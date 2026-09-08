@@ -10,8 +10,6 @@ import QuoteModal from "./components/QuoteModal";
 // Modular Page Components (Each Navbar Option has its own folder & details)
 import HomePage from "./pages/Home/HomePage";
 import ServicesPage from "./pages/Services/ServicesPage";
-import EstimatorPage from "./pages/Estimator/EstimatorPage";
-import LiveTrackerPage from "./pages/LiveTracker/LiveTrackerPage";
 import ProjectsPage from "./pages/Projects/ProjectsPage";
 import GuaranteesPage from "./pages/Guarantees/GuaranteesPage";
 import ReviewsPage from "./pages/Reviews/ReviewsPage";
@@ -24,18 +22,6 @@ function App() {
   // Quote Modal State
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [quotePrefillData, setQuotePrefillData] = useState(null);
-
-  // Jump to Cost Estimator page
-  const handleJumpEstimator = () => {
-    setCurrentPage("estimator");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  // Open modal with prefill from Cost Estimator
-  const handleBookWithEstimate = (estimateData) => {
-    setQuotePrefillData(estimateData);
-    setIsQuoteModalOpen(true);
-  };
 
   // Open modal with specific service or project
   const handleOpenQuoteWithService = (serviceName) => {
@@ -57,16 +43,6 @@ function App() {
           <ServicesPage 
             onOpenQuote={handleOpenQuoteWithService} 
           />
-        );
-      case "estimator":
-        return (
-          <EstimatorPage 
-            onBookWithEstimate={handleBookWithEstimate} 
-          />
-        );
-      case "tracker":
-        return (
-          <LiveTrackerPage />
         );
       case "projects":
         return (
@@ -95,9 +71,7 @@ function App() {
         return (
           <HomePage 
             onOpenQuote={handleOpenQuoteGeneric}
-            onBookWithEstimate={handleBookWithEstimate}
             onSelectService={handleOpenQuoteWithService}
-            onJumpEstimator={handleJumpEstimator}
             onNavigate={setCurrentPage}
           />
         );
@@ -111,7 +85,6 @@ function App() {
         currentPage={currentPage}
         onNavigate={setCurrentPage}
         onOpenQuote={handleOpenQuoteGeneric}
-        onJumpEstimator={handleJumpEstimator}
       />
 
       {/* Main Content: Rendered from each option's dedicated folder */}
@@ -127,7 +100,6 @@ function App() {
       {/* Floating Quick Action Dock */}
       <FloatingDock 
         onOpenQuote={handleOpenQuoteGeneric}
-        onJumpEstimator={handleJumpEstimator}
       />
 
       {/* Quote & Free Consultation Modal */}

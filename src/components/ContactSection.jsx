@@ -13,10 +13,17 @@ import {
 
 export default function ContactSection({ onOpenQuote }) {
   const [fastFormSent, setFastFormSent] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
   const [fastInput, setFastInput] = useState({ name: "", phone: "", service: "New Home Build" });
 
   const handleFastSubmit = (e) => {
     e.preventDefault();
+    const cleanDigits = fastInput.phone.replace(/\D/g, "");
+    if (cleanDigits.length !== 10) {
+      setPhoneError("Please enter a valid 10-digit mobile number (0-9 only).");
+      return;
+    }
+    setPhoneError("");
     setFastFormSent(true);
   };
 
@@ -44,11 +51,22 @@ export default function ContactSection({ onOpenQuote }) {
                 <PhoneCall size={24} />
               </div>
               <div className="contact-details">
-                <div className="contact-label">Direct Phone & WhatsApp Hotline</div>
-                <a href="tel:+18005552845" className="contact-val highlight-val">
-                  (800) 555-BUILD • (800) 555-2845
-                </a>
-                <div className="contact-sub">Direct line to Senior Civil Estimators • Mon-Sat 8am-7pm</div>
+                <div className="contact-label" style={{ color: "#0F172A", fontWeight: 800 }}>Managing Directors & Hotlines</div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginTop: "6px" }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "6px" }}>
+                    <span style={{ color: "#334155", fontSize: "0.85rem", fontWeight: 700 }}>Digvijay Singh Rathore:</span>
+                    <a href="tel:+918800570023" className="contact-val highlight-val" style={{ fontSize: "1rem" }}>
+                      +91 88005 70023
+                    </a>
+                  </div>
+                  <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "6px" }}>
+                    <span style={{ color: "#334155", fontSize: "0.85rem", fontWeight: 700 }}>Jagdeesh Prashad:</span>
+                    <a href="tel:+917224862150" className="contact-val highlight-val" style={{ fontSize: "1rem" }}>
+                      +91 72248 62150
+                    </a>
+                  </div>
+                </div>
+                <div className="contact-sub" style={{ marginTop: "6px" }}>Direct contact with Company Managing Directors • Mon-Sat 8am-8pm</div>
               </div>
             </div>
 
@@ -57,11 +75,11 @@ export default function ContactSection({ onOpenQuote }) {
                 <Mail size={24} />
               </div>
               <div className="contact-details">
-                <div className="contact-label">Blueprints & CAD Submission Desk</div>
-                <a href="mailto:blueprints@apexbuild.com" className="contact-val">
-                  blueprints@apexbuild.com
+                <div className="contact-label">Blueprints & Project Planning Desk</div>
+                <a href="mailto:contact@manobhavconstruction.com" className="contact-val">
+                  contact@manobhavconstruction.com
                 </a>
-                <div className="contact-sub">Send CAD/PDF drawings for guaranteed 24-hr engineering review</div>
+                <div className="contact-sub">Send blueprints or inquiries for review • Building your dreams, brick by brick</div>
               </div>
             </div>
 
@@ -70,9 +88,29 @@ export default function ContactSection({ onOpenQuote }) {
                 <MapPin size={24} />
               </div>
               <div className="contact-details">
-                <div className="contact-label">National Headquarters & Design Center</div>
-                <div className="contact-val">450 Grand Architectural Blvd, Suite 800</div>
-                <div className="contact-sub">Civil Engineering Lab & Tactile Material Studio</div>
+                <div className="contact-label" style={{ color: "#0F172A", fontWeight: 800 }}>Headquarters & Office Address</div>
+                <div className="contact-val" style={{ fontSize: "0.95rem", lineHeight: 1.4 }}>
+                  Shop No. 205, RAJ NAGAR, PALASI KAROND, BHOPAL - 462038
+                </div>
+                <div className="contact-sub" style={{ color: "#64748B", fontWeight: 700, marginTop: "2px" }}>
+                  (In front of Truba College) • Bhopal, Madhya Pradesh
+                </div>
+              </div>
+            </div>
+
+            {/* Official GST Registration Card */}
+            <div className="contact-card glass-card" style={{ borderColor: "#E2E8F0", background: "#FFFFFF" }}>
+              <div className="contact-icon-box" style={{ color: "#0F172A", background: "#F1F5F9" }}>
+                <ShieldCheck size={24} />
+              </div>
+              <div className="contact-details">
+                <div className="contact-label" style={{ color: "#0F172A", fontWeight: 800 }}>Govt. Tax & Legal Compliance</div>
+                <div className="contact-val highlight-val" style={{ fontFamily: "monospace", letterSpacing: "0.08em", fontSize: "1.05rem", color: "#0F172A" }}>
+                  GSTIN: 23AABCM8923M1Z5
+                </div>
+                <div className="contact-sub" style={{ color: "#64748B" }}>
+                  GST Number for Manobhav Construction (Madhya Pradesh) • Class-1 Works Contractor • 100% Tax Compliant
+                </div>
               </div>
             </div>
 
@@ -85,8 +123,8 @@ export default function ContactSection({ onOpenQuote }) {
                 <strong>Emergency Civil & Structural Response</strong>
                 <span>Urgent foundation shifting, severe settlement, or storm remediation?</span>
               </div>
-              <a href="tel:+18005552845" className="btn btn-primary btn-sm">
-                Call 24/7 Hotline
+              <a href="tel:+918800570023" className="btn btn-primary btn-sm">
+                Call Direct Line
               </a>
             </div>
           </div>
@@ -96,11 +134,11 @@ export default function ContactSection({ onOpenQuote }) {
             <div className="glass-card fast-callback-card">
               <div className="fast-card-header">
                 <div className="badge-gold">
-                  <Clock size={13} /> 15-Minute Response Time
+                  <Clock size={13} /> 15-Minute Response Time: +91 88005 70023 (Digvijay Singh Rathore)
                 </div>
                 <h3 className="fast-card-title">Request Immediate Callback</h3>
                 <p className="fast-card-desc">
-                  Leave your number and our lead site engineer will call you right back to discuss timeline, preliminary costs, and plot feasibility.
+                  Leave your number and Managing Director <strong>Digvijay Singh Rathore (+91 88005 70023)</strong> will call you back within 15 minutes to discuss timeline, preliminary costs, and plot feasibility.
                 </p>
               </div>
 
@@ -119,15 +157,33 @@ export default function ContactSection({ onOpenQuote }) {
                   </div>
 
                   <div className="form-field">
-                    <label className="field-label">Phone Number (Required for Callback)</label>
+                    <label className="field-label">Mobile Number (10 Digits Only) *</label>
                     <input
                       type="tel"
                       required
-                      placeholder="+1 (555) 000-0000"
-                      className="modal-input"
+                      inputMode="numeric"
+                      pattern="[0-9]{10}"
+                      maxLength={10}
+                      minLength={10}
+                      placeholder="10-digit mobile number (e.g. 8800570023)"
+                      className={`modal-input ${phoneError ? "input-error" : ""}`}
                       value={fastInput.phone}
-                      onChange={(e) => setFastInput({ ...fastInput, phone: e.target.value })}
+                      onChange={(e) => {
+                        const cleanDigits = e.target.value.replace(/\D/g, "").slice(0, 10);
+                        setFastInput({ ...fastInput, phone: cleanDigits });
+                        if (phoneError && cleanDigits.length === 10) {
+                          setPhoneError("");
+                        }
+                      }}
+                      onBlur={() => {
+                        if (fastInput.phone && fastInput.phone.length !== 10) {
+                          setPhoneError("Mobile number must be exactly 10 digits (0-9 only).");
+                        } else {
+                          setPhoneError("");
+                        }
+                      }}
                     />
+                    {phoneError && <span className="field-error-msg">{phoneError}</span>}
                   </div>
 
                   <div className="form-field">
@@ -160,10 +216,14 @@ export default function ContactSection({ onOpenQuote }) {
                   <CheckCircle2 size={46} className="text-green" />
                   <h4>Callback Request Received!</h4>
                   <p>
-                    Thank you, <strong>{fastInput.name}</strong>. Our lead site estimator is reviewing your request and will call <strong>{fastInput.phone}</strong> shortly.
+                    Thank you, <strong>{fastInput.name}</strong>. Managing Director <strong>Digvijay Singh Rathore (+91 88005 70023)</strong> is reviewing your request and will call <strong>+91 {fastInput.phone}</strong> within 15 minutes.
                   </p>
                   <button 
-                    onClick={() => setFastFormSent(false)} 
+                    onClick={() => {
+                      setFastFormSent(false);
+                      setPhoneError("");
+                      setFastInput({ name: "", phone: "", service: "New Home Build" });
+                    }} 
                     className="btn btn-secondary btn-sm"
                     style={{ marginTop: 16 }}
                   >

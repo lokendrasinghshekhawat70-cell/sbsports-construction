@@ -19,13 +19,14 @@ export default function QuoteModal({ isOpen, onClose, initialData }) {
     name: "",
     phone: "",
     email: "",
-    projectType: "Custom Luxury Villa",
+    projectType: "Residential Development (House & Roofing)",
     estimatedArea: "2,500 sq ft",
     timelineTarget: "Next 1-3 Months",
     address: "",
     notes: "",
     preferredDate: ""
   });
+  const [phoneError, setPhoneError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
@@ -43,13 +44,37 @@ export default function QuoteModal({ isOpen, onClose, initialData }) {
 
   if (!isOpen) return null;
 
+  const handlePhoneChange = (e) => {
+    // 0 to 9 numbers only, max 10 digits
+    const cleanDigits = e.target.value.replace(/\D/g, "").slice(0, 10);
+    setFormData((prev) => ({ ...prev, phone: cleanDigits }));
+    if (phoneError && cleanDigits.length === 10) {
+      setPhoneError("");
+    }
+  };
+
+  const handlePhoneBlur = () => {
+    if (formData.phone && formData.phone.length !== 10) {
+      setPhoneError("Mobile number must be exactly 10 digits (0-9 only).");
+    } else {
+      setPhoneError("");
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const cleanDigits = formData.phone.replace(/\D/g, "");
+    if (cleanDigits.length !== 10) {
+      setPhoneError("Please enter a valid 10-digit mobile number (0-9 only).");
+      return;
+    }
+    setPhoneError("");
     setIsSubmitted(true);
   };
 
   const handleReset = () => {
     setIsSubmitted(false);
+    setPhoneError("");
     setStep(1);
     onClose();
   };
@@ -65,11 +90,11 @@ export default function QuoteModal({ isOpen, onClose, initialData }) {
           <div>
             <div className="modal-top-header">
               <div className="badge-gold">
-                <ShieldCheck size={13} /> 100% Free & No Obligation
+                <Clock size={13} /> 15-Minute Response Time: +91 88005 70023 (Digvijay Singh Rathore)
               </div>
-              <h3 className="quote-modal-title">Book Free Site Survey & Consultation</h3>
+              <h3 className="quote-modal-title">MANOBHAV CONSTRUCTION Consultation</h3>
               <p className="quote-modal-sub">
-                Speak directly with a licensed civil engineer. We'll review your plot, discuss design plans, and prepare a fixed-price proposal.
+                HOUSE & BUILDING CONSTRUCTION: Connect for Residential Development, Commercial Projects, and Infrastructure Works. Direct response from Managing Director Digvijay Singh Rathore (+91 88005 70023).
               </p>
             </div>
 
@@ -97,16 +122,22 @@ export default function QuoteModal({ isOpen, onClose, initialData }) {
 
                 <div className="form-field">
                   <label className="field-label">
-                    <Phone size={14} className="text-amber" /> Mobile Phone *
+                    <Phone size={14} className="text-amber" /> Mobile Phone (10 Digits Only) *
                   </label>
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. +1 (555) 019-2834"
-                    className="modal-input"
+                    inputMode="numeric"
+                    pattern="[0-9]{10}"
+                    maxLength={10}
+                    minLength={10}
+                    placeholder="10-digit mobile number (e.g. 8800570023)"
+                    className={`modal-input ${phoneError ? "input-error" : ""}`}
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={handlePhoneChange}
+                    onBlur={handlePhoneBlur}
                   />
+                  {phoneError && <span className="field-error-msg">{phoneError}</span>}
                 </div>
               </div>
 
@@ -134,11 +165,11 @@ export default function QuoteModal({ isOpen, onClose, initialData }) {
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   >
-                    <option value="Custom Luxury Villa">Custom Luxury Villa</option>
-                    <option value="Commercial Complex">Commercial Complex / Office</option>
-                    <option value="Interior Renovation">Full Interior Renovation</option>
-                    <option value="Structural & Foundation">Structural & Foundation Works</option>
-                    <option value="Architectural Design">Architectural & 3D Planning</option>
+                    <option value="Residential Development (House & Roofing)">Residential Development (House & Roofing)</option>
+                    <option value="Timber Framing & Structural Wood">Timber Framing & Structural Wood</option>
+                    <option value="Commercial Projects (Multi-Story & Crane)">Commercial Projects (Multi-Story & Crane)</option>
+                    <option value="Infrastructure Works (Excavation & Foundations)">Infrastructure Works (Excavation & Foundations)</option>
+                    <option value="Architectural Blueprints & Site Safety">Architectural Blueprints & Site Safety</option>
                   </select>
                 </div>
               </div>
@@ -222,7 +253,7 @@ export default function QuoteModal({ isOpen, onClose, initialData }) {
               </div>
               <div className="ticket-row">
                 <span>Estimated Response Time:</span>
-                <span className="text-green">Within 15 Minutes (Business Hours)</span>
+                <span className="text-green">Within 15 Minutes • Digvijay Singh Rathore (+91 88005 70023)</span>
               </div>
             </div>
 

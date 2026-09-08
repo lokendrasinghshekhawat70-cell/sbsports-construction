@@ -98,11 +98,11 @@ export default function GuaranteesPage({ onOpenQuote }) {
           })}
         </div>
 
-        {/* Comparison Table: Traditional Contractor vs ApexBuild */}
+        {/* Comparison Table: Traditional Contractor vs MANOBHAV CONSTRUCTION */}
         <div className="comparison-table-card glass-card">
           <div className="comp-header">
-            <h3>Why Homeowners & Developers Choose ApexBuild</h3>
-            <p>Direct comparison against standard local contracting practices.</p>
+            <h3>Why Clients Choose MANOBHAV CONSTRUCTION</h3>
+            <p>Direct comparison against standard local contracting practices. Building your dreams, brick by brick.</p>
           </div>
 
           <div className="table-responsive">
@@ -111,7 +111,7 @@ export default function GuaranteesPage({ onOpenQuote }) {
                 <tr>
                   <th>Feature / Guarantee</th>
                   <th>Traditional Contractors</th>
-                  <th className="highlight-col">ApexBuild Construction</th>
+                  <th className="highlight-col">MANOBHAV CONSTRUCTION</th>
                 </tr>
               </thead>
               <tbody>

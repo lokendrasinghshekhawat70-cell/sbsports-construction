@@ -1,109 +1,115 @@
 import React from "react";
-import { 
-  Home, 
-  Building2, 
-  Compass, 
-  Hammer, 
-  Layers, 
-  Leaf, 
-  ArrowRight, 
-  Check, 
-  ShieldCheck, 
-  Wrench,
-  Sparkles
+import {
+  Home,
+  Building2,
+  Tractor,
+  FileText,
+  HardHat,
+  Check,
+  ArrowRight,
+  Sparkles,
+  Layers,
+  Hammer
 } from "lucide-react";
 
 export default function Services({ onSelectService }) {
+  // STRICTLY only the details present in the picture:
   const servicesList = [
     {
-      id: "residential",
-      title: "Bespoke Luxury Villas & Private Estates",
-      category: "Turnkey Residential",
+      id: "residential-house",
+      title: "Residential Development & House Construction",
+      category: "Picture Detail: Left Side",
       icon: Home,
-      description: "Complete turnkey design and engineering for architect-designed modern residences, cantilevered contemporary villas, and multi-generational family compounds.",
+      description: "Complete house construction featuring high-pitch architectural roof shingles, multiple dormer windows, exterior siding, and custom residential finishes as shown on site.",
       highlights: [
-        "100% Custom 3D BIM & VR Architectural Plans",
-        "Seismic-Resistant Reinforced Concrete Superstructure",
-        "Imported Italian Marble & Custom Fluted Millwork",
-        "15-Year Comprehensive Structural Warranty"
+        "Two-Story Residential Home Construction",
+        "High-Pitch Roof Shingle Installation & Siding",
+        "Turnkey Residential Development from Ground Up",
+        "Building Your Dreams, Brick by Brick"
       ],
-      startingFrom: "$145 / sq ft",
-      badge: "Turnkey EPC"
+      startingFrom: "Residential Spec",
+      badge: "Picture Detail",
+      image: "/images/roofing_structure.jpg"
     },
     {
-      id: "commercial",
-      title: "Commercial Campuses & Corporate Hubs",
-      category: "Commercial & Mixed-Use",
-      icon: Building2,
-      description: "Grade-A corporate office towers, tech headquarters, and retail facilities engineered for high foot traffic, acoustic isolation, and LEED Platinum certification.",
-      highlights: [
-        "Curved Double-Glazed Parametric Curtain Walls",
-        "Industrial Central VRF HVAC & Smoke Dampers",
-        "LEED Gold / Platinum Net-Zero Energy Compliance",
-        "Phased Handover for Fast Tenant Occupancy"
-      ],
-      startingFrom: "$180 / sq ft",
-      badge: "Commercial Grade"
-    },
-    {
-      id: "renovation",
-      title: "Full Interior Re-Engineering & Remodeling",
-      category: "Renovation & Redesign",
+      id: "timber-framing",
+      title: "Timber Framing & Structural Woodwork",
+      category: "Picture Detail: Center Frame",
       icon: Hammer,
-      description: "High-end structural modifications for penthouses and estates. We remove load-bearing walls, install waterfall marble islands, and integrate smart lighting.",
+      description: "Heavy timber structural framing, roof trusses, wall studs, beams, and on-site carpentry executed by skilled workers as displayed in the central building frame.",
       highlights: [
-        "Non-Load Bearing Wall Demolition & Steel Lintels",
-        "Book-Matched Calacatta Marble Waterfall Kitchens",
-        "Whole-Home Acoustic Underlay & Concealed Ducts",
-        "100% Dust-Free Protocol with HEPA Air Scrubbers"
+        "Complete Wood Skeleton & Timber Wall Studs",
+        "Roof Rafters, Trusses & Structural Load Paths",
+        "Precision Carpentry & Structural Framing Integrity",
+        "Certified Safe Framing Construction"
       ],
-      startingFrom: "$95 / sq ft",
-      badge: "Fast Turnaround"
+      startingFrom: "Framing Spec",
+      badge: "Picture Detail",
+      image: "/images/timber_structure.jpg"
     },
     {
-      id: "structural",
-      title: "Civil Foundations & Geotechnical Engineering",
-      category: "Heavy Civil & Foundations",
+      id: "commercial-highrise",
+      title: "Commercial Projects & Multi-Story Buildings",
+      category: "Picture Detail: Right Side",
+      icon: Building2,
+      description: "Reinforced concrete commercial high-rises engineered with heavy floor slabs, exterior safety scaffolding, protective netting, and modern urban glass facade integration.",
+      highlights: [
+        "Multi-Story Reinforced Concrete Superstructures",
+        "Exterior Construction Scaffolding & Safety Netting",
+        "Commercial Grade Floor Slabs & Column Pouring",
+        "High-Rise Commercial Facilities & Urban Towers"
+      ],
+      startingFrom: "Commercial Grade",
+      badge: "Picture Detail",
+      image: "/images/concrete_structure.jpg"
+    },
+    {
+      id: "crane-operations",
+      title: "Tower Crane & Heavy Structural Lifting",
+      category: "Picture Detail: Sky Crane",
       icon: Layers,
-      description: "Sub-surface soil boring, micropile deep foundations, retaining shoring walls, and licensed Professional Engineer (PE) structural audit stamps.",
+      description: "Industrial yellow tower crane operations for vertical material transport, structural steel hoisting, and high-altitude commercial building assembly.",
       highlights: [
-        "Core Soil Drilling & Plate Load Bearing Tests",
-        "Deep Bored Micropiles & Post-Tensioned Slabs",
-        "Carbon-Fiber Wrapping & Seismic Retrofitting",
-        "Licensed Professional Engineer (PE) Stamped Sign-off"
+        "Heavy-Duty Yellow Tower Crane Deployment",
+        "Vertical Steel & Concrete Material Hoisting",
+        "High-Altitude Rigging & Rigorous Safety Protocols",
+        "Precision Commercial Lifting Operations"
       ],
-      startingFrom: "$80 / sq ft",
-      badge: "Safety Certified"
+      startingFrom: "Heavy Lifting",
+      badge: "Picture Detail",
+      image: "/images/crane_structure.jpg"
     },
     {
-      id: "architecture",
-      title: "3D BIM Blueprints & Permitting Clearance",
-      category: "Design & Municipal Approvals",
-      icon: Compass,
-      description: "Cinematic 4K photorealistic exterior and interior renders, immersive VR walkthroughs, MEP CAD blueprints, and expedited city council approvals.",
+      id: "infrastructure-earthworks",
+      title: "Infrastructure Works & Hydraulic Excavation",
+      category: "Picture Detail: Midground Machinery",
+      icon: Tractor,
+      description: "Heavy yellow hydraulic excavator earthmoving, groundwork leveling, trenching, soil clearing, and civil preparation for heavy foundations.",
       highlights: [
-        "Ultra-HD 4K Renders & Virtual Reality Walkthroughs",
-        "Complete Structural, MEP & Plumbing Blueprints",
-        "100% Municipal Council Bylaw & Zoning Clearance",
-        "Passive Solar & Natural Cross-Ventilation Studies"
+        "Hydraulic Excavator & Earthmoving Operations",
+        "Site Grading, Deep Trenching & Soil Preparation",
+        "Foundation Excavation & Subgrade Compaction",
+        "Heavy Civil Infrastructure Development"
       ],
-      startingFrom: "Custom Blueprints",
-      badge: "3D Visualization"
+      startingFrom: "Infrastructure Spec",
+      badge: "Picture Detail",
+      image: "/images/excavation_structure.jpg"
     },
     {
-      id: "green",
-      title: "Net-Zero Sustainable & Solar Eco-Building",
-      category: "Green Technology",
-      icon: Leaf,
-      description: "Self-sustaining construction featuring rooftop solar microgrids, rainwater recycling, ultra-high R-value thermal envelope, and low-carbon cement.",
+      id: "blueprints-safety",
+      title: "Blueprints & Safety Hard Hat Standards",
+      category: "Picture Detail: Foreground Planning Table",
+      icon: FileText,
+      description: "Detailed architectural blueprints rolled out on site, paired with strict yellow safety helmet protocols and brick-by-brick structural foundation engineering.",
       highlights: [
-        "Up to 75% Permanent Reduction in Electric Bills",
-        "Integrated Solar Photovoltaic Grid with Battery Storage",
-        "Sub-surface Rainwater Filtration & Greywater Systems",
-        "Eligible for Federal & State Green Building Rebates"
+        "Precision Architectural Blueprints & Drafting",
+        "Mandatory Yellow Hard Hat & Site Safety Protocols",
+        "Brick Stacks & Solid Structural Masonry",
+        "Flawless Execution from Plan to Handover"
       ],
-      startingFrom: "Eco Spec",
-      badge: "Net-Zero Ready"
+      startingFrom: "Blueprint Spec",
+      badge: "Picture Detail",
+      image: "/images/blueprint_structure.jpg"
     }
   ];
 
@@ -111,17 +117,17 @@ export default function Services({ onSelectService }) {
     <section id="services" className="section-padding services-section">
       <div className="container">
         {/* Header */}
-        <div className="section-header">
-          <div className="section-pill">
-            <Wrench size={15} />
-            <span>Comprehensive Solutions</span>
+        <div className="section-header" style={{ textAlign: "center" }}>
+          <div className="section-pill" style={{ margin: "0 auto 12px auto" }}>
+            <Sparkles size={15} style={{ color: "#0F172A" }} />
+            <span>Picture Construction Disciplines</span>
           </div>
           <h2 className="section-title">
-            Engineered For Excellence, <br />
-            <span className="text-gradient-amber">Built For Generations</span>
+            HOUSE & BUILDING CONSTRUCTION <br />
+            <span className="text-gradient-amber">Building Your Dreams, Brick By Brick</span>
           </h2>
-          <p className="section-subtitle">
-            Whether you are building your dream family home or scaling a multi-million dollar commercial center, our certified teams deliver turnkey precision from groundbreaking to handover.
+          <p className="section-subtitle" style={{ maxWidth: "760px", margin: "0 auto" }}>
+            Every discipline below is directly derived from the official <strong>MANOBHAV CONSTRUCTION</strong> picture: Residential Development, Commercial Projects, Infrastructure Works, and precision Blueprint & Safety Standards.
           </p>
         </div>
 
@@ -130,46 +136,60 @@ export default function Services({ onSelectService }) {
           {servicesList.map((service) => {
             const Icon = service.icon;
             return (
-              <div key={service.id} className="feature-card service-card">
-                <div className="service-card-top">
-                  <div className="feature-icon-wrapper">
-                    <Icon size={26} />
-                  </div>
-                  {service.badge && (
-                    <span className="badge-gold service-badge">
-                      <Sparkles size={12} /> {service.badge}
-                    </span>
-                  )}
+              <div key={service.id} className="feature-card service-card" style={{ overflow: "hidden", padding: 0 }}>
+                {/* Working Construction Structure Photo */}
+                <div style={{ width: "100%", height: "180px", overflow: "hidden", position: "relative" }}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                  <span className="badge-gold" style={{ position: "absolute", bottom: "10px", left: "12px", background: "rgba(15,23,42,0.85)" }}>
+                    <Sparkles size={11} /> Active Structure
+                  </span>
                 </div>
 
-                <div className="service-category">{service.category}</div>
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-desc">{service.description}</p>
-
-                {/* Highlights list */}
-                <div className="service-highlights">
-                  {service.highlights.map((item, idx) => (
-                    <div key={idx} className="service-highlight-item">
-                      <Check size={14} className="text-amber" />
-                      <span>{item}</span>
+                <div style={{ padding: "20px" }}>
+                  <div className="service-card-top">
+                    <div className="feature-icon-wrapper">
+                      <Icon size={24} />
                     </div>
-                  ))}
-                </div>
-
-                {/* Card Footer */}
-                <div className="service-card-footer">
-                  <div className="service-pricing">
-                    <span className="pricing-label">Starting From</span>
-                    <span className="pricing-value">{service.startingFrom}</span>
+                    {service.badge && (
+                      <span className="badge-gold service-badge">
+                        <Sparkles size={12} /> {service.badge}
+                      </span>
+                    )}
                   </div>
-                  <button 
-                    onClick={() => onSelectService(service.title)}
-                    className="service-action-btn"
-                    title={`Inquire about ${service.title}`}
-                  >
-                    <span>Request Service</span>
-                    <ArrowRight size={15} />
-                  </button>
+
+                  <div className="service-category">{service.category}</div>
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-desc">{service.description}</p>
+
+                  {/* Highlights list */}
+                  <div className="service-highlights">
+                    {service.highlights.map((item, idx) => (
+                      <div key={idx} className="service-highlight-item">
+                        <Check size={14} className="text-amber" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Card Footer */}
+                  <div className="service-card-footer">
+                    <div className="service-pricing">
+                      <span className="pricing-label">Scope</span>
+                      <span className="pricing-value" style={{ fontSize: "0.88rem" }}>{service.startingFrom}</span>
+                    </div>
+                    <button
+                      onClick={() => onSelectService(service.title)}
+                      className="service-action-btn"
+                      title={`Inquire about ${service.title}`}
+                    >
+                      <span>Inquire Discipline</span>
+                      <ArrowRight size={15} />
+                    </button>
+                  </div>
                 </div>
               </div>
             );

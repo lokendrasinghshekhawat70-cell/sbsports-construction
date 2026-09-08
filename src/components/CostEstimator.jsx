@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { 
   Calculator, 
-  Home, 
-  Building, 
-  Hammer, 
-  Layers, 
   Check, 
-  Sparkles, 
   Calendar, 
   DollarSign, 
   ArrowRight,
@@ -16,7 +11,6 @@ import {
 
 export default function CostEstimator({ onBookWithEstimate }) {
   const [currency, setCurrency] = useState("USD"); // "USD" or "INR"
-  const [projectType, setProjectType] = useState("villa");
   const [sqft, setSqft] = useState(2800);
   const [tier, setTier] = useState("premium");
   const [addons, setAddons] = useState({
@@ -26,36 +20,11 @@ export default function CostEstimator({ onBookWithEstimate }) {
     fastTrack: false
   });
 
-  const projectTypes = [
-    {
-      id: "villa",
-      title: "Bespoke Luxury Villa & Estate",
-      icon: Home,
-      basePerSqft: currency === "USD" ? 145 : 2900,
-      description: "Complete turnkey architectural build from soil boring to Italian marble handover."
-    },
-    {
-      id: "commercial",
-      title: "Commercial & Office Complex",
-      icon: Building,
-      basePerSqft: currency === "USD" ? 180 : 3500,
-      description: "Grade-A corporate framing, acoustic curtain walls, central VRF & fire safety."
-    },
-    {
-      id: "renovation",
-      title: "Full Interior Re-Engineering",
-      icon: Hammer,
-      basePerSqft: currency === "USD" ? 95 : 1900,
-      description: "Space re-planning, Calacatta waterfall islands, luxury spa baths & rewiring."
-    },
-    {
-      id: "structural",
-      title: "Civil Foundation & RCC Superstructure",
-      icon: Layers,
-      basePerSqft: currency === "USD" ? 80 : 1600,
-      description: "Geotechnical soil testing, bored micropiling, post-tensioned suspended slabs."
-    }
-  ];
+  const selectedType = {
+    title: "House & Building Construction",
+    basePerSqft: currency === "USD" ? 145 : 2900,
+    description: "Complete turnkey house & building construction, brick by brick."
+  };
 
   const qualityTiers = [
     {
@@ -93,7 +62,6 @@ export default function CostEstimator({ onBookWithEstimate }) {
   };
 
   // Calculations
-  const selectedType = projectTypes.find((p) => p.id === projectType) || projectTypes[0];
   const selectedTier = qualityTiers.find((t) => t.id === tier) || qualityTiers[1];
 
   const baseCost = selectedType.basePerSqft * sqft * selectedTier.multiplier;
@@ -115,8 +83,6 @@ export default function CostEstimator({ onBookWithEstimate }) {
   if (sqft > 2000) baseMonths = 7;
   if (sqft > 4000) baseMonths = 10;
   if (sqft > 8000) baseMonths = 14;
-  if (projectType === "renovation") baseMonths = Math.max(2, Math.round(baseMonths * 0.5));
-  if (projectType === "structural") baseMonths = Math.max(3, Math.round(baseMonths * 0.6));
   if (addons.fastTrack) baseMonths = Math.max(2, Math.round(baseMonths * 0.75));
 
   const formatMoney = (amount) => {
@@ -145,13 +111,13 @@ export default function CostEstimator({ onBookWithEstimate }) {
         <div className="section-header">
           <div className="section-pill">
             <Calculator size={15} />
-            <span>Interactive Cost Calculator</span>
+            <span>MANOBHAV CONSTRUCTION ESTIMATOR</span>
           </div>
           <h2 className="section-title">
-            Instant Construction <span className="text-gradient-amber">Cost Estimator</span>
+            HOUSE & BUILDING <span className="text-gradient-amber">CONSTRUCTION ESTIMATOR</span>
           </h2>
           <p className="section-subtitle">
-            No guessing or awkward sales calls. Get an instant, transparent estimate for your project in under 30 seconds with guaranteed fixed-price contracts.
+            Calculate your turnkey budget for Residential Development, Commercial Projects, and Infrastructure Works. Building your dreams, brick by brick.
           </p>
 
           {/* Currency Switcher */}
@@ -178,45 +144,11 @@ export default function CostEstimator({ onBookWithEstimate }) {
         <div className="estimator-grid">
           {/* Left Column: Selectors & Inputs */}
           <div className="estimator-controls-card glass-card">
-            {/* Step 1: Project Type */}
-            <div className="estimator-group">
-              <label className="estimator-label">
-                <span className="step-num">1</span>
-                <span>Select Project Type</span>
-              </label>
-              <div className="project-type-grid">
-                {projectTypes.map((type) => {
-                  const Icon = type.icon;
-                  const isSelected = projectType === type.id;
-                  return (
-                    <div
-                      key={type.id}
-                      className={`type-card ${isSelected ? "type-card-active" : ""}`}
-                      onClick={() => setProjectType(type.id)}
-                    >
-                      <div className="type-icon-box">
-                        <Icon size={22} />
-                      </div>
-                      <div className="type-info">
-                        <div className="type-title">{type.title}</div>
-                        <div className="type-desc">{type.description}</div>
-                      </div>
-                      {isSelected && (
-                        <div className="selection-check">
-                          <Check size={14} />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Step 2: Square Footage Slider */}
+            {/* Step 1: Square Footage Slider */}
             <div className="estimator-group">
               <div className="estimator-label-row">
                 <label className="estimator-label">
-                  <span className="step-num">2</span>
+                  <span className="step-num">1</span>
                   <span>Estimated Total Built-Up Area</span>
                 </label>
                 <div className="sqft-display">
@@ -249,10 +181,10 @@ export default function CostEstimator({ onBookWithEstimate }) {
               </div>
             </div>
 
-            {/* Step 3: Quality Tier Cards */}
+            {/* Step 2: Quality Tier Cards */}
             <div className="estimator-group">
               <label className="estimator-label">
-                <span className="step-num">3</span>
+                <span className="step-num">2</span>
                 <span>Choose Material & Finish Specification</span>
               </label>
               <div className="tier-cards-grid">
@@ -286,10 +218,10 @@ export default function CostEstimator({ onBookWithEstimate }) {
               </div>
             </div>
 
-            {/* Step 4: Optional Add-ons */}
+            {/* Step 3: Optional Add-ons */}
             <div className="estimator-group" style={{ marginBottom: 0 }}>
               <label className="estimator-label">
-                <span className="step-num">4</span>
+                <span className="step-num">3</span>
                 <span>Select High-Value Enhancements</span>
               </label>
               <div className="addon-pills-grid">
@@ -318,11 +250,7 @@ export default function CostEstimator({ onBookWithEstimate }) {
           {/* Right Column: Dynamic Price Summary Card */}
           <div className="estimator-summary-col">
             <div className="glass-card summary-card sticky-card">
-              <div className="summary-header">
-                <div className="summary-tag">
-                  <Sparkles size={14} className="text-amber" />
-                  <span>Real-Time Estimation</span>
-                </div>
+              <div className="summary-header" style={{ justifyContent: "flex-end" }}>
                 <div className="fixed-price-badge">
                   <Shield size={14} /> Fixed Price Lock
                 </div>

@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { 
-  HardHat, 
-  PhoneCall, 
-  Calculator, 
-  Menu, 
-  X, 
+import {
+  HardHat,
+  PhoneCall,
+  Building2,
+  Menu,
+  X,
   ChevronRight,
   ShieldCheck,
   Clock,
-  Home
+  Home,
+  Sparkles
 } from "lucide-react";
+import ManobhavLogo from "./ManobhavLogo";
 
-export default function Navbar({ 
-  currentPage = "home", 
-  onNavigate, 
-  onOpenQuote, 
-  onJumpEstimator 
+export default function Navbar({
+  currentPage = "home",
+  onNavigate,
+  onOpenQuote
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,9 +31,7 @@ export default function Navbar({
 
   const navLinks = [
     { id: "home", name: "Home" },
-    { id: "services", name: "Services" },
-    { id: "estimator", name: "Cost Estimator", highlight: true },
-    { id: "tracker", name: "Live Tracker" },
+    { id: "services", name: "Construction Services" },
     { id: "projects", name: "Projects" },
     { id: "guarantees", name: "Guarantees" },
     { id: "reviews", name: "Reviews" },
@@ -47,45 +46,18 @@ export default function Navbar({
 
   return (
     <>
-      {/* Top Utility Bar for Transparency & Trust */}
-      <div className="top-banner">
-        <div className="container top-banner-inner">
-          <div className="top-banner-left">
-            <span className="top-tag">
-              <ShieldCheck size={14} className="text-amber" /> 
-              Licensed General Contractor #GC-89421
-            </span>
-            <span className="divider-dot">•</span>
-            <span className="top-tag">
-              <Clock size={14} className="text-green" /> 
-              99.4% On-Time Completion Guarantee
-            </span>
-          </div>
-          <div className="top-banner-right">
-            <a href="tel:+18005552845" className="top-phone">
-              <PhoneCall size={13} />
-              <span>24/7 Builder Hotline: <strong>(800) 555-BUILD</strong></span>
-            </a>
-          </div>
-        </div>
-      </div>
-
+      
       {/* Main Sticky Navbar */}
       <header className={`site-header ${scrolled ? "header-scrolled" : ""}`}>
         <div className="container nav-wrapper">
           {/* Brand Logo */}
-          <button 
-            onClick={() => handleLinkClick("home")} 
+          <button
+            onClick={() => handleLinkClick("home")}
             className="brand-logo"
-            title="ApexBuild Home"
+            title="MANOBHAV CONSTRUCTION Home"
+            style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
           >
-            <div className="logo-icon-box">
-              <HardHat size={26} className="logo-icon" />
-            </div>
-            <div className="logo-text-box">
-              <span className="brand-name">APEXBUILD</span>
-              <span className="brand-sub">CONSTRUCTION & ENGINEERING</span>
-            </div>
+            <ManobhavLogo size="sm" showText={true} variant="dark" />
           </button>
 
           {/* Desktop Navigation */}
@@ -93,9 +65,9 @@ export default function Navbar({
             {navLinks.map((link) => {
               const isActive = currentPage === link.id;
               return (
-                <button 
-                  key={link.id} 
-                  onClick={() => handleLinkClick(link.id)} 
+                <button
+                  key={link.id}
+                  onClick={() => handleLinkClick(link.id)}
                   className={`nav-link ${isActive ? "nav-link-active" : ""} ${link.highlight ? "nav-link-badge" : ""}`}
                 >
                   {link.name}
@@ -108,26 +80,28 @@ export default function Navbar({
 
           {/* Action CTAs */}
           <div className="nav-actions">
-            <button 
-              onClick={() => handleLinkClick("estimator")} 
+            <button
+              onClick={() => handleLinkClick("projects")}
               className="btn btn-secondary btn-sm nav-btn-calc"
-              title="Calculate estimated construction cost"
+              title="View Projects"
+              style={{ background: "#F1F5F9", color: "#0F172A", border: "1px solid #CBD5E1" }}
             >
-              <Calculator size={16} className="text-amber" />
-              <span>Cost Calculator</span>
+              <Building2 size={16} style={{ color: "#0F172A" }} />
+              <span>Our Projects</span>
             </button>
 
-            <button 
-              onClick={() => onOpenQuote()} 
-              className="btn btn-primary btn-sm btn-glow"
+            <button
+              onClick={() => onOpenQuote()}
+              className="btn btn-sm btn-quote-white"
+              title="Get Free Quote"
             >
               <span>Get Free Quote</span>
               <ChevronRight size={16} />
             </button>
 
             {/* Mobile Hamburger Toggle */}
-            <button 
-              className="mobile-menu-btn" 
+            <button
+              className="mobile-menu-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
             >
@@ -149,21 +123,21 @@ export default function Navbar({
                     onClick={() => handleLinkClick(link.id)}
                   >
                     <span>{link.name}</span>
-                    <ChevronRight size={16} className={isActive ? "text-amber" : "text-muted"} />
+                    <ChevronRight size={16} className={isActive ? "text-primary" : "text-muted"} />
                   </button>
                 );
               })}
               <div className="mobile-drawer-cta">
-                <button 
-                  onClick={() => { setMobileMenuOpen(false); onOpenQuote(); }} 
+                <button
+                  onClick={() => { setMobileMenuOpen(false); onOpenQuote(); }}
                   className="btn btn-primary"
                   style={{ width: "100%" }}
                 >
                   <span>Request Free Consultation</span>
                 </button>
-                <a href="tel:+18005552845" className="mobile-call-link">
-                  <PhoneCall size={16} /> Call (800) 555-BUILD
-                </a>
+                <button onClick={() => { setMobileMenuOpen(false); onOpenQuote(); }} className="mobile-call-link" style={{ background: "none", border: "none", cursor: "pointer" }}>
+                  <HardHat size={16} /> MANOBHAV CONSTRUCTION
+                </button>
               </div>
             </div>
           </div>

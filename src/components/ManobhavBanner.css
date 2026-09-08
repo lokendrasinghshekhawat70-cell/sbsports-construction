@@ -1,0 +1,410 @@
+/* ==========================================================================
+   MANOBHAV CONSTRUCTION OFFICIAL BANNER & DETAILS STYLES
+   Faithfully styled with the authentic original construction banner picture
+   ========================================================================== */
+
+.manobhav-banner-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  padding: 0 12px;
+  background: transparent;
+}
+
+/* Control Bar on Top of the Banner Component */
+.banner-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding: 10px 18px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.banner-controls-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.banner-official-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0F172A;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid #334155;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+}
+
+.banner-tagline-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748B;
+}
+
+.banner-zoom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  white-space: nowrap;
+}
+
+.banner-zoom-btn:hover {
+  background: #0F172A;
+  border-color: #0F172A;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+}
+
+/* ==========================================================================
+   AUTHENTIC BANNER POSTER CONTAINER (Vinyl banner presentation - 100% Responsive)
+   ========================================================================== */
+.manobhav-banner-frame {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 45px -10px rgba(15, 23, 42, 0.16),
+    0 4px 16px rgba(15, 23, 42, 0.06),
+    0 0 0 1px #CBD5E1;
+  background: #0F172A;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.manobhav-banner-frame:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 28px 55px -12px rgba(15, 23, 42, 0.22),
+    0 8px 24px rgba(15, 23, 42, 0.08),
+    0 0 0 1.5px #94A3B8;
+}
+
+.original-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.manobhav-banner-frame:hover .original-banner-img {
+  transform: scale(1.015);
+}
+
+/* Hover / Click Hint Pill */
+.banner-click-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 20;
+}
+
+.manobhav-banner-frame:hover .banner-click-hint {
+  background: #0F172A;
+  border-color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* Corner Grommets (Eyelets) */
+.grommet {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0F172A 35%, #94A3B8 40%, #E2E8F0 70%, #475569 100%);
+  border: 1.5px solid #CBD5E1;
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.8),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.grommet-tl {
+  top: 10px;
+  left: 10px;
+}
+
+.grommet-tr {
+  top: 10px;
+  right: 10px;
+}
+
+.grommet-bl {
+  bottom: 10px;
+  left: 10px;
+}
+
+.grommet-br {
+  bottom: 10px;
+  right: 10px;
+}
+
+/* ==========================================================================
+   DETAIL BREAKDOWN CARDS (Interactivity below the banner)
+   ========================================================================== */
+.banner-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-detail-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.banner-detail-card:hover,
+.banner-detail-card.active {
+  border-color: #0F172A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+  background: #FFFFFF;
+}
+
+.card-accent-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.card-strip-charcoal,
+.card-strip-red {
+  background: #0F172A;
+}
+
+.card-strip-slate,
+.card-strip-blue {
+  background: #334155;
+}
+
+.card-strip-grey,
+.card-strip-gold {
+  background: #64748B;
+}
+
+.card-strip-neutral {
+  background: #94A3B8;
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.detail-card-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #0F172A;
+  flex-shrink: 0;
+}
+
+.detail-card-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0F172A;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.detail-card-desc {
+  font-size: 0.74rem;
+  color: #475569;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.detail-card-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #F1F5F9;
+  color: #0F172A;
+  border: 1px solid #E2E8F0;
+}
+
+/* Fullscreen Banner Modal */
+.banner-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.banner-modal-content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-modal-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.banner-modal-close:hover {
+  background: #0F172A;
+}
+
+.banner-modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .manobhav-banner-wrapper {
+    padding: 0 8px;
+  }
+
+  .banner-controls-bar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    padding: 10px 14px;
+  }
+
+  .banner-controls-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .banner-zoom-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .manobhav-banner-frame {
+    border-radius: 12px;
+  }
+
+  .banner-click-hint {
+    bottom: 8px;
+    right: 8px;
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+
+  .grommet {
+    width: 12px;
+    height: 12px;
+  }
+
+  .grommet-tl { top: 6px; left: 6px; }
+  .grommet-tr { top: 6px; right: 6px; }
+  .grommet-bl { bottom: 6px; left: 6px; }
+  .grommet-br { bottom: 6px; right: 6px; }
+}
+
+@media (max-width: 480px) {
+  .manobhav-banner-wrapper {
+    padding: 0 4px;
+  }
+
+  .manobhav-banner-frame {
+    border-radius: 10px;
+  }
+
+  .banner-details-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

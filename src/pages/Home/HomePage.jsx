@@ -2,8 +2,6 @@ import React from "react";
 import "./Home.css";
 import Hero from "../../components/Hero";
 import Services from "../../components/Services";
-import CostEstimator from "../../components/CostEstimator";
-import LiveTracker from "../../components/LiveTracker";
 import Portfolio from "../../components/Portfolio";
 import Guarantees from "../../components/Guarantees";
 import HowItWorks from "../../components/HowItWorks";
@@ -12,9 +10,7 @@ import ContactSection from "../../components/ContactSection";
 
 export default function HomePage({ 
   onOpenQuote, 
-  onBookWithEstimate, 
   onSelectService, 
-  onJumpEstimator,
   onNavigate 
 }) {
   return (
@@ -22,21 +18,13 @@ export default function HomePage({
       {/* Hero Section */}
       <Hero 
         onOpenQuote={onOpenQuote}
-        onJumpEstimator={onJumpEstimator}
+        onSelectService={onSelectService}
       />
 
       {/* Services with Attractive Feature Cards */}
       <Services 
         onSelectService={onSelectService}
       />
-
-      {/* Interactive Cost & Timeline Estimator */}
-      <CostEstimator 
-        onBookWithEstimate={onBookWithEstimate}
-      />
-
-      {/* Client Live Project Progress Tracker */}
-      <LiveTracker />
 
       {/* Featured Projects Showcase */}
       <Portfolio 

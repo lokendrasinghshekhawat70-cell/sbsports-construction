@@ -14,55 +14,77 @@ import {
 } from "lucide-react";
 
 export default function LiveTracker() {
-  const [projectIdInput, setProjectIdInput] = useState("BLD-9042");
-  const [searchedId, setSearchedId] = useState("BLD-9042");
+  const [projectIdInput, setProjectIdInput] = useState("RES-101");
+  const [searchedId, setSearchedId] = useState("RES-101");
 
   const sampleProjects = {
-    "BLD-9042": {
-      name: "The Highland Glass & Basalt Residence",
-      type: "Custom Cantilevered Villa (5,800 sq ft)",
-      location: "Hillside Ridge Estates, Plot 42",
+    "RES-101": {
+      name: "Residential 2-Story House & Timber Framing",
+      type: "Residential Development (Picture Detail)",
+      location: "Residential Construction Zone A",
       startDate: "April 10, 2026",
       estimatedHandover: "December 18, 2026",
-      progressPercent: 76,
-      currentPhase: "Phase 4: MEP Rough-in, Acoustic Insulation & Low-E Facade",
-      siteManager: "Eng. Julian Becker, Lead PE",
-      managerPhone: "+1 (800) 555-2845",
-      nextMilestone: "Italian Marble Delivery & Solar Inverter Commissioning",
+      progressPercent: 78,
+      currentPhase: "Phase 4: Roof Shingles, Timber Framing & Weatherproof Siding",
+      siteManager: "Site Engineer — MANOBHAV CONSTRUCTION",
+      managerPhone: "Builder Field Office",
+      nextMilestone: "Roof Truss Completion & Interior Carpentry",
       nextDate: "October 02, 2026",
       phases: [
-        { name: "BIM Architectural Design, Geotechnical Soil & Permits", status: "completed", date: "May 04, 2026" },
-        { name: "Site Excavation, Micropile Piling & M35 Raft Slab", status: "completed", date: "June 18, 2026" },
-        { name: "Reinforced Superstructure & Post-Tensioned Slabs", status: "completed", date: "August 12, 2026" },
-        { name: "MEP Conduits, Daikin VRV HVAC & Thermal Envelope", status: "in-progress", date: "In Progress (88%)" },
-        { name: "Statuario Marble Flooring & Custom Walnut Millwork", status: "upcoming", date: "Target: Oct 25" },
-        { name: "250-Point QA Audit, Municipal Clearance & Handover", status: "upcoming", date: "Target: Dec 18" }
+        { name: "Architectural Blueprint Drafting & Safety Compliance", status: "completed", date: "May 04, 2026" },
+        { name: "Hydraulic Excavator Earthmoving & Foundation Trenching", status: "completed", date: "June 18, 2026" },
+        { name: "Brick-by-Brick Foundation Masonry & Concrete Footings", status: "completed", date: "August 12, 2026" },
+        { name: "Timber Framing, Studs, Rafters & Roof Truss Erection", status: "in-progress", date: "In Progress (88%)" },
+        { name: "High-Pitch Roof Shingle Installation & Cladding", status: "upcoming", date: "Target: Oct 25" },
+        { name: "Turnkey Final Inspection & Homeowner Handover", status: "upcoming", date: "Target: Dec 18" }
       ],
-      recentInspection: "Concrete Core Compression 42 MPa Passed • City Structural Sign-off Approved",
-      image: "/images/villa.jpg"
+      recentInspection: "Timber Rafter Load Integrity Passed • Hard Hat Safety Protocol 100%",
+      image: "/images/timber_structure.jpg"
     },
-    "COM-3180": {
-      name: "Zenith Horizon Commercial Headquarters",
-      type: "Commercial Corporate Tower & Atrium (48,000 sq ft)",
-      location: "Central Financial District, Sector 12",
+    "COM-202": {
+      name: "Commercial Multi-Story Concrete Tower",
+      type: "Commercial Projects (Picture Detail)",
+      location: "Commercial Construction Sector",
       startDate: "February 01, 2026",
       estimatedHandover: "January 20, 2027",
-      progressPercent: 84,
-      currentPhase: "Phase 5: Double-Glazed Curtain Wall & Acoustic Ceilings",
-      siteManager: "Eng. Sarah Jenkins, LEED AP",
-      managerPhone: "+1 (800) 555-2845",
-      nextMilestone: "Elevator Core Commissioning & Lobby Granite",
+      progressPercent: 82,
+      currentPhase: "Phase 5: Yellow Tower Crane Operations & Floor Slab Pouring",
+      siteManager: "Commercial Project Supervisor — MANOBHAV CONSTRUCTION",
+      managerPhone: "Commercial Field Office",
+      nextMilestone: "Upper Concrete Floor Pour & Safety Netting Extension",
       nextDate: "October 10, 2026",
       phases: [
-        { name: "Municipal Approvals & Environmental Impact Assessment", status: "completed", date: "Mar 10, 2026" },
-        { name: "Deep Bored Basements & Raft Foundation Concrete", status: "completed", date: "Apr 28, 2026" },
-        { name: "Composite Structural Steel Framing (14 Levels)", status: "completed", date: "Jul 22, 2026" },
-        { name: "Parametric Solar-Reflective Double Curtain Wall", status: "in-progress", date: "In Progress (90%)" },
-        { name: "Central Industrial VRF Chillers & High-Speed Elevators", status: "in-progress", date: "In Progress (82%)" },
-        { name: "LEED Platinum Final Certification & Handover", status: "upcoming", date: "Target: Jan 20" }
+        { name: "Civil Groundwork & Excavator Soil Grading", status: "completed", date: "Mar 10, 2026" },
+        { name: "Reinforced Concrete Foundation & Basement Columns", status: "completed", date: "Apr 28, 2026" },
+        { name: "Yellow Tower Crane Erection & Rigging Setup", status: "completed", date: "Jul 22, 2026" },
+        { name: "Multi-Story Scaffolding & Concrete Floor Slabs", status: "in-progress", date: "In Progress (90%)" },
+        { name: "Exterior Curtain Wall & Commercial Facade Integration", status: "in-progress", date: "In Progress (75%)" },
+        { name: "Final Structural Load Verification & Commercial Handover", status: "upcoming", date: "Target: Jan 20" }
       ],
-      recentInspection: "Acoustic Attenuation & Smoke Management System Passed 100%",
-      image: "/images/commercial.jpg"
+      recentInspection: "Tower Crane Rigging Inspection Passed • Reinforced Concrete 40 MPa Verified",
+      image: "/images/foundation_structure.jpg"
+    },
+    "INF-303": {
+      name: "Infrastructure Excavation & Masonry Foundations",
+      type: "Infrastructure Works (Picture Detail)",
+      location: "Civil Infrastructure Zone",
+      startDate: "March 15, 2026",
+      estimatedHandover: "November 30, 2026",
+      progressPercent: 70,
+      currentPhase: "Phase 3: Hydraulic Excavator Digging & Brick Stack Laying",
+      siteManager: "Civil Works Engineer — MANOBHAV CONSTRUCTION",
+      managerPhone: "Infrastructure Field Office",
+      nextMilestone: "Subgrade Compaction & Drainage Trench Completion",
+      nextDate: "October 05, 2026",
+      phases: [
+        { name: "Topographical Survey & Blueprint Earthwork Schematics", status: "completed", date: "Apr 05, 2026" },
+        { name: "Hydraulic Excavator Bulk Digging & Rubble Clearing", status: "completed", date: "May 20, 2026" },
+        { name: "Brick-by-Brick Foundation Masonry Stacking", status: "in-progress", date: "In Progress (70%)" },
+        { name: "Civil Subgrade Compaction & Structural Retaining", status: "upcoming", date: "Target: Oct 30" },
+        { name: "Civil Infrastructure Inspection & Handover", status: "upcoming", date: "Target: Nov 30" }
+      ],
+      recentInspection: "Subgrade Bearing Capacity Test Passed 100%",
+      image: "/images/excavation_structure.jpg"
     }
   };
 
@@ -73,7 +95,7 @@ export default function LiveTracker() {
     }
   };
 
-  const activeProject = sampleProjects[searchedId] || sampleProjects["BLD-9042"];
+  const activeProject = sampleProjects[searchedId] || sampleProjects["RES-101"];
 
   return (
     <section id="tracker" className="section-padding tracker-section">
@@ -82,13 +104,13 @@ export default function LiveTracker() {
         <div className="section-header">
           <div className="section-pill">
             <Clock size={15} />
-            <span>Real-Time Client Transparency</span>
+            <span>MANOBHAV CONSTRUCTION LIVE TRACKER</span>
           </div>
           <h2 className="section-title">
-            Live Project <span className="text-gradient-amber">Progress Tracker</span>
+            HOUSE & BUILDING <span className="text-gradient-amber">CONSTRUCTION TRACKER</span>
           </h2>
           <p className="section-subtitle">
-            Every ApexBuild client receives a private portal to track construction in real-time. Experience how simple tracking milestones, inspection reports, and daily photos really is.
+            Track real-time progress across Residential Development, Commercial Projects, and Infrastructure Works. Building your dreams, brick by brick.
           </p>
         </div>
 
@@ -101,7 +123,7 @@ export default function LiveTracker() {
                 type="text" 
                 value={projectIdInput}
                 onChange={(e) => setProjectIdInput(e.target.value)}
-                placeholder="Enter Project Tracking ID (e.g. BLD-9042 or COM-3180)..."
+                placeholder="Enter Project ID (e.g. RES-101, COM-202, or INF-303)..."
                 className="tracker-input"
               />
             </div>
@@ -112,18 +134,24 @@ export default function LiveTracker() {
 
           {/* Quick Demo Switchers */}
           <div className="demo-track-buttons">
-            <span className="demo-track-label">Try Demo Projects:</span>
+            <span className="demo-track-label">Picture Disciplines:</span>
             <button 
-              className={`demo-btn ${searchedId === "BLD-9042" ? "demo-btn-active" : ""}`}
-              onClick={() => { setProjectIdInput("BLD-9042"); setSearchedId("BLD-9042"); }}
+              className={`demo-btn ${searchedId === "RES-101" ? "demo-btn-active" : ""}`}
+              onClick={() => { setProjectIdInput("RES-101"); setSearchedId("RES-101"); }}
             >
-              Residential Villa (BLD-9042)
+              Residential House (RES-101)
             </button>
             <button 
-              className={`demo-btn ${searchedId === "COM-3180" ? "demo-btn-active" : ""}`}
-              onClick={() => { setProjectIdInput("COM-3180"); setSearchedId("COM-3180"); }}
+              className={`demo-btn ${searchedId === "COM-202" ? "demo-btn-active" : ""}`}
+              onClick={() => { setProjectIdInput("COM-202"); setSearchedId("COM-202"); }}
             >
-              Commercial Tower (COM-3180)
+              Commercial Tower (COM-202)
+            </button>
+            <button 
+              className={`demo-btn ${searchedId === "INF-303" ? "demo-btn-active" : ""}`}
+              onClick={() => { setProjectIdInput("INF-303"); setSearchedId("INF-303"); }}
+            >
+              Infrastructure Works (INF-303)
             </button>
           </div>
         </div>

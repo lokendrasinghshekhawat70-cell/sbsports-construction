@@ -22,60 +22,60 @@ export default function ReviewsPage() {
   const testimonials = [
     {
       id: 1,
-      quote: "We had heard horror stories from colleagues about contractors hitting them with 30% price spikes and running a year behind. ApexBuild was the total opposite: they delivered our 6,200 sq ft contemporary villa 3 weeks ahead of schedule, and the closing invoice matched our original quote down to the exact dollar.",
+      quote: "MANOBHAV CONSTRUCTION was the total opposite of unreliable builders: they delivered our residential 2-story home on time, with timber rafters and high-pitch roofing done with absolute perfection. True to their word: building dreams, brick by brick.",
       author: "David & Dr. Eleanor Vance",
-      role: "Private Homeowners",
-      project: "Custom Hillside Cantilevered Villa (6,200 sq ft)",
+      role: "Homeowners",
+      project: "Residential House & Roofing (Picture Detail)",
       rating: 5,
       avatarInitials: "DV",
       verified: true,
-      city: "Hillside Ridge Estates",
+      city: "Residential Zone",
       date: "August 2026"
     },
     {
       id: 2,
-      quote: "As institutional real estate developers, timeline certainty is non-negotiable. ApexBuild managed our 58,000 sq ft tech headquarters with flawless site coordination. The live online portal gave our investment committee daily 4K drone progress and concrete cube test certifications in real time.",
+      quote: "MANOBHAV CONSTRUCTION managed our commercial multi-story concrete tower with flawless engineering. Their yellow tower crane operations and strict site safety gave our team total confidence from foundation to final floor slab.",
       author: "Harrison Sterling",
-      role: "Managing Director, Sterling Capital Investments",
-      project: "Aura Tech Center & Glass Atrium",
+      role: "Commercial Project Director",
+      project: "Commercial Multi-Story Concrete Superstructure",
       rating: 5,
       avatarInitials: "HS",
       verified: true,
-      city: "Financial Tech Corridor",
+      city: "Commercial Sector",
       date: "July 2026"
     },
     {
       id: 3,
-      quote: "Our penthouse overhaul was complex because of strict HOA noise and dust restrictions. ApexBuild's HEPA isolation protocol was so effective our neighbors never heard a disturbance. The 16-foot waterfall Statuario marble island and fluted oak woodwork are absolute museum-grade craft.",
+      quote: "The groundwork and hydraulic excavator earthmoving were carried out with surgical precision. Their brick masonry stacks and solid foundation gave our development the strongest civil footing possible.",
       author: "Samantha & Brian Cole",
-      role: "Luxury Penthouse Owners",
-      project: "Full Architectural Penthouse Remodel",
+      role: "Civil Infrastructure Lead",
+      project: "Infrastructure Earthworks & Foundation",
       rating: 5,
       avatarInitials: "SC",
       verified: true,
-      city: "Grand Central Skyline District",
+      city: "Infrastructure Zone",
       date: "May 2026"
     },
     {
       id: 4,
-      quote: "From soil testing to the final handover inspection, Marcus and the engineering team operated like clockwork. Their transparent bill of quantities gave our bank total confidence for construction loan disbursements.",
+      quote: "From blueprint drafting to on-site yellow safety hard hat protocols, the engineering team worked flawlessly. You can see the dedication in every brick.",
       author: "Vikram & Ananya Patel",
-      role: "Residential Estate Investors",
-      project: "Multi-Level Contemporary Estate (7,200 sq ft)",
+      role: "Residential Homeowner",
+      project: "Residential Timber Frame Residence",
       rating: 5,
       avatarInitials: "VP",
       verified: true,
-      city: "West Hill Boulevard",
+      city: "Residential Zone",
       date: "April 2026"
     }
   ];
 
   const certifications = [
-    { title: "LEED Gold Certified", desc: "Sustainable Green Building Standards" },
-    { title: "OSHA 100% Compliant", desc: "Zero-Incident Safety Protocol" },
-    { title: "Licensed Master Builders", desc: "License #GC-89421 State Verified" },
-    { title: "ISO 9001:2015 Quality", desc: "Certified Civil & Structural Management" },
-    { title: "National Home Builders Assn", desc: "Excellence in Craftsmanship Award" }
+    { title: "House & Building Construction", desc: "Turnkey Civil & Structural Engineering" },
+    { title: "Residential Development", desc: "Craftsman Timber Framing & Roofing" },
+    { title: "Commercial Projects", desc: "High-Rise Concrete & Crane Operations" },
+    { title: "Infrastructure Works", desc: "Hydraulic Excavation & Foundation Masonry" },
+    { title: "Site Safety Hard Hat Protocol", desc: "Zero-Accident Safety Compliance" }
   ];
 
   const handleReviewSubmit = (e) => {
@@ -89,13 +89,13 @@ export default function ReviewsPage() {
         <div className="container">
           <div className="section-pill">
             <ThumbsUp size={14} />
-            <span>Verified Client Feedback</span>
+            <span>MANOBHAV CONSTRUCTION FEEDBACK</span>
           </div>
           <h1 className="page-main-title">
-            Client Testimonials & <span className="text-gradient-amber">Trust Rating</span>
+            HOUSE & BUILDING <span className="text-gradient-amber">CONSTRUCTION REVIEWS</span>
           </h1>
           <p className="page-main-subtitle">
-            Read unedited reviews from homeowners, commercial asset managers, and architectural firms who partnered with ApexBuild for their signature builds.
+            Read verified reviews from clients who built their Residential Development, Commercial Projects, and Infrastructure Works with MANOBHAV CONSTRUCTION. Building your dreams, brick by brick.
           </p>
 
           {/* Rating Summary Bar */}

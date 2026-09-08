@@ -13,30 +13,30 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      quote: "We had heard horror stories from colleagues about contractors hitting them with 30% price spikes and running a year behind. ApexBuild was the total opposite: they delivered our 6,200 sq ft contemporary villa 3 weeks ahead of schedule, and the closing invoice matched our original quote down to the exact dollar.",
+      quote: "MANOBHAV CONSTRUCTION was the total opposite of unreliable builders: they delivered our residential 2-story home on time, with timber rafters and high-pitch roofing done with absolute perfection. True to their word: building dreams, brick by brick.",
       author: "David & Dr. Eleanor Vance",
-      role: "Private Homeowners",
-      project: "Custom Hillside Cantilevered Villa (6,200 sq ft)",
+      role: "Homeowners",
+      project: "Residential House & Roofing (Picture Detail)",
       rating: 5,
       avatarInitials: "DV",
       verified: true
     },
     {
       id: 2,
-      quote: "As institutional real estate developers, timeline certainty is non-negotiable. ApexBuild managed our 58,000 sq ft tech headquarters with flawless site coordination. The live online portal gave our investment committee daily 4K drone progress and concrete cube test certifications in real time.",
+      quote: "MANOBHAV CONSTRUCTION managed our commercial multi-story concrete tower with flawless engineering. Their yellow tower crane operations and strict site safety gave our team total confidence from foundation to final floor slab.",
       author: "Harrison Sterling",
-      role: "Managing Director, Sterling Capital Investments",
-      project: "Aura Tech Center & Glass Atrium",
+      role: "Commercial Project Director",
+      project: "Commercial Multi-Story Concrete Superstructure",
       rating: 5,
       avatarInitials: "HS",
       verified: true
     },
     {
       id: 3,
-      quote: "Our penthouse overhaul was complex because of strict HOA noise and dust restrictions. ApexBuild's HEPA isolation protocol was so effective our neighbors never heard a disturbance. The 16-foot waterfall Statuario marble island and fluted oak woodwork are absolute museum-grade craft.",
+      quote: "The groundwork and hydraulic excavator earthmoving were carried out with surgical precision. Their brick masonry stacks and solid foundation gave our development the strongest civil footing possible.",
       author: "Samantha & Brian Cole",
-      role: "Luxury Penthouse Owners",
-      project: "Full Architectural Penthouse Remodel",
+      role: "Civil Infrastructure Lead",
+      project: "Infrastructure Earthworks & Foundation",
       rating: 5,
       avatarInitials: "SC",
       verified: true
@@ -61,11 +61,11 @@ export default function Testimonials() {
             <span>Client Satisfaction</span>
           </div>
           <h2 className="section-title">
-            Trusted By Over 350+ <br />
-            <span className="text-gradient-amber">Homeowners & Developers</span>
+            HOUSE & BUILDING CONSTRUCTION <br />
+            <span className="text-gradient-amber">Building Your Dreams, Brick By Brick</span>
           </h2>
           <p className="section-subtitle">
-            See why 98% of our clients recommend ApexBuild for high-end residential estates, commercial facilities, and architectural renovations.
+            See why clients recommend MANOBHAV CONSTRUCTION for Residential Development, Commercial Projects, and Infrastructure Works.
           </p>
         </div>
 
