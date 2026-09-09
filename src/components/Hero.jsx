@@ -13,73 +13,59 @@ import {
   Tractor,
   HardHat,
   PhoneCall,
+  Mail,
   MapPin
 } from "lucide-react";
-import ManobhavLogo from "./ManobhavLogo";
-import ManobhavBanner from "./ManobhavBanner";
+import SBLogo from "./SBLogo";
 
 export default function Hero({ onOpenQuote, onSelectService }) {
   return (
-    <section className="hero-section" style={{ padding: "28px 0 45px 0", background: "#FFFFFF", position: "relative" }}>
-      {/* Background Accent Grid / Subtle Architectural Clean Light Gradient */}
-      <div className="hero-bg-container">
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 60%, #F1F5F9 100%)",
-            opacity: 1
-          }}
-        />
-        <div className="hero-bg-particles" />
-      </div>
-
+    <section className="hero-section" style={{ padding: "32px 0 45px 0", background: "#FFFFFF", position: "relative" }}>
       <div className="container hero-content" style={{ position: "relative", zIndex: 10 }}>
         {/* Top Header Row with Official Title & Slogan */}
         <div style={{ textAlign: "center", maxWidth: "980px", margin: "0 auto 20px auto" }}>
-          {/* Badge: HOUSE & BUILDING in White, CONSTRUCTION in White */}
+          {/* Badge: HOUSE & BUILDING in Black/White */}
           <div
-            className="hero-badge animate-float"
+            className="hero-badge"
             style={{
               display: "inline-flex",
-              background: "#0F172A",
-              border: "1px solid #334155",
-              padding: "5px 16px",
-              borderRadius: "999px",
-              marginBottom: "12px",
-              boxShadow: "0 4px 15px rgba(15, 23, 42, 0.15)"
+              alignItems: "center",
+              gap: "8px",
+              background: "#FFFFFF",
+              border: "1px solid #000000",
+              padding: "6px 18px",
+              borderRadius: "0px",
+              marginBottom: "16px"
             }}
           >
-            <Sparkles size={15} style={{ color: "#FFFFFF" }} />
-            <span style={{ letterSpacing: "0.06em", textTransform: "uppercase", fontSize: "0.82rem" }}>
-              <span style={{ color: "#FFFFFF", fontWeight: 900 }}>HOUSE & BUILDING </span>
-              <span style={{ color: "#FFFFFF", fontWeight: 900 }}>CONSTRUCTION</span>
+            <Sparkles size={15} style={{ color: "#000000" }} />
+            <span style={{ letterSpacing: "0.08em", textTransform: "uppercase", fontSize: "0.82rem", color: "#000000", fontWeight: 800 }}>
+              HOUSE & BUILDING CONSTRUCTION
             </span>
           </div>
 
-          {/* Details from the Start of the Image: Authentic Brand Logo */}
-          <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-            <ManobhavLogo size="lg" showText={true} variant="dark" />
+          {/* Authentic SB Brand Logo */}
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+            <SBLogo size="lg" showText={true} variant="dark" />
           </div>
 
-          {/* Details from the End of the Image: Official Slogan in Pure Crisp Dark Charcoal */}
+          {/* Official Slogan */}
           <h1
             style={{
               fontFamily: "'Outfit', 'Plus Jakarta Sans', sans-serif",
-              fontSize: "clamp(1.3rem, 2.8vw, 2rem)",
+              fontSize: "clamp(1.4rem, 2.8vw, 2.2rem)",
               fontWeight: 900,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              color: "#0F172A",
-              filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.06))",
-              margin: "0 0 12px 0",
-              lineHeight: 1.15
+              color: "#000000",
+              margin: "0 0 14px 0",
+              lineHeight: 1.2
             }}
           >
             BUILDING YOUR DREAMS, BRICK BY BRICK
           </h1>
 
-          {/* Details from the End of the Image: Royal Blue 3 Pillars Bar */}
+          {/* 3 Pillars Bar in Crisp White & Black Lines */}
           <div
             style={{
               display: "flex",
@@ -88,118 +74,107 @@ export default function Hero({ onOpenQuote, onSelectService }) {
               alignItems: "center",
               gap: "8px 14px",
               background: "#FFFFFF",
-              border: "1px solid #E2E8F0",
-              borderRadius: "999px",
+              border: "1px solid #000000",
               padding: "8px 22px",
               margin: "0 auto 16px auto",
-              width: "fit-content",
-              boxShadow: "0 4px 16px rgba(15, 23, 42, 0.05)"
-            }}
-          >
-            <span style={{ color: "#94A3B8", fontSize: "1.2rem" }}>•</span>
-            <span style={{ color: "#0F172A", fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              RESIDENTIAL DEVELOPMENT
-            </span>
-            <span style={{ color: "#94A3B8", fontSize: "1.2rem" }}>•</span>
-            <span style={{ color: "#0F172A", fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              COMMERCIAL PROJECTS
-            </span>
-            <span style={{ color: "#94A3B8", fontSize: "1.2rem" }}>•</span>
-            <span style={{ color: "#0F172A", fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              INFRASTRUCTURE WORKS
-            </span>
-            <span style={{ color: "#94A3B8", fontSize: "1.2rem" }}>•</span>
-          </div>
-
-          {/* Official Managing Directors & Direct Phone Numbers at Top */}
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "12px 28px",
-              background: "#FFFFFF",
-              border: "1px solid #E2E8F0",
-              borderRadius: "14px",
-              padding: "10px 24px",
-              margin: "0 auto 16px auto",
-              maxWidth: "860px",
-              boxShadow: "0 4px 20px rgba(15, 23, 42, 0.06)"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "#F1F5F9", display: "flex", alignItems: "center", justifyContent: "center", color: "#0F172A" }}>
-                <HardHat size={18} />
-              </div>
-              <div style={{ textAlign: "left" }}>
-                <div style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.08em", color: "#64748B", textTransform: "uppercase" }}>Company Leadership</div>
-                <div style={{ fontSize: "0.85rem", fontWeight: 900, color: "#0F172A" }}>Managing Directors</div>
-              </div>
-            </div>
-
-            <div style={{ width: "1px", height: "32px", background: "#E2E8F0" }} />
-
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "#DCFCE7", display: "flex", alignItems: "center", justifyContent: "center", color: "#16A34A" }}>
-                <PhoneCall size={14} />
-              </div>
-              <div style={{ textAlign: "left" }}>
-                <div style={{ fontSize: "0.76rem", fontWeight: 700, color: "#475569" }}>Digvijay Singh Rathore</div>
-                <a href="tel:+918800570023" style={{ fontSize: "0.98rem", fontWeight: 900, color: "#0F172A", textDecoration: "none", fontFamily: "monospace", letterSpacing: "0.02em" }}>
-                  +91 88005 70023
-                </a>
-              </div>
-            </div>
-
-            <div style={{ width: "1px", height: "32px", background: "#E2E8F0" }} />
-
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "#DCFCE7", display: "flex", alignItems: "center", justifyContent: "center", color: "#16A34A" }}>
-                <PhoneCall size={14} />
-              </div>
-              <div style={{ textAlign: "left" }}>
-                <div style={{ fontSize: "0.76rem", fontWeight: 700, color: "#475569" }}>Jagdeesh Prashad</div>
-                <a href="tel:+917224862150" style={{ fontSize: "0.98rem", fontWeight: 900, color: "#0F172A", textDecoration: "none", fontFamily: "monospace", letterSpacing: "0.02em" }}>
-                  +91 72248 62150
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Official GST Number for Manobhav Construction & Address */}
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "8px 14px",
-              background: "#FFFFFF",
-              border: "1px solid #CBD5E1",
-              borderRadius: "999px",
-              padding: "6px 20px",
-              margin: "0 auto 20px auto",
-              boxShadow: "0 2px 8px rgba(15, 23, 42, 0.04)",
               width: "fit-content"
             }}
           >
-            <ShieldCheck size={16} style={{ color: "#0F172A" }} />
-            <span style={{ color: "#475569", fontSize: "0.82rem", fontWeight: 700 }}>
-              GSTIN:
+            <span style={{ color: "#000000", fontSize: "1rem" }}>•</span>
+            <span style={{ color: "#000000", fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              RESIDENTIAL DEVELOPMENT
             </span>
-            <span style={{ color: "#0F172A", fontSize: "0.92rem", fontWeight: 900, letterSpacing: "0.08em", fontFamily: "monospace" }}>
-              23AABCM8923M1Z5
+            <span style={{ color: "#000000", fontSize: "1rem" }}>•</span>
+            <span style={{ color: "#000000", fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              COMMERCIAL PROJECTS
             </span>
-            <span style={{ color: "#CBD5E1" }}>•</span>
-            <span style={{ color: "#475569", fontSize: "0.78rem" }}>
-              <MapPin size={12} style={{ display: "inline", verticalAlign: "middle", marginRight: "3px", color: "#64748B" }} />
-              Shop No. 205, Raj Nagar, Palasi Karond, Bhopal - 462038 (In front of Truba College)
+            <span style={{ color: "#000000", fontSize: "1rem" }}>•</span>
+            <span style={{ color: "#000000", fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              INFRASTRUCTURE WORKS
             </span>
+            <span style={{ color: "#000000", fontSize: "1rem" }}>•</span>
           </div>
 
-          {/* Short Bio strictly based on picture */}
-          <p style={{ color: "#475569", fontSize: "0.98rem", lineHeight: 1.6, maxWidth: "780px", margin: "0 auto 24px auto" }}>
+          {/* Verified Architectural Standards Bar */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "24px",
+              background: "#FFFFFF",
+              border: "1px solid #000000",
+              padding: "10px 24px",
+              margin: "0 auto 16px auto",
+              maxWidth: "860px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <HardHat size={16} style={{ color: "#000000" }} />
+              <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#000000", letterSpacing: "0.04em" }}>
+                ARCHITECTURAL CIVIL DISCIPLINE
+              </span>
+            </div>
+            <span style={{ color: "#000000" }}>•</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <Building2 size={16} style={{ color: "#000000" }} />
+              <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#000000", letterSpacing: "0.04em" }}>
+                RESIDENTIAL • COMMERCIAL • SPORTS
+              </span>
+            </div>
+          </div>
+
+          {/* Direct Contact Bar */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px 20px",
+              background: "#FFFFFF",
+              border: "1px solid #000000",
+              padding: "8px 24px",
+              margin: "0 auto 16px auto",
+              width: "fit-content"
+            }}
+          >
+            <a
+              href="tel:+919636365391"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                color: "#000000",
+                fontSize: "0.85rem",
+                fontWeight: 800,
+                textDecoration: "underline"
+              }}
+            >
+              <PhoneCall size={15} style={{ color: "#000000" }} />
+              <span>Call / WhatsApp: +91-9636365391</span>
+            </a>
+            <span style={{ color: "#000000" }}>•</span>
+            <a
+              href="mailto:sbsportsandconstruction@gmail.com"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                color: "#000000",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                textDecoration: "underline"
+              }}
+            >
+              <Mail size={15} style={{ color: "#000000" }} />
+              <span>sbsportsandconstruction@gmail.com</span>
+            </a>
+          </div>
+
+          {/* Short Bio */}
+          <p style={{ color: "#333333", fontSize: "0.98rem", lineHeight: 1.6, maxWidth: "780px", margin: "0 auto 24px auto" }}>
             From residential timber house framing and architectural roofing to multi-story commercial towers, tower cranes, hydraulic excavation, and precision blueprint execution.
           </p>
 
@@ -209,13 +184,12 @@ export default function Hero({ onOpenQuote, onSelectService }) {
               onClick={() => onOpenQuote("House & Building Construction")}
               className="btn btn-primary"
               style={{
-                background: "#0F172A",
+                background: "#000000",
                 color: "#FFFFFF",
                 fontWeight: 800,
-                border: "none",
+                border: "1px solid #000000",
                 padding: "12px 24px",
-                borderRadius: "8px",
-                boxShadow: "0 4px 16px rgba(15, 23, 42, 0.2)"
+                borderRadius: "0px"
               }}
             >
               <HardHat size={18} />
@@ -228,32 +202,21 @@ export default function Hero({ onOpenQuote, onSelectService }) {
               className="btn btn-secondary"
               style={{
                 background: "#FFFFFF",
-                color: "#0F172A",
-                fontWeight: 700,
-                border: "1px solid #CBD5E1",
+                color: "#000000",
+                fontWeight: 800,
+                border: "1px solid #000000",
                 padding: "12px 24px",
-                borderRadius: "8px",
+                borderRadius: "0px",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "8px",
-                textDecoration: "none",
-                boxShadow: "0 2px 8px rgba(15, 23, 42, 0.04)"
+                textDecoration: "none"
               }}
             >
-              <Building2 size={18} style={{ color: "#0F172A" }} />
+              <Building2 size={18} style={{ color: "#000000" }} />
               <span>View Construction Services</span>
             </a>
           </div>
-        </div>
-
-        {/* The Authentic Picture Banner Presentation Component */}
-        <div style={{ marginTop: "16px" }}>
-          <ManobhavBanner
-            onSelectPillar={(pillarId) => {
-              if (onSelectService) onSelectService(pillarId);
-            }}
-            onOpenQuote={onOpenQuote}
-          />
         </div>
       </div>
     </section>

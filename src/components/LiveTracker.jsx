@@ -26,7 +26,7 @@ export default function LiveTracker() {
       estimatedHandover: "December 18, 2026",
       progressPercent: 78,
       currentPhase: "Phase 4: Roof Shingles, Timber Framing & Weatherproof Siding",
-      siteManager: "Site Engineer — MANOBHAV CONSTRUCTION",
+      siteManager: "Site Engineer — SB SPORTS & CONSTRUCTION",
       managerPhone: "Builder Field Office",
       nextMilestone: "Roof Truss Completion & Interior Carpentry",
       nextDate: "October 02, 2026",
@@ -49,7 +49,7 @@ export default function LiveTracker() {
       estimatedHandover: "January 20, 2027",
       progressPercent: 82,
       currentPhase: "Phase 5: Yellow Tower Crane Operations & Floor Slab Pouring",
-      siteManager: "Commercial Project Supervisor — MANOBHAV CONSTRUCTION",
+      siteManager: "Commercial Project Supervisor — SB SPORTS & CONSTRUCTION",
       managerPhone: "Commercial Field Office",
       nextMilestone: "Upper Concrete Floor Pour & Safety Netting Extension",
       nextDate: "October 10, 2026",
@@ -72,7 +72,7 @@ export default function LiveTracker() {
       estimatedHandover: "November 30, 2026",
       progressPercent: 70,
       currentPhase: "Phase 3: Hydraulic Excavator Digging & Brick Stack Laying",
-      siteManager: "Civil Works Engineer — MANOBHAV CONSTRUCTION",
+      siteManager: "Civil Works Engineer — SB SPORTS & CONSTRUCTION",
       managerPhone: "Infrastructure Field Office",
       nextMilestone: "Subgrade Compaction & Drainage Trench Completion",
       nextDate: "October 05, 2026",
@@ -104,7 +104,7 @@ export default function LiveTracker() {
         <div className="section-header">
           <div className="section-pill">
             <Clock size={15} />
-            <span>MANOBHAV CONSTRUCTION LIVE TRACKER</span>
+            <span>SB SPORTS & CONSTRUCTION LIVE TRACKER</span>
           </div>
           <h2 className="section-title">
             HOUSE & BUILDING <span className="text-gradient-amber">CONSTRUCTION TRACKER</span>
@@ -235,9 +235,7 @@ export default function LiveTracker() {
                 <div className="mini-card-subtitle">Lead On-Site Engineer</div>
                 <div className="mini-card-title">{activeProject.siteManager}</div>
                 <div className="mini-card-footer">
-                  <a href={`tel:${activeProject.managerPhone}`} className="engineer-call-btn">
-                    <Phone size={12} /> Call Engineer
-                  </a>
+                  <span className="badge-green">Verified On-Site</span>
                 </div>
               </div>
             </div>

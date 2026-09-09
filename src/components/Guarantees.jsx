@@ -56,7 +56,7 @@ export default function Guarantees() {
         <div className="section-header">
           <div className="section-pill">
             <HeartHandshake size={15} />
-            <span>The MANOBHAV Promise • Brick By Brick</span>
+            <span>The SB Promise • Brick By Brick</span>
           </div>
           <h2 className="section-title">
             Industry-First Guarantees That <br />

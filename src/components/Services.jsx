@@ -127,7 +127,7 @@ export default function Services({ onSelectService }) {
             <span className="text-gradient-amber">Building Your Dreams, Brick By Brick</span>
           </h2>
           <p className="section-subtitle" style={{ maxWidth: "760px", margin: "0 auto" }}>
-            Every discipline below is directly derived from the official <strong>MANOBHAV CONSTRUCTION</strong> picture: Residential Development, Commercial Projects, Infrastructure Works, and precision Blueprint & Safety Standards.
+            Every discipline below is directly derived from the official <strong>SB SPORTS & CONSTRUCTION</strong> portfolio: Residential Development, Commercial Projects, Infrastructure Works, and precision Blueprint & Safety Standards.
           </p>
         </div>
 

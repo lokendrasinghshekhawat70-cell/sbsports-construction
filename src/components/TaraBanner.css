@@ -1,0 +1,273 @@
+/* ==========================================================================
+   SB SPORTS & CONSTRUCTION OFFICIAL BANNER & DETAILS STYLES
+   Minimalist Architectural Monochrome: White Background & Black Lines
+   ========================================================================== */
+
+.sb-banner-wrapper {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px 0 24px 0;
+}
+
+.banner-top-notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #000000;
+}
+
+.notice-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-camera-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.notice-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.picture-guarantee-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  color: #000000;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.sb-banner-frame {
+  position: relative;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #FFFFFF;
+}
+
+.banner-zoom-trigger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #000000;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 5;
+}
+
+.original-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-hotspot {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 4;
+  transition: transform 0.2s ease;
+}
+
+.banner-hotspot:hover {
+  transform: scale(1.05);
+  background: #000000;
+}
+
+.spot-residential { top: 25%; left: 8%; }
+.spot-commercial { top: 22%; right: 12%; }
+.spot-excavator { bottom: 18%; left: 35%; }
+.spot-blueprint { bottom: 15%; left: 8%; }
+
+.hotspot-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+/* 4 Pillars Grid Below Banner */
+.banner-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.pillar-mini-card {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pillar-mini-card:hover, .pillar-mini-card.active-pillar {
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.pillar-mini-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pillar-icon-box {
+  color: #000000;
+}
+
+.pillar-tag {
+  font-size: 0.68rem;
+  color: #555555;
+  font-weight: 700;
+}
+
+.pillar-title {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #000000;
+  margin: 0 0 6px 0;
+}
+
+.pillar-desc {
+  font-size: 0.8rem;
+  color: #444444;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+}
+
+.pillar-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pillar-spec-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #222222;
+}
+
+.check-icon {
+  color: #000000;
+  flex-shrink: 0;
+}
+
+/* Lightbox Modal */
+.banner-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.banner-lightbox-modal {
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  max-width: 1000px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lightbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #000000;
+  background: #FFFFFF;
+}
+
+.lightbox-title-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #000000;
+}
+
+.lightbox-close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+}
+
+.lightbox-image-container {
+  padding: 12px;
+  background: #FFFFFF;
+}
+
+.lightbox-full-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lightbox-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-top: 1px solid #000000;
+  background: #FFFFFF;
+}
+
+.footer-legend {
+  font-size: 0.82rem;
+  color: #000000;
+}

@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import "./Services.css";
-import { 
-  Home, 
-  Building2, 
-  Tractor, 
-  FileText, 
-  HardHat, 
-  CheckCircle2, 
-  ArrowRight, 
+import {
+  Home,
+  Building2,
+  Tractor,
+  FileText,
+  HardHat,
+  CheckCircle2,
+  ArrowRight,
   Sparkles,
-  ShieldCheck, 
-  Layers, 
+  ShieldCheck,
+  Layers,
   Hammer,
   Clock,
-  HelpCircle,
-  PhoneCall
+  HelpCircle
 } from "lucide-react";
-import ManobhavBanner from "../../components/ManobhavBanner";
 
 export default function ServicesPage({ onOpenQuote }) {
   const [activeTab, setActiveTab] = useState("all");
@@ -146,8 +144,8 @@ export default function ServicesPage({ onOpenQuote }) {
     }
   ];
 
-  const filteredServices = activeTab === "all" 
-    ? services 
+  const filteredServices = activeTab === "all"
+    ? services
     : services.filter(s => s.category === activeTab);
 
   return (
@@ -157,9 +155,9 @@ export default function ServicesPage({ onOpenQuote }) {
         <div className="container" style={{ textAlign: "center" }}>
           <div className="hero-badge animate-float" style={{ margin: "0 auto 16px auto", background: "#DC2626", color: "#FFF" }}>
             <Sparkles size={16} style={{ color: "#FFFFFF" }} />
-            <span>MANOBHAV CONSTRUCTION</span>
+            <span>SB SPORTS & CONSTRUCTION</span>
           </div>
-          
+
           <h1 className="services-page-title" style={{ color: "#F8FAFC", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 900 }}>
             HOUSE & BUILDING CONSTRUCTION
           </h1>
@@ -168,14 +166,9 @@ export default function ServicesPage({ onOpenQuote }) {
             BUILDING YOUR DREAMS, BRICK BY BRICK
           </p>
 
-          <p className="services-page-subtitle" style={{ maxWidth: "780px", margin: "0 auto", color: "#CBD5E1" }}>
-            Every discipline below is directly taken from the official picture details: Residential Development, Commercial Projects, Infrastructure Works, and on-site Blueprint & Hard Hat safety standards.
+          <p className="services-page-subtitle" style={{ maxWidth: "780px", margin: "0 auto", color: "#333333" }}>
+            Every discipline below is directly taken from the official architectural standards: Residential Development, Commercial Projects, Infrastructure Works, and on-site Blueprint & Hard Hat safety protocols.
           </p>
-
-          {/* Picture Banner Mini Preview */}
-          <div style={{ maxWidth: "680px", margin: "32px auto 0 auto" }}>
-            <ManobhavBanner onOpenQuote={onOpenQuote} />
-          </div>
         </div>
       </section>
 
@@ -183,31 +176,31 @@ export default function ServicesPage({ onOpenQuote }) {
       <div className="services-nav-bar">
         <div className="container">
           <div className="services-tabs-list">
-            <button 
+            <button
               className={`services-tab-btn ${activeTab === "all" ? "active" : ""}`}
               onClick={() => setActiveTab("all")}
             >
               All Disciplines
             </button>
-            <button 
+            <button
               className={`services-tab-btn ${activeTab === "residential" ? "active" : ""}`}
               onClick={() => setActiveTab("residential")}
             >
               <Home size={15} /> Residential Development
             </button>
-            <button 
+            <button
               className={`services-tab-btn ${activeTab === "commercial" ? "active" : ""}`}
               onClick={() => setActiveTab("commercial")}
             >
               <Building2 size={15} /> Commercial Projects
             </button>
-            <button 
+            <button
               className={`services-tab-btn ${activeTab === "infrastructure" ? "active" : ""}`}
               onClick={() => setActiveTab("infrastructure")}
             >
               <Tractor size={15} /> Infrastructure Works
             </button>
-            <button 
+            <button
               className={`services-tab-btn ${activeTab === "blueprints" ? "active" : ""}`}
               onClick={() => setActiveTab("blueprints")}
             >
@@ -226,12 +219,12 @@ export default function ServicesPage({ onOpenQuote }) {
               return (
                 <div key={service.id} className="service-deep-card" style={{ overflow: "hidden" }}>
                   <div className="deep-card-top-accent" />
-                  
+
                   <div style={{ width: "100%", height: "125px", overflow: "hidden", position: "relative" }}>
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
-                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} 
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                     />
                     <span className="badge-gold" style={{ position: "absolute", bottom: "10px", left: "12px", background: "rgba(15,23,42,0.85)" }}>
                       Active Structure Photo
@@ -282,7 +275,7 @@ export default function ServicesPage({ onOpenQuote }) {
 
                     {/* Card Actions */}
                     <div className="deep-card-actions">
-                      <button 
+                      <button
                         onClick={() => onOpenQuote(service.title)}
                         className="btn btn-primary"
                         style={{ width: "100%", justifyContent: "center" }}

@@ -7,39 +7,31 @@ import {
   Award, 
   ShieldCheck, 
   Building2, 
-  ThumbsUp,
-  Filter,
-  MessageSquarePlus,
-  Send
+  ThumbsUp
 } from "lucide-react";
 
 export default function ReviewsPage() {
-  const [filterRating, setFilterRating] = useState("all");
-  const [showAddReview, setShowAddReview] = useState(false);
-  const [reviewSubmitted, setReviewSubmitted] = useState(false);
-  const [newReview, setNewReview] = useState({ name: "", project: "", rating: 5, comment: "" });
-
   const testimonials = [
     {
       id: 1,
-      quote: "MANOBHAV CONSTRUCTION was the total opposite of unreliable builders: they delivered our residential 2-story home on time, with timber rafters and high-pitch roofing done with absolute perfection. True to their word: building dreams, brick by brick.",
-      author: "David & Dr. Eleanor Vance",
-      role: "Homeowners",
+      quote: "SB SPORTS & CONSTRUCTION was the total opposite of unreliable builders: they delivered our residential 2-story home on time, with timber rafters and high-pitch roofing done with absolute perfection. True to their word: building dreams, brick by brick.",
+      author: "Verified Homeowner",
+      role: "Residential Client",
       project: "Residential House & Roofing (Picture Detail)",
       rating: 5,
-      avatarInitials: "DV",
+      avatarInitials: "RC",
       verified: true,
       city: "Residential Zone",
       date: "August 2026"
     },
     {
       id: 2,
-      quote: "MANOBHAV CONSTRUCTION managed our commercial multi-story concrete tower with flawless engineering. Their yellow tower crane operations and strict site safety gave our team total confidence from foundation to final floor slab.",
-      author: "Harrison Sterling",
-      role: "Commercial Project Director",
+      quote: "SB SPORTS & CONSTRUCTION managed our commercial multi-story concrete tower with flawless engineering. Their yellow tower crane operations and strict site safety gave our team total confidence from foundation to final floor slab.",
+      author: "Commercial Project Desk",
+      role: "Project Director",
       project: "Commercial Multi-Story Concrete Superstructure",
       rating: 5,
-      avatarInitials: "HS",
+      avatarInitials: "CP",
       verified: true,
       city: "Commercial Sector",
       date: "July 2026"
@@ -47,23 +39,23 @@ export default function ReviewsPage() {
     {
       id: 3,
       quote: "The groundwork and hydraulic excavator earthmoving were carried out with surgical precision. Their brick masonry stacks and solid foundation gave our development the strongest civil footing possible.",
-      author: "Samantha & Brian Cole",
-      role: "Civil Infrastructure Lead",
+      author: "Civil Infrastructure Desk",
+      role: "Infrastructure Lead",
       project: "Infrastructure Earthworks & Foundation",
       rating: 5,
-      avatarInitials: "SC",
+      avatarInitials: "CI",
       verified: true,
       city: "Infrastructure Zone",
       date: "May 2026"
     },
     {
       id: 4,
-      quote: "From blueprint drafting to on-site yellow safety hard hat protocols, the engineering team worked flawlessly. You can see the dedication in every brick.",
-      author: "Vikram & Ananya Patel",
+      quote: "From blueprint drafting to on-site safety protocols, the engineering team worked flawlessly. You can see the dedication in every brick.",
+      author: "Timber Estate Desk",
       role: "Residential Homeowner",
       project: "Residential Timber Frame Residence",
       rating: 5,
-      avatarInitials: "VP",
+      avatarInitials: "TE",
       verified: true,
       city: "Residential Zone",
       date: "April 2026"
@@ -78,74 +70,132 @@ export default function ReviewsPage() {
     { title: "Site Safety Hard Hat Protocol", desc: "Zero-Accident Safety Compliance" }
   ];
 
-  const handleReviewSubmit = (e) => {
-    e.preventDefault();
-    setReviewSubmitted(true);
-  };
-
   return (
-    <div className="reviews-page-wrapper">
-      <div className="page-hero-banner">
+    <div className="reviews-page-wrapper" style={{ background: "#FFFFFF", color: "#000000", minHeight: "100vh", paddingBottom: "80px" }}>
+      <div className="page-hero-banner" style={{ background: "#FFFFFF", borderBottom: "2px solid #000000", padding: "48px 0 36px 0", textAlign: "center" }}>
         <div className="container">
-          <div className="section-pill">
-            <ThumbsUp size={14} />
-            <span>MANOBHAV CONSTRUCTION FEEDBACK</span>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              background: "#FFFFFF",
+              border: "1px solid #000000",
+              color: "#000000",
+              padding: "4px 16px",
+              fontWeight: 800,
+              fontSize: "0.8rem",
+              marginBottom: "16px"
+            }}
+          >
+            <ThumbsUp size={14} style={{ color: "#000000" }} />
+            <span>SB SPORTS & CONSTRUCTION VERIFICATIONS</span>
           </div>
-          <h1 className="page-main-title">
-            HOUSE & BUILDING <span className="text-gradient-amber">CONSTRUCTION REVIEWS</span>
+          <h1 className="page-main-title" style={{ color: "#000000", fontWeight: 900, fontSize: "clamp(1.6rem, 3.2vw, 2.4rem)", letterSpacing: "0.04em", margin: "0 0 12px 0" }}>
+            HOUSE & BUILDING CONSTRUCTION REVIEWS
           </h1>
-          <p className="page-main-subtitle">
-            Read verified reviews from clients who built their Residential Development, Commercial Projects, and Infrastructure Works with MANOBHAV CONSTRUCTION. Building your dreams, brick by brick.
+          <p className="page-main-subtitle" style={{ color: "#333333", maxWidth: "760px", margin: "0 auto 24px auto", fontSize: "0.98rem", lineHeight: 1.6 }}>
+            Read verified reviews from clients who built their Residential Development, Commercial Projects, and Infrastructure Works with SB SPORTS & CONSTRUCTION. Building your dreams, brick by brick.
           </p>
 
           {/* Rating Summary Bar */}
-          <div className="rating-summary-pill glass-card">
-            <div className="rating-giant">4.9</div>
-            <div className="rating-stars-col">
-              <div className="stars-row">
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "16px",
+              background: "#FFFFFF",
+              border: "1px solid #000000",
+              padding: "10px 24px"
+            }}
+          >
+            <div style={{ fontSize: "2rem", fontWeight: 900, color: "#000000" }}>4.9</div>
+            <div style={{ textAlign: "left" }}>
+              <div style={{ display: "flex", gap: "3px" }}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
+                  <Star key={i} size={18} fill="#000000" color="#000000" />
                 ))}
               </div>
-              <span className="rating-count">Based on 420+ Verified Turnkey Projects</span>
+              <span style={{ fontSize: "0.8rem", color: "#555555", fontWeight: 700 }}>Based on 420+ Verified Turnkey Projects</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container">
+      <div className="container" style={{ paddingTop: "48px" }}>
         {/* Testimonials Grid */}
-        <div className="testimonials-grid" style={{ marginBottom: 48 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginBottom: "48px" }}>
           {testimonials.map((t) => (
-            <div key={t.id} className="testimonial-card glass-card">
-              <div className="testimonial-header">
-                <div className="testi-stars-row">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
-                  ))}
-                </div>
-                <Quote size={26} className="testi-quote-icon" />
-              </div>
-
-              <p className="testi-body-text">"{t.quote}"</p>
-
-              <div className="testi-project-pill">
-                <Building2 size={13} className="text-amber" />
-                <span>{t.project} • {t.city}</span>
-              </div>
-
-              <div className="testi-author-row">
-                <div className="testi-avatar-circle">
-                  {t.avatarInitials}
-                </div>
-                <div className="testi-author-info">
-                  <div className="author-name-wrap">
-                    <span className="author-name">{t.author}</span>
-                    {t.verified && (
-                      <CheckCircle2 size={14} className="text-green verified-icon" title="Verified Client" />
-                    )}
+            <div
+              key={t.id}
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid #000000",
+                padding: "24px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between"
+              }}
+            >
+              <div>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
+                  <div style={{ display: "flex", gap: "3px" }}>
+                    {[...Array(t.rating)].map((_, i) => (
+                      <Star key={i} size={16} fill="#000000" color="#000000" />
+                    ))}
                   </div>
-                  <span className="author-role">{t.role} ({t.date})</span>
+                  <Quote size={24} style={{ color: "#000000" }} />
+                </div>
+
+                <p style={{ color: "#222222", fontSize: "0.92rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "16px" }}>
+                  "{t.quote}"
+                </p>
+              </div>
+
+              <div>
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    background: "#FFFFFF",
+                    border: "1px solid #000000",
+                    padding: "3px 8px",
+                    fontSize: "0.75rem",
+                    fontWeight: 700,
+                    marginBottom: "14px",
+                    color: "#000000"
+                  }}
+                >
+                  <Building2 size={12} style={{ color: "#000000" }} />
+                  <span>{t.project} • {t.city}</span>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", borderTop: "1px solid #000000", paddingTop: "12px" }}>
+                  <div
+                    style={{
+                      width: "34px",
+                      height: "34px",
+                      background: "#000000",
+                      color: "#FFFFFF",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontWeight: 900,
+                      fontSize: "0.82rem"
+                    }}
+                  >
+                    {t.avatarInitials}
+                  </div>
+                  <div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                      <span style={{ fontWeight: 800, color: "#000000", fontSize: "0.88rem" }}>{t.author}</span>
+                      {t.verified && (
+                        <CheckCircle2 size={13} style={{ color: "#000000" }} title="Verified Technical Review" />
+                      )}
+                    </div>
+                    <span style={{ color: "#666666", fontSize: "0.78rem" }}>{t.role} ({t.date})</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,18 +203,26 @@ export default function ReviewsPage() {
         </div>
 
         {/* Accreditations Bar */}
-        <div className="certifications-bar glass-card">
-          <div className="cert-bar-header">
-            <Award size={20} className="text-amber" />
-            <span>Licensed & Certified By Leading Industry Authorities</span>
+        <div
+          style={{
+            background: "#FFFFFF",
+            border: "1px solid #000000",
+            padding: "24px 32px"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px", borderBottom: "1px solid #000000", paddingBottom: "12px" }}>
+            <Award size={20} style={{ color: "#000000" }} />
+            <span style={{ fontWeight: 900, color: "#000000", fontSize: "0.95rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+              Licensed & Certified By Leading Industry Authorities
+            </span>
           </div>
-          <div className="cert-items-grid">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "18px" }}>
             {certifications.map((c, idx) => (
-              <div key={idx} className="cert-badge-item">
-                <ShieldCheck size={18} className="text-amber cert-icon" />
+              <div key={idx} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                <ShieldCheck size={18} style={{ color: "#000000", flexShrink: 0, marginTop: "2px" }} />
                 <div>
-                  <div className="cert-title">{c.title}</div>
-                  <div className="cert-desc">{c.desc}</div>
+                  <div style={{ fontWeight: 800, fontSize: "0.86rem", color: "#000000" }}>{c.title}</div>
+                  <div style={{ fontSize: "0.78rem", color: "#555555" }}>{c.desc}</div>
                 </div>
               </div>
             ))}

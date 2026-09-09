@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./Projects.css";
-import { 
-  Building, 
-  MapPin, 
-  Calendar, 
-  Maximize2, 
-  Check, 
-  ArrowUpRight, 
+import {
+  Building,
+  MapPin,
+  Calendar,
+  Maximize2,
+  Check,
+  ArrowUpRight,
   X,
   Star,
   Sparkles,
@@ -15,7 +15,6 @@ import {
   Building2,
   Tractor
 } from "lucide-react";
-import ManobhavBanner from "../../components/ManobhavBanner";
 
 export default function ProjectsPage({ onBookConsultation }) {
   const [filter, setFilter] = useState("all");
@@ -39,7 +38,7 @@ export default function ProjectsPage({ onBookConsultation }) {
         "Custom dormer window framing and weatherproof cladding",
         "Complete turnkey delivery: brick by brick"
       ],
-      clientReview: "MANOBHAV CONSTRUCTION delivered our dream family residence with unmatched craftsmanship from the timber rafters down to the foundation.",
+      clientReview: "SB SPORTS & CONSTRUCTION delivered our dream family residence with unmatched craftsmanship from the timber rafters down to the foundation.",
       clientAuthor: "Homeowner — Residential Development"
     },
     {
@@ -77,7 +76,7 @@ export default function ProjectsPage({ onBookConsultation }) {
         "Engineered formwork for high-rise commercial strength",
         "Strict site safety and structural load compliance"
       ],
-      clientReview: "MANOBHAV CONSTRUCTION handled the high-rise concrete pours and commercial framework with zero safety incidents.",
+      clientReview: "SB SPORTS & CONSTRUCTION handled the high-rise concrete pours and commercial framework with zero safety incidents.",
       clientAuthor: "Commercial Project Director"
     },
     {
@@ -139,8 +138,8 @@ export default function ProjectsPage({ onBookConsultation }) {
     }
   ];
 
-  const filteredProjects = filter === "all" 
-    ? projects 
+  const filteredProjects = filter === "all"
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
@@ -150,9 +149,9 @@ export default function ProjectsPage({ onBookConsultation }) {
         <div className="container" style={{ textAlign: "center" }}>
           <div className="hero-badge animate-float" style={{ margin: "0 auto 16px auto", background: "#DC2626", color: "#FFF" }}>
             <Sparkles size={16} style={{ color: "#FFFFFF" }} />
-            <span>MANOBHAV CONSTRUCTION</span>
+            <span>SB SPORTS & CONSTRUCTION</span>
           </div>
-          
+
           <h1 className="projects-page-title" style={{ color: "#F8FAFC", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 900 }}>
             HOUSE & BUILDING CONSTRUCTION
           </h1>
@@ -161,14 +160,9 @@ export default function ProjectsPage({ onBookConsultation }) {
             BUILDING YOUR DREAMS, BRICK BY BRICK
           </p>
 
-          <p className="projects-page-subtitle" style={{ maxWidth: "780px", margin: "0 auto", color: "#CBD5E1" }}>
-            Showcasing works directly derived from the official picture: Residential Development, Commercial Projects, and Infrastructure Works.
+          <p className="projects-page-subtitle" style={{ maxWidth: "780px", margin: "0 auto", color: "#333333" }}>
+            Showcasing works directly executed by SB SPORTS & CONSTRUCTION: Residential Development, Commercial Projects, and Infrastructure Works.
           </p>
-
-          {/* Picture Banner Preview */}
-          <div style={{ maxWidth: "680px", margin: "32px auto 0 auto" }}>
-            <ManobhavBanner onOpenQuote={onBookConsultation} />
-          </div>
         </div>
       </section>
 
@@ -176,25 +170,25 @@ export default function ProjectsPage({ onBookConsultation }) {
       <div className="projects-filter-bar">
         <div className="container">
           <div className="projects-tabs-list" style={{ display: "flex", justifyContent: "center", gap: "10px", flexWrap: "wrap", padding: "16px 0" }}>
-            <button 
+            <button
               className={`filter-btn ${filter === "all" ? "active" : ""}`}
               onClick={() => setFilter("all")}
             >
               All Works
             </button>
-            <button 
+            <button
               className={`filter-btn ${filter === "residential" ? "active" : ""}`}
               onClick={() => setFilter("residential")}
             >
               <Home size={15} /> Residential Development
             </button>
-            <button 
+            <button
               className={`filter-btn ${filter === "commercial" ? "active" : ""}`}
               onClick={() => setFilter("commercial")}
             >
               <Building2 size={15} /> Commercial Projects
             </button>
-            <button 
+            <button
               className={`filter-btn ${filter === "infrastructure" ? "active" : ""}`}
               onClick={() => setFilter("infrastructure")}
             >
@@ -209,19 +203,19 @@ export default function ProjectsPage({ onBookConsultation }) {
         <div className="container">
           <div className="portfolio-grid">
             {filteredProjects.map((proj) => (
-              <div 
-                key={proj.id} 
+              <div
+                key={proj.id}
                 className="portfolio-card"
                 onClick={() => setSelectedProject(proj)}
               >
                 <div className="portfolio-img-box">
-                  <img 
-                    src={proj.image} 
-                    alt={proj.title} 
+                  <img
+                    src={proj.image}
+                    alt={proj.title}
                     className="portfolio-img"
                   />
                   <div className="portfolio-overlay">
-                    <button 
+                    <button
                       className="portfolio-zoom-btn"
                       title="View Construction Details"
                       aria-label={`View details for ${proj.title}`}
@@ -249,7 +243,7 @@ export default function ProjectsPage({ onBookConsultation }) {
 
                   <div className="portfolio-card-footer">
                     <span className="project-area-tag">{proj.area}</span>
-                    <button 
+                    <button
                       className="view-project-link"
                       onClick={(e) => {
                         e.stopPropagation();
@@ -271,8 +265,8 @@ export default function ProjectsPage({ onBookConsultation }) {
       {selectedProject && (
         <div className="portfolio-modal-backdrop" onClick={() => setSelectedProject(null)}>
           <div className="portfolio-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="modal-close-btn" 
+            <button
+              className="modal-close-btn"
               onClick={() => setSelectedProject(null)}
               aria-label="Close dialog"
             >
@@ -280,9 +274,9 @@ export default function ProjectsPage({ onBookConsultation }) {
             </button>
 
             <div className="modal-hero-img-box">
-              <img 
-                src={selectedProject.image} 
-                alt={selectedProject.title} 
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
                 className="modal-hero-img"
               />
               <span className="badge-gold modal-badge">
@@ -331,7 +325,7 @@ export default function ProjectsPage({ onBookConsultation }) {
               </div>
 
               <div className="modal-actions">
-                <button 
+                <button
                   onClick={() => {
                     const title = selectedProject.title;
                     setSelectedProject(null);

@@ -111,7 +111,7 @@ export default function CostEstimator({ onBookWithEstimate }) {
         <div className="section-header">
           <div className="section-pill">
             <Calculator size={15} />
-            <span>MANOBHAV CONSTRUCTION ESTIMATOR</span>
+            <span>SB SPORTS & CONSTRUCTION ESTIMATOR</span>
           </div>
           <h2 className="section-title">
             HOUSE & BUILDING <span className="text-gradient-amber">CONSTRUCTION ESTIMATOR</span>

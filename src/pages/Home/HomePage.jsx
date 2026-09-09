@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import Hero from "../../components/Hero";
 import Services from "../../components/Services";
+import SportsCourtSection from "../../components/SportsCourtSection";
 import Portfolio from "../../components/Portfolio";
 import Guarantees from "../../components/Guarantees";
 import HowItWorks from "../../components/HowItWorks";
@@ -24,6 +25,12 @@ export default function HomePage({
       {/* Services with Attractive Feature Cards */}
       <Services 
         onSelectService={onSelectService}
+      />
+
+      {/* Sports Courts & Synthetic Coating Showcase */}
+      <SportsCourtSection 
+        onNavigate={onNavigate}
+        onOpenQuote={onOpenQuote}
       />
 
       {/* Featured Projects Showcase */}

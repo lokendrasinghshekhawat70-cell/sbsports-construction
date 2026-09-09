@@ -37,7 +37,7 @@ export default function Portfolio({ onBookConsultation }) {
         "Custom dormer window framing and weatherproof cladding",
         "Complete turnkey delivery: brick by brick"
       ],
-      clientReview: "MANOBHAV CONSTRUCTION delivered our dream family residence with unmatched craftsmanship from the timber rafters down to the foundation.",
+      clientReview: "SB SPORTS & CONSTRUCTION delivered our dream family residence with unmatched craftsmanship from the timber rafters down to the foundation.",
       clientAuthor: "Homeowner — Residential Development"
     },
     {
@@ -75,7 +75,7 @@ export default function Portfolio({ onBookConsultation }) {
         "Engineered formwork for high-rise commercial strength",
         "Strict site safety and structural load compliance"
       ],
-      clientReview: "MANOBHAV CONSTRUCTION handled the high-rise concrete pours and commercial framework with zero safety incidents.",
+      clientReview: "SB SPORTS & CONSTRUCTION handled the high-rise concrete pours and commercial framework with zero safety incidents.",
       clientAuthor: "Commercial Project Director"
     },
     {
@@ -155,7 +155,7 @@ export default function Portfolio({ onBookConsultation }) {
             <span className="text-gradient-amber">Building Your Dreams, Brick By Brick</span>
           </h2>
           <p className="section-subtitle" style={{ maxWidth: "780px", margin: "0 auto" }}>
-            Explore the exact works featured in the official <strong>MANOBHAV CONSTRUCTION</strong> picture: Residential Development, Commercial Projects, and Infrastructure Works.
+            Explore the exact works featured in the official <strong>SB SPORTS & CONSTRUCTION</strong> portfolio: Residential Development, Commercial Projects, and Infrastructure Works.
           </p>
 
           {/* Filter Bar */}
