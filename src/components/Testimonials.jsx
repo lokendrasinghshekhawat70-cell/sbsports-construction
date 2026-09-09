@@ -6,109 +6,95 @@ import {
   Award, 
   ShieldCheck, 
   Building2, 
-  ThumbsUp
+  ThumbsUp,
+  Sparkles,
+  Trophy
 } from "lucide-react";
 
 export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      quote: "SB SPORTS & CONSTRUCTION delivered our residential 2-story home on time, with timber rafters and high-pitch roofing done with absolute precision. True to their word: building dreams, brick by brick.",
-      author: "Verified Homeowner",
-      role: "Residential Client",
-      project: "Residential House & Roofing (Picture Detail)",
+      quote: "SB SPORTS & CONSTRUCTION delivered our 8-layer ITF tennis courts with incredible speed. The sub-base leveling and anti-glare acrylic coating give our players a grand slam experience.",
+      author: "President — National Sports Club",
+      role: "Tournament Sports Client",
+      project: "8-Layer ITF Tennis Arena",
       rating: 5,
-      avatarInitials: "RC",
+      avatarInitials: "TC",
       verified: true
     },
     {
       id: 2,
-      quote: "SB SPORTS & CONSTRUCTION managed our commercial multi-story concrete tower with flawless engineering. Their yellow tower crane operations and strict site safety gave our team total confidence from foundation to final floor slab.",
-      author: "Commercial Development Desk",
-      role: "Project Director",
-      project: "Commercial Multi-Story Concrete Superstructure",
+      quote: "Our Box Cricket turf arena was constructed in just 4 weeks. High-density grass, heavy perimeter netting, and LED floodlights have kept the court fully booked every night.",
+      author: "Commercial Turf Owner",
+      role: "Commercial Client",
+      project: "Box Cricket & Futsal Arena",
       rating: 5,
-      avatarInitials: "CD",
+      avatarInitials: "BC",
       verified: true
     },
     {
       id: 3,
-      quote: "The groundwork and hydraulic excavator earthmoving were carried out with surgical precision. Their brick masonry stacks and solid foundation gave our development the strongest civil footing possible.",
-      author: "Civil Infrastructure Desk",
-      role: "Infrastructure Lead",
-      project: "Infrastructure Earthworks & Foundation",
+      quote: "SB SPORTS & CONSTRUCTION handled our multi-story commercial complex and luxury residential villa. Zero cost overruns, 100% on-time handover, and absolute structural perfection.",
+      author: "Real Estate Developer",
+      role: "Commercial & Civil Client",
+      project: "Commercial Complex & Villa",
       rating: 5,
-      avatarInitials: "CI",
+      avatarInitials: "RD",
       verified: true
     }
   ];
 
   const certifications = [
-    { title: "LEED Gold Certified", desc: "Sustainable Green Building Standards" },
-    { title: "OSHA 100% Compliant", desc: "Zero-Incident Safety Protocol" },
-    { title: "Licensed Master Builders", desc: "License #GC-89421 State Verified" },
-    { title: "ISO 9001:2015 Quality", desc: "Certified Civil & Structural Management" },
-    { title: "National Home Builders Assn", desc: "Excellence in Craftsmanship Award" }
+    { title: "ITF Certified Court", desc: "International Tennis Federation Standards" },
+    { title: "BWF Grade Surfacing", desc: "Badminton World Federation Approved" },
+    { title: "ISO 9001:2015 Quality", desc: "Certified Civil & Sports Infrastructure Management" },
+    { title: "100% Licensed PE Engineers", desc: "Licensed Structural Engineers & Architects" },
+    { title: "Turnkey Project Delivery", desc: "Complete End-to-End Civil & Sports Execution" }
   ];
 
   return (
-    <section id="reviews" className="section-padding testimonials-section" style={{ background: "#FFFFFF", color: "#000000" }}>
+    <section id="reviews" className="section-padding testimonials-section" style={{ background: "#F4F7FA", color: "#071A33" }}>
       <div className="container">
         {/* Header */}
-        <div className="section-header" style={{ textAlign: "center", marginBottom: "48px" }}>
-          <div
-            className="section-pill"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "#FFFFFF",
-              border: "1px solid #000000",
-              color: "#000000",
-              padding: "4px 16px",
-              fontWeight: 800,
-              fontSize: "0.8rem",
-              marginBottom: "12px"
-            }}
-          >
-            <ThumbsUp size={15} style={{ color: "#000000" }} />
-            <span>CLIENT VERIFICATIONS</span>
+        <div className="section-header">
+          <div className="section-pill">
+            <ThumbsUp size={15} style={{ color: "#087FEA" }} />
+            <span>CLIENT VERIFICATIONS & TESTIMONIALS</span>
           </div>
-          <h2 className="section-title" style={{ color: "#000000", fontWeight: 900, fontSize: "clamp(1.6rem, 3.2vw, 2.4rem)", letterSpacing: "0.04em", margin: "0 0 12px 0" }}>
-            HOUSE & BUILDING CONSTRUCTION <br />
-            BUILDING YOUR DREAMS, BRICK BY BRICK
+          <h2 className="section-title">
+            Trusted by Sports Clubs, Developers <br />
+            <span className="text-gradient-blue">& Institutional Clients</span>
           </h2>
-          <p className="section-subtitle" style={{ color: "#333333", maxWidth: "760px", margin: "0 auto", fontSize: "0.98rem", lineHeight: 1.6 }}>
-            Verified technical feedback for SB SPORTS & CONSTRUCTION Residential Development, Commercial Projects, Sports Arenas, and Infrastructure Works.
+          <p className="section-subtitle">
+            Verified feedback for SB SPORTS & CONSTRUCTION synthetic court installations, Box Cricket turfs, commercial complexes, and luxury civil developments.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="testimonials-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", marginBottom: "40px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "28px", marginBottom: "48px" }}>
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="testimonial-card"
+              className="clean-card"
               style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "24px",
+                padding: "32px 28px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between"
               }}
             >
               <div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
                   <div style={{ display: "flex", gap: "4px" }}>
                     {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} size={16} fill="#000000" color="#000000" />
+                      <Star key={i} size={16} fill="#087FEA" color="#087FEA" />
                     ))}
                   </div>
-                  <Quote size={24} style={{ color: "#000000" }} />
+                  <Quote size={28} style={{ color: "rgba(8, 127, 234, 0.2)" }} />
                 </div>
 
-                <p style={{ color: "#222222", fontSize: "0.95rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "20px" }}>
+                <p style={{ color: "#071A33", fontSize: "0.95rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "24px" }}>
                   "{t.quote}"
                 </p>
               </div>
@@ -119,43 +105,45 @@ export default function Testimonials() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "6px",
-                    background: "#FFFFFF",
-                    border: "1px solid #000000",
-                    padding: "4px 10px",
+                    background: "rgba(8, 127, 234, 0.1)",
+                    border: "1px solid rgba(8, 127, 234, 0.3)",
+                    padding: "5px 12px",
+                    borderRadius: "6px",
                     fontSize: "0.78rem",
                     fontWeight: 700,
-                    marginBottom: "16px",
-                    color: "#000000"
+                    marginBottom: "18px",
+                    color: "#087FEA"
                   }}
                 >
-                  <Building2 size={13} style={{ color: "#000000" }} />
+                  <Building2 size={13} />
                   <span>{t.project}</span>
                 </div>
 
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", borderTop: "1px solid #000000", paddingTop: "14px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "14px", borderTop: "1px solid #DCE4EC", paddingTop: "16px" }}>
                   <div
                     style={{
-                      width: "36px",
-                      height: "36px",
-                      background: "#000000",
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "6px",
+                      background: "#087FEA",
                       color: "#FFFFFF",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontWeight: 900,
-                      fontSize: "0.85rem"
+                      fontWeight: 800,
+                      fontSize: "0.9rem"
                     }}
                   >
                     {t.avatarInitials}
                   </div>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                      <span style={{ fontWeight: 800, color: "#000000", fontSize: "0.92rem" }}>{t.author}</span>
+                      <span style={{ fontWeight: 800, color: "#071A33", fontSize: "0.95rem" }}>{t.author}</span>
                       {t.verified && (
-                        <CheckCircle2 size={14} style={{ color: "#000000" }} title="Verified Client" />
+                        <CheckCircle2 size={15} style={{ color: "#087FEA" }} title="Verified Client" />
                       )}
                     </div>
-                    <span style={{ color: "#666666", fontSize: "0.8rem" }}>{t.role}</span>
+                    <span style={{ color: "#64748B", fontSize: "0.82rem" }}>{t.role}</span>
                   </div>
                 </div>
               </div>
@@ -165,25 +153,26 @@ export default function Testimonials() {
 
         {/* Industry Trust & Accreditation Bar */}
         <div
+          className="clean-card"
           style={{
-            background: "#FFFFFF",
-            border: "1px solid #000000",
-            padding: "24px 32px"
+            padding: "28px 36px",
+            background: "#071A33",
+            borderColor: "rgba(25, 200, 244, 0.2)"
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "18px", borderBottom: "1px solid #000000", paddingBottom: "12px" }}>
-            <Award size={20} style={{ color: "#000000" }} />
-            <span style={{ fontWeight: 900, color: "#000000", fontSize: "0.95rem", letterSpacing: "0.04em", textTransform: "uppercase" }}>
-              Licensed & Certified By Leading Industry Authorities
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", borderBottom: "1px solid rgba(217, 226, 234, 0.15)", paddingBottom: "14px" }}>
+            <Award size={22} style={{ color: "#19C8F4" }} />
+            <span style={{ fontWeight: 800, color: "#FFFFFF", fontSize: "1rem", letterSpacing: "0.04em", textTransform: "uppercase" }}>
+              Licensed & Certified By Global Industry Authorities
             </span>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px" }}>
             {certifications.map((c, idx) => (
-              <div key={idx} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
-                <ShieldCheck size={18} style={{ color: "#000000", flexShrink: 0, marginTop: "2px" }} />
+              <div key={idx} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+                <ShieldCheck size={20} style={{ color: "#19C8F4", flexShrink: 0, marginTop: "2px" }} />
                 <div>
-                  <div style={{ fontWeight: 800, fontSize: "0.88rem", color: "#000000" }}>{c.title}</div>
-                  <div style={{ fontSize: "0.78rem", color: "#555555" }}>{c.desc}</div>
+                  <div style={{ fontWeight: 700, fontSize: "0.9rem", color: "#FFFFFF" }}>{c.title}</div>
+                  <div style={{ fontSize: "0.8rem", color: "#D9E2EA" }}>{c.desc}</div>
                 </div>
               </div>
             ))}
@@ -193,3 +182,5 @@ export default function Testimonials() {
     </section>
   );
 }
+
+

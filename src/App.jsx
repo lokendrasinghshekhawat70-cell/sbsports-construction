@@ -40,9 +40,9 @@ function App() {
           {/* Home */}
           <Route path="/" element={<HomePage onOpenQuote={handleOpenQuoteGeneric} onSelectService={handleOpenQuoteWithService} />} />
 
-          {/* Sports Courts & Synthetic Coating */}
-          <Route path="/SportsCourtsAndCoating" element={<SportsCourtsPage onOpenQuote={handleOpenQuoteGeneric} />} />
-          <Route path="/sports-courts" element={<SportsCourtsPage onOpenQuote={handleOpenQuoteGeneric} />} />
+          {/* Sports Courts & Synthetic Coating (Integrated into Services) */}
+          <Route path="/SportsCourtsAndCoating" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />
+          <Route path="/sports-courts" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />
 
           {/* Construction Services */}
           <Route path="/Services" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />

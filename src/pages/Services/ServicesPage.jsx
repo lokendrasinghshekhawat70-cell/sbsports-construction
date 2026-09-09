@@ -1,293 +1,408 @@
 import React, { useState } from "react";
 import "./Services.css";
 import {
+  Trophy,
   Home,
-  Building2,
-  Tractor,
-  FileText,
-  HardHat,
+  ShieldCheck,
   CheckCircle2,
   ArrowRight,
   Sparkles,
-  ShieldCheck,
+  PhoneCall,
+  HardHat,
   Layers,
-  Hammer,
-  Clock,
-  HelpCircle
+  Zap,
+  Award
 } from "lucide-react";
 
-export default function ServicesPage({ onOpenQuote }) {
-  const [activeTab, setActiveTab] = useState("all");
-  const [selectedServiceDetail, setSelectedServiceDetail] = useState(null);
+import CourtSimulator from "../../components/CourtSimulator";
+import CoatingLayersVisualizer from "../../components/CoatingLayersVisualizer";
 
-  // STRICTLY only the details present in the picture:
+export default function ServicesPage({ onOpenQuote }) {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [showSimulator, setShowSimulator] = useState(false);
+  const [showLayersVisualizer, setShowLayersVisualizer] = useState(false);
+
   const services = [
     {
-      id: "residential-house",
-      title: "Residential House & Home Construction",
-      category: "residential",
-      categoryName: "Residential Development",
-      icon: Home,
-      startingPrice: "Turnkey House Spec",
-      timeline: "6 - 9 Months",
-      warranty: "Brick-by-Brick Warranty",
-      image: "/images/roofing_structure.jpg",
-      description: "Full residential 2-story home construction featuring high-pitch architectural roof shingles, multiple dormers, premium siding, and craftsmen carpentry shown on the left side of the picture.",
+      id: "tennis-court",
+      title: "Lawn Tennis Court Construction",
+      category: "sports",
+      categoryName: "Sports Infrastructure",
+      icon: Trophy,
+      badge: "ITF Certified Pace 3",
+      image: "/images/sports_tennis_court.jpg",
+      description: "From earth excavation and concrete sub-base casting to an 8-layer ITF-certified synthetic acrylic coating, delivering grand-slam caliber performance.",
       scope: [
-        "Two-story residential custom home building",
-        "High-pitch architectural roof shingle installation",
-        "Exterior siding, trim, dormers and weatherproofing",
-        "Full turnkey residential handover: from foundation to finishing"
+        "8-Layer ITF cushion synthetic acrylic overlay for smooth, resilient bounce",
+        "Laser-screed 1:100 dual-slope gradient for zero rainwater ponding",
+        "Non-glare UV resistant acrylic colors in US Open royal blue & electric cyan",
+        "Multi-layer shock attenuation protecting athlete knee & ankle joints"
       ],
-      materials: "Premium Architectural Shingles, Structural Wall Studs, Weather Barrier, Hardwood Trusses",
-      faq: "Can you build on our custom plot? Yes, our residential team handles full site preparation, framing, roofing, and turnkey handover."
+      popular: true
     },
     {
-      id: "timber-framing",
-      title: "Timber Framing & Structural Wood Carpentry",
-      category: "residential",
-      categoryName: "Residential Development",
-      icon: Hammer,
-      startingPrice: "Framing Spec",
-      timeline: "3 - 5 Months",
-      warranty: "Structural Wood Warranty",
-      image: "/images/timber_structure.jpg",
-      description: "Heavy timber structural framing, roof trusses, wall studs, beams, and on-site carpentry executed by skilled workers as displayed in the central building frame.",
-      scope: [
-        "Complete wood skeleton & timber stud framing",
-        "Engineered roof rafters, trusses, and load-bearing framing",
-        "Subfloor joist installation and structural shear bracing",
-        "On-site master carpentry and timber fitting"
-      ],
-      materials: "Kiln-Dried Structural Lumber, Heavy-Duty Timber Trusses, Hurricane Ties & Fasteners",
-      faq: "Are timber frames structurally durable? Yes, engineered timber frames meet rigorous structural load standards and offer superior thermal efficiency."
-    },
-    {
-      id: "commercial-highrise",
-      title: "Commercial Multi-Story Concrete Buildings",
-      category: "commercial",
-      categoryName: "Commercial Projects",
-      icon: Building2,
-      startingPrice: "Commercial Grade Spec",
-      timeline: "12 - 18 Months",
-      warranty: "Commercial Engineering Warranty",
-      image: "/images/concrete_structure.jpg",
-      description: "Multi-level commercial buildings engineered with reinforced concrete floor slabs, exterior safety scaffolding, protective netting, and modern urban glass facade integration.",
-      scope: [
-        "Multi-story reinforced concrete cast-in-place columns and slabs",
-        "Perimeter scaffolding, safety containment netting & hoist lifts",
-        "Commercial floor layout, structural engineering & load calculation",
-        "High-rise commercial facilities and corporate urban developments"
-      ],
-      materials: "High-Strength Ready-Mix Concrete, High-Tensile Steel Rebar, Structural Formwork",
-      faq: "How do you manage site safety on tall buildings? We enforce strict perimeter scaffolding, safety netting, and mandatory hard hat compliance at all times."
-    },
-    {
-      id: "crane-operations",
-      title: "Tower Crane Operations & Heavy Material Hoisting",
-      category: "commercial",
-      categoryName: "Commercial Projects",
+      id: "cricket-turf",
+      title: "Box Cricket & Futsal Turf Arena",
+      category: "sports",
+      categoryName: "Sports Infrastructure",
       icon: Layers,
-      startingPrice: "Heavy Crane Spec",
-      timeline: "Project Duration",
-      warranty: "Rigging Safety Certified",
-      image: "/images/crane_structure.jpg",
-      description: "Yellow tower crane operations for vertical material transport, structural steel hoisting, concrete bucket placement, and high-altitude assembly shown in the picture skyline.",
+      badge: "FIFA Standard Turf",
+      image: "/images/sports_box_cricket_turf.jpg",
+      description: "Turnkey commercial box cricket and futsal turf development including civil base compaction, 50mm artificial grass, steel cage netting, and high-mast lights.",
       scope: [
-        "Heavy-duty yellow tower crane deployment and site positioning",
-        "High-altitude concrete and rebar lifting operations",
-        "Rigorous crane operator certifications and daily rigging checks",
-        "Coordinated commercial building vertical logistics"
+        "50mm FIFA standard monofilament PE grass with silica sand infill",
+        "Heavy-gauge 30ft tubular steel truss cage structure with rust-proof coating",
+        "High-tenacity nylon ball containment netting covering top and perimeter",
+        "High-lux 300+ Lux stadium floodlighting for 24/7 commercial revenue"
       ],
-      materials: "Certified Heavy Steel Rigging, High-Capacity Winches, Anti-Collision Systems",
-      faq: "Can the tower crane handle heavy concrete pours? Yes, industrial tower cranes handle heavy concrete skips, steel beams, and structural prefabricated elements with precision."
+      popular: true
     },
     {
-      id: "infrastructure-earthworks",
-      title: "Infrastructure Works & Hydraulic Excavation",
-      category: "infrastructure",
-      categoryName: "Infrastructure Works",
-      icon: Tractor,
-      startingPrice: "Infrastructure Spec",
-      timeline: "1 - 3 Months",
-      warranty: "Civil Groundwork Warranty",
-      image: "/images/excavation_structure.jpg",
-      description: "Heavy yellow hydraulic excavator earthmoving, groundwork leveling, trenching, soil clearing, and civil preparation for heavy foundations as shown on site.",
+      id: "badminton-arena",
+      title: "Indoor Badminton Arena Construction",
+      category: "sports",
+      categoryName: "Sports Infrastructure",
+      icon: Award,
+      badge: "BWF Grade 1 Spec",
+      image: "/images/sports_badminton_court.jpg",
+      description: "Professional indoor badminton hall setups with world-standard BWF approved vinyl flooring, sprung timber sub-floors, and glare-free lighting.",
       scope: [
-        "Heavy hydraulic excavator digging, trenching & bulk earthmoving",
-        "Site leveling, rough grading, and rubble clearing",
-        "Foundation trenching and subgrade compaction",
-        "Site civil infrastructure and groundwork drainage"
+        "Anti-slip embossed sand/lychee texture BWF PVC vinyl matting",
+        "High-density cellular foam backing for maximum energy absorption",
+        "Zero-glare high-bay asymmetric LED lighting positioned over tramlines",
+        "Optional sprung timber sub-floor with heavy-duty rubber shock pads"
       ],
-      materials: "Engineered Subbase, Crushed Stone Aggregates, Geotextile Fabric, Compaction Soil",
-      faq: "What machinery is utilized? Heavy hydraulic tracked excavators, diggers, and compaction equipment for robust subgrade stability."
+      popular: false
     },
     {
-      id: "blueprints-safety",
-      title: "Blueprints & Safety Hard Hat Standards",
-      category: "blueprints",
-      categoryName: "Blueprints & Safety",
-      icon: FileText,
-      startingPrice: "Engineering Plan Spec",
-      timeline: "Continuous Quality Protocol",
-      warranty: "Zero Compromise Standards",
-      image: "/images/blueprint_structure.jpg",
-      description: "Detailed architectural blueprints rolled out on site, paired with strict yellow safety helmet protocols and brick-by-brick structural foundation engineering.",
+      id: "basketball-court",
+      title: "High-Grip Basketball Court Construction",
+      category: "sports",
+      categoryName: "Sports Infrastructure",
+      icon: Trophy,
+      badge: "FIBA Standard",
+      image: "/images/sports_basketball_court.jpg",
+      description: "Custom-engineered FIBA regulation basketball courts built with reinforced concrete foundations, heavy impact acrylic cushion, and break-away hoops.",
       scope: [
-        "Detailed architectural blueprints and construction site schematics",
-        "Mandatory yellow safety hard hat protocols and PPE enforcement",
-        "Brick stacks & brick-by-brick foundation structural masonry",
-        "Continuous on-site supervision from blueprint to final handover"
+        "Vibrant multi-colored keys, 3-point arcs, and perimeter runoff zones",
+        "High-grip micro-texture preventing slipping during aggressive drives",
+        "Heavy-duty in-ground pole systems with tempered glass backboards",
+        "Laser-sharp regulation line marking with zero edge bleed"
       ],
-      materials: "Precision Blueprint Cad Drawings, Certified Safety Hard Hats, Solid Clay Masonry Bricks",
-      faq: "Why is the hard hat protocol emphasized? Site safety is our highest priority, ensuring every worker and engineer operates in zero-accident conditions."
+      popular: false
+    },
+    {
+      id: "pickleball-court",
+      title: "Outdoor & Indoor Pickleball Court",
+      category: "sports",
+      categoryName: "Sports Infrastructure",
+      icon: Zap,
+      badge: "USAPA Tournament Grade",
+      image: "/images/sports_pickleball_court.jpg",
+      description: "Dedicated pickleball court construction or tennis conversion with USAPA 5-layer textured acrylic cushion coating and fast non-volley kitchen zones.",
+      scope: [
+        "Distinct two-tone color contrast for 7ft non-volley kitchen zones",
+        "Specially graded silica texture for optimal wiffle-ball bounce & traction",
+        "Permanent or semi-permanent tournament-grade steel net posts",
+        "Multi-court clustering layouts with interior divider netting"
+      ],
+      popular: true
+    },
+    {
+      id: "running-track",
+      title: "Synthetic Athletic Running Track",
+      category: "sports",
+      categoryName: "Sports Infrastructure",
+      icon: Award,
+      badge: "World Athletics (IAAF)",
+      image: "/images/sports_running_track.jpg",
+      description: "Full-PUR and Sandwich polyurethane synthetic track surfaces engineered for high energy return, spike resistance, and World Athletics compliance.",
+      scope: [
+        "13mm IAAF Class 1 full-PUR or sandwich polyurethane system",
+        "Cast-in-place UV resistant EPDM rubber broadcast granules",
+        "Spike-resistant and shock-absorbing energy return surface",
+        "Laser-guided curbing, slot drains & steeplechase pit integration"
+      ],
+      popular: false
+    },
+    {
+      id: "squash-court",
+      title: "WSF International Championship Squash Court",
+      category: "sports",
+      categoryName: "Sports Infrastructure",
+      icon: ShieldCheck,
+      badge: "WSF Compliant",
+      image: "/images/sports_squash_court.jpg",
+      description: "International competition squash courts constructed with WSF-accredited Armourcoat impact plaster, toughened safety glass rear walls, and sprung wooden flooring.",
+      scope: [
+        "Resilient high-impact Armourcoat plaster walls with zero hollows",
+        "12mm clear toughened glass rear spectator wall with self-closing door",
+        "Air-sprung European maple wood sub-floor for joint protection",
+        "Precision flush tin sound board and regulation red border markings"
+      ],
+      popular: false
+    },
+    {
+      id: "gym-flooring",
+      title: "Gym & Commercial Fitness Flooring",
+      category: "sports",
+      categoryName: "Sports Infrastructure",
+      icon: Layers,
+      badge: "Heavy Gym Grade",
+      image: "/images/sports_gym_flooring.jpg",
+      description: "Complete commercial gym flooring solutions including heavy deadlift drop platforms, anti-vibration sub-bases, and functional turf sprint tracks.",
+      scope: [
+        "15mm–25mm high-density vulcanized rubber shock tiles",
+        "Acoustic sub-base decoupling under Olympic free-weight drop zones",
+        "Seamless high-traction functional sprint turf track with meter marks",
+        "Non-porous, sweat-impermeable, anti-microbial & easy to sanitize"
+      ],
+      popular: false
+    },
+    {
+      id: "residential-house-villas",
+      title: "Turnkey Residential House & Villa Construction",
+      category: "residential",
+      categoryName: "Turnkey Residential",
+      icon: Home,
+      badge: "Full Turnkey Handover",
+      image: "/images/roofing_structure.jpg",
+      description: "Custom luxury 2-story house construction featuring architectural roof shingles, engineered dormers, precision masonry, and turnkey craftsmen handover.",
+      scope: [
+        "End-to-end residential construction from foundation excavation to finishing",
+        "High-pitch architectural roof shingle installation & weather barrier",
+        "Custom exterior siding, trim framing, and dormer carpentry",
+        "Electrical, plumbing, flooring, and interior turnkey handover"
+      ],
+      popular: true
     }
   ];
 
-  const filteredServices = activeTab === "all"
+  const filteredServices = activeCategory === "all"
     ? services
-    : services.filter(s => s.category === activeTab);
+    : services.filter(s => s.category === activeCategory);
 
   return (
-    <div className="services-page-container">
-      {/* Top Banner Hero */}
-      <section className="services-hero-banner" style={{ background: "linear-gradient(180deg, #091932 0%, #0D264F 100%)", padding: "60px 0 40px 0" }}>
+    <div className="services-page-wrapper">
+      {/* Hero Banner Section */}
+      <section className="services-hero-banner">
         <div className="container" style={{ textAlign: "center" }}>
-          <div className="hero-badge animate-float" style={{ margin: "0 auto 16px auto", background: "#DC2626", color: "#FFF" }}>
-            <Sparkles size={16} style={{ color: "#FFFFFF" }} />
-            <span>SB SPORTS & CONSTRUCTION</span>
+          <div className="services-pill-badge">
+            <HardHat size={16} style={{ color: "#19C8F4" }} />
+            <span>SB SPORTS & CONSTRUCTION SERVICES DESK</span>
           </div>
 
-          <h1 className="services-page-title" style={{ color: "#F8FAFC", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 900 }}>
-            HOUSE & BUILDING CONSTRUCTION
+          <h1 className="services-hero-title">
+            Our Complete Engineering Services <br />
+            <span className="text-gradient-blue">Sports Infrastructure & Residential Construction</span>
           </h1>
 
-          <p style={{ color: "#FFFFFF", fontSize: "1.2rem", fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase", margin: "10px 0 20px 0" }}>
-            BUILDING YOUR DREAMS, BRICK BY BRICK
+          <p className="services-hero-subtitle">
+            Specialists in ITF, BWF, FIFA & IAAF Certified Synthetic Sports Courts & Arenas alongside Turnkey Luxury Residential House Construction.
           </p>
 
-          <p className="services-page-subtitle" style={{ maxWidth: "780px", margin: "0 auto", color: "#333333" }}>
-            Every discipline below is directly taken from the official architectural standards: Residential Development, Commercial Projects, Infrastructure Works, and on-site Blueprint & Hard Hat safety protocols.
-          </p>
+          <div className="services-hero-metrics">
+            <div className="metric-chip">
+              <Trophy size={16} style={{ color: "#19C8F4" }} />
+              <span>500+ Sports Arenas Completed</span>
+            </div>
+            <div className="metric-chip">
+              <Home size={16} style={{ color: "#087FEA" }} />
+              <span>Turnkey Residential Handover</span>
+            </div>
+            <div className="metric-chip">
+              <ShieldCheck size={16} style={{ color: "#FF8A00" }} />
+              <span>100% Quality Execution</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Tabs Filter Bar */}
-      <div className="services-nav-bar">
+      {/* Filter Navigation Bar */}
+      <div className="services-filter-nav">
         <div className="container">
-          <div className="services-tabs-list">
+          <div className="filter-tabs-wrapper">
             <button
-              className={`services-tab-btn ${activeTab === "all" ? "active" : ""}`}
-              onClick={() => setActiveTab("all")}
+              className={`filter-btn ${activeCategory === "all" ? "active" : ""}`}
+              onClick={() => setActiveCategory("all")}
             >
-              All Disciplines
+              All Services ({services.length})
             </button>
             <button
-              className={`services-tab-btn ${activeTab === "residential" ? "active" : ""}`}
-              onClick={() => setActiveTab("residential")}
+              className={`filter-btn ${activeCategory === "sports" ? "active" : ""}`}
+              onClick={() => setActiveCategory("sports")}
             >
-              <Home size={15} /> Residential Development
+              <Trophy size={16} /> 1. Sports Courts & Infrastructure
             </button>
             <button
-              className={`services-tab-btn ${activeTab === "commercial" ? "active" : ""}`}
-              onClick={() => setActiveTab("commercial")}
+              className={`filter-btn ${activeCategory === "residential" ? "active" : ""}`}
+              onClick={() => setActiveCategory("residential")}
             >
-              <Building2 size={15} /> Commercial Projects
-            </button>
-            <button
-              className={`services-tab-btn ${activeTab === "infrastructure" ? "active" : ""}`}
-              onClick={() => setActiveTab("infrastructure")}
-            >
-              <Tractor size={15} /> Infrastructure Works
-            </button>
-            <button
-              className={`services-tab-btn ${activeTab === "blueprints" ? "active" : ""}`}
-              onClick={() => setActiveTab("blueprints")}
-            >
-              <FileText size={15} /> Blueprints & Safety
+              <Home size={16} /> 2. Turnkey Residential Construction
             </button>
           </div>
         </div>
       </div>
 
+      {/* Interactive Tools Control Bar */}
+      <div style={{ background: "#04101F", padding: "16px 0", borderBottom: "1px solid rgba(25, 200, 244, 0.2)" }}>
+        <div className="container" style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
+          <button
+            type="button"
+            onClick={() => setShowSimulator(!showSimulator)}
+            className="btn"
+            style={{
+              background: showSimulator ? "#087FEA" : "rgba(8, 127, 234, 0.15)",
+              border: "1px solid #087FEA",
+              color: "#FFFFFF",
+              padding: "10px 20px",
+              fontSize: "0.88rem",
+              fontWeight: 700
+            }}
+          >
+            <Zap size={16} style={{ color: "#19C8F4" }} />
+            <span>{showSimulator ? "Close Court Color Simulator" : "Launch 3D Court Color Simulator"}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setShowLayersVisualizer(!showLayersVisualizer)}
+            className="btn"
+            style={{
+              background: showLayersVisualizer ? "#087FEA" : "rgba(25, 200, 244, 0.15)",
+              border: "1px solid #19C8F4",
+              color: "#FFFFFF",
+              padding: "10px 20px",
+              fontSize: "0.88rem",
+              fontWeight: 700
+            }}
+          >
+            <Layers size={16} style={{ color: "#19C8F4" }} />
+            <span>{showLayersVisualizer ? "Close 8-Layer Tech Visualizer" : "View 8-Layer Acrylic Coating Visualizer"}</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Render Court Simulator if Toggled */}
+      {showSimulator && (
+        <div className="container" style={{ marginTop: "30px" }}>
+          <CourtSimulator />
+        </div>
+      )}
+
+      {/* Render Coating Layers Visualizer if Toggled */}
+      {showLayersVisualizer && (
+        <div className="container" style={{ marginTop: "30px" }}>
+          <CoatingLayersVisualizer />
+        </div>
+      )}
+
       {/* Main Services Grid */}
-      <section className="section-padding services-main-content">
+      <section className="section-padding services-main-section">
         <div className="container">
-          <div className="services-deep-grid">
+          <div className="services-cards-grid">
             {filteredServices.map((service) => {
               const Icon = service.icon;
               return (
-                <div key={service.id} className="service-deep-card" style={{ overflow: "hidden" }}>
-                  <div className="deep-card-top-accent" />
-
-                  <div style={{ width: "100%", height: "125px", overflow: "hidden", position: "relative" }}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                    />
-                    <span className="badge-gold" style={{ position: "absolute", bottom: "10px", left: "12px", background: "rgba(15,23,42,0.85)" }}>
-                      Active Structure Photo
-                    </span>
+                <div key={service.id} className="service-pro-card">
+                  {/* Image Header with Badge */}
+                  <div className="card-image-wrap">
+                    <img src={service.image} alt={service.title} className="card-image" />
+                    <span className="card-top-badge">{service.badge}</span>
+                    {service.popular && (
+                      <span className="card-popular-pill">
+                        <Sparkles size={13} /> Popular Service
+                      </span>
+                    )}
                   </div>
 
-                  <div className="deep-card-body">
-                    <div className="deep-card-header">
-                      <div className="deep-icon-box">
-                        <Icon size={26} />
+                  {/* Card Content Body */}
+                  <div className="card-body">
+                    <div className="card-header-row">
+                      <div className="icon-badge">
+                        <Icon size={24} style={{ color: "#087FEA" }} />
                       </div>
-                      <span className="badge-gold deep-badge">
-                        {service.categoryName}
-                      </span>
+                      <span className="category-tag">{service.categoryName}</span>
                     </div>
 
-                    <h2 className="deep-card-title">{service.title}</h2>
-                    <p className="deep-card-description">{service.description}</p>
+                    <h2 className="card-title">{service.title}</h2>
+                    <p className="card-description">{service.description}</p>
 
                     {/* Scope Checklist */}
-                    <div className="deep-scope-section">
-                      <h3 className="deep-section-label">Discipline Scope:</h3>
-                      <ul className="deep-scope-list">
+                    <div className="scope-box">
+                      <div className="scope-title">Key Service Scope:</div>
+                      <ul className="scope-list">
                         {service.scope.map((item, idx) => (
                           <li key={idx}>
-                            <CheckCircle2 size={16} className="text-amber" />
+                            <CheckCircle2 size={15} style={{ color: "#087FEA", flexShrink: 0, marginTop: "2px" }} />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    {/* Specifications */}
-                    <div className="deep-specs-row">
-                      <div className="deep-spec-item">
-                        <span className="spec-label">Timeline</span>
-                        <span className="spec-val">{service.timeline}</span>
-                      </div>
-                      <div className="deep-spec-item">
-                        <span className="spec-label">Safety</span>
-                        <span className="spec-val">Hard Hat Protocol</span>
-                      </div>
-                      <div className="deep-spec-item">
-                        <span className="spec-label">Standard</span>
-                        <span className="spec-val">Brick by Brick</span>
-                      </div>
-                    </div>
-
-                    {/* Card Actions */}
-                    <div className="deep-card-actions">
+                    {/* Action Buttons */}
+                    <div className="card-actions-row">
                       <button
                         onClick={() => onOpenQuote(service.title)}
                         className="btn btn-primary"
-                        style={{ width: "100%", justifyContent: "center" }}
+                        style={{ flex: 1, justifyContent: "center" }}
                       >
-                        <span>Inquire About {service.categoryName}</span>
+                        <span>Inquire Spec</span>
                         <ArrowRight size={16} />
                       </button>
+
+                      <a
+                        href="tel:+919636365391"
+                        className="call-direct-btn"
+                        title="Call Engineering Desk"
+                      >
+                        <PhoneCall size={18} style={{ color: "#19C8F4" }} />
+                      </a>
                     </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Engineering Consultation Callout Banner */}
+      <section className="consultation-callout-section">
+        <div className="container">
+          <div className="consultation-banner-box">
+            <div className="consultation-content">
+              <div className="consultation-pill">
+                <Sparkles size={15} style={{ color: "#19C8F4" }} />
+                <span>DIRECT TECHNICAL DESK</span>
+              </div>
+              <h2 className="consultation-title">
+                Ready to Start Your Sports Arena or Residential House Construction?
+              </h2>
+              <p className="consultation-text">
+                Speak directly with SB SPORTS & CONSTRUCTION engineers for site inspection, CAD drawings, turf specs, and turnkey estimates.
+              </p>
+            </div>
+
+            <div className="consultation-actions">
+              <button
+                onClick={() => onOpenQuote("General Inquiry")}
+                className="btn btn-primary btn-glow"
+                style={{ padding: "16px 32px", fontSize: "1.05rem" }}
+              >
+                <span>Request Free Estimate</span>
+                <ArrowRight size={18} />
+              </button>
+
+              <a
+                href="tel:+919636365391"
+                className="direct-phone-link"
+              >
+                <PhoneCall size={18} style={{ color: "#19C8F4" }} />
+                <span>Call Hotline: <strong>+91-9636365391</strong></span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

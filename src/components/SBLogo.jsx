@@ -1,67 +1,73 @@
 import React from "react";
+import logoImg from "../assets/SB.jpeg";
 
 /**
- * SBLogo: Clean black & white architectural & sports line-art logo
- * featuring the iconic SB monogram and bold SB SPORTS & CONSTRUCTION typography.
+ * SBLogo: Premium brand logo component using SB.jpeg asset
+ * with Royal Blue (#087FEA), Electric Cyan (#19C8F4), and Orange (#FF8A00) accents.
  */
-export default function SBLogo({ size = "md", showText = true, className = "" }) {
+export default function SBLogo({ size = "md", showText = true, className = "", variant = "dark" }) {
   const sizeMap = {
-    sm: { iconWidth: 38, iconHeight: 38, titleSize: "1.1rem", subSize: "0.55rem" },
-    md: { iconWidth: 50, iconHeight: 50, titleSize: "1.35rem", subSize: "0.65rem" },
-    lg: { iconWidth: 70, iconHeight: 70, titleSize: "1.85rem", subSize: "0.8rem" },
-    xl: { iconWidth: 96, iconHeight: 96, titleSize: "2.5rem", subSize: "1.05rem" }
+    sm: { iconSize: 36, titleSize: "0.98rem", subSize: "0.55rem", gap: "10px" },
+    md: { iconSize: 44, titleSize: "1.18rem", subSize: "0.6rem", gap: "12px" },
+    lg: { iconSize: 56, titleSize: "1.5rem", subSize: "0.72rem", gap: "14px" },
+    xl: { iconSize: 76, titleSize: "2.0rem", subSize: "0.88rem", gap: "16px" }
   };
 
   const currentSize = sizeMap[size] || sizeMap.md;
+  const isLight = variant === "light";
 
   return (
-    <div className={`sb-brand-logo ${className}`} style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}>
-      {/* Clean Architectural Black & White SB Monogram Icon */}
-      <svg
-        width={currentSize.iconWidth}
-        height={currentSize.iconHeight}
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ flexShrink: 0 }}
+    <div
+      className={`sb-brand-logo ${className}`}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: currentSize.gap,
+        userSelect: "none"
+      }}
+    >
+      {/* Logo Image Frame */}
+      <div
+        style={{
+          position: "relative",
+          width: currentSize.iconSize,
+          height: currentSize.iconSize,
+          borderRadius: "8px",
+          overflow: "hidden",
+          background: "#FFFFFF",
+          border: "2px solid #087FEA",
+          boxShadow: "0 4px 14px rgba(8, 127, 234, 0.25)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+          padding: "2px"
+        }}
       >
-        {/* Outer Minimalist Black Frame */}
-        <rect x="5" y="5" width="110" height="110" rx="10" fill="#FFFFFF" stroke="#000000" strokeWidth="4" />
-        
-        {/* 'S' Stylized Sports Ribbon Line */}
-        <path
-          d="M48 34 C36 34 30 40 30 48 C30 58 48 60 48 70 C48 78 40 84 30 84"
-          fill="none"
-          stroke="#000000"
-          strokeWidth="6"
-          strokeLinecap="round"
+        <img
+          src={logoImg}
+          alt="SB SPORTS & CONSTRUCTION"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            borderRadius: "4px",
+            display: "block"
+          }}
         />
+      </div>
 
-        {/* 'B' Stylized Architecture & Pillar Tower */}
-        <path
-          d="M62 32 L62 86 M62 32 L82 32 C92 32 92 56 62 56 M62 56 L85 56 C96 56 96 86 62 86"
-          fill="none"
-          stroke="#000000"
-          strokeWidth="6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-
-        {/* Diagonal Baseline Architecture & Arena Track Stroke */}
-        <line x1="16" y1="100" x2="104" y2="100" stroke="#000000" strokeWidth="4" strokeLinecap="round" />
-        <circle cx="98" cy="22" r="4" fill="#000000" />
-      </svg>
-
-      {/* Brand Text Elements in Pure Black */}
+      {/* Brand Text */}
       {showText && (
-        <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.05, textAlign: "left" }}>
+        <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.1, textAlign: "left" }}>
           <span
             style={{
               fontSize: currentSize.titleSize,
-              fontWeight: 900,
-              letterSpacing: "0.06em",
-              fontFamily: "'Outfit', 'Plus Jakarta Sans', sans-serif",
-              color: "#000000"
+              fontWeight: 800,
+              letterSpacing: "0.04em",
+              fontFamily: "'Manrope', sans-serif",
+              color: isLight ? "#FFFFFF" : "#071A33",
+              textTransform: "uppercase"
             }}
           >
             SB SPORTS
@@ -70,10 +76,10 @@ export default function SBLogo({ size = "md", showText = true, className = "" })
             style={{
               fontSize: currentSize.subSize,
               fontWeight: 800,
-              letterSpacing: "0.20em",
-              color: "#000000",
+              letterSpacing: "0.16em",
+              color: "#087FEA",
               textTransform: "uppercase",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: "'Manrope', sans-serif",
               marginTop: "2px"
             }}
           >
@@ -86,3 +92,6 @@ export default function SBLogo({ size = "md", showText = true, className = "" })
 }
 
 export { SBLogo };
+
+
+

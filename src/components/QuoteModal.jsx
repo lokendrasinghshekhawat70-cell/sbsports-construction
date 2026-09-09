@@ -6,22 +6,25 @@ import {
   Mail,
   Building,
   ShieldCheck,
-  Check,
   Clock,
   Layers,
-  FileText
+  FileText,
+  Phone,
+  Sparkles
 } from "lucide-react";
 
 export default function QuoteModal({ isOpen, onClose, initialData }) {
   const [formData, setFormData] = useState({
     projectTitle: "",
     email: "",
-    projectType: "Residential Development (House & Roofing)",
-    estimatedArea: "2,500 sq ft",
+    phone: "",
+    projectType: "Synthetic Sports Court Construction",
+    estimatedArea: "3,000 sq ft",
     timelineTarget: "Next 1-3 Months",
     notes: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
 
   useEffect(() => {
     if (initialData) {
@@ -38,9 +41,33 @@ export default function QuoteModal({ isOpen, onClose, initialData }) {
 
   if (!isOpen) return null;
 
+  const validatePhone = (phoneNumber) => {
+    const digitsOnly = phoneNumber.replace(/[^0-9]/g, "");
+    return digitsOnly.length === 10;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validatePhone(formData.phone)) {
+      setPhoneError("Kripya poore 10-digit ka valid mobile number enter karein.");
+      return;
+    }
+    setPhoneError("");
     setIsSubmitted(true);
+
+    const text = encodeURIComponent(
+      `Hello SB Sports & Construction!\n\n` +
+      `📌 *NEW ESTIMATE & QUOTE REQUEST*\n` +
+      `-----------------------------------\n` +
+      `👤 *Name/Org:* ${formData.projectTitle || "N/A"}\n` +
+      `📞 *Phone:* ${formData.phone || "N/A"}\n` +
+      `✉️ *Email:* ${formData.email || "N/A"}\n` +
+      `🏗️ *Discipline:* ${formData.projectType || "N/A"}\n` +
+      `📝 *Notes & Plot Specs:* ${formData.notes || "N/A"}\n` +
+      `-----------------------------------\n` +
+      `Please provide engineering estimate & site inspection schedule.`
+    );
+    window.open(`https://wa.me/919636365391?text=${text}`, "_blank");
   };
 
   const handleReset = () => {
@@ -49,251 +76,268 @@ export default function QuoteModal({ isOpen, onClose, initialData }) {
   };
 
   return (
-    <div className="modal-overlay" onClick={handleReset}>
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: "rgba(4, 16, 31, 0.75)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        zIndex: 2500,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "20px"
+      }}
+      onClick={handleReset}
+    >
       <div
-        className="quote-modal"
-        onClick={(e) => e.stopPropagation()}
+        className="clean-card"
         style={{
+          maxWidth: "650px",
+          width: "100%",
+          maxHeight: "90vh",
+          overflowY: "auto",
+          padding: "36px",
           background: "#FFFFFF",
-          border: "2px solid #000000",
-          boxShadow: "0 10px 40px rgba(0,0,0,0.15)",
-          color: "#000000"
+          borderColor: "#DCE4EC",
+          position: "relative"
         }}
+        onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="modal-close-btn"
           onClick={handleReset}
           aria-label="Close dialog"
-          style={{ color: "#000000", border: "1px solid #000000", background: "#FFFFFF" }}
+          style={{
+            position: "absolute",
+            top: "20px",
+            right: "20px",
+            background: "#F4F7FA",
+            border: "1px solid #DCE4EC",
+            color: "#071A33",
+            width: "36px",
+            height: "36px",
+            borderRadius: "6px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer"
+          }}
         >
           <X size={20} />
         </button>
 
         {!isSubmitted ? (
           <div>
-            <div className="modal-top-header" style={{ borderBottom: "1px solid #000000", paddingBottom: "16px", marginBottom: "20px" }}>
+            <div style={{ borderBottom: "1px solid #DCE4EC", paddingBottom: "18px", marginBottom: "20px" }}>
               <div
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "6px",
-                  border: "1px solid #000000",
+                  background: "rgba(8, 127, 234, 0.1)",
+                  border: "1px solid rgba(8, 127, 234, 0.25)",
+                  color: "#087FEA",
                   padding: "4px 12px",
-                  fontSize: "0.78rem",
-                  fontWeight: 800,
-                  marginBottom: "8px",
-                  background: "#FFFFFF",
-                  color: "#000000"
+                  borderRadius: "6px",
+                  fontSize: "0.75rem",
+                  fontWeight: 700,
+                  marginBottom: "10px"
                 }}
               >
-                <Clock size={13} style={{ color: "#000000" }} /> TECHNICAL PLANNING DESK
+                <Clock size={12} /> TECHNICAL PLANNING DESK
               </div>
-              <h3 className="quote-modal-title" style={{ color: "#000000", fontWeight: 900 }}>
-                SB SPORTS & CONSTRUCTION Project Inquiry
+              <h3 style={{ color: "#071A33", fontWeight: 800, fontSize: "1.4rem", margin: "0 0 6px 0" }}>
+                SB SPORTS & CONSTRUCTION Project Consultation
               </h3>
-              <p className="quote-modal-sub" style={{ color: "#333333" }}>
-                Official Blueprint & Engineering Review: Residential Development, Commercial Projects, Sports Arenas, and Infrastructure Works.
+              <p style={{ color: "#64748B", fontSize: "0.88rem", margin: 0, lineHeight: 1.5 }}>
+                Request an official estimate & engineering site audit for Sports Courts, Acrylic Coatings, Commercial Projects, or Luxury Villas.
               </p>
             </div>
 
             {initialData && initialData.estimatedCost && (
               <div
                 style={{
-                  background: "#FFFFFF",
-                  border: "1px solid #000000",
-                  padding: "8px 14px",
-                  marginBottom: "16px",
+                  background: "rgba(8, 127, 234, 0.1)",
+                  border: "1px solid rgba(8, 127, 234, 0.3)",
+                  padding: "10px 16px",
+                  borderRadius: "6px",
+                  marginBottom: "20px",
                   fontSize: "0.88rem",
                   fontWeight: 700,
-                  color: "#000000"
+                  color: "#087FEA"
                 }}
               >
                 Attached Estimate: {initialData.estimatedCost} • {initialData.sqft} sq ft ({initialData.tier})
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="quote-modal-form">
-              <div className="form-grid-2">
-                <div className="form-field">
-                  <label className="field-label" style={{ color: "#000000", fontWeight: 700 }}>
-                    <FileText size={14} style={{ color: "#000000" }} /> Project Scope / Organization *
+            <form onSubmit={handleSubmit}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
+                <div>
+                  <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#071A33", marginBottom: "6px" }}>
+                    Project Name / Organization *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. 5-Acre Residential Layout / Commercial High-Rise"
-                    className="modal-input"
+                    placeholder="e.g. Metro Sports Club"
                     value={formData.projectTitle}
                     onChange={(e) => setFormData({ ...formData, projectTitle: e.target.value })}
-                    style={{ background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
+                    style={{
+                      width: "100%",
+                      padding: "12px 14px",
+                      background: "#F4F7FA",
+                      border: "1px solid #DCE4EC",
+                      borderRadius: "6px",
+                      color: "#071A33",
+                      fontSize: "0.9rem",
+                      outline: "none"
+                    }}
                   />
                 </div>
 
-                <div className="form-field">
-                  <label className="field-label" style={{ color: "#000000", fontWeight: 700 }}>
-                    <Mail size={14} style={{ color: "#000000" }} /> Official Planning Email *
+                <div>
+                  <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#071A33", marginBottom: "6px" }}>
+                    Phone Number (10 Digits) *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    maxLength={10}
+                    placeholder="Enter 10-Digit Mobile Number"
+                    value={formData.phone}
+                    onChange={(e) => {
+                      const val = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+                      setFormData({ ...formData, phone: val });
+                      if (phoneError) setPhoneError("");
+                    }}
+                    style={{
+                      width: "100%",
+                      padding: "12px 14px",
+                      background: "#F4F7FA",
+                      border: phoneError ? "1px solid #FF4D4D" : "1px solid #DCE4EC",
+                      borderRadius: "6px",
+                      color: "#071A33",
+                      fontSize: "0.9rem",
+                      outline: "none"
+                    }}
+                  />
+                  {phoneError && (
+                    <div style={{ color: "#FF4D4D", fontSize: "0.78rem", marginTop: "4px", fontWeight: 700 }}>
+                      {phoneError}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
+                <div>
+                  <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#071A33", marginBottom: "6px" }}>
+                    Official Email *
                   </label>
                   <input
                     type="email"
                     required
-                    placeholder="planning@organization.com"
-                    className="modal-input"
+                    placeholder="planning@org.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    style={{ background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
+                    style={{
+                      width: "100%",
+                      padding: "12px 14px",
+                      background: "#F4F7FA",
+                      border: "1px solid #DCE4EC",
+                      borderRadius: "6px",
+                      color: "#071A33",
+                      fontSize: "0.9rem",
+                      outline: "none"
+                    }}
                   />
                 </div>
-              </div>
 
-              <div className="form-grid-2">
-                <div className="form-field">
-                  <label className="field-label" style={{ color: "#000000", fontWeight: 700 }}>
-                    <Building size={14} style={{ color: "#000000" }} /> Construction Discipline *
+                <div>
+                  <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#071A33", marginBottom: "6px" }}>
+                    Discipline / Category *
                   </label>
                   <select
-                    className="modal-input"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    style={{ background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
+                    style={{
+                      width: "100%",
+                      padding: "12px 14px",
+                      background: "#F4F7FA",
+                      border: "1px solid #DCE4EC",
+                      borderRadius: "6px",
+                      color: "#071A33",
+                      fontSize: "0.9rem",
+                      outline: "none"
+                    }}
                   >
-                    <option value="Residential Development (House & Roofing)">Residential Development (House & Roofing)</option>
-                    <option value="Commercial Projects (Multi-Story & Cranes)">Commercial Projects (Multi-Story & Cranes)</option>
-                    <option value="Sports Court & Synthetic Coating (Acrylic/Turf)">Sports Court & Synthetic Coating (Acrylic/Turf)</option>
-                    <option value="Infrastructure Works (Excavation & Foundations)">Infrastructure Works (Excavation & Foundations)</option>
-                    <option value="Architectural Blueprints & Structural Engineering">Architectural Blueprints & Structural Engineering</option>
-                  </select>
-                </div>
-
-                <div className="form-field">
-                  <label className="field-label" style={{ color: "#000000", fontWeight: 700 }}>
-                    <Layers size={14} style={{ color: "#000000" }} /> Groundbreaking Timeline
-                  </label>
-                  <select
-                    className="modal-input"
-                    value={formData.timelineTarget}
-                    onChange={(e) => setFormData({ ...formData, timelineTarget: e.target.value })}
-                    style={{ background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
-                  >
-                    <option value="Immediate (Ready for Excavation)">Immediate (Ready for Excavation)</option>
-                    <option value="Next 1-3 Months">Next 1-3 Months</option>
-                    <option value="3-6 Months">3-6 Months</option>
-                    <option value="Planning & Feasibility Phase">Planning & Feasibility Phase</option>
+                    <option value="Synthetic Sports Court Construction">Synthetic Sports Court Construction (Tennis/Basketball/Badminton)</option>
+                    <option value="Box Cricket & Futsal Turf Arena">Box Cricket & Futsal Turf Arena</option>
+                    <option value="8-Layer ITF Acrylic Resurfacing">8-Layer ITF Acrylic Resurfacing</option>
+                    <option value="Turnkey Residential House Construction">Turnkey Residential House & Villa Construction</option>
                   </select>
                 </div>
               </div>
 
-              <div className="form-field">
-                <label className="field-label" style={{ color: "#000000", fontWeight: 700 }}>
-                  Site Location, Plot Dimensions & Engineering Notes
+              <div style={{ marginBottom: "20px" }}>
+                <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#071A33", marginBottom: "6px" }}>
+                  Plot Location, Dimensions & Specific Notes
                 </label>
                 <textarea
                   rows="3"
-                  placeholder="Share site details: plot dimensions, municipal zone, architectural specifics..."
-                  className="modal-input modal-textarea"
+                  placeholder="Dimensions, court colors, sub-base condition, target completion date..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  style={{ background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
+                  style={{
+                    width: "100%",
+                    padding: "12px 14px",
+                    background: "#F4F7FA",
+                    border: "1px solid #DCE4EC",
+                    borderRadius: "6px",
+                    color: "#071A33",
+                    fontSize: "0.9rem",
+                    outline: "none",
+                    resize: "vertical"
+                  }}
                 />
               </div>
 
-              <div className="modal-submit-row">
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  style={{
-                    width: "100%",
-                    background: "#000000",
-                    color: "#FFFFFF",
-                    border: "1px solid #000000",
-                    fontWeight: 800,
-                    padding: "14px 20px"
-                  }}
-                >
-                  <Send size={16} />
-                  <span>Submit Blueprint & Engineering Inquiry</span>
-                </button>
-              </div>
-
-              <div
-                className="modal-privacy-note"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "4px",
-                  color: "#333333",
-                  fontSize: "0.8rem",
-                  marginTop: "12px"
-                }}
+              <button
+                type="submit"
+                className="btn btn-primary"
+                style={{ width: "100%", justifyContent: "center", padding: "14px" }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <ShieldCheck size={14} style={{ color: "#000000" }} />
-                  <span>Class-1 Civil Construction Standards • Institutional Confidentiality</span>
-                </div>
-                <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#000000" }}>
-                  Direct Helpline: <a href="tel:+919636365391" style={{ color: "#000000", textDecoration: "underline" }}>+91-9636365391</a> • <a href="mailto:sbsportsandconstruction@gmail.com" style={{ color: "#000000", textDecoration: "underline" }}>sbsportsandconstruction@gmail.com</a>
-                </div>
+                <Sparkles size={16} />
+                <span>Submit Blueprint & Estimate Request</span>
+              </button>
+
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", color: "#64748B", fontSize: "0.78rem", marginTop: "14px" }}>
+                <ShieldCheck size={14} style={{ color: "#087FEA" }} />
+                <span>ISO 9001:2015 Civil Standards • Confidentiality Assured</span>
               </div>
             </form>
           </div>
         ) : (
-          <div className="modal-success-screen" style={{ textAlign: "center", padding: "20px 0" }}>
-            <div className="success-icon-wrap" style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
-              <CheckCircle size={52} style={{ color: "#000000" }} />
-            </div>
-            <h3 className="success-title" style={{ color: "#000000", fontWeight: 900, fontSize: "1.4rem" }}>
+          <div style={{ textAlign: "center", padding: "20px 0" }}>
+            <CheckCircle size={54} style={{ color: "#087FEA", margin: "0 auto 16px auto" }} />
+            <h3 style={{ color: "#071A33", fontWeight: 800, fontSize: "1.5rem", marginBottom: "8px" }}>
               Inquiry Dispatched to Engineering Desk
             </h3>
-            <p className="success-desc" style={{ color: "#333333", maxWidth: "480px", margin: "0 auto 20px auto" }}>
-              Your technical dossier for <strong>{formData.projectTitle || "Site Development"}</strong> has been registered with SB SPORTS & CONSTRUCTION.
+            <p style={{ color: "#64748B", maxWidth: "480px", margin: "0 auto 24px auto", fontSize: "0.95rem" }}>
+              Your dossier for <strong>{formData.projectTitle || "Sports & Construction Facility"}</strong> has been registered with SB SPORTS & CONSTRUCTION.
             </p>
-
-            <div
-              className="success-ticket-box"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "16px",
-                margin: "0 auto 24px auto",
-                maxWidth: "460px",
-                textAlign: "left",
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px"
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid #E5E5E5", paddingBottom: "6px" }}>
-                <span style={{ color: "#555555" }}>Inquiry Reference:</span>
-                <strong style={{ color: "#000000" }}>#SB-{Math.floor(1000 + Math.random() * 9000)}</strong>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid #E5E5E5", paddingBottom: "6px" }}>
-                <span style={{ color: "#555555" }}>Construction Discipline:</span>
-                <span style={{ color: "#000000", fontWeight: 700 }}>{formData.projectType}</span>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "1px solid #E5E5E5", paddingBottom: "6px" }}>
-                <span style={{ color: "#555555" }}>Official Planning Email:</span>
-                <span style={{ color: "#000000", fontWeight: 700 }}>{formData.email}</span>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <span style={{ color: "#555555" }}>Review Status:</span>
-                <span style={{ color: "#000000", fontWeight: 800 }}>Assigned to Senior Structural Engineer</span>
-              </div>
-            </div>
 
             <button
               onClick={handleReset}
               className="btn btn-primary"
-              style={{
-                width: "100%",
-                background: "#000000",
-                color: "#FFFFFF",
-                border: "1px solid #000000",
-                fontWeight: 800,
-                padding: "12px 20px"
-              }}
+              style={{ width: "100%", justifyContent: "center", background: "#087FEA", color: "#FFFFFF" }}
             >
-              <span>Done & Return to Blueprints</span>
+              <span>Return to Website</span>
             </button>
           </div>
         )}

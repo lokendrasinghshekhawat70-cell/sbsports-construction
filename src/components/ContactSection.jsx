@@ -8,81 +8,113 @@ import {
   ShieldCheck,
   CheckCircle2,
   Building,
-  Building2,
   HardHat,
-  FileText
+  Sparkles,
+  MessageSquare
 } from "lucide-react";
 
 export default function ContactSection({ onOpenQuote }) {
   const [inquirySent, setInquirySent] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
   const [fastInput, setFastInput] = useState({
     organization: "",
     email: "",
-    service: "Residential Development (House & Roofing)",
+    phone: "",
+    service: "Synthetic Sports Court Construction",
     notes: ""
   });
 
+  const validatePhone = (phoneNumber) => {
+    const digitsOnly = phoneNumber.replace(/[^0-9]/g, "");
+    if (digitsOnly.length !== 10) {
+      return false;
+    }
+    return true;
+  };
+
   const handleFastSubmit = (e) => {
     e.preventDefault();
+    if (!validatePhone(fastInput.phone)) {
+      setPhoneError("Kripya poore 10-digit ka valid mobile number enter karein.");
+      return;
+    }
+    setPhoneError("");
     setInquirySent(true);
+
+    const text = encodeURIComponent(
+      `Hello SB Sports & Construction!\n\n` +
+      `📌 *NEW SITE INTAKE & ESTIMATE REQUEST*\n` +
+      `-----------------------------------\n` +
+      `👤 *Name/Org:* ${fastInput.organization || "N/A"}\n` +
+      `📞 *Phone:* ${fastInput.phone || "N/A"}\n` +
+      `✉️ *Email:* ${fastInput.email || "N/A"}\n` +
+      `🏗️ *Discipline:* ${fastInput.service || "N/A"}\n` +
+      `📝 *Notes & Specs:* ${fastInput.notes || "N/A"}\n` +
+      `-----------------------------------\n` +
+      `Please contact for site inspection & quote.`
+    );
+    window.open(`https://wa.me/919636365391?text=${text}`, "_blank");
+  };
+
+  const openWhatsApp = () => {
+    if (!validatePhone(fastInput.phone)) {
+      setPhoneError("Kripya poore 10-digit ka valid mobile number enter karein.");
+      return;
+    }
+    setPhoneError("");
+    const text = encodeURIComponent(
+      `Hello SB Sports & Construction!\nName/Org: ${fastInput.organization}\nService: ${fastInput.service}\nPhone: ${fastInput.phone}\nNotes: ${fastInput.notes}`
+    );
+    window.open(`https://wa.me/919636365391?text=${text}`, "_blank");
   };
 
   return (
-    <section id="contact" className="section-padding contact-section" style={{ background: "#FFFFFF", color: "#000000" }}>
+    <section id="contact" className="section-padding contact-section" style={{ background: "#071A33", color: "#FFFFFF" }}>
       <div className="container">
-        <div className="section-header" style={{ textAlign: "center", marginBottom: "40px" }}>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              border: "1px solid #000000",
-              background: "#FFFFFF",
-              color: "#000000",
-              padding: "4px 16px",
-              fontWeight: 800,
-              fontSize: "0.8rem",
-              marginBottom: "12px"
-            }}
-          >
-            <HardHat size={14} style={{ color: "#000000" }} />
-            <span>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
+        {/* Section Header */}
+        <div className="section-header">
+          <div className="section-pill" style={{ background: "rgba(8, 127, 234, 0.15)", borderColor: "rgba(25, 200, 244, 0.3)" }}>
+            <HardHat size={15} style={{ color: "#19C8F4" }} />
+            <span style={{ color: "#19C8F4" }}>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
           </div>
-          <h2 className="section-title" style={{ color: "#000000", fontWeight: 900, fontSize: "clamp(1.6rem, 3.2vw, 2.4rem)", letterSpacing: "0.04em", margin: "0 0 10px 0" }}>
-            SUBMIT PROJECT REQUIREMENTS
+          <h2 className="section-title" style={{ color: "#FFFFFF" }}>
+            Submit Your Project Specifications <br />
+            <span className="text-gradient-blue">& Request Site Inspection</span>
           </h2>
-          <p className="section-subtitle" style={{ color: "#333333", maxWidth: "760px", margin: "0 auto", fontSize: "0.98rem", lineHeight: 1.6 }}>
-            Connect directly with the SB SPORTS & CONSTRUCTION architectural engineering desk for Sports Arenas, Synthetic Coatings, Residential Development, Commercial Projects, and Infrastructure Works. Building your dreams, brick by brick.
+          <p className="section-subtitle" style={{ color: "#D9E2EA" }}>
+            Connect directly with our engineering desk for Sports Arenas, ITF Synthetic Coatings, Box Cricket Turfs, and Turnkey House Construction Projects.
           </p>
         </div>
 
-        <div className="contact-main-grid">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px", alignItems: "start" }}>
           {/* Left Column: Technical Desks */}
-          <div className="contact-info-cards-col">
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             {/* Direct Phone Helpline Card */}
             <div
-              className="contact-card"
               style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "20px",
-                marginBottom: "16px"
+                padding: "26px",
+                background: "#04101F",
+                border: "1px solid rgba(25, 200, 244, 0.25)",
+                borderRadius: "10px",
+                boxShadow: "0 8px 30px rgba(4, 16, 31, 0.5)"
               }}
             >
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <div style={{ padding: "8px", border: "1px solid #000000", background: "#FFFFFF", color: "#000000" }}>
-                  <PhoneCall size={22} />
+              <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#19C8F4", flexShrink: 0 }}>
+                  <PhoneCall size={24} />
                 </div>
                 <div>
-                  <div style={{ color: "#000000", fontWeight: 800, fontSize: "0.95rem" }}>Direct Contact & WhatsApp Helpline</div>
+                  <div style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "1.05rem", marginBottom: "4px" }}>
+                    Direct Call & WhatsApp Hotline
+                  </div>
                   <a
                     href="tel:+919636365391"
-                    style={{ color: "#000000", fontSize: "1.1rem", fontWeight: 900, textDecoration: "underline", display: "inline-block", marginTop: "2px" }}
+                    style={{ color: "#19C8F4", fontSize: "1.25rem", fontWeight: 800, textDecoration: "none", display: "inline-block" }}
                   >
                     +91-9636365391
                   </a>
-                  <div style={{ color: "#555555", fontSize: "0.8rem", marginTop: "2px" }}>
-                    Instant consultation for Sports Courts, Synthetic Coatings & Construction
+                  <div style={{ color: "#94A3B8", fontSize: "0.85rem", marginTop: "4px" }}>
+                    Instant consultation for Sports Courts, Turfs & Turnkey Construction
                   </div>
                 </div>
               </div>
@@ -90,79 +122,58 @@ export default function ContactSection({ onOpenQuote }) {
 
             {/* Official Email Card */}
             <div
-              className="contact-card"
               style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "20px",
-                marginBottom: "16px"
+                padding: "26px",
+                background: "#04101F",
+                border: "1px solid rgba(25, 200, 244, 0.25)",
+                borderRadius: "10px",
+                boxShadow: "0 8px 30px rgba(4, 16, 31, 0.5)"
               }}
             >
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <div style={{ padding: "8px", border: "1px solid #000000", background: "#FFFFFF", color: "#000000" }}>
-                  <Mail size={22} />
+              <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#19C8F4", flexShrink: 0 }}>
+                  <Mail size={24} />
                 </div>
                 <div>
-                  <div style={{ color: "#000000", fontWeight: 800, fontSize: "0.95rem" }}>Official Planning & Tender Submissions</div>
+                  <div style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "1.05rem", marginBottom: "4px" }}>
+                    Planning & Tender Submissions
+                  </div>
                   <a
                     href="mailto:sbsportsandconstruction@gmail.com"
-                    style={{ color: "#000000", fontSize: "0.95rem", fontWeight: 800, textDecoration: "underline", display: "inline-block", marginTop: "2px" }}
+                    style={{ color: "#D9E2EA", fontSize: "0.98rem", fontWeight: 600, textDecoration: "none", display: "inline-block" }}
                   >
                     sbsportsandconstruction@gmail.com
                   </a>
-                  <div style={{ color: "#555555", fontSize: "0.8rem", marginTop: "2px" }}>
-                    Send CAD drawings, court specifications, or architectural blueprints
+                  <div style={{ color: "#94A3B8", fontSize: "0.85rem", marginTop: "4px" }}>
+                    Send CAD drawings, site dimensions, or blueprint specs
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Project Engineering & Planning Desk */}
+            {/* Engineering Standards Card */}
             <div
-              className="contact-card"
               style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "20px",
-                marginBottom: "16px"
+                padding: "26px",
+                background: "#04101F",
+                border: "1px solid rgba(25, 200, 244, 0.25)",
+                borderRadius: "10px",
+                boxShadow: "0 8px 30px rgba(4, 16, 31, 0.5)"
               }}
             >
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <div style={{ padding: "8px", border: "1px solid #000000", background: "#FFFFFF", color: "#000000" }}>
-                  <Building size={22} />
+              <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#19C8F4", flexShrink: 0 }}>
+                  <ShieldCheck size={24} />
                 </div>
                 <div>
-                  <div style={{ color: "#000000", fontWeight: 800, fontSize: "0.95rem" }}>Project Engineering & Planning Desk</div>
-                  <div style={{ color: "#000000", fontSize: "0.9rem", fontWeight: 700, marginTop: "2px" }}>
-                    Online Technical Assessment & Blueprint Reviews
+                  <div style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "1.05rem", marginBottom: "4px" }}>
+                    ISO Certified Civil Engineering Standards
                   </div>
-                  <div style={{ color: "#555555", fontSize: "0.8rem", marginTop: "2px" }}>Active Support Desk • Monday through Saturday 8:00 AM – 8:00 PM</div>
-                </div>
-              </div>
-            </div>
-
-
-
-            {/* Civil Licensing Card */}
-            <div
-              className="contact-card"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "20px"
-              }}
-            >
-              <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                <div style={{ padding: "8px", border: "1px solid #000000", background: "#FFFFFF", color: "#000000" }}>
-                  <ShieldCheck size={22} />
-                </div>
-                <div>
-                  <div style={{ color: "#000000", fontWeight: 800, fontSize: "0.95rem" }}>Civil Engineering Standards</div>
-                  <div style={{ color: "#000000", fontSize: "0.9rem", fontWeight: 800, marginTop: "2px" }}>
-                    Class-1 Certified Infrastructure
+                  <div style={{ color: "#19C8F4", fontSize: "0.9rem", fontWeight: 700 }}>
+                    Certified Engineering Audits & Quality Guarantee
                   </div>
-                  <div style={{ color: "#555555", fontSize: "0.8rem", marginTop: "2px" }}>
-                    Full Structural Engineering Audits • Laser Screed Quality Verification • 100% Certified Standards
+                  <div style={{ color: "#94A3B8", fontSize: "0.85rem", marginTop: "4px" }}>
+                    Full structural audits, laser-screed precision level, and zero-puddle slope gradients.
                   </div>
                 </div>
               </div>
@@ -170,165 +181,232 @@ export default function ContactSection({ onOpenQuote }) {
           </div>
 
           {/* Right Column: Project Requirements Form Card */}
-          <div className="contact-form-col" id="quick-form">
-            <div
-              style={{
-                background: "#FFFFFF",
-                border: "2px solid #000000",
-                padding: "28px",
-                color: "#000000"
-              }}
-            >
-              <div style={{ borderBottom: "1px solid #000000", paddingBottom: "14px", marginBottom: "18px" }}>
-                <div
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    border: "1px solid #000000",
-                    padding: "3px 10px",
-                    fontSize: "0.75rem",
-                    fontWeight: 800,
-                    marginBottom: "8px"
-                  }}
-                >
-                  <Clock size={12} /> TECHNICAL BLUEPRINT INTAKE
-                </div>
-                <h3 style={{ color: "#000000", fontWeight: 900, fontSize: "1.25rem", margin: "0 0 6px 0" }}>
-                  Request Project Consultation
-                </h3>
-                <p style={{ color: "#444444", fontSize: "0.88rem", lineHeight: 1.5, margin: 0 }}>
-                  Submit your site specifications and our senior engineering team will evaluate blueprint requirements and feasibility.
-                </p>
+          <div
+            style={{
+              padding: "36px",
+              background: "#04101F",
+              border: "1px solid rgba(25, 200, 244, 0.3)",
+              borderRadius: "10px",
+              boxShadow: "0 12px 40px rgba(4, 16, 31, 0.7)"
+            }}
+            id="quick-form"
+          >
+            <div style={{ borderBottom: "1px solid rgba(217, 226, 234, 0.15)", paddingBottom: "18px", marginBottom: "22px" }}>
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: "rgba(25, 200, 244, 0.12)",
+                  border: "1px solid rgba(25, 200, 244, 0.3)",
+                  color: "#19C8F4",
+                  padding: "4px 12px",
+                  borderRadius: "6px",
+                  fontSize: "0.75rem",
+                  fontWeight: 700,
+                  marginBottom: "10px"
+                }}
+              >
+                <Clock size={12} /> FAST SITE INTAKE
               </div>
+              <h3 style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "1.4rem", margin: "0 0 6px 0" }}>
+                Request Consultation & Estimate
+              </h3>
+              <p style={{ color: "#94A3B8", fontSize: "0.9rem", lineHeight: 1.5, margin: 0 }}>
+                Submit your site specifications and our senior engineering team will evaluate your requirements.
+              </p>
+            </div>
 
-              {!inquirySent ? (
-                <form onSubmit={handleFastSubmit} className="fast-form">
-                  <div className="form-field" style={{ marginBottom: "14px" }}>
-                    <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 800, marginBottom: "4px" }}>
-                      Project Scope / Organization *
+            {!inquirySent ? (
+              <form onSubmit={handleFastSubmit}>
+                <div style={{ marginBottom: "18px" }}>
+                  <label style={{ display: "block", fontSize: "0.86rem", fontWeight: 700, color: "#FFFFFF", marginBottom: "6px" }}>
+                    Name / Organization *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Metro Club / Villa Layout"
+                    value={fastInput.organization}
+                    onChange={(e) => setFastInput({ ...fastInput, organization: e.target.value })}
+                    style={{
+                      width: "100%",
+                      padding: "13px 16px",
+                      background: "#071A33",
+                      border: "1px solid rgba(25, 200, 244, 0.3)",
+                      borderRadius: "6px",
+                      color: "#FFFFFF",
+                      fontSize: "0.94rem",
+                      outline: "none"
+                    }}
+                  />
+                </div>
+
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "18px" }}>
+                  <div>
+                    <label style={{ display: "block", fontSize: "0.86rem", fontWeight: 700, color: "#FFFFFF", marginBottom: "6px" }}>
+                      Phone Number (10 Digits) *
                     </label>
                     <input
-                      type="text"
+                      type="tel"
                       required
-                      placeholder="e.g. Metro Sports Complex / Residential Layout"
-                      className="modal-input"
-                      value={fastInput.organization}
-                      onChange={(e) => setFastInput({ ...fastInput, organization: e.target.value })}
-                      style={{ width: "100%", padding: "10px 12px", background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
+                      maxLength={10}
+                      placeholder="Enter 10-Digit Mobile Number"
+                      value={fastInput.phone}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+                        setFastInput({ ...fastInput, phone: val });
+                        if (phoneError) setPhoneError("");
+                      }}
+                      style={{
+                        width: "100%",
+                        padding: "13px 16px",
+                        background: "#071A33",
+                        border: phoneError ? "1px solid #FF4D4D" : "1px solid rgba(25, 200, 244, 0.3)",
+                        borderRadius: "6px",
+                        color: "#FFFFFF",
+                        fontSize: "0.94rem",
+                        outline: "none"
+                      }}
                     />
+                    {phoneError && (
+                      <div style={{ color: "#FF4D4D", fontSize: "0.78rem", marginTop: "4px", fontWeight: 700 }}>
+                        {phoneError}
+                      </div>
+                    )}
                   </div>
-
-                  <div className="form-field" style={{ marginBottom: "14px" }}>
-                    <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 800, marginBottom: "4px" }}>
-                      Official Planning Email *
+                  <div>
+                    <label style={{ display: "block", fontSize: "0.86rem", fontWeight: 700, color: "#FFFFFF", marginBottom: "6px" }}>
+                      Email Address
                     </label>
                     <input
                       type="email"
-                      required
-                      placeholder="planning@organization.com"
-                      className="modal-input"
+                      placeholder="info@domain.com"
                       value={fastInput.email}
                       onChange={(e) => setFastInput({ ...fastInput, email: e.target.value })}
-                      style={{ width: "100%", padding: "10px 12px", background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
+                      style={{
+                        width: "100%",
+                        padding: "13px 16px",
+                        background: "#071A33",
+                        border: "1px solid rgba(25, 200, 244, 0.3)",
+                        borderRadius: "6px",
+                        color: "#FFFFFF",
+                        fontSize: "0.94rem",
+                        outline: "none"
+                      }}
                     />
                   </div>
+                </div>
 
-                  <div className="form-field" style={{ marginBottom: "14px" }}>
-                    <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 800, marginBottom: "4px" }}>
-                      Construction Discipline *
-                    </label>
-                    <select
-                      className="modal-input"
-                      value={fastInput.service}
-                      onChange={(e) => setFastInput({ ...fastInput, service: e.target.value })}
-                      style={{ width: "100%", padding: "10px 12px", background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
-                    >
-                      <option value="Residential Development (House & Roofing)">Residential Development (House & Roofing)</option>
-                      <option value="Commercial Projects (Multi-Story Concrete & Cranes)">Commercial Projects (Multi-Story Concrete & Cranes)</option>
-                      <option value="Sports Court & Synthetic Coating (Acrylic/Turf)">Sports Court & Synthetic Coating (Acrylic/Turf)</option>
-                      <option value="Infrastructure Works (Excavation & Foundations)">Infrastructure Works (Excavation & Foundations)</option>
-                      <option value="Architectural Blueprints & Structural Engineering">Architectural Blueprints & Structural Engineering</option>
-                    </select>
-                  </div>
-
-                  <div className="form-field" style={{ marginBottom: "18px" }}>
-                    <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 800, marginBottom: "4px" }}>
-                      Site Location / Engineering Notes
-                    </label>
-                    <textarea
-                      rows="3"
-                      placeholder="Plot dimensions, geography, target timeline..."
-                      className="modal-input modal-textarea"
-                      value={fastInput.notes}
-                      onChange={(e) => setFastInput({ ...fastInput, notes: e.target.value })}
-                      style={{ width: "100%", padding: "10px 12px", background: "#FFFFFF", border: "1px solid #000000", color: "#000000", resize: "vertical" }}
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
+                <div style={{ marginBottom: "18px" }}>
+                  <label style={{ display: "block", fontSize: "0.86rem", fontWeight: 700, color: "#FFFFFF", marginBottom: "6px" }}>
+                    Service / Discipline *
+                  </label>
+                  <select
+                    value={fastInput.service}
+                    onChange={(e) => setFastInput({ ...fastInput, service: e.target.value })}
                     style={{
                       width: "100%",
-                      background: "#000000",
+                      padding: "13px 16px",
+                      background: "#071A33",
+                      border: "1px solid rgba(25, 200, 244, 0.3)",
+                      borderRadius: "6px",
                       color: "#FFFFFF",
-                      border: "1px solid #000000",
-                      fontWeight: 800,
-                      padding: "12px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "8px"
+                      fontSize: "0.94rem",
+                      outline: "none"
                     }}
                   >
-                    <Send size={15} />
-                    <span>Submit Blueprint & Engineering Inquiry</span>
+                    <option value="Synthetic Sports Court Construction" style={{ background: "#071A33", color: "#FFFFFF" }}>Synthetic Sports Court Construction (Tennis/Basketball/Badminton)</option>
+                    <option value="Box Cricket & Futsal Turf Arena" style={{ background: "#071A33", color: "#FFFFFF" }}>Box Cricket & Futsal Turf Arena</option>
+                    <option value="8-Layer ITF Acrylic Resurfacing" style={{ background: "#071A33", color: "#FFFFFF" }}>8-Layer ITF Acrylic Resurfacing</option>
+                    <option value="Turnkey Residential House Construction" style={{ background: "#071A33", color: "#FFFFFF" }}>Turnkey Residential House & Villa Construction</option>
+                  </select>
+                </div>
+
+                <div style={{ marginBottom: "24px" }}>
+                  <label style={{ display: "block", fontSize: "0.86rem", fontWeight: 700, color: "#FFFFFF", marginBottom: "6px" }}>
+                    Court Dimensions / Site Notes
+                  </label>
+                  <textarea
+                    rows="3"
+                    placeholder="Plot dimensions, location, desired timeline..."
+                    value={fastInput.notes}
+                    onChange={(e) => setFastInput({ ...fastInput, notes: e.target.value })}
+                    style={{
+                      width: "100%",
+                      padding: "13px 16px",
+                      background: "#071A33",
+                      border: "1px solid rgba(25, 200, 244, 0.3)",
+                      borderRadius: "6px",
+                      color: "#FFFFFF",
+                      fontSize: "0.94rem",
+                      outline: "none",
+                      resize: "vertical"
+                    }}
+                  />
+                </div>
+
+                <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
+                  <button
+                    type="submit"
+                    className="btn btn-orange"
+                    style={{ flex: 1, justifyContent: "center", padding: "16px" }}
+                  >
+                    <Send size={18} />
+                    <span>Submit Online Inquiry</span>
                   </button>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "6px",
-                      fontSize: "0.78rem",
-                      color: "#444444",
-                      marginTop: "10px"
-                    }}
-                  >
-                    <ShieldCheck size={13} style={{ color: "#000000" }} />
-                    <span>Class-1 Civil Construction Standards • Technical confidentiality assured</span>
-                  </div>
-                </form>
-              ) : (
-                <div style={{ textAlign: "center", padding: "24px 8px" }}>
-                  <CheckCircle2 size={42} style={{ color: "#000000", margin: "0 auto 14px auto" }} />
-                  <h4 style={{ fontSize: "1.2rem", fontWeight: 900, color: "#000000", marginBottom: "6px" }}>
-                    Project Consultation Registered
-                  </h4>
-                  <p style={{ color: "#444444", fontSize: "0.9rem", lineHeight: 1.5, maxWidth: "380px", margin: "0 auto 18px auto" }}>
-                    Requirements for <strong>{fastInput.organization}</strong> have been received. Our senior engineering staff will review the dossier and respond via {fastInput.email}.
-                  </p>
                   <button
-                    onClick={() => {
-                      setInquirySent(false);
-                      setFastInput({ organization: "", email: "", service: "Residential Development (House & Roofing)", notes: "" });
-                    }}
-                    className="btn btn-secondary"
+                    type="button"
+                    onClick={openWhatsApp}
+                    className="btn"
                     style={{
-                      background: "#FFFFFF",
-                      color: "#000000",
-                      border: "1px solid #000000",
-                      fontWeight: 800,
-                      padding: "8px 20px"
+                      flex: 1,
+                      justifyContent: "center",
+                      padding: "16px",
+                      background: "rgba(25, 200, 244, 0.12)",
+                      border: "1px solid #19C8F4",
+                      color: "#19C8F4"
                     }}
                   >
-                    Send Another Inquiry
+                    <MessageSquare size={18} />
+                    <span>Direct WhatsApp</span>
                   </button>
                 </div>
-              )}
-            </div>
+              </form>
+            ) : (
+              <div style={{ textAlign: "center", padding: "30px 10px" }}>
+                <CheckCircle2 size={48} style={{ color: "#19C8F4", margin: "0 auto 16px auto" }} />
+                <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#FFFFFF", marginBottom: "8px" }}>
+                  Inquiry Successfully Registered
+                </h4>
+                <p style={{ color: "#94A3B8", fontSize: "0.92rem", lineHeight: 1.5, maxWidth: "400px", margin: "0 auto 20px auto" }}>
+                  Thank you! Requirements for <strong>{fastInput.organization}</strong> have been logged. Our engineering desk will contact you via {fastInput.phone || fastInput.email}.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setInquirySent(false);
+                    setFastInput({ organization: "", email: "", phone: "", service: "Synthetic Sports Court Construction", notes: "" });
+                  }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "10px 22px",
+                    background: "rgba(25, 200, 244, 0.15)",
+                    border: "1px solid #19C8F4",
+                    color: "#FFFFFF",
+                    fontSize: "0.9rem",
+                    fontWeight: 700,
+                    borderRadius: "6px",
+                    cursor: "pointer"
+                  }}
+                >
+                  <span>Submit Another Inquiry</span>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

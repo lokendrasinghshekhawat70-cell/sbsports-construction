@@ -7,13 +7,11 @@ import {
   Layers,
   Award,
   Sparkles,
-  Quote,
   PhoneCall,
   Mail,
-  CheckCircle2,
-  ChevronRight,
   Camera,
-  Maximize2
+  ShieldCheck,
+  CheckCircle2
 } from "lucide-react";
 
 export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
@@ -27,7 +25,7 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
       name: "Gym & Fitness Flooring Solutions",
       type: "Vulcanized Rubber Tiles & Olympic Drop Zones",
       image: "/images/sports_gym_flooring.jpg",
-      quote: "Iron meets resilience. Heavy drop zones engineered for silence and zero floor damage.",
+      quote: "Heavy drop zones engineered for silence and zero floor damage.",
       badge: "Commercial Gym Grade",
       spec: "15mm - 25mm High Density SBR / EPDM",
       warranty: "10-Year Anti-Wear"
@@ -39,7 +37,7 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
       name: "Championship Squash Court",
       type: "WSF Armourcoat Plaster & Sprung Maple",
       image: "/images/sports_squash_court.jpg",
-      quote: "Four walls, zero excuses. Precision rebound from glass wall to championship tin.",
+      quote: "Precision rebound from glass wall to championship tin.",
       badge: "WSF Standard",
       spec: "9.75m × 6.4m Regulation Playing Area",
       warranty: "10-Year Wall & Floor"
@@ -174,76 +172,36 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
     <section
       className="sports-court-home-section"
       style={{
-        background: "#FFFFFF",
-        padding: "80px 0",
-        borderTop: "2px solid #000000",
-        borderBottom: "2px solid #000000",
+        background: "#F4F7FA",
+        padding: "90px 0",
+        borderTop: "1px solid #DCE4EC",
+        borderBottom: "1px solid #DCE4EC",
         position: "relative",
-        color: "#000000"
+        color: "#071A33"
       }}
     >
       <div className="container">
         {/* Section Header */}
-        <div style={{ textAlign: "center", maxWidth: "900px", margin: "0 auto 36px auto" }}>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "#FFFFFF",
-              border: "1px solid #000000",
-              color: "#000000",
-              padding: "5px 16px",
-              fontSize: "0.82rem",
-              fontWeight: 800,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              marginBottom: "14px"
-            }}
-          >
-            <Trophy size={16} style={{ color: "#000000" }} />
+        <div style={{ textAlign: "center", maxWidth: "900px", margin: "0 auto 40px auto" }}>
+          <div className="section-pill">
+            <Trophy size={16} style={{ color: "#087FEA" }} />
             <span>SB SPORTS INFRASTRUCTURE & ACADEMY SOLUTIONS</span>
           </div>
 
-          <h2
-            style={{
-              fontSize: "clamp(1.9rem, 3.5vw, 2.8rem)",
-              fontWeight: 900,
-              color: "#000000",
-              lineHeight: 1.2,
-              marginBottom: "14px",
-              letterSpacing: "0.02em"
-            }}
-          >
-            SPORTS ARENAS, COURTS & PROFESSIONAL SERVICES
+          <h2 className="section-title">
+            World-Class Sports Arenas, <br />
+            <span className="text-gradient-blue">Synthetic Courts & Turf Systems</span>
           </h2>
 
-          <p
-            style={{
-              fontSize: "1.05rem",
-              color: "#333333",
-              lineHeight: 1.6,
-              margin: "0 auto 24px auto"
-            }}
-          >
-            From gymnasiums, championship squash, and table tennis to outdoor box cricket turfs, lawn tennis, running tracks, international training academies, and turnkey business consulting.
+          <p className="section-subtitle" style={{ maxWidth: "780px", margin: "0 auto 28px auto" }}>
+            From gymnasium drop zones, WSF squash courts, and BWF badminton mats to FIFA Box Cricket turfs, ITF lawn tennis arenas, IAAF running tracks, and turnkey sports consulting.
           </p>
 
           {/* Action CTAs */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap", marginBottom: "28px" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap", marginBottom: "32px" }}>
             <button
               onClick={() => onNavigate("courts")}
               className="btn btn-primary"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "12px 24px",
-                fontWeight: 800,
-                background: "#000000",
-                color: "#FFFFFF",
-                border: "1px solid #000000"
-              }}
             >
               <Play size={16} />
               <span>Launch 2D Court Simulator</span>
@@ -252,16 +210,6 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
             <button
               onClick={() => onNavigate("courts")}
               className="btn btn-secondary"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "12px 24px",
-                fontWeight: 800,
-                background: "#FFFFFF",
-                color: "#000000",
-                border: "1px solid #000000"
-              }}
             >
               <Layers size={16} />
               <span>Explore All Specifications ({sportsCatalog.length})</span>
@@ -274,12 +222,14 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
             style={{
               position: "relative",
               width: "100%",
-              height: "clamp(260px, 35vw, 420px)",
+              height: "clamp(280px, 38vw, 440px)",
               overflow: "hidden",
-              border: "2px solid #000000",
-              margin: "24px 0 32px 0",
-              background: "#000000",
-              cursor: "pointer"
+              borderRadius: "8px",
+              border: "1px solid #DCE4EC",
+              margin: "24px 0 36px 0",
+              background: "#FFFFFF",
+              cursor: "pointer",
+              boxShadow: "0 12px 30px rgba(7, 26, 51, 0.08)"
             }}
             title="Click to view all sports arenas & courts"
           >
@@ -294,52 +244,31 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
                 bottom: 0,
                 left: 0,
                 right: 0,
-                padding: "24px",
-                background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.88) 100%)",
+                padding: "28px",
+                background: "linear-gradient(180deg, rgba(7, 26, 51, 0) 0%, rgba(7, 26, 51, 0.95) 100%)",
                 color: "#FFFFFF",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "flex-end",
                 flexWrap: "wrap",
-                gap: "12px",
+                gap: "14px",
                 textAlign: "left"
               }}
             >
               <div>
-                <span
-                  style={{
-                    background: "#FFFFFF",
-                    color: "#000000",
-                    fontSize: "0.72rem",
-                    fontWeight: 800,
-                    padding: "3px 8px",
-                    border: "1px solid #000000",
-                    textTransform: "uppercase",
-                    display: "inline-block",
-                    marginBottom: "6px"
-                  }}
-                >
+                <span className="badge-blue" style={{ marginBottom: "8px", display: "inline-block", background: "#087FEA", color: "#FFFFFF" }}>
                   Featured Mega Sports Infrastructure
                 </span>
-                <h3 style={{ fontSize: "clamp(1.2rem, 2.2vw, 1.8rem)", fontWeight: 900, color: "#FFFFFF", margin: 0 }}>
+                <h3 style={{ fontSize: "clamp(1.3rem, 2.4vw, 1.9rem)", fontWeight: 800, color: "#FFFFFF", margin: 0 }}>
                   Olympic 400m Running Track, 8-Layer Acrylic Tennis & Multi-Sport Complex
                 </h3>
               </div>
               <div
-                style={{
-                  background: "#000000",
-                  color: "#FFFFFF",
-                  border: "1px solid #FFFFFF",
-                  padding: "8px 16px",
-                  fontSize: "0.82rem",
-                  fontWeight: 800,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px"
-                }}
+                className="btn btn-secondary btn-sm"
+                style={{ background: "rgba(25, 200, 244, 0.2)", border: "1px solid #19C8F4", color: "#FFFFFF" }}
               >
-                <Camera size={15} />
-                <span>View All Arena Photos</span>
+                <Camera size={16} />
+                <span>View Arena Specs</span>
               </div>
             </div>
           </div>
@@ -349,21 +278,22 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
             style={{
               display: "flex",
               justifyContent: "center",
-              gap: "8px",
+              gap: "10px",
               flexWrap: "wrap"
             }}
           >
             <button
               onClick={() => setActiveTab("all")}
               style={{
-                background: activeTab === "all" ? "#000000" : "#FFFFFF",
-                color: activeTab === "all" ? "#FFFFFF" : "#000000",
-                border: "1px solid #000000",
-                padding: "8px 18px",
-                fontSize: "0.85rem",
-                fontWeight: 800,
+                background: activeTab === "all" ? "#087FEA" : "#FFFFFF",
+                color: activeTab === "all" ? "#FFFFFF" : "#071A33",
+                border: activeTab === "all" ? "1px solid #087FEA" : "1px solid #DCE4EC",
+                padding: "10px 22px",
+                fontSize: "0.88rem",
+                fontWeight: 700,
+                borderRadius: "6px",
                 cursor: "pointer",
-                transition: "all 0.15s ease"
+                transition: "all 0.25s ease"
               }}
             >
               All Offerings ({sportsCatalog.length})
@@ -371,47 +301,50 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
             <button
               onClick={() => setActiveTab("indoor")}
               style={{
-                background: activeTab === "indoor" ? "#000000" : "#FFFFFF",
-                color: activeTab === "indoor" ? "#FFFFFF" : "#000000",
-                border: "1px solid #000000",
-                padding: "8px 18px",
-                fontSize: "0.85rem",
-                fontWeight: 800,
+                background: activeTab === "indoor" ? "#087FEA" : "#FFFFFF",
+                color: activeTab === "indoor" ? "#FFFFFF" : "#071A33",
+                border: activeTab === "indoor" ? "1px solid #087FEA" : "1px solid #DCE4EC",
+                padding: "10px 22px",
+                fontSize: "0.88rem",
+                fontWeight: 700,
+                borderRadius: "6px",
                 cursor: "pointer",
-                transition: "all 0.15s ease"
+                transition: "all 0.25s ease"
               }}
             >
-              Indoor Games (Gym, Squash, TT, Badminton)
+              Indoor Arenas (Gym, Squash, TT, Badminton)
             </button>
             <button
               onClick={() => setActiveTab("outdoor")}
               style={{
-                background: activeTab === "outdoor" ? "#000000" : "#FFFFFF",
-                color: activeTab === "outdoor" ? "#FFFFFF" : "#000000",
-                border: "1px solid #000000",
-                padding: "8px 18px",
-                fontSize: "0.85rem",
-                fontWeight: 800,
+                background: activeTab === "outdoor" ? "#087FEA" : "#FFFFFF",
+                color: activeTab === "outdoor" ? "#FFFFFF" : "#071A33",
+                border: activeTab === "outdoor" ? "1px solid #087FEA" : "1px solid #DCE4EC",
+                padding: "10px 22px",
+                fontSize: "0.88rem",
+                fontWeight: 700,
+                borderRadius: "6px",
                 cursor: "pointer",
-                transition: "all 0.15s ease"
+                transition: "all 0.25s ease"
               }}
             >
-              Outdoor Games (Box Cricket, Tennis, Basketball, Track)
+              Outdoor Courts (Box Cricket, Tennis, Basketball, Track)
             </button>
             <button
               onClick={() => setActiveTab("services")}
               style={{
-                background: activeTab === "services" ? "#000000" : "#FFFFFF",
-                color: activeTab === "services" ? "#FFFFFF" : "#000000",
-                border: "1px solid #000000",
-                padding: "8px 18px",
-                fontSize: "0.85rem",
-                fontWeight: 800,
+                background: activeTab === "services" ? "#087FEA" : "#FFFFFF",
+                color: activeTab === "services" ? "#FFFFFF" : "#071A33",
+                border: activeTab === "services" ? "1px solid #087FEA" : "1px solid #DCE4EC",
+                padding: "10px 22px",
+                fontSize: "0.88rem",
+                fontWeight: 700,
+                borderRadius: "6px",
                 cursor: "pointer",
-                transition: "all 0.15s ease"
+                transition: "all 0.25s ease"
               }}
             >
-              Services & Academy Management
+              Academy & Management
             </button>
           </div>
         </div>
@@ -420,41 +353,39 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "24px",
-            marginBottom: "40px"
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "28px",
+            marginBottom: "50px"
           }}
         >
           {filteredCatalog.map((court) => (
             <div
               key={court.id}
+              className="clean-card"
               style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
                 display: "flex",
                 flexDirection: "column",
-                overflow: "hidden",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease"
+                overflow: "hidden"
               }}
-              className="home-court-card"
             >
-              <div style={{ position: "relative", height: "260px", overflow: "hidden", borderBottom: "1px solid #000000" }}>
+              <div style={{ position: "relative", height: "240px", overflow: "hidden", borderBottom: "1px solid #DCE4EC" }}>
                 <img
                   src={court.image}
                   alt={court.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease" }}
                 />
                 <span
                   style={{
                     position: "absolute",
-                    top: "10px",
-                    left: "10px",
-                    background: "#FFFFFF",
-                    color: "#000000",
-                    fontSize: "0.7rem",
-                    fontWeight: 800,
-                    padding: "3px 8px",
-                    border: "1px solid #000000",
+                    top: "12px",
+                    left: "12px",
+                    background: "#071A33",
+                    color: "#19C8F4",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    padding: "4px 12px",
+                    borderRadius: "4px",
+                    border: "1px solid rgba(25, 200, 244, 0.3)",
                     textTransform: "uppercase"
                   }}
                 >
@@ -464,56 +395,57 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
                 <span
                   style={{
                     position: "absolute",
-                    top: "10px",
-                    right: "10px",
-                    background: "#000000",
+                    top: "12px",
+                    right: "12px",
+                    background: "#087FEA",
                     color: "#FFFFFF",
-                    fontSize: "0.7rem",
+                    fontSize: "0.72rem",
                     fontWeight: 800,
-                    padding: "3px 8px",
-                    border: "1px solid #000000"
+                    padding: "4px 12px",
+                    borderRadius: "4px"
                   }}
                 >
                   {court.badge}
                 </span>
               </div>
 
-              <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
-                <h4 style={{ fontSize: "1.15rem", fontWeight: 900, color: "#000000", margin: "0 0 4px 0" }}>
+              <div style={{ padding: "24px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                <h4 style={{ fontSize: "1.18rem", fontWeight: 800, color: "#071A33", margin: "0 0 6px 0", lineHeight: 1.3 }}>
                   {court.name}
                 </h4>
-                <p style={{ fontSize: "0.82rem", color: "#444444", fontWeight: 700, margin: "0 0 10px 0" }}>
+                <p style={{ fontSize: "0.85rem", color: "#087FEA", fontWeight: 600, margin: "0 0 14px 0" }}>
                   {court.type}
                 </p>
 
                 <div
                   style={{
-                    background: "#F8F8F8",
-                    border: "1px solid #E0E0E0",
-                    padding: "8px 12px",
-                    fontSize: "0.8rem",
-                    color: "#222222",
-                    marginBottom: "12px"
+                    background: "#F4F7FA",
+                    border: "1px solid #DCE4EC",
+                    borderRadius: "6px",
+                    padding: "12px 14px",
+                    fontSize: "0.82rem",
+                    color: "#64748B",
+                    marginBottom: "16px"
                   }}
                 >
-                  <div><strong>Spec:</strong> {court.spec}</div>
-                  <div style={{ marginTop: "2px" }}><strong>Warranty:</strong> <span style={{ color: "#059669", fontWeight: 700 }}>{court.warranty}</span></div>
+                  <div><strong style={{ color: "#071A33" }}>Spec:</strong> {court.spec}</div>
                 </div>
 
                 <div
                   style={{
-                    background: "#FFFFFF",
-                    borderLeft: "3px solid #000000",
-                    padding: "8px 12px",
-                    marginBottom: "16px",
+                    background: "rgba(8, 127, 234, 0.05)",
+                    borderLeft: "3px solid #087FEA",
+                    padding: "10px 14px",
+                    borderRadius: "0 6px 6px 0",
+                    marginBottom: "20px",
                     flexGrow: 1
                   }}
                 >
                   <p
                     style={{
-                      fontSize: "0.8rem",
+                      fontSize: "0.82rem",
                       fontStyle: "italic",
-                      color: "#333333",
+                      color: "#64748B",
                       margin: 0,
                       lineHeight: 1.4
                     }}
@@ -522,23 +454,11 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
                   </p>
                 </div>
 
-                <div style={{ display: "flex", gap: "8px", marginTop: "auto" }}>
+                <div style={{ display: "flex", gap: "10px", marginTop: "auto" }}>
                   <button
                     onClick={() => onNavigate("courts")}
-                    style={{
-                      flex: 1,
-                      background: "#FFFFFF",
-                      color: "#000000",
-                      border: "1px solid #000000",
-                      padding: "8px 12px",
-                      fontSize: "0.82rem",
-                      fontWeight: 800,
-                      cursor: "pointer",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "4px"
-                    }}
+                    className="btn btn-secondary btn-sm"
+                    style={{ flex: 1, justifyContent: "center" }}
                   >
                     <span>Full Specs</span>
                     <ArrowRight size={14} />
@@ -546,20 +466,8 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
 
                   <a
                     href="tel:+919636365391"
-                    style={{
-                      flex: 1.2,
-                      background: "#000000",
-                      color: "#FFFFFF",
-                      border: "1px solid #000000",
-                      padding: "8px 12px",
-                      fontSize: "0.82rem",
-                      fontWeight: 800,
-                      textDecoration: "none",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "6px"
-                    }}
+                    className="btn btn-primary btn-sm"
+                    style={{ flex: 1.2, justifyContent: "center", textDecoration: "none" }}
                   >
                     <PhoneCall size={14} />
                     <span>Call Now</span>
@@ -569,97 +477,9 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
             </div>
           ))}
         </div>
-
-        {/* Bottom Banner Bar */}
-        <div
-          style={{
-            background: "#FFFFFF",
-            border: "1px solid #000000",
-            padding: "20px 28px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: "16px"
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-            <div
-              style={{
-                width: "42px",
-                height: "42px",
-                background: "#000000",
-                color: "#FFFFFF",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontWeight: 900,
-                fontSize: "1.1rem"
-              }}
-            >
-              10Y
-            </div>
-            <div>
-              <strong style={{ color: "#000000", fontSize: "1rem", display: "block" }}>
-                10-Year Anti-Peeling & Structural Warranty On All Arenas
-              </strong>
-              <span style={{ color: "#444444", fontSize: "0.85rem" }}>
-                Laser-screed 1:100 slope gradient eliminates standing puddles permanently.
-              </span>
-            </div>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "14px", flexWrap: "wrap" }}>
-            <a
-              href="tel:+919636365391"
-              className="btn btn-secondary btn-sm"
-              style={{
-                background: "#FFFFFF",
-                color: "#000000",
-                border: "1px solid #000000",
-                fontWeight: 800,
-                padding: "10px 16px",
-                textDecoration: "none",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px"
-              }}
-            >
-              <PhoneCall size={15} />
-              <span>+91-9636365391</span>
-            </a>
-
-            <a
-              href="mailto:sbsportsandconstruction@gmail.com"
-              className="btn btn-secondary btn-sm"
-              style={{
-                background: "#FFFFFF",
-                color: "#000000",
-                border: "1px solid #000000",
-                fontWeight: 800,
-                padding: "10px 16px",
-                textDecoration: "none",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px"
-              }}
-            >
-              <Mail size={15} />
-              <span>Email Proposal</span>
-            </a>
-
-            <Link
-              to="/SportsCourtsAndCoating"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="btn btn-primary btn-sm"
-              style={{ fontWeight: 800, padding: "10px 20px", background: "#000000", color: "#FFFFFF", border: "1px solid #000000", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}
-            >
-              <span>Explore All Courts & Blueprints</span>
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );
 }
+
+

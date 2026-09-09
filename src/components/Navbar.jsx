@@ -2,17 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import {
-  HardHat,
   PhoneCall,
   Mail,
-  Building2,
   Menu,
   X,
   ChevronRight,
-  ShieldCheck,
-  Clock,
-  Home,
-  Sparkles
+  Sparkles,
+  ShieldCheck
 } from "lucide-react";
 import SBLogo from "./SBLogo";
 
@@ -33,10 +29,8 @@ export default function Navbar({
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Sports Courts & Coating", path: "/SportsCourtsAndCoating", highlight: true },
     { name: "Services", path: "/Services" },
     { name: "Projects", path: "/Projects" },
-    
     { name: "Reviews", path: "/Reviews" },
     { name: "Contact", path: "/Contact" }
   ];
@@ -58,15 +52,7 @@ export default function Navbar({
   return (
     <>
       {/* Top Contact & Trust Bar */}
-      <div
-        style={{
-          background: "#FFFFFF",
-          borderBottom: "1px solid #000000",
-          fontSize: "0.82rem",
-          padding: "6px 0",
-          color: "#000000"
-        }}
-      >
+      <div className="top-trust-bar">
         <div
           className="container"
           style={{
@@ -79,39 +65,27 @@ export default function Navbar({
         >
           <div style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
             <a
-              href="tel:+919636365391"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                color: "#000000",
-                fontWeight: 800,
-                textDecoration: "none"
-              }}
-            >
-              <PhoneCall size={13} style={{ color: "#000000" }} />
-              <span>+91-9636365391</span>
-            </a>
-            <span style={{ color: "#000000" }}>•</span>
-            <a
               href="mailto:sbsportsandconstruction@gmail.com"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "6px",
-                color: "#000000",
-                fontWeight: 700,
+                color: "#D9E2EA",
+                fontWeight: 600,
                 textDecoration: "none"
               }}
             >
-              <Mail size={13} style={{ color: "#000000" }} />
+              <Mail size={13} style={{ color: "#19C8F4" }} />
               <span>sbsportsandconstruction@gmail.com</span>
             </a>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "0.78rem", fontWeight: 700 }}>
-            <span>SPORTS COURTS & SYNTHETIC COATING SPECIALISTS</span>
-          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.78rem", fontWeight: 700, color: "#94A3B8" }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: "5px", color: "#19C8F4" }}>
+              <PhoneCall   size={14} /> +91-9636365391
+            </span>
+            
+            </div>
         </div>
       </div>
 
@@ -127,7 +101,7 @@ export default function Navbar({
               title="SB SPORTS & CONSTRUCTION Home"
               style={{ background: "none", border: "none", padding: 0, cursor: "pointer", textDecoration: "none" }}
             >
-              <SBLogo size="md" />
+              <SBLogo size="md" variant="light" />
             </Link>
           </div>
 
@@ -152,34 +126,24 @@ export default function Navbar({
 
           {/* Action CTAs */}
           <div className="nav-actions">
-            <a
-              href="tel:+919636365391"
-              className="btn btn-secondary btn-sm nav-btn-calc"
-              title="Call Directly"
-              style={{ background: "#FFFFFF", color: "#000000", border: "1px solid #000000", textDecoration: "none" }}
-            >
-              <PhoneCall size={15} style={{ color: "#000000" }} />
-              <span>+91-9636365391</span>
-            </a>
-
             {onOpenQuote ? (
               <button
                 onClick={() => onOpenQuote()}
-                className="btn btn-sm btn-quote-white"
+                className="btn btn-primary btn-sm desktop-only-btn"
                 title="Get Free Quote"
-                style={{ cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "6px" }}
+                style={{ cursor: "pointer", borderRadius: "6px" }}
               >
                 <Sparkles size={14} />
-                <span>Get Quote</span>
+                <span>Get Instant Quote</span>
               </button>
             ) : (
               <a
                 href="mailto:sbsportsandconstruction@gmail.com"
-                className="btn btn-sm btn-quote-white"
+                className="btn btn-primary btn-sm desktop-only-btn"
                 title="Email Us"
-                style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}
+                style={{ borderRadius: "6px" }}
               >
-                <Mail size={15} />
+                <Mail size={14} />
                 <span>Email Us</span>
               </a>
             )}
@@ -190,7 +154,7 @@ export default function Navbar({
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+              {mobileMenuOpen ? <X size={20} style={{ color: "#19C8F4" }} /> : <Menu size={20} style={{ color: "#19C8F4" }} />}
             </button>
           </div>
         </div>
@@ -210,24 +174,17 @@ export default function Navbar({
                     style={{ textDecoration: "none" }}
                   >
                     <span>{link.name}</span>
-                    <ChevronRight size={16} className={active ? "text-primary" : "text-muted"} />
+                    <ChevronRight size={16} className={active ? "text-amber" : "text-muted"} />
                   </Link>
                 );
               })}
               <div className="mobile-drawer-cta">
                 <a
-                  href="tel:+919636365391"
-                  className="mobile-call-link"
-                  style={{ textDecoration: "none", background: "#000000", color: "#FFFFFF", border: "1px solid #000000" }}
-                >
-                  <PhoneCall size={16} /> Call +91-9636365391
-                </a>
-                <a
                   href="mailto:sbsportsandconstruction@gmail.com"
-                  className="mobile-call-link"
-                  style={{ textDecoration: "none", background: "#FFFFFF", color: "#000000", border: "1px solid #000000" }}
+                  className="mobile-call-link btn-secondary"
+                  style={{ textDecoration: "none" }}
                 >
-                  <Mail size={16} /> sbsportsandconstruction@gmail.com
+                  <Mail size={16} /> Email Direct
                 </a>
                 {onOpenQuote && (
                   <button
@@ -249,3 +206,4 @@ export default function Navbar({
     </>
   );
 }
+

@@ -9,308 +9,330 @@ import {
   ShieldCheck,
   CheckCircle2,
   Building,
-  Building2,
-  FileText,
-  Layers,
-  HardHat
+  HardHat,
+  Sparkles,
+  MessageSquare,
+  Trophy,
+  Home,
+  Award
 } from "lucide-react";
 
 export default function ContactPage({ onOpenQuote }) {
   const [inquirySent, setInquirySent] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
   const [inputData, setInputData] = useState({
     organization: "",
     email: "",
-    service: "Residential Development (House & Roofing)",
+    phone: "",
+    service: "Synthetic Sports Court Construction",
     notes: ""
   });
 
+  const validatePhone = (phoneNumber) => {
+    const digitsOnly = phoneNumber.replace(/[^0-9]/g, "");
+    if (digitsOnly.length !== 10) {
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validatePhone(inputData.phone)) {
+      setPhoneError("Kripya poore 10-digit ka valid mobile number enter karein.");
+      return;
+    }
+    setPhoneError("");
     setInquirySent(true);
+
+    const text = encodeURIComponent(
+      `Hello SB Sports & Construction!\n\n` +
+      `📌 *NEW PROJECT SPECIFICATIONS INQUIRY*\n` +
+      `-----------------------------------\n` +
+      `👤 *Name/Org:* ${inputData.organization || "N/A"}\n` +
+      `📞 *Phone:* ${inputData.phone || "N/A"}\n` +
+      `✉️ *Email:* ${inputData.email || "N/A"}\n` +
+      `🏗️ *Discipline:* ${inputData.service || "N/A"}\n` +
+      `📝 *Notes & Specifications:* ${inputData.notes || "N/A"}\n` +
+      `-----------------------------------\n` +
+      `Please evaluate specifications and contact for site inspection.`
+    );
+    window.open(`https://wa.me/919636365391?text=${text}`, "_blank");
+  };
+
+  const openWhatsApp = () => {
+    if (!validatePhone(inputData.phone)) {
+      setPhoneError("Kripya poore 10-digit ka valid mobile number enter karein.");
+      return;
+    }
+    setPhoneError("");
+    const text = encodeURIComponent(
+      `Hello SB Sports & Construction!\nName/Org: ${inputData.organization}\nService: ${inputData.service}\nPhone: ${inputData.phone}\nNotes: ${inputData.notes}`
+    );
+    window.open(`https://wa.me/919636365391?text=${text}`, "_blank");
   };
 
   return (
-    <div className="contact-page-wrapper" style={{ background: "#FFFFFF", color: "#000000", minHeight: "100vh" }}>
-      <div className="page-hero-banner" style={{ background: "#FFFFFF", borderBottom: "2px solid #000000", padding: "48px 0 36px 0", textAlign: "center" }}>
-        <div className="container">
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              border: "1px solid #000000",
-              background: "#FFFFFF",
-              color: "#000000",
-              padding: "4px 18px",
-              fontWeight: 800,
-              fontSize: "0.82rem",
-              marginBottom: "12px"
-            }}
-          >
-            <HardHat size={15} />
+    <div className="contact-page-wrapper">
+      {/* Top Banner Header */}
+      <section className="contact-hero-banner">
+        <div className="container" style={{ textAlign: "center" }}>
+          <div className="contact-pill-badge">
+            <HardHat size={16} style={{ color: "#19C8F4" }} />
             <span>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
           </div>
-          <h1 className="page-main-title" style={{ color: "#000000", fontWeight: 900, margin: "0 0 10px 0" }}>
-            SUBMIT YOUR PROJECT SPECIFICATIONS
+
+          <h1 className="contact-hero-title">
+            Submit Your Project Specifications <br />
+            <span className="text-gradient-blue">& Request Site Inspection</span>
           </h1>
-          <p className="page-main-subtitle" style={{ color: "#333333", maxWidth: "780px", margin: "0 auto", fontSize: "1rem" }}>
-            Reach out directly to the SB SPORTS & CONSTRUCTION team for Sports Courts & Synthetic Coating, House & Building Construction, Commercial High-Rises, and Infrastructure Works. Building your dreams, brick by brick.
+
+          <p className="contact-hero-subtitle">
+            Connect directly with our senior engineering desk for Sports Arenas, 8-Layer ITF Acrylic Surfacing, Box Cricket Turfs, and Turnkey Residential House Construction.
           </p>
-        </div>
-      </div>
 
-      <div className="container" style={{ marginTop: "40px", padding: "0 16px 80px 16px" }}>
-        <div className="contact-main-grid">
-          {/* Direct Technical Desks Column */}
-          <div className="contact-info-cards-col">
-            {/* Phone & WhatsApp Helpline */}
-            <div
-              className="contact-card"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "24px",
-                marginBottom: "20px"
-              }}
-            >
-              <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "10px", border: "1px solid #000000", background: "#FFFFFF", color: "#000000" }}>
-                  <PhoneCall size={24} />
-                </div>
-                <div>
-                  <div style={{ color: "#000000", fontWeight: 900, fontSize: "1rem" }}>Direct Phone & WhatsApp Helpline</div>
-                  <a
-                    href="tel:+919636365391"
-                    style={{ color: "#000000", fontSize: "1.15rem", fontWeight: 900, textDecoration: "underline", display: "inline-block", marginTop: "4px" }}
-                  >
-                    +91-9636365391
-                  </a>
-                  <div style={{ color: "#555555", fontSize: "0.82rem", marginTop: "4px" }}>
-                    Instant consultation for Sports Courts, Synthetic Coatings & Building Construction
-                  </div>
-                </div>
-              </div>
+          <div className="contact-hero-metrics">
+            <div className="metric-chip">
+              <PhoneCall size={16} style={{ color: "#19C8F4" }} />
+              <span>Direct Hotline: +91-9636365391</span>
             </div>
-
-            <div
-              className="contact-card"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "24px",
-                marginBottom: "20px"
-              }}
-            >
-              <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "10px", border: "1px solid #000000", background: "#FFFFFF", color: "#000000" }}>
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <div style={{ color: "#000000", fontWeight: 900, fontSize: "1rem" }}>Official Planning & Blueprint Submissions</div>
-                  <a
-                    href="mailto:sbsportsandconstruction@gmail.com"
-                    style={{ color: "#000000", fontSize: "0.95rem", fontWeight: 700, textDecoration: "underline", display: "inline-block", marginTop: "4px" }}
-                  >
-                    sbsportsandconstruction@gmail.com
-                  </a>
-                  <div style={{ color: "#555555", fontSize: "0.82rem", marginTop: "4px" }}>
-                    Send CAD drawings, architectural schematics, or tender documents
-                  </div>
-                </div>
-              </div>
+            <div className="metric-chip">
+              <ShieldCheck size={16} style={{ color: "#087FEA" }} />
+              <span>ISO Certified Standards</span>
             </div>
-
-
-
-            {/* Quality & Civil Licensing Card */}
-            <div
-              className="contact-card"
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #000000",
-                padding: "24px"
-              }}
-            >
-              <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "10px", border: "1px solid #000000", background: "#FFFFFF", color: "#000000" }}>
-                  <ShieldCheck size={24} />
-                </div>
-                <div>
-                  <div style={{ color: "#000000", fontWeight: 900, fontSize: "1rem" }}>Civil Engineering Standards</div>
-                  <div style={{ color: "#000000", fontSize: "0.92rem", fontWeight: 800, marginTop: "4px" }}>
-                    Class-1 Certified Infrastructure
-                  </div>
-                  <div style={{ color: "#555555", fontSize: "0.82rem", marginTop: "4px" }}>
-                    Full Structural Engineering Audits • Laser Screed Quality Verification • 100% Certified Standards
-                  </div>
-                </div>
-              </div>
+            <div className="metric-chip">
+              <Clock size={16} style={{ color: "#FF8A00" }} />
+              <span>24/7 Technical Response</span>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Project Blueprint Submission Form */}
-          <div className="contact-form-col" id="inquiry-form">
-            <div
-              style={{
-                background: "#FFFFFF",
-                border: "2px solid #000000",
-                padding: "32px",
-                color: "#000000"
-              }}
-            >
-              <div style={{ borderBottom: "1px solid #000000", paddingBottom: "16px", marginBottom: "20px" }}>
-                <div
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    border: "1px solid #000000",
-                    padding: "4px 12px",
-                    fontSize: "0.76rem",
-                    fontWeight: 800,
-                    marginBottom: "10px"
-                  }}
-                >
+      {/* Main Grid Content */}
+      <section className="contact-main-section">
+        <div className="container">
+          <div className="contact-grid-layout">
+            {/* Left Column: Direct Technical Desks */}
+            <div className="contact-desks-col">
+              {/* Direct Phone Helpline Card */}
+              <div className="contact-desk-card highlight-card">
+                <div className="desk-icon-box">
+                  <PhoneCall size={26} />
+                </div>
+                <div className="desk-info">
+                  <div className="desk-title">Direct Phone & WhatsApp Hotline</div>
+                  <a href="tel:+919636365391" className="desk-phone-link">
+                    +91-9636365391
+                  </a>
+                  <p className="desk-subtext">
+                    Instant technical consultation for Sports Courts, Turfs & Turnkey House Construction.
+                  </p>
+                </div>
+              </div>
+
+              {/* Official Email Card */}
+              <div className="contact-desk-card">
+                <div className="desk-icon-box">
+                  <Mail size={26} />
+                </div>
+                <div className="desk-info">
+                  <div className="desk-title">Planning & Tender Submissions</div>
+                  <a href="mailto:sbsportsandconstruction@gmail.com" className="desk-email-link">
+                    sbsportsandconstruction@gmail.com
+                  </a>
+                  <p className="desk-subtext">
+                    Send CAD drawings, architectural schematics, or site measurement specs.
+                  </p>
+                </div>
+              </div>
+
+              {/* Corporate Office & Regional Desk */}
+              <div className="contact-desk-card">
+                <div className="desk-icon-box">
+                  <MapPin size={26} />
+                </div>
+                <div className="desk-info">
+                  <div className="desk-title">Pan-India Operations & Head Desk</div>
+                  <div className="desk-location">
+                    SB SPORTS & CONSTRUCTION Campus, Rajasthan, India
+                  </div>
+                  <p className="desk-subtext">
+                    Pan-India execution for Sports Arenas, Turf Complexes & Turnkey Residential Villas.
+                  </p>
+                </div>
+              </div>
+
+              {/* ISO Quality Standards Card */}
+              <div className="contact-desk-card">
+                <div className="desk-icon-box">
+                  <ShieldCheck size={26} />
+                </div>
+                <div className="desk-info">
+                  <div className="desk-title">ISO Certified Civil Engineering Standards</div>
+                  <div className="desk-certified">
+                    Certified Engineering Audits & Quality Guarantee
+                  </div>
+                  <p className="desk-subtext">
+                    Laser-screed precision level verification, sub-base slope gradient, and structural masonry checks.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Project Requirements Form Card */}
+            <div className="contact-form-card" id="quick-form">
+              <div className="form-card-header">
+                <div className="form-intake-badge">
                   <Clock size={13} /> ARCHITECTURAL INTAKE DESK
                 </div>
-                <h3 style={{ color: "#000000", fontWeight: 900, fontSize: "1.35rem", margin: "0 0 6px 0" }}>
+                <h3 className="form-card-title">
                   Submit Project Requirements
                 </h3>
-                <p style={{ color: "#444444", fontSize: "0.9rem", lineHeight: 1.5, margin: 0 }}>
-                  Specify your project parameters and blueprint notes for technical engineering evaluation and preliminary timeline scheduling.
+                <p className="form-card-subtext">
+                  Specify your project parameters and blueprint notes for technical engineering evaluation.
                 </p>
               </div>
 
               {!inquirySent ? (
-                <form onSubmit={handleSubmit} className="fast-form">
-                  <div className="form-field" style={{ marginBottom: "16px" }}>
-                    <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 800, marginBottom: "6px" }}>
-                      Project Scope / Organization *
+                <form onSubmit={handleSubmit} className="contact-intake-form">
+                  <div className="form-group">
+                    <label className="form-label">
+                      Name / Organization *
                     </label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Metro Sports Arena / Residential Villa Layout"
-                      className="modal-input"
+                      className="form-input"
                       value={inputData.organization}
                       onChange={(e) => setInputData({ ...inputData, organization: e.target.value })}
-                      style={{ width: "100%", padding: "12px", background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
                     />
                   </div>
 
-                  <div className="form-field" style={{ marginBottom: "16px" }}>
-                    <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 800, marginBottom: "6px" }}>
-                      Official Planning Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="planning@organization.com"
-                      className="modal-input"
-                      value={inputData.email}
-                      onChange={(e) => setInputData({ ...inputData, email: e.target.value })}
-                      style={{ width: "100%", padding: "12px", background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
-                    />
+                  <div className="form-row-2col">
+                    <div className="form-group">
+                      <label className="form-label">
+                        Phone Number (10 Digits) *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        maxLength={10}
+                        placeholder="Enter 10-Digit Mobile Number"
+                        className="form-input"
+                        style={{ borderColor: phoneError ? "#FF4D4D" : undefined }}
+                        value={inputData.phone}
+                        onChange={(e) => {
+                          const val = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+                          setInputData({ ...inputData, phone: val });
+                          if (phoneError) setPhoneError("");
+                        }}
+                      />
+                      {phoneError && (
+                        <div style={{ color: "#FF4D4D", fontSize: "0.78rem", marginTop: "4px", fontWeight: 700 }}>
+                          {phoneError}
+                        </div>
+                      )}
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        placeholder="info@domain.com"
+                        className="form-input"
+                        value={inputData.email}
+                        onChange={(e) => setInputData({ ...inputData, email: e.target.value })}
+                      />
+                    </div>
                   </div>
 
-                  <div className="form-field" style={{ marginBottom: "16px" }}>
-                    <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 800, marginBottom: "6px" }}>
+                  <div className="form-group">
+                    <label className="form-label">
                       Construction Discipline *
                     </label>
                     <select
-                      className="modal-input"
+                      className="form-input form-select"
                       value={inputData.service}
                       onChange={(e) => setInputData({ ...inputData, service: e.target.value })}
-                      style={{ width: "100%", padding: "12px", background: "#FFFFFF", border: "1px solid #000000", color: "#000000" }}
                     >
-                      <option value="Residential Development (House & Roofing)">Residential Development (House & Roofing)</option>
-                      <option value="Commercial Projects (Multi-Story Concrete & Cranes)">Commercial Projects (Multi-Story Concrete & Cranes)</option>
-                      <option value="Sports Court & Synthetic Coating (Acrylic/Turf)">Sports Court & Synthetic Coating (Acrylic/Turf)</option>
-                      <option value="Infrastructure Works (Excavation & Foundations)">Infrastructure Works (Excavation & Foundations)</option>
-                      <option value="Architectural Blueprints & Structural Engineering">Architectural Blueprints & Structural Engineering</option>
+                      <option value="Synthetic Sports Court Construction">Synthetic Sports Court Construction (Tennis/Basketball/Badminton)</option>
+                      <option value="Box Cricket & Futsal Turf Arena">Box Cricket & Futsal Turf Arena</option>
+                      <option value="8-Layer ITF Acrylic Resurfacing">8-Layer ITF Acrylic Resurfacing</option>
+                      <option value="Turnkey Residential House Construction">Turnkey Residential House & Villa Construction</option>
                     </select>
                   </div>
 
-                  <div className="form-field" style={{ marginBottom: "20px" }}>
-                    <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 800, marginBottom: "6px" }}>
+                  <div className="form-group">
+                    <label className="form-label">
                       Project Details / Plot Specifications
                     </label>
                     <textarea
-                      rows="4"
-                      placeholder="Plot dimensions, geographic location, structural requirements, target completion date..."
-                      className="modal-input modal-textarea"
+                      rows="3"
+                      placeholder="Plot dimensions, geographic location, structural requirements..."
+                      className="form-input form-textarea"
                       value={inputData.notes}
                       onChange={(e) => setInputData({ ...inputData, notes: e.target.value })}
-                      style={{ width: "100%", padding: "12px", background: "#FFFFFF", border: "1px solid #000000", color: "#000000", resize: "vertical" }}
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    style={{
-                      width: "100%",
-                      background: "#000000",
-                      color: "#FFFFFF",
-                      border: "1px solid #000000",
-                      fontWeight: 800,
-                      padding: "14px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "8px"
-                    }}
-                  >
-                    <Send size={16} />
-                    <span>Submit Project Requirements</span>
-                  </button>
+                  <div className="form-actions-row">
+                    <button
+                      type="submit"
+                      className="btn btn-orange form-submit-btn"
+                    >
+                      <Send size={18} />
+                      <span>Submit Project Requirements</span>
+                    </button>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "6px",
-                      fontSize: "0.8rem",
-                      color: "#444444",
-                      marginTop: "12px"
-                    }}
-                  >
-                    <ShieldCheck size={14} style={{ color: "#000000" }} />
-                    <span>Class-1 Civil Construction Standards • Zero spam guarantee</span>
+                    <button
+                      type="button"
+                      onClick={openWhatsApp}
+                      className="btn form-whatsapp-btn"
+                    >
+                      <MessageSquare size={18} />
+                      <span>Direct WhatsApp</span>
+                    </button>
                   </div>
                 </form>
               ) : (
-                <div style={{ textAlign: "center", padding: "30px 10px" }}>
-                  <CheckCircle2 size={48} style={{ color: "#000000", margin: "0 auto 16px auto" }} />
-                  <h4 style={{ fontSize: "1.3rem", fontWeight: 900, color: "#000000", marginBottom: "8px" }}>
-                    Project Intake Received
+                <div className="form-success-box">
+                  <CheckCircle2 size={52} className="success-icon" />
+                  <h4 className="success-title">
+                    Specifications Logged Successfully
                   </h4>
-                  <p style={{ color: "#444444", fontSize: "0.95rem", lineHeight: 1.5, maxWidth: "420px", margin: "0 auto 20px auto" }}>
-                    Requirements for <strong>{inputData.organization}</strong> have been cataloged. Our senior engineering staff will review the dossier and respond via {inputData.email}.
+                  <p className="success-text">
+                    Thank you! Requirements for <strong>{inputData.organization}</strong> have been logged. Our senior engineering desk will contact you via {inputData.phone || inputData.email}.
                   </p>
                   <button
+                    type="button"
                     onClick={() => {
                       setInquirySent(false);
-                      setInputData({ organization: "", email: "", service: "Residential Development (House & Roofing)", notes: "" });
+                      setInputData({ organization: "", email: "", phone: "", service: "Synthetic Sports Court Construction", notes: "" });
                     }}
-                    className="btn btn-secondary"
                     style={{
-                      background: "#FFFFFF",
-                      color: "#000000",
-                      border: "1px solid #000000",
-                      fontWeight: 800,
-                      padding: "10px 24px"
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "12px 24px",
+                      background: "rgba(25, 200, 244, 0.15)",
+                      border: "1px solid #19C8F4",
+                      color: "#FFFFFF",
+                      fontSize: "0.92rem",
+                      fontWeight: 700,
+                      borderRadius: "6px",
+                      cursor: "pointer"
                     }}
                   >
-                    Submit Another Inquiry
+                    <span>Submit Another Project</span>
                   </button>
                 </div>
               )}
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

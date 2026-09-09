@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import "./Footer.css";
 import {
-  HardHat,
   PhoneCall,
   Mail,
-  MapPin,
   ShieldCheck,
   Check,
   ArrowUp,
   Send,
-  Sparkles
+  Sparkles,
+  Trophy,
+  Layers
 } from "lucide-react";
 import SBLogo from "./SBLogo";
 
@@ -34,27 +35,27 @@ export default function Footer({ onOpenQuote }) {
         <div className="footer-grid">
           {/* Brand Col */}
           <div className="footer-brand-col">
-            <div style={{ marginBottom: "16px" }}>
-              <SBLogo size="md" showText={true} variant="dark" />
+            <div style={{ marginBottom: "20px" }}>
+              <SBLogo size="lg" showText={true} variant="light" />
             </div>
 
             <p className="footer-bio">
-              <strong>HOUSE & BUILDING CONSTRUCTION:</strong> Dedicated to delivering world-class Residential Development, Commercial Projects, and Infrastructure Works. We are committed to building your dreams, brick by brick.
+              <strong>SB SPORTS & CONSTRUCTION:</strong> India's premier specialists in ITF & BWF Certified Synthetic Acrylic Sports Courts, Box Cricket Turfs, Basketball & Badminton Arenas, Commercial Complexes & High-End Construction.
             </p>
 
-            <div style={{ margin: "16px 0", display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.85rem" }}>
+            <div style={{ margin: "18px 0", display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.9rem" }}>
               <a
                 href="tel:+919636365391"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "8px",
-                  color: "#000000",
+                  gap: "10px",
+                  color: "#19C8F4",
                   fontWeight: 800,
-                  textDecoration: "underline"
+                  textDecoration: "none"
                 }}
               >
-                <PhoneCall size={15} />
+                <PhoneCall size={16} style={{ color: "#19C8F4" }} />
                 <span>+91-9636365391</span>
               </a>
               <a
@@ -62,56 +63,56 @@ export default function Footer({ onOpenQuote }) {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "8px",
-                  color: "#000000",
-                  fontWeight: 700,
-                  textDecoration: "underline"
+                  gap: "10px",
+                  color: "#D9E2EA",
+                  fontWeight: 600,
+                  textDecoration: "none"
                 }}
               >
-                <Mail size={15} />
+                <Mail size={16} style={{ color: "#087FEA" }} />
                 <span>sbsportsandconstruction@gmail.com</span>
               </a>
             </div>
 
             <div className="footer-license-box">
-              <Sparkles size={16} style={{ color: "#000000" }} />
-              <span>HOUSE & BUILDING CONSTRUCTION • BRICK BY BRICK</span>
+              <ShieldCheck size={16} style={{ color: "#19C8F4" }} />
+              <span>ISO 9001:2015 CERTIFIED • TURNKEY INFRASTRUCTURE</span>
             </div>
           </div>
 
-          {/* Core Construction Pillars strictly from Picture */}
+          {/* Sports Courts Categories */}
           <div className="footer-links-col">
-            <h4 className="footer-col-title">Construction Pillars</h4>
+            <h4 className="footer-col-title">Sports Surfaces</h4>
             <ul className="footer-links-list">
-              <li><a href="#services">House & Building Construction</a></li>
-              <li><a href="#services">Sports Court & Synthetic Coating</a></li>
-              <li><a href="#services">Residential Development</a></li>
-              <li><a href="#services">Commercial Projects</a></li>
-              <li><a href="#services">Infrastructure Works</a></li>
-              <li><a href="#services">Blueprints & Precision Drafting</a></li>
-              <li><a href="#services">Site Safety & Hard Hat Protocols</a></li>
+              <li><a href="/SportsCourtsAndCoating">8-Layer ITF Tennis Courts</a></li>
+              <li><a href="/SportsCourtsAndCoating">Box Cricket & Futsal Turf</a></li>
+              <li><a href="/SportsCourtsAndCoating">BWF Wooden & Synthetic Badminton</a></li>
+              <li><a href="/SportsCourtsAndCoating">FIBA Acrylic Basketball Courts</a></li>
+              <li><a href="/SportsCourtsAndCoating">Pickleball Court Systems</a></li>
+              <li><a href="/SportsCourtsAndCoating">Volleyball & Squash Arenas</a></li>
+              <li><a href="/SportsCourtsAndCoating">Synthetic Running Tracks</a></li>
             </ul>
           </div>
 
-          {/* Picture Details Breakdown */}
+          {/* Construction Services */}
           <div className="footer-links-col">
-            <h4 className="footer-col-title">Picture Visual Details</h4>
+            <h4 className="footer-col-title">Construction Services</h4>
             <ul className="footer-links-list">
-              <li><a href="#services">8-Layer Acrylic Sports Courts</a></li>
-              <li><a href="#services">Box Cricket & Futsal Turfs</a></li>
-              <li><a href="#services">2-Story Residential Homes</a></li>
-              <li><a href="#services">Roofing & Timber Framing</a></li>
-              <li><a href="#services">Multi-Story Concrete High-Rises</a></li>
-              <li><a href="#services">Yellow Tower Crane Operations</a></li>
-              <li><a href="#services">Hydraulic Excavator Earthmoving</a></li>
+              <li><a href="/Services">Turnkey Commercial Projects</a></li>
+              <li><a href="/Services">Luxury Architectural Villas</a></li>
+              <li><a href="/Services">Structural Steel Buildings</a></li>
+              <li><a href="/Services">Synthetic Acrylic Resurfacing</a></li>
+              <li><a href="/Services">Foundation Earthmoving & Civil</a></li>
+              <li><a href="/Services">Renovation & Repairs</a></li>
+              <li><a href="/Services">Sports Arena Consulting</a></li>
             </ul>
           </div>
 
           {/* Newsletter & Direct Contact */}
           <div className="footer-contact-col">
-            <h4 className="footer-col-title">Construction Market Insights</h4>
+            <h4 className="footer-col-title">Consultation & Updates</h4>
             <p className="footer-news-desc">
-              Subscribe to receive quarterly construction cost indices, architectural design trends, and land development guides.
+              Subscribe to receive synthetic court technical specs, cost estimates, and maintenance guidelines.
             </p>
 
             {!subscribed ? (
@@ -119,63 +120,45 @@ export default function Footer({ onOpenQuote }) {
                 <input
                   type="email"
                   required
-                  placeholder="Enter your email..."
+                  placeholder="Enter email address..."
                   className="news-input"
                   value={newsEmail}
                   onChange={(e) => setNewsEmail(e.target.value)}
                 />
-                <button type="submit" className="news-btn" aria-label="Subscribe to newsletter">
-                  <Send size={15} />
+                <button type="submit" className="news-btn" aria-label="Subscribe to updates">
+                  <Send size={16} />
                 </button>
               </form>
             ) : (
               <div className="news-success">
-                <Check size={15} className="text-primary" />
-                <span>Subscribed to Construction Trends!</span>
+                <Check size={16} />
+                <span>Subscribed Successfully!</span>
               </div>
             )}
 
-            <div className="footer-fast-actions">
-              <button onClick={() => onOpenQuote()} className="btn btn-primary btn-sm" style={{ width: "100%" }}>
+            <div className="footer-fast-actions" style={{ marginTop: "16px" }}>
+              <button
+                onClick={() => onOpenQuote()}
+                className="btn btn-primary btn-sm"
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                <Sparkles size={16} />
                 <span>Request Free Site Survey</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* End of Picture Visual Banner Bars (Faithfully Replicating Banner Base) */}
-        <div style={{ margin: "32px 0 24px 0", border: "1px solid #000000", background: "#FFFFFF" }}>
-          {/* Ribbon 1 */}
-          <div style={{ background: "#000000", padding: "10px 16px", textAlign: "center" }}>
-            <span style={{ color: "#FFFFFF", fontWeight: 900, fontSize: "0.98rem", letterSpacing: "0.06em" }}>HOUSE & BUILDING CONSTRUCTION</span>
-          </div>
-          {/* Ribbon 2: 3 Pillars Bar */}
-          <div style={{ background: "#FFFFFF", padding: "8px 16px", textAlign: "center", borderTop: "1px solid #000000", borderBottom: "1px solid #000000" }}>
-            <span style={{ color: "#000000", fontWeight: 800, fontSize: "0.84rem", letterSpacing: "0.06em" }}>
-              RESIDENTIAL DEVELOPMENT &bull; COMMERCIAL PROJECTS &bull; INFRASTRUCTURE WORKS
-            </span>
-          </div>
-          {/* Ribbon 3 */}
-          <div style={{ background: "#F5F5F5", padding: "10px 16px", textAlign: "center" }}>
-            <span style={{ color: "#000000", fontWeight: 900, fontSize: "0.92rem", letterSpacing: "0.08em" }}>
-              BUILDING YOUR DREAMS, BRICK BY BRICK
-            </span>
-          </div>
-        </div>
-
+       
         {/* Bottom Bar */}
         <div className="footer-bottom-bar">
-          <div className="bottom-copy">
+          <div className="bottom-copy" style={{ color: "#94A3B8" }}>
             © {new Date().getFullYear()} SB SPORTS & CONSTRUCTION. All rights reserved.
           </div>
-          <div className="bottom-badges">
-            <span style={{ color: "#FFFFFF", fontWeight: 700 }}>BUILDING YOUR DREAMS, BRICK BY BRICK</span>
-            <span className="dot">•</span>
-            <span>RESIDENTIAL DEVELOPMENT</span>
-            <span className="dot">•</span>
-            <span>COMMERCIAL PROJECTS</span>
-            <span className="dot">•</span>
-            <span>INFRASTRUCTURE WORKS</span>
+          <div className="bottom-badges" style={{ display: "flex", gap: "12px", alignItems: "center", color: "#D9E2EA", fontSize: "0.8rem", fontWeight: 700 }}>
+            <span>ITF CERTIFIED SURFACES</span>
+            <span>•</span>
+            <span>BWF STANDARD COURTS</span>
           </div>
           <button onClick={scrollToTop} className="scroll-top-btn" title="Scroll back to top" aria-label="Scroll to top">
             <ArrowUp size={18} />
@@ -185,3 +168,4 @@ export default function Footer({ onOpenQuote }) {
     </footer>
   );
 }
+

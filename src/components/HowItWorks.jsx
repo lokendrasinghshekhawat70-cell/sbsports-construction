@@ -6,7 +6,8 @@ import {
   Key, 
   ArrowRight,
   ShieldCheck,
-  Check
+  Check,
+  Sparkles
 } from "lucide-react";
 
 export default function HowItWorks({ onOpenQuote }) {
@@ -15,96 +16,129 @@ export default function HowItWorks({ onOpenQuote }) {
       step: "01",
       title: "Complimentary Site Survey & Feasibility Audit",
       icon: ClipboardCheck,
-      description: "Our senior civil engineer and architect inspect your land in person. We evaluate soil strata, topography, municipal zoning setbacks, and map your spatial vision.",
-      highlights: ["Free engineering site audit", "Topography & soil review", "Zero pressure or obligation"]
+      description: "Our senior civil engineer inspects your site. We evaluate soil strata, sub-base laser gradient, court dimensions, municipal zoning, and map your vision.",
+      highlights: ["Free engineering site audit", "Laser gradient & soil review", "Zero pressure or obligation"]
     },
     {
       step: "02",
-      title: "3D BIM Visualization & Locked-In Quote",
+      title: "CAD Blueprints & Locked-In Contract",
       icon: Layers,
-      description: "Experience your project in immersive 4K architectural renders and VR walkthroughs, accompanied by an itemized, 100% fixed-price contract with milestone dates.",
-      highlights: ["Immersive 3D/VR walkthrough", "100% fixed-price contract", "Tactile material finish board"]
+      description: "Experience your project in detailed 2D/3D CAD blueprints, accompanied by an itemized, 100% fixed-price contract with milestone completion dates.",
+      highlights: ["Precision CAD blueprints", "100% fixed-price contract", "Material sample board"]
     },
     {
       step: "03",
-      title: "Permitting Clearance & Supervised Build",
+      title: "Sub-Base Pouring & Multi-Layer Coating",
       icon: Hammer,
-      description: "We handle all municipal approvals and utility sanctions. Construction kicks off under full-time licensed PE supervision with daily 4K app photos and milestone sign-offs.",
-      highlights: ["100% city permits managed", "Dedicated on-site PE engineers", "Daily client app updates"]
+      description: "Construction kicks off under full-time PE supervision. Sub-base concrete is poured, followed by primer, resurfacer, and 8 ITF acrylic cushion layers.",
+      highlights: ["Laser-screed sub-base", "ITF acrylic coating application", "Daily progress photo updates"]
     },
     {
       step: "04",
-      title: "250-Point QA Audit & White-Glove Handover",
+      title: "250-Point QA Audit & Official Handover",
       icon: Key,
-      description: "Following third-party concrete compression testing, acoustic verification, and deep site cleaning, we deliver your keys with a 15-Year Structural Warranty certificate.",
-      highlights: ["250-point QA inspection", "White-glove deep cleaned", "15-Year PE Warranty certificate"]
+      description: "Following anti-slip friction verification, line-marking inspection, and deep cleaning, we hand over your arena with an official PE Handover dossier.",
+      highlights: ["250-point QA inspection", "Deep site cleaning", "Official PE Handover dossier"]
     }
   ];
 
   return (
-    <section className="section-padding how-it-works-section">
+    <section className="section-padding how-it-works-section" style={{ background: "#F4F7FA" }}>
       <div className="container">
         <div className="section-header">
           <div className="section-pill">
-            <ShieldCheck size={15} />
-            <span>Simplicity By Design</span>
+            <ShieldCheck size={15} style={{ color: "#087FEA" }} />
+            <span>4-Step Execution Protocol</span>
           </div>
           <h2 className="section-title">
             How We Make Building <br />
-            <span className="text-gradient-amber">Completely Stress-Free</span>
+            <span className="text-gradient-blue">Completely Stress-Free</span>
           </h2>
           <p className="section-subtitle">
-            From initial sketch to moving day, our proven 4-step framework gives you total clarity, predictable timelines, and zero surprises.
+            From initial site survey to official handover, our proven framework gives you total clarity, predictable timelines, and zero surprises.
           </p>
         </div>
 
         {/* Steps Grid */}
-        <div className="steps-grid">
-          {steps.map((item, index) => {
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "24px",
+            marginBottom: "48px"
+          }}
+        >
+          {steps.map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.step} className="step-card glass-card">
-                <div className="step-card-header">
-                  <span className="step-number-badge">{item.step}</span>
-                  <div className="step-icon-circle">
-                    <Icon size={24} />
+              <div key={item.step} className="clean-card" style={{ padding: "32px 24px", display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
+                  <span
+                    style={{
+                      fontSize: "1.8rem",
+                      fontWeight: 800,
+                      fontFamily: "'Manrope', sans-serif",
+                      color: "#087FEA"
+                    }}
+                  >
+                    {item.step}
+                  </span>
+                  <div className="feature-icon-wrapper" style={{ marginBottom: 0 }}>
+                    <Icon size={22} />
                   </div>
                 </div>
 
-                <h3 className="step-card-title">{item.title}</h3>
-                <p className="step-card-desc">{item.description}</p>
+                <h3 style={{ fontSize: "1.12rem", fontWeight: 800, color: "#071A33", marginBottom: "12px", lineHeight: 1.3 }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: "0.88rem", color: "#64748B", lineHeight: 1.6, marginBottom: "20px" }}>
+                  {item.description}
+                </p>
 
-                <div className="step-card-bullets">
+                <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "8px" }}>
                   {item.highlights.map((bullet, i) => (
-                    <div key={i} className="step-bullet-item">
-                      <Check size={13} className="text-amber" />
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.82rem", color: "#071A33" }}>
+                      <Check size={14} style={{ color: "#087FEA" }} />
                       <span>{bullet}</span>
                     </div>
                   ))}
                 </div>
-
-                {index < steps.length - 1 && (
-                  <div className="step-connector-arrow">
-                    <ArrowRight size={18} />
-                  </div>
-                )}
               </div>
             );
           })}
         </div>
 
         {/* Bottom CTA Card */}
-        <div className="process-cta-card glass-card">
-          <div className="process-cta-content">
-            <h3 className="process-cta-title">Ready to Start Your Construction Journey?</h3>
-            <p className="process-cta-desc">Book your complimentary site survey with our lead structural engineer today.</p>
+        <div
+          className="clean-card"
+          style={{
+            padding: "32px 40px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "20px",
+            background: "#FFFFFF",
+            borderColor: "#DCE4EC"
+          }}
+        >
+          <div>
+            <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "#071A33", marginBottom: "6px" }}>
+              Ready to Start Your Sports Arena or Building Project?
+            </h3>
+            <p style={{ fontSize: "0.95rem", color: "#64748B", margin: 0 }}>
+              Book your complimentary site survey with our lead structural engineer today.
+            </p>
           </div>
           <button onClick={() => onOpenQuote()} className="btn btn-primary btn-glow">
+            <Sparkles size={18} />
             <span>Schedule Free Site Survey</span>
-            <ArrowRight size={17} />
+            <ArrowRight size={18} />
           </button>
         </div>
       </div>
     </section>
   );
 }
+
+

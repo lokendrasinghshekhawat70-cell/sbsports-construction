@@ -1,194 +1,144 @@
 import React from "react";
 import {
+  Trophy,
   Home,
-  Building2,
-  Tractor,
-  FileText,
-  HardHat,
   Check,
   ArrowRight,
   Sparkles,
-  Layers,
-  Hammer
+  PhoneCall,
+  ShieldCheck,
+  Clock
 } from "lucide-react";
 
 export default function Services({ onSelectService }) {
-  // STRICTLY only the details present in the picture:
-  const servicesList = [
+  const coreDivisions = [
     {
-      id: "residential-house",
-      title: "Residential Development & House Construction",
-      category: "Picture Detail: Left Side",
+      id: "sports-infrastructure",
+      title: "Synthetic Sports Infrastructure & Arena Construction",
+      category: "Flagship Division 1",
+      icon: Trophy,
+      badge: "ITF & BWF Certified",
+      image: "/images/sports_tennis_court.jpg",
+      description: "Engineering world-class 8-layer ITF cushion acrylic courts, box cricket turf arenas with 30ft heavy cages, BWF badminton halls, and IAAF polyurethane running tracks.",
+      highlights: [
+        "8-Layer ITF Cushion Acrylic Court Surfacing",
+        "Box Cricket & Futsal Turf Arenas with High-Mast LEDs",
+        "BWF Grade Indoor Badminton Halls & Vinyl Arenas",
+        "IAAF Certified Polyurethane Running Tracks"
+      ]
+    },
+    {
+      id: "residential-construction",
+      title: "Turnkey Residential House & Villa Construction",
+      category: "Flagship Division 2",
       icon: Home,
-      description: "Complete house construction featuring high-pitch architectural roof shingles, multiple dormer windows, exterior siding, and custom residential finishes as shown on site.",
+      badge: "Turnkey Residential",
+      image: "/images/roofing_structure.jpg",
+      description: "Custom luxury 2-story house construction featuring architectural roof shingles, engineered dormers, precision masonry, and turnkey craftsmen handover.",
       highlights: [
-        "Two-Story Residential Home Construction",
-        "High-Pitch Roof Shingle Installation & Siding",
-        "Turnkey Residential Development from Ground Up",
-        "Building Your Dreams, Brick by Brick"
-      ],
-      startingFrom: "Residential Spec",
-      badge: "Picture Detail",
-      image: "/images/roofing_structure.jpg"
-    },
-    {
-      id: "timber-framing",
-      title: "Timber Framing & Structural Woodwork",
-      category: "Picture Detail: Center Frame",
-      icon: Hammer,
-      description: "Heavy timber structural framing, roof trusses, wall studs, beams, and on-site carpentry executed by skilled workers as displayed in the central building frame.",
-      highlights: [
-        "Complete Wood Skeleton & Timber Wall Studs",
-        "Roof Rafters, Trusses & Structural Load Paths",
-        "Precision Carpentry & Structural Framing Integrity",
-        "Certified Safe Framing Construction"
-      ],
-      startingFrom: "Framing Spec",
-      badge: "Picture Detail",
-      image: "/images/timber_structure.jpg"
-    },
-    {
-      id: "commercial-highrise",
-      title: "Commercial Projects & Multi-Story Buildings",
-      category: "Picture Detail: Right Side",
-      icon: Building2,
-      description: "Reinforced concrete commercial high-rises engineered with heavy floor slabs, exterior safety scaffolding, protective netting, and modern urban glass facade integration.",
-      highlights: [
-        "Multi-Story Reinforced Concrete Superstructures",
-        "Exterior Construction Scaffolding & Safety Netting",
-        "Commercial Grade Floor Slabs & Column Pouring",
-        "High-Rise Commercial Facilities & Urban Towers"
-      ],
-      startingFrom: "Commercial Grade",
-      badge: "Picture Detail",
-      image: "/images/concrete_structure.jpg"
-    },
-    {
-      id: "crane-operations",
-      title: "Tower Crane & Heavy Structural Lifting",
-      category: "Picture Detail: Sky Crane",
-      icon: Layers,
-      description: "Industrial yellow tower crane operations for vertical material transport, structural steel hoisting, and high-altitude commercial building assembly.",
-      highlights: [
-        "Heavy-Duty Yellow Tower Crane Deployment",
-        "Vertical Steel & Concrete Material Hoisting",
-        "High-Altitude Rigging & Rigorous Safety Protocols",
-        "Precision Commercial Lifting Operations"
-      ],
-      startingFrom: "Heavy Lifting",
-      badge: "Picture Detail",
-      image: "/images/crane_structure.jpg"
-    },
-    {
-      id: "infrastructure-earthworks",
-      title: "Infrastructure Works & Hydraulic Excavation",
-      category: "Picture Detail: Midground Machinery",
-      icon: Tractor,
-      description: "Heavy yellow hydraulic excavator earthmoving, groundwork leveling, trenching, soil clearing, and civil preparation for heavy foundations.",
-      highlights: [
-        "Hydraulic Excavator & Earthmoving Operations",
-        "Site Grading, Deep Trenching & Soil Preparation",
-        "Foundation Excavation & Subgrade Compaction",
-        "Heavy Civil Infrastructure Development"
-      ],
-      startingFrom: "Infrastructure Spec",
-      badge: "Picture Detail",
-      image: "/images/excavation_structure.jpg"
-    },
-    {
-      id: "blueprints-safety",
-      title: "Blueprints & Safety Hard Hat Standards",
-      category: "Picture Detail: Foreground Planning Table",
-      icon: FileText,
-      description: "Detailed architectural blueprints rolled out on site, paired with strict yellow safety helmet protocols and brick-by-brick structural foundation engineering.",
-      highlights: [
-        "Precision Architectural Blueprints & Drafting",
-        "Mandatory Yellow Hard Hat & Site Safety Protocols",
-        "Brick Stacks & Solid Structural Masonry",
-        "Flawless Execution from Plan to Handover"
-      ],
-      startingFrom: "Blueprint Spec",
-      badge: "Picture Detail",
-      image: "/images/blueprint_structure.jpg"
+        "End-to-End Residential Foundation to Finishing Handover",
+        "High-Pitch Architectural Roof Shingle & Weather Barrier",
+        "Custom Exterior Siding, Trim Framing & Dormer Carpentry",
+        "Complete Electrical, Plumbing, Flooring & Interior Works"
+      ]
     }
   ];
 
   return (
-    <section id="services" className="section-padding services-section">
+    <section id="services" className="section-padding services-section" style={{ background: "#F4F7FA" }}>
       <div className="container">
         {/* Header */}
-        <div className="section-header" style={{ textAlign: "center" }}>
-          <div className="section-pill" style={{ margin: "0 auto 12px auto" }}>
-            <Sparkles size={15} style={{ color: "#0F172A" }} />
-            <span>Picture Construction Disciplines</span>
+        <div className="section-header">
+          <div className="section-pill">
+            <Sparkles size={15} style={{ color: "#087FEA" }} />
+            <span>Our 2 Core Engineering Specialties</span>
           </div>
           <h2 className="section-title">
-            HOUSE & BUILDING CONSTRUCTION <br />
-            <span className="text-gradient-amber">Building Your Dreams, Brick By Brick</span>
+            Sports Infrastructure <br />
+            <span className="text-gradient-blue">& Turnkey Residential Construction</span>
           </h2>
-          <p className="section-subtitle" style={{ maxWidth: "760px", margin: "0 auto" }}>
-            Every discipline below is directly derived from the official <strong>SB SPORTS & CONSTRUCTION</strong> portfolio: Residential Development, Commercial Projects, Infrastructure Works, and precision Blueprint & Safety Standards.
+          <p className="section-subtitle">
+            <strong>SB SPORTS & CONSTRUCTION</strong> specializes in 2 core engineering divisions — delivering international synthetic sports courts & complete turnkey residential home construction.
           </p>
         </div>
 
-        {/* Services Cards Grid */}
-        <div className="services-cards-grid">
-          {servicesList.map((service) => {
-            const Icon = service.icon;
+        {/* 2 Main Divisions Grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "32px" }}>
+          {coreDivisions.map((division) => {
+            const Icon = division.icon;
             return (
-              <div key={service.id} className="feature-card service-card" style={{ overflow: "hidden", padding: 0 }}>
-                {/* Working Construction Structure Photo */}
-                <div style={{ width: "100%", height: "180px", overflow: "hidden", position: "relative" }}>
+              <div key={division.id} className="clean-card" style={{ padding: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+                {/* Photo Header */}
+                <div style={{ width: "100%", height: "230px", overflow: "hidden", position: "relative", background: "#04101F" }}>
                   <img
-                    src={service.image}
-                    alt={service.title}
+                    src={division.image}
+                    alt={division.title}
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                   />
-                  <span className="badge-gold" style={{ position: "absolute", bottom: "10px", left: "12px", background: "rgba(15,23,42,0.85)" }}>
-                    <Sparkles size={11} /> Active Structure
+                  <span className="badge-blue" style={{ position: "absolute", bottom: "14px", left: "14px", background: "#071A33", color: "#19C8F4", border: "1px solid rgba(25, 200, 244, 0.3)" }}>
+                    <Sparkles size={12} /> {division.badge}
                   </span>
                 </div>
 
-                <div style={{ padding: "20px" }}>
-                  <div className="service-card-top">
-                    <div className="feature-icon-wrapper">
-                      <Icon size={24} />
+                <div style={{ padding: "30px", display: "flex", flexDirection: "column", flex: 1 }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px" }}>
+                    <div className="feature-icon-wrapper" style={{ marginBottom: 0 }}>
+                      <Icon size={24} style={{ color: "#087FEA" }} />
                     </div>
-                    {service.badge && (
-                      <span className="badge-gold service-badge">
-                        <Sparkles size={12} /> {service.badge}
-                      </span>
-                    )}
+                    <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#087FEA", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                      {division.category}
+                    </span>
                   </div>
 
-                  <div className="service-category">{service.category}</div>
-                  <h3 className="service-title">{service.title}</h3>
-                  <p className="service-desc">{service.description}</p>
+                  <h3 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#071A33", marginBottom: "12px", lineHeight: 1.3 }}>
+                    {division.title}
+                  </h3>
+                  <p style={{ fontSize: "0.94rem", color: "#64748B", lineHeight: 1.6, marginBottom: "22px" }}>
+                    {division.description}
+                  </p>
 
-                  {/* Highlights list */}
-                  <div className="service-highlights">
-                    {service.highlights.map((item, idx) => (
-                      <div key={idx} className="service-highlight-item">
-                        <Check size={14} className="text-amber" />
+                  {/* Highlights checklist */}
+                  <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "26px", background: "#F8FAFC", padding: "16px", borderRadius: "6px", border: "1px solid #E2E8F0" }}>
+                    <div style={{ fontSize: "0.78rem", fontWeight: 800, color: "#071A33", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                      Core Discipline Scope:
+                    </div>
+                    {division.highlights.map((item, idx) => (
+                      <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.88rem", color: "#071A33" }}>
+                        <Check size={16} style={{ color: "#087FEA", flexShrink: 0, marginTop: "2px" }} />
                         <span>{item}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Card Footer */}
-                  <div className="service-card-footer">
-                    <div className="service-pricing">
-                      <span className="pricing-label">Scope</span>
-                      <span className="pricing-value" style={{ fontSize: "0.88rem" }}>{service.startingFrom}</span>
-                    </div>
+                  {/* Actions */}
+                  <div style={{ marginTop: "auto", display: "flex", gap: "12px" }}>
                     <button
-                      onClick={() => onSelectService(service.title)}
-                      className="service-action-btn"
-                      title={`Inquire about ${service.title}`}
+                      onClick={() => onSelectService(division.title)}
+                      className="btn btn-primary"
+                      style={{ flex: 1, justifyContent: "center" }}
                     >
-                      <span>Inquire Discipline</span>
-                      <ArrowRight size={15} />
+                      <span>Inquire Specification</span>
+                      <ArrowRight size={16} />
                     </button>
+
+                    <a
+                      href="tel:+919636365391"
+                      className="call-direct-btn"
+                      title="Call Desk"
+                      style={{
+                        width: "46px",
+                        height: "46px",
+                        borderRadius: "6px",
+                        background: "#071A33",
+                        border: "1px solid #087FEA",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        textDecoration: "none"
+                      }}
+                    >
+                      <PhoneCall size={18} style={{ color: "#19C8F4" }} />
+                    </a>
                   </div>
                 </div>
               </div>

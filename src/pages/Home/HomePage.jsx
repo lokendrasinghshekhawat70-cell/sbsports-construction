@@ -4,7 +4,6 @@ import Hero from "../../components/Hero";
 import Services from "../../components/Services";
 import SportsCourtSection from "../../components/SportsCourtSection";
 import Portfolio from "../../components/Portfolio";
-import Guarantees from "../../components/Guarantees";
 import HowItWorks from "../../components/HowItWorks";
 import Testimonials from "../../components/Testimonials";
 import ContactSection from "../../components/ContactSection";
@@ -37,9 +36,6 @@ export default function HomePage({
       <Portfolio 
         onBookConsultation={onSelectService}
       />
-
-      {/* 4 Contractual Guarantees */}
-      <Guarantees />
 
       {/* 4 Simple Steps Framework */}
       <HowItWorks 
