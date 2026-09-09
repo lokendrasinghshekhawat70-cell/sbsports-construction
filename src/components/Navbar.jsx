@@ -51,43 +51,7 @@ export default function Navbar({
 
   return (
     <>
-      {/* Top Contact & Trust Bar */}
-      <div className="top-trust-bar">
-        <div
-          className="container"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "10px"
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
-            <a
-              href="mailto:sbsportsandconstruction@gmail.com"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                color: "#D9E2EA",
-                fontWeight: 600,
-                textDecoration: "none"
-              }}
-            >
-              <Mail size={13} style={{ color: "#19C8F4" }} />
-              <span>sbsportsandconstruction@gmail.com</span>
-            </a>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.78rem", fontWeight: 700, color: "#94A3B8" }}>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: "5px", color: "#19C8F4" }}>
-              <PhoneCall   size={14} /> +91-9636365391
-            </span>
-            
-            </div>
-        </div>
-      </div>
+     
 
       {/* Main Sticky Navbar */}
       <header className={`site-header ${scrolled ? "header-scrolled" : ""}`}>
