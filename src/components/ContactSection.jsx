@@ -69,13 +69,23 @@ export default function ContactSection({ onOpenQuote }) {
   };
 
   return (
-    <section id="contact" className="section-padding contact-section" style={{ background: "#071A33", color: "#FFFFFF" }}>
+    <section
+      id="contact"
+      className="section-padding contact-section"
+      style={{
+        background: "#04101F",
+        color: "#FFFFFF",
+        borderTop: "2px solid #087FEA",
+        borderBottom: "2px solid #087FEA",
+        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.5)"
+      }}
+    >
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
           <div className="section-pill" style={{ background: "rgba(8, 127, 234, 0.15)", borderColor: "rgba(25, 200, 244, 0.3)" }}>
-            <HardHat size={15} style={{ color: "#19C8F4" }} />
-            <span style={{ color: "#19C8F4" }}>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
+            <HardHat size={15} style={{ color: "#2298D8" }} />
+            <span style={{ color: "#2298D8" }}>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
           </div>
           <h2 className="section-title" style={{ color: "#FFFFFF" }}>
             Submit Your Project Specifications <br />
@@ -100,7 +110,7 @@ export default function ContactSection({ onOpenQuote }) {
               }}
             >
               <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#19C8F4", flexShrink: 0 }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#2298D8", flexShrink: 0 }}>
                   <PhoneCall size={24} />
                 </div>
                 <div>
@@ -109,7 +119,7 @@ export default function ContactSection({ onOpenQuote }) {
                   </div>
                   <a
                     href="tel:+919636365391"
-                    style={{ color: "#19C8F4", fontSize: "1.25rem", fontWeight: 800, textDecoration: "none", display: "inline-block" }}
+                    style={{ color: "#2298D8", fontSize: "1.25rem", fontWeight: 800, textDecoration: "none", display: "inline-block" }}
                   >
                     +91-9636365391
                   </a>
@@ -131,7 +141,7 @@ export default function ContactSection({ onOpenQuote }) {
               }}
             >
               <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#19C8F4", flexShrink: 0 }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#2298D8", flexShrink: 0 }}>
                   <Mail size={24} />
                 </div>
                 <div>
@@ -162,14 +172,14 @@ export default function ContactSection({ onOpenQuote }) {
               }}
             >
               <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#19C8F4", flexShrink: 0 }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#2298D8", flexShrink: 0 }}>
                   <ShieldCheck size={24} />
                 </div>
                 <div>
                   <div style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "1.05rem", marginBottom: "4px" }}>
                     ISO Certified Civil Engineering Standards
                   </div>
-                  <div style={{ color: "#19C8F4", fontSize: "0.9rem", fontWeight: 700 }}>
+                  <div style={{ color: "#2298D8", fontSize: "0.9rem", fontWeight: 700 }}>
                     Certified Engineering Audits & Quality Guarantee
                   </div>
                   <div style={{ color: "#94A3B8", fontSize: "0.85rem", marginTop: "4px" }}>
@@ -199,7 +209,7 @@ export default function ContactSection({ onOpenQuote }) {
                   gap: "6px",
                   background: "rgba(25, 200, 244, 0.12)",
                   border: "1px solid rgba(25, 200, 244, 0.3)",
-                  color: "#19C8F4",
+                  color: "#2298D8",
                   padding: "4px 12px",
                   borderRadius: "6px",
                   fontSize: "0.75rem",
@@ -262,7 +272,7 @@ export default function ContactSection({ onOpenQuote }) {
                         width: "100%",
                         padding: "13px 16px",
                         background: "#071A33",
-                        border: phoneError ? "1px solid #FF4D4D" : "1px solid rgba(25, 200, 244, 0.3)",
+                        border: phoneError ? "1px solid #ff5858ff" : "1px solid rgba(25, 200, 244, 0.3)",
                         borderRadius: "6px",
                         color: "#FFFFFF",
                         fontSize: "0.94rem",
@@ -316,10 +326,16 @@ export default function ContactSection({ onOpenQuote }) {
                       outline: "none"
                     }}
                   >
-                    <option value="Synthetic Sports Court Construction" style={{ background: "#071A33", color: "#FFFFFF" }}>Synthetic Sports Court Construction (Tennis/Basketball/Badminton)</option>
-                    <option value="Box Cricket & Futsal Turf Arena" style={{ background: "#071A33", color: "#FFFFFF" }}>Box Cricket & Futsal Turf Arena</option>
-                    <option value="8-Layer ITF Acrylic Resurfacing" style={{ background: "#071A33", color: "#FFFFFF" }}>8-Layer ITF Acrylic Resurfacing</option>
-                    <option value="Turnkey Residential House Construction" style={{ background: "#071A33", color: "#FFFFFF" }}>Turnkey Residential House & Villa Construction</option>
+                    <option value="8-Layer ITF Cushion Tennis Court Construction" style={{ background: "#071A33", color: "#FFFFFF" }}>1. 8-Layer ITF Cushion Lawn Tennis Court Construction</option>
+                    <option value="Box Cricket & Futsal Turf Arena (30ft Cage)" style={{ background: "#071A33", color: "#FFFFFF" }}>2. Box Cricket & Futsal Turf Arena (50mm Turf + 30ft Cage)</option>
+                    <option value="BWF Grade Indoor Badminton Arena" style={{ background: "#071A33", color: "#FFFFFF" }}>3. BWF Grade Indoor Badminton Arena & Sprung Wood</option>
+                    <option value="FIBA Basketball & Multi-Sport Arena" style={{ background: "#071A33", color: "#FFFFFF" }}>4. FIBA Basketball & Multi-Sport Arena</option>
+                    <option value="Panoramic Padel & Pickleball Court" style={{ background: "#071A33", color: "#FFFFFF" }}>5. Panoramic Padel & USAPA Pickleball Court</option>
+                    <option value="IAAF Synthetic Athletic Running Track" style={{ background: "#071A33", color: "#FFFFFF" }}>6. IAAF Synthetic Athletic Running Track</option>
+                    <option value="Turnkey Civil EPC Building Contracting" style={{ background: "#071A33", color: "#FFFFFF" }}>7. Turnkey Civil EPC Building Contracting</option>
+                    <option value="Commercial Towers & Corporate Complexes" style={{ background: "#071A33", color: "#FFFFFF" }}>8. Commercial Towers & Corporate Complexes</option>
+                    <option value="Industrial PEB Steel Warehouse & Sheds" style={{ background: "#071A33", color: "#FFFFFF" }}>9. Industrial PEB Steel Warehouse & Factory Sheds</option>
+                    <option value="Luxury Turnkey Residential Villa Construction" style={{ background: "#071A33", color: "#FFFFFF" }}>10. Luxury Turnkey Residential Villa & Bungalow</option>
                   </select>
                 </div>
 
@@ -365,8 +381,8 @@ export default function ContactSection({ onOpenQuote }) {
                       justifyContent: "center",
                       padding: "16px",
                       background: "rgba(25, 200, 244, 0.12)",
-                      border: "1px solid #19C8F4",
-                      color: "#19C8F4"
+                      border: "1px solid #2298D8",
+                      color: "#2298D8"
                     }}
                   >
                     <MessageSquare size={18} />
@@ -376,7 +392,7 @@ export default function ContactSection({ onOpenQuote }) {
               </form>
             ) : (
               <div style={{ textAlign: "center", padding: "30px 10px" }}>
-                <CheckCircle2 size={48} style={{ color: "#19C8F4", margin: "0 auto 16px auto" }} />
+                <CheckCircle2 size={48} style={{ color: "#2298D8", margin: "0 auto 16px auto" }} />
                 <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#FFFFFF", marginBottom: "8px" }}>
                   Inquiry Successfully Registered
                 </h4>
@@ -395,7 +411,7 @@ export default function ContactSection({ onOpenQuote }) {
                     gap: "8px",
                     padding: "10px 22px",
                     background: "rgba(25, 200, 244, 0.15)",
-                    border: "1px solid #19C8F4",
+                    border: "1px solid #2298D8",
                     color: "#FFFFFF",
                     fontSize: "0.9rem",
                     fontWeight: 700,

@@ -42,13 +42,13 @@ export default function HomePage({
         onOpenQuote={onOpenQuote}
       />
 
-      {/* Verified Reviews & Accreditations */}
-      <Testimonials />
-
       {/* Direct Contact & Fast Callback */}
       <ContactSection 
         onOpenQuote={onOpenQuote}
       />
+
+      {/* Verified Reviews & Accreditations (Above Footer) */}
+      <Testimonials />
     </div>
   );
 }

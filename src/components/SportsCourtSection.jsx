@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import AOS from "aos";
 import {
   Trophy,
   ArrowRight,
@@ -11,11 +12,27 @@ import {
   Mail,
   Camera,
   ShieldCheck,
-  CheckCircle2
+  CheckCircle2,
+  Zap,
+  Flame
 } from "lucide-react";
 
 export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
   const [activeTab, setActiveTab] = useState("all");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [activeTab]);
+
+  const handleGoToServices = () => {
+    if (onNavigate) {
+      onNavigate("courts");
+    } else {
+      navigate("/sports-courts");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   const sportsCatalog = [
     {
@@ -188,27 +205,27 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
             <span>SB SPORTS INFRASTRUCTURE & ACADEMY SOLUTIONS</span>
           </div>
 
-          <h2 className="section-title">
+          <h2 className="section-title" data-aos="fade-up" data-aos-delay="100">
             World-Class Sports Arenas, <br />
             <span className="text-gradient-blue">Synthetic Courts & Turf Systems</span>
           </h2>
 
-          <p className="section-subtitle" style={{ maxWidth: "780px", margin: "0 auto 28px auto" }}>
+          <p className="section-subtitle" data-aos="fade-up" data-aos-delay="150" style={{ maxWidth: "780px", margin: "0 auto 28px auto" }}>
             From gymnasium drop zones, WSF squash courts, and BWF badminton mats to FIFA Box Cricket turfs, ITF lawn tennis arenas, IAAF running tracks, and turnkey sports consulting.
           </p>
 
           {/* Action CTAs */}
-          <div style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap", marginBottom: "32px" }}>
+          <div data-aos="fade-up" data-aos-delay="200" style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap", marginBottom: "32px" }}>
             <button
-              onClick={() => onNavigate("courts")}
+              onClick={handleGoToServices}
               className="btn btn-primary"
             >
               <Play size={16} />
-              <span>Launch 2D Court Simulator</span>
+              <span>Launch 3D/2D Court Simulator</span>
             </button>
 
             <button
-              onClick={() => onNavigate("courts")}
+              onClick={handleGoToServices}
               className="btn btn-secondary"
             >
               <Layers size={16} />
@@ -218,7 +235,10 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
 
           {/* Big Featured Panoramic Arena Showcase */}
           <div
-            onClick={() => onNavigate("courts")}
+            onClick={handleGoToServices}
+            data-aos="fade-up"
+            data-aos-delay="250"
+            data-aos-duration="800"
             style={{
               position: "relative",
               width: "100%",
@@ -265,7 +285,7 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
               </div>
               <div
                 className="btn btn-secondary btn-sm"
-                style={{ background: "rgba(25, 200, 244, 0.2)", border: "1px solid #19C8F4", color: "#FFFFFF" }}
+                style={{ background: "rgba(25, 200, 244, 0.2)", border: "1px solid #2298D8", color: "#FFFFFF" }}
               >
                 <Camera size={16} />
                 <span>View Arena Specs</span>
@@ -275,6 +295,8 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
 
           {/* Interactive Category Filter Tabs */}
           <div
+            data-aos="fade-up"
+            data-aos-delay="300"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -358,10 +380,13 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
             marginBottom: "50px"
           }}
         >
-          {filteredCatalog.map((court) => (
+          {filteredCatalog.map((court, idx) => (
             <div
               key={court.id}
               className="clean-card"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={(idx % 3) * 120}
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -380,7 +405,7 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
                     top: "12px",
                     left: "12px",
                     background: "#071A33",
-                    color: "#19C8F4",
+                    color: "#2298D8",
                     fontSize: "0.72rem",
                     fontWeight: 700,
                     padding: "4px 12px",
@@ -456,7 +481,7 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
 
                 <div style={{ display: "flex", gap: "10px", marginTop: "auto" }}>
                   <button
-                    onClick={() => onNavigate("courts")}
+                    onClick={handleGoToServices}
                     className="btn btn-secondary btn-sm"
                     style={{ flex: 1, justifyContent: "center" }}
                   >

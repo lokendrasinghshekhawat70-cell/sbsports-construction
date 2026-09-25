@@ -16,8 +16,8 @@
   --border-highlight: #087FEA;
 
   --accent-blue: #087FEA;
-  --accent-cyan: #19C8F4;
-  --accent-orange: #FF8A00;
+  --accent-cyan: #2298D8;
+  --accent-orange: #D97706;
   --accent-silver: #D9E2EA;
 
   --text-dark: #071A33;
@@ -76,7 +76,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #19C8F4;
+  background: #2298D8;
 }
 
 /* Selection Color */
@@ -182,11 +182,11 @@ button {
 }
 
 .text-cyan {
-  color: #19C8F4 !important;
+  color: #2298D8 !important;
 }
 
 .text-orange {
-  color: #FF8A00 !important;
+  color: #D97706 !important;
 }
 
 .text-navy {
@@ -202,7 +202,7 @@ button {
 }
 
 .text-gradient-blue {
-  background: linear-gradient(135deg, #087FEA 0%, #19C8F4 100%) !important;
+  background: linear-gradient(135deg, #087FEA 0%, #2298D8 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
@@ -280,7 +280,7 @@ button {
 }
 
 .stat-card:hover {
-  border-color: #19C8F4 !important;
+  border-color: #2298D8 !important;
   transform: translateY(-2px);
 }
 
@@ -327,7 +327,7 @@ button {
   left: 16px;
   background: #071A33 !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  color: #19C8F4 !important;
+  color: #2298D8 !important;
   padding: 4px 12px;
   font-size: 0.75rem;
   font-weight: 700;
@@ -361,7 +361,7 @@ button {
   letter-spacing: 0.02em;
 }
 
-/* Primary Button: Background #087FEA, Text #FFFFFF, Hover #19C8F4 */
+/* Primary Button: Background #087FEA, Text #FFFFFF, Hover #2298D8 */
 .btn-primary {
   background: #087FEA !important;
   color: #FFFFFF !important;
@@ -371,8 +371,8 @@ button {
 }
 
 .btn-primary:hover {
-  background: #19C8F4 !important;
-  border-color: #19C8F4 !important;
+  background: #2298D8 !important;
+  border-color: #2298D8 !important;
   color: #071A33 !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(25, 200, 244, 0.35) !important;
@@ -387,16 +387,16 @@ button {
 
 .btn-secondary:hover {
   background: rgba(8, 127, 234, 0.08) !important;
-  border-color: #19C8F4 !important;
+  border-color: #2298D8 !important;
   color: #087FEA !important;
   transform: translateY(-2px);
 }
 
-/* Orange Accent Button: Background #FF8A00 for high priority CTAs */
+/* Orange Accent Button: Background #D97706 for high priority CTAs */
 .btn-orange {
-  background: #FF8A00 !important;
+  background: #D97706 !important;
   color: #FFFFFF !important;
-  border: 1px solid #FF8A00 !important;
+  border: 1px solid #D97706 !important;
   font-weight: 800;
   box-shadow: 0 4px 14px rgba(255, 138, 0, 0.3) !important;
 }
@@ -429,7 +429,7 @@ button {
 .badge-cyan {
   background: rgba(25, 200, 244, 0.1) !important;
   border: 1px solid rgba(25, 200, 244, 0.3) !important;
-  color: #19C8F4 !important;
+  color: #2298D8 !important;
   padding: 4px 12px;
   font-size: 0.78rem;
   font-weight: 700;
@@ -440,12 +440,43 @@ button {
 .badge-orange {
   background: rgba(255, 138, 0, 0.1) !important;
   border: 1px solid rgba(255, 138, 0, 0.3) !important;
-  color: #FF8A00 !important;
+  color: #D97706 !important;
   padding: 4px 12px;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   border-radius: var(--radius-sm);
 }
+
+/* Hero Specialty Pill Items */
+.hero-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: rgba(4, 16, 31, 0.85);
+  border: 1px solid rgba(25, 200, 244, 0.25);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(4, 16, 31, 0.5);
+  transition: var(--transition-smooth);
+}
+
+.hero-pill-item:hover {
+  border-color: #2298D8;
+  transform: translateY(-2px);
+  background: rgba(8, 127, 234, 0.2);
+}
+
+.btn-glow {
+  box-shadow: 0 0 24px rgba(8, 127, 234, 0.45) !important;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 32px rgba(25, 200, 244, 0.6) !important;
+}
+
 
 

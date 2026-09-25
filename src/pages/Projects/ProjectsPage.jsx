@@ -13,7 +13,10 @@ import {
   Trophy,
   Home,
   ShieldCheck,
-  Clock
+  Clock,
+  Building2,
+  HardHat,
+  Layers
 } from "lucide-react";
 
 export default function ProjectsPage({ onBookConsultation }) {
@@ -23,12 +26,12 @@ export default function ProjectsPage({ onBookConsultation }) {
   const projects = [
     {
       id: "p1",
-      title: "Grand Slam Standard 8-Layer Synthetic Acrylic Tennis Court",
+      title: "Championship 8-Layer Synthetic Acrylic Tennis Arena",
       category: "sports",
       categoryName: "Sports Infrastructure",
-      location: "Metropolitan Sports Club",
-      area: "78ft × 36ft (Enclosure: 120ft × 60ft)",
-      timeline: "12 Days Execution",
+      location: "Metropolitan Sports Complex",
+      area: "14,400 sq ft (2 Courts)",
+      timeline: "3 Weeks Handover",
       image: "/images/sports_tennis_court.jpg",
       description: "8-layer ITF class 4/5 cushion acrylic court surface with sub-base laser-screed gradient, anti-glare color coating, high-mast LED floodlights, and perimeter fencing.",
       architecturalFeatures: [
@@ -46,8 +49,8 @@ export default function ProjectsPage({ onBookConsultation }) {
       category: "sports",
       categoryName: "Sports Infrastructure",
       location: "Commercial Sports Hub",
-      area: "100ft × 60ft Enclosure (30ft Height)",
-      timeline: "14 Days Execution",
+      area: "12,000 sq ft (30ft Truss Cage)",
+      timeline: "4 Weeks Turnkey",
       image: "/images/sports_box_cricket_turf.jpg",
       description: "Commercial box cricket arena built with 50mm FIFA standard monofilament PE grass, heavy-duty 30ft steel cage netting, and night illumination.",
       architecturalFeatures: [
@@ -65,8 +68,8 @@ export default function ProjectsPage({ onBookConsultation }) {
       category: "sports",
       categoryName: "Sports Infrastructure",
       location: "National Sports Academy",
-      area: "50ft × 25ft Enclosure",
-      timeline: "10 Days Execution",
+      area: "8,500 sq ft (4 Courts)",
+      timeline: "2 Weeks Installation",
       image: "/images/sports_badminton_court.jpg",
       description: "Tournament badminton hall with BWF approved lychee-texture anti-slip sports vinyl, sprung timber sub-floor, and asymmetric LED lights.",
       architecturalFeatures: [
@@ -83,7 +86,7 @@ export default function ProjectsPage({ onBookConsultation }) {
       title: "IAAF Certified 400m Synthetic Athletic Running Track",
       category: "sports",
       categoryName: "Sports Infrastructure",
-      location: "Olympic Sports Complex",
+      location: "Olympic Sports Stadium",
       area: "400m Oval (8 Lanes)",
       timeline: "25 Days Execution",
       image: "/images/sports_running_track.jpg",
@@ -99,10 +102,48 @@ export default function ProjectsPage({ onBookConsultation }) {
     },
     {
       id: "p5",
-      title: "Turnkey Luxury 2-Story Villa & Roof Construction",
-      category: "residential",
-      categoryName: "Turnkey Residential",
-      location: "Residential Sector",
+      title: "Commercial Multi-Story Concrete Superstructure",
+      category: "civil",
+      categoryName: "Turnkey Civil & Structural",
+      location: "Commercial Plaza Sector",
+      area: "42,000 sq ft Built-Up",
+      timeline: "14 Months Commercial Build",
+      image: "/images/concrete_structure.jpg",
+      description: "Multi-story reinforced concrete commercial building with perimeter safety scaffolding, containment nets, floor slab pouring, and heavy crane operations.",
+      architecturalFeatures: [
+        "Reinforced concrete columns, shear walls, and floor slabs",
+        "Multi-level safety scaffolding and containment netting",
+        "Engineered formwork for high-rise commercial strength",
+        "Strict site safety and structural load compliance"
+      ],
+      clientReview: "SB SPORTS & CONSTRUCTION handled the high-rise concrete pours and commercial framework with zero safety incidents.",
+      clientAuthor: "Commercial Project Director"
+    },
+    {
+      id: "p6",
+      title: "Industrial PEB High-Span Steel Warehouse",
+      category: "civil",
+      categoryName: "Turnkey Civil & Structural",
+      location: "Logistics Hub & Industrial Park",
+      area: "35,000 sq ft Floor Span",
+      timeline: "4 Months Handover",
+      image: "/images/steel_structure.jpg",
+      description: "Heavy structural steel I-beam framing, clear-span portal trusses, overhead crane gantries, and standing-seam insulated roof panels.",
+      architecturalFeatures: [
+        "Heavy structural steel I-beam framing and high-strength bolts",
+        "Clear-span portal truss engineering for maximum storage",
+        "Laser-screed Tremix vacuum dewatered concrete flooring",
+        "Seismic-rated structural steel joints and connection plates"
+      ],
+      clientReview: "Their structural steel erection team is world-class. The warehouse skeleton went up with millimeter precision.",
+      clientAuthor: "Lead Commercial Structural Engineer"
+    },
+    {
+      id: "p7",
+      title: "Turnkey Luxury 2-Story Villa & Roof Framing",
+      category: "civil",
+      categoryName: "Turnkey Civil & Structural",
+      location: "Green Valley Luxury Enclave",
       area: "4,800 sq ft Built-Up",
       timeline: "7 Months Handover",
       image: "/images/roofing_structure.jpg",
@@ -117,23 +158,23 @@ export default function ProjectsPage({ onBookConsultation }) {
       clientAuthor: "Homeowner — Luxury Villa Project"
     },
     {
-      id: "p6",
-      title: "Brick-by-Brick Structural Masonry & Load-Bearing Villa",
-      category: "residential",
-      categoryName: "Turnkey Residential",
-      location: "Green Valley Enclave",
-      area: "3,600 sq ft Built-Up",
-      timeline: "5 Months Handover",
-      image: "/images/brickwork_structure.jpg",
-      description: "Custom residential villa built with high-density red clay brick masonry, reinforced concrete lintels, damp-proof courses, and craftsmen finishes.",
+      id: "p8",
+      title: "Heavy Excavator Earthmoving & Deep Raft Groundwork",
+      category: "civil",
+      categoryName: "Turnkey Civil & Structural",
+      location: "Infrastructure Development Zone",
+      area: "Civil Earthworks & Raft",
+      timeline: "2 Months Site Prep",
+      image: "/images/excavation_structure.jpg",
+      description: "Heavy hydraulic excavator trenching and bulk excavation, subgrade grading, Fe-550D TMT rebar binding, and seismic-resistant raft casting.",
       architecturalFeatures: [
-        "Load-bearing red clay brick and mortar structural masonry",
-        "Reinforced lintels, damp-proof courses, and tie beams",
-        "Level and plumb alignment verified with spirit levels",
-        "Building your dreams, brick by brick structural durability"
+        "Heavy hydraulic excavator trenching and bulk excavation",
+        "Subgrade leveling, pneumatic compaction, and foundation grading",
+        "Reinforced concrete lintels and damp-proof membrane courses",
+        "Robust civil site preparation and stormwater drainage infrastructure"
       ],
-      clientReview: "Watching the brick-by-brick craftsmanship rise on our home was incredible. Truly sturdy and authentic workmanship.",
-      clientAuthor: "Client — Green Valley Residence"
+      clientReview: "The groundwork and excavation were performed with heavy machinery precision, creating an impenetrable foundation.",
+      clientAuthor: "Civil Site Supervisor"
     }
   ];
 
@@ -153,7 +194,7 @@ export default function ProjectsPage({ onBookConsultation }) {
               gap: "8px",
               background: "rgba(8, 127, 234, 0.12)",
               border: "1px solid rgba(25, 200, 244, 0.3)",
-              color: "#19C8F4",
+              color: "#2298D8",
               padding: "6px 18px",
               fontSize: "0.8rem",
               fontWeight: 800,
@@ -173,7 +214,7 @@ export default function ProjectsPage({ onBookConsultation }) {
           </h1>
 
           <p className="projects-page-subtitle" style={{ maxWidth: "780px", margin: "0 auto", color: "#D9E2EA", fontSize: "1.05rem", lineHeight: 1.6 }}>
-            Explore completed Sports Courts, Synthetic Surfacing, Box Cricket Arenas, and Turnkey Residential Houses executed by SB SPORTS & CONSTRUCTION.
+            Explore completed Sports Arenas, Synthetic Courts, Box Cricket Turfs, Commercial Complexes, and Turnkey Houses executed by SB SPORTS & CONSTRUCTION.
           </p>
         </div>
       </section>
@@ -192,13 +233,13 @@ export default function ProjectsPage({ onBookConsultation }) {
               className={`filter-btn ${filter === "sports" ? "active" : ""}`}
               onClick={() => setFilter("sports")}
             >
-              <Trophy size={16} /> 1. Sports Infrastructure
+              <Trophy size={16} /> 1. Sports Arenas & Turfs (Integral Spor Caliber)
             </button>
             <button
-              className={`filter-btn ${filter === "residential" ? "active" : ""}`}
-              onClick={() => setFilter("residential")}
+              className={`filter-btn ${filter === "civil" ? "active" : ""}`}
+              onClick={() => setFilter("civil")}
             >
-              <Home size={16} /> 2. Turnkey Residential Houses
+              <Building2 size={16} /> 2. Civil & Building Engineering (MSS Krishna Caliber)
             </button>
           </div>
         </div>
@@ -239,7 +280,7 @@ export default function ProjectsPage({ onBookConsultation }) {
                       left: "14px",
                       background: "#071A33",
                       border: "1px solid rgba(25, 200, 244, 0.3)",
-                      color: "#19C8F4",
+                      color: "#2298D8",
                       padding: "4px 12px",
                       fontSize: "0.75rem",
                       fontWeight: 800,
@@ -257,7 +298,7 @@ export default function ProjectsPage({ onBookConsultation }) {
                       <MapPin size={14} style={{ color: "#087FEA" }} /> {proj.location}
                     </span>
                     <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                      <Calendar size={14} style={{ color: "#19C8F4" }} /> {proj.timeline}
+                      <Calendar size={14} style={{ color: "#2298D8" }} /> {proj.timeline}
                     </span>
                   </div>
 
@@ -349,7 +390,7 @@ export default function ProjectsPage({ onBookConsultation }) {
 
             <div style={{ width: "100%", height: "260px", overflow: "hidden", position: "relative" }}>
               <img src={selectedProject.image} alt={selectedProject.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              <span style={{ position: "absolute", bottom: "16px", left: "16px", background: "#071A33", border: "1px solid #19C8F4", color: "#19C8F4", padding: "6px 14px", fontWeight: 800, fontSize: "0.8rem", borderRadius: "6px" }}>
+              <span style={{ position: "absolute", bottom: "16px", left: "16px", background: "#071A33", border: "1px solid #2298D8", color: "#2298D8", padding: "6px 14px", fontWeight: 800, fontSize: "0.8rem", borderRadius: "6px" }}>
                 {selectedProject.categoryName}
               </span>
             </div>
@@ -363,13 +404,13 @@ export default function ProjectsPage({ onBookConsultation }) {
               </p>
 
               <div style={{ background: "#071A33", border: "1px solid rgba(25, 200, 244, 0.2)", borderRadius: "8px", padding: "20px", marginBottom: "24px" }}>
-                <h4 style={{ color: "#19C8F4", fontWeight: 800, fontSize: "0.9rem", textTransform: "uppercase", marginBottom: "12px" }}>
+                <h4 style={{ color: "#2298D8", fontWeight: 800, fontSize: "0.9rem", textTransform: "uppercase", marginBottom: "12px" }}>
                   Engineering Specifications:
                 </h4>
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   {selectedProject.architecturalFeatures.map((feat, i) => (
                     <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.9rem", color: "#FFFFFF" }}>
-                      <Check size={16} style={{ color: "#19C8F4", flexShrink: 0, marginTop: "2px" }} />
+                      <Check size={16} style={{ color: "#2298D8", flexShrink: 0, marginTop: "2px" }} />
                       <span>{feat}</span>
                     </div>
                   ))}
@@ -379,13 +420,13 @@ export default function ProjectsPage({ onBookConsultation }) {
               <div style={{ background: "rgba(8, 127, 234, 0.1)", border: "1px solid rgba(8, 127, 234, 0.3)", borderRadius: "8px", padding: "20px", marginBottom: "26px" }}>
                 <div style={{ display: "flex", gap: "4px", marginBottom: "8px" }}>
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} fill="#FF8A00" color="#FF8A00" />
+                    <Star key={i} size={16} fill="#D97706" color="#D97706" />
                   ))}
                 </div>
                 <p style={{ color: "#FFFFFF", fontStyle: "italic", fontSize: "0.92rem", margin: "0 0 8px 0" }}>
                   "{selectedProject.clientReview}"
                 </p>
-                <div style={{ color: "#19C8F4", fontWeight: 700, fontSize: "0.85rem" }}>— {selectedProject.clientAuthor}</div>
+                <div style={{ color: "#2298D8", fontWeight: 700, fontSize: "0.85rem" }}>— {selectedProject.clientAuthor}</div>
               </div>
 
               <button

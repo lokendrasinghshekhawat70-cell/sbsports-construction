@@ -78,7 +78,7 @@ export default function ContactPage({ onOpenQuote }) {
       <section className="contact-hero-banner">
         <div className="container" style={{ textAlign: "center" }}>
           <div className="contact-pill-badge">
-            <HardHat size={16} style={{ color: "#19C8F4" }} />
+            <HardHat size={16} style={{ color: "#2298D8" }} />
             <span>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
           </div>
 
@@ -93,7 +93,7 @@ export default function ContactPage({ onOpenQuote }) {
 
           <div className="contact-hero-metrics">
             <div className="metric-chip">
-              <PhoneCall size={16} style={{ color: "#19C8F4" }} />
+              <PhoneCall size={16} style={{ color: "#2298D8" }} />
               <span>Direct Hotline: +91-9636365391</span>
             </div>
             <div className="metric-chip">
@@ -101,7 +101,7 @@ export default function ContactPage({ onOpenQuote }) {
               <span>ISO Certified Standards</span>
             </div>
             <div className="metric-chip">
-              <Clock size={16} style={{ color: "#FF8A00" }} />
+              <Clock size={16} style={{ color: "#D97706" }} />
               <span>24/7 Technical Response</span>
             </div>
           </div>
@@ -257,10 +257,16 @@ export default function ContactPage({ onOpenQuote }) {
                       value={inputData.service}
                       onChange={(e) => setInputData({ ...inputData, service: e.target.value })}
                     >
-                      <option value="Synthetic Sports Court Construction">Synthetic Sports Court Construction (Tennis/Basketball/Badminton)</option>
-                      <option value="Box Cricket & Futsal Turf Arena">Box Cricket & Futsal Turf Arena</option>
-                      <option value="8-Layer ITF Acrylic Resurfacing">8-Layer ITF Acrylic Resurfacing</option>
-                      <option value="Turnkey Residential House Construction">Turnkey Residential House & Villa Construction</option>
+                      <option value="8-Layer ITF Cushion Tennis Court Construction">1. 8-Layer ITF Cushion Lawn Tennis Court Construction</option>
+                      <option value="Box Cricket & Futsal Turf Arena (30ft Cage)">2. Box Cricket & Futsal Turf Arena (50mm Turf + 30ft Cage)</option>
+                      <option value="BWF Grade Indoor Badminton Arena">3. BWF Grade Indoor Badminton Arena & Sprung Wood</option>
+                      <option value="FIBA Basketball & Multi-Sport Arena">4. FIBA Basketball & Multi-Sport Arena</option>
+                      <option value="Panoramic Padel & Pickleball Court">5. Panoramic Padel & USAPA Pickleball Court</option>
+                      <option value="IAAF Synthetic Athletic Running Track">6. IAAF Synthetic Athletic Running Track</option>
+                      <option value="Turnkey Civil EPC Building Contracting">7. Turnkey Civil EPC Building Contracting</option>
+                      <option value="Commercial Towers & Corporate Complexes">8. Commercial Towers & Corporate Complexes</option>
+                      <option value="Industrial PEB Steel Warehouse & Sheds">9. Industrial PEB Steel Warehouse & Factory Sheds</option>
+                      <option value="Luxury Turnkey Residential Villa Construction">10. Luxury Turnkey Residential Villa & Bungalow</option>
                     </select>
                   </div>
 
@@ -317,7 +323,7 @@ export default function ContactPage({ onOpenQuote }) {
                       gap: "8px",
                       padding: "12px 24px",
                       background: "rgba(25, 200, 244, 0.15)",
-                      border: "1px solid #19C8F4",
+                      border: "1px solid #2298D8",
                       color: "#FFFFFF",
                       fontSize: "0.92rem",
                       fontWeight: 700,

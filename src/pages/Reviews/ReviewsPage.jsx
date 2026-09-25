@@ -85,7 +85,7 @@ export default function ReviewsPage() {
               gap: "8px",
               background: "rgba(8, 127, 234, 0.12)",
               border: "1px solid rgba(25, 200, 244, 0.3)",
-              color: "#19C8F4",
+              color: "#2298D8",
               padding: "6px 18px",
               fontWeight: 800,
               fontSize: "0.8rem",
@@ -119,11 +119,11 @@ export default function ReviewsPage() {
               boxShadow: "0 8px 25px rgba(4, 16, 31, 0.5)"
             }}
           >
-            <div style={{ fontSize: "2.2rem", fontWeight: 800, color: "#19C8F4", fontFamily: "'Manrope', sans-serif" }}>4.9</div>
+            <div style={{ fontSize: "2.2rem", fontWeight: 800, color: "#2298D8", fontFamily: "'Manrope', sans-serif" }}>4.9</div>
             <div style={{ textAlign: "left" }}>
               <div style={{ display: "flex", gap: "4px" }}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="#FF8A00" color="#FF8A00" />
+                  <Star key={i} size={18} fill="#D97706" color="#D97706" />
                 ))}
               </div>
               <span style={{ fontSize: "0.82rem", color: "#D9E2EA", fontWeight: 600 }}>Based on 500+ Verified Projects</span>
@@ -154,7 +154,7 @@ export default function ReviewsPage() {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
                   <div style={{ display: "flex", gap: "3px" }}>
                     {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} size={17} fill="#FF8A00" color="#FF8A00" />
+                      <Star key={i} size={17} fill="#D97706" color="#D97706" />
                     ))}
                   </div>
                   <Quote size={24} style={{ color: "#087FEA", opacity: 0.6 }} />
@@ -193,7 +193,7 @@ export default function ReviewsPage() {
                       borderRadius: "8px",
                       background: "#071A33",
                       border: "1px solid #087FEA",
-                      color: "#19C8F4",
+                      color: "#2298D8",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -230,7 +230,7 @@ export default function ReviewsPage() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", borderBottom: "1px solid rgba(217, 226, 234, 0.15)", paddingBottom: "14px" }}>
-            <Award size={22} style={{ color: "#19C8F4" }} />
+            <Award size={22} style={{ color: "#2298D8" }} />
             <span style={{ fontWeight: 800, color: "#FFFFFF", fontSize: "1.05rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
               Licensed & Certified By Leading International Authorities
             </span>
@@ -238,7 +238,7 @@ export default function ReviewsPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "20px" }}>
             {certifications.map((c, idx) => (
               <div key={idx} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                <ShieldCheck size={20} style={{ color: "#19C8F4", flexShrink: 0, marginTop: "2px" }} />
+                <ShieldCheck size={20} style={{ color: "#2298D8", flexShrink: 0, marginTop: "2px" }} />
                 <div>
                   <div style={{ fontWeight: 800, fontSize: "0.9rem", color: "#FFFFFF" }}>{c.title}</div>
                   <div style={{ fontSize: "0.8rem", color: "#94A3B8", marginTop: "2px" }}>{c.desc}</div>

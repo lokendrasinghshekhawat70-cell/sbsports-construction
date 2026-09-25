@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Shared Layout Components
 import Navbar from "./components/Navbar";
@@ -20,6 +22,21 @@ import ContactPage from "./pages/Contact/ContactPage";
 function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [quotePrefillData, setQuotePrefillData] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 750,
+      easing: "ease-out-cubic",
+      once: false, // Animates every single time on scroll
+      mirror: true, // Animates out and back in when scrolling up/down
+      offset: 60,
+    });
+  }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [location.pathname]);
 
   const handleOpenQuoteWithService = (serviceName) => {
     setQuotePrefillData({ projectType: serviceName });
@@ -52,7 +69,7 @@ function App() {
           <Route path="/Projects" element={<ProjectsPage onBookConsultation={handleOpenQuoteWithService} />} />
           <Route path="/projects" element={<ProjectsPage onBookConsultation={handleOpenQuoteWithService} />} />
 
-          
+
 
           {/* Reviews */}
           <Route path="/Reviews" element={<ReviewsPage />} />
@@ -73,7 +90,7 @@ function App() {
       <FloatingDock onOpenQuote={handleOpenQuoteGeneric} />
 
       {/* Quote & Free Consultation Modal */}
-      <QuoteModal 
+      <QuoteModal
         isOpen={isQuoteModalOpen}
         onClose={() => setIsQuoteModalOpen(false)}
         initialData={quotePrefillData}

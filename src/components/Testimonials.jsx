@@ -1,11 +1,11 @@
 import React from "react";
-import { 
-  Star, 
-  Quote, 
-  CheckCircle2, 
-  Award, 
-  ShieldCheck, 
-  Building2, 
+import {
+  Star,
+  Quote,
+  CheckCircle2,
+  Award,
+  ShieldCheck,
+  Building2,
   ThumbsUp,
   Sparkles,
   Trophy
@@ -161,18 +161,18 @@ export default function Testimonials() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", borderBottom: "1px solid rgba(217, 226, 234, 0.15)", paddingBottom: "14px" }}>
-            <Award size={22} style={{ color: "#19C8F4" }} />
-            <span style={{ fontWeight: 800, color: "#FFFFFF", fontSize: "1rem", letterSpacing: "0.04em", textTransform: "uppercase" }}>
+            <Award size={22} style={{ color: "#2298D8" }} />
+            <span style={{ fontWeight: 800, color: "#372b2bff", fontSize: "1rem", letterSpacing: "0.04em", textTransform: "uppercase" }}>
               Licensed & Certified By Global Industry Authorities
             </span>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px" }}>
             {certifications.map((c, idx) => (
               <div key={idx} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                <ShieldCheck size={20} style={{ color: "#19C8F4", flexShrink: 0, marginTop: "2px" }} />
+                <ShieldCheck size={20} style={{ color: "#2298D8", flexShrink: 0, marginTop: "2px" }} />
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: "0.9rem", color: "#FFFFFF" }}>{c.title}</div>
-                  <div style={{ fontSize: "0.8rem", color: "#D9E2EA" }}>{c.desc}</div>
+                  <div style={{ fontWeight: 700, fontSize: "0.9rem", color: "#3e3636ff" }}>{c.title}</div>
+                  <div style={{ fontSize: "0.8rem", color: "#424547ff" }}>{c.desc}</div>
                 </div>
               </div>
             ))}
