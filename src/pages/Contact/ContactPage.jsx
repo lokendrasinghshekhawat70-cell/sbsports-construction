@@ -75,34 +75,34 @@ export default function ContactPage({ onOpenQuote }) {
   return (
     <div className="contact-page-wrapper">
       {/* Top Banner Header */}
-      <section className="contact-hero-banner">
-        <div className="container" style={{ textAlign: "center" }}>
-          <div className="contact-pill-badge">
-            <HardHat size={16} style={{ color: "#2298D8" }} />
+      <section className="contact-hero-banner" data-aos="fade-up">
+        <div className="container">
+          <div className="contact-pill-badge" data-aos="fade-down">
+            <HardHat size={16} />
             <span>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
           </div>
 
-          <h1 className="contact-hero-title">
+          <h1 className="contact-hero-title" data-aos="fade-up" data-aos-delay="100">
             Submit Your Project Specifications <br />
-            <span className="text-gradient-blue">& Request Site Inspection</span>
+            <span>& Request Site Inspection</span>
           </h1>
 
-          <p className="contact-hero-subtitle">
-            Connect directly with our senior engineering desk for Sports Arenas, 8-Layer ITF Acrylic Surfacing, Box Cricket Turfs, and Turnkey Residential House Construction.
+          <p className="contact-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+            Connect directly with our senior engineering desk for Sports Arenas, 8-Layer ITF Acrylic Surfacing, Box Cricket Turfs, and Turnkey Civil & Residential House Construction.
           </p>
 
-          <div className="contact-hero-metrics">
+          <div className="contact-hero-metrics" data-aos="zoom-in" data-aos-delay="300">
             <div className="metric-chip">
-              <PhoneCall size={16} style={{ color: "#2298D8" }} />
+              <PhoneCall size={16} />
               <span>Direct Hotline: +91-9636365391</span>
             </div>
             <div className="metric-chip">
-              <ShieldCheck size={16} style={{ color: "#087FEA" }} />
-              <span>ISO Certified Standards</span>
+              <ShieldCheck size={16} />
+              <span>ISO 9001:2015 Standards</span>
             </div>
             <div className="metric-chip">
-              <Clock size={16} style={{ color: "#D97706" }} />
-              <span>24/7 Technical Response</span>
+              <Clock size={16} />
+              <span>24/7 Technical Support</span>
             </div>
           </div>
         </div>
@@ -115,112 +115,112 @@ export default function ContactPage({ onOpenQuote }) {
             {/* Left Column: Direct Technical Desks */}
             <div className="contact-desks-col">
               {/* Direct Phone Helpline Card */}
-              <div className="contact-desk-card highlight-card">
-                <div className="desk-icon-box">
-                  <PhoneCall size={26} />
+              <div className="contact-desk-card" data-aos="fade-right" data-aos-delay="100">
+                <div className="desk-card-header">
+                  <div className="desk-card-icon">
+                    <PhoneCall size={22} />
+                  </div>
+                  <div>
+                    <div className="desk-card-title">Direct Phone & WhatsApp Hotline</div>
+                    <div className="desk-card-subtitle">Instant Engineering Consultation</div>
+                  </div>
                 </div>
-                <div className="desk-info">
-                  <div className="desk-title">Direct Phone & WhatsApp Hotline</div>
-                  <a href="tel:+919636365391" className="desk-phone-link">
-                    +91-9636365391
-                  </a>
-                  <p className="desk-subtext">
-                    Instant technical consultation for Sports Courts, Turfs & Turnkey House Construction.
-                  </p>
+                <div className="desk-card-info-list">
+                  <div className="desk-info-row">
+                    <PhoneCall size={16} />
+                    <a href="tel:+919636365391">+91-9636365391</a>
+                  </div>
                 </div>
               </div>
 
               {/* Official Email Card */}
-              <div className="contact-desk-card">
-                <div className="desk-icon-box">
-                  <Mail size={26} />
+              <div className="contact-desk-card" data-aos="fade-right" data-aos-delay="200">
+                <div className="desk-card-header">
+                  <div className="desk-card-icon">
+                    <Mail size={22} />
+                  </div>
+                  <div>
+                    <div className="desk-card-title">Planning & Tender Submissions</div>
+                    <div className="desk-card-subtitle">CAD drawings & technical blueprints</div>
+                  </div>
                 </div>
-                <div className="desk-info">
-                  <div className="desk-title">Planning & Tender Submissions</div>
-                  <a href="mailto:sbsportsandconstruction@gmail.com" className="desk-email-link">
-                    sbsportsandconstruction@gmail.com
-                  </a>
-                  <p className="desk-subtext">
-                    Send CAD drawings, architectural schematics, or site measurement specs.
-                  </p>
+                <div className="desk-card-info-list">
+                  <div className="desk-info-row">
+                    <Mail size={16} />
+                    <a href="mailto:sbsportsandconstruction@gmail.com">sbsportsandconstruction@gmail.com</a>
+                  </div>
                 </div>
               </div>
 
               {/* Corporate Office & Regional Desk */}
-              <div className="contact-desk-card">
-                <div className="desk-icon-box">
-                  <MapPin size={26} />
-                </div>
-                <div className="desk-info">
-                  <div className="desk-title">Pan-India Operations & Head Desk</div>
-                  <div className="desk-location">
-                    SB SPORTS & CONSTRUCTION Campus, Rajasthan, India
+              <div className="contact-desk-card" data-aos="fade-right" data-aos-delay="300">
+                <div className="desk-card-header">
+                  <div className="desk-card-icon">
+                    <MapPin size={22} />
                   </div>
-                  <p className="desk-subtext">
-                    Pan-India execution for Sports Arenas, Turf Complexes & Turnkey Residential Villas.
-                  </p>
+                  <div>
+                    <div className="desk-card-title">Pan-India Operations & Head Desk</div>
+                    <div className="desk-card-subtitle">Rajasthan & National Projects Desk</div>
+                  </div>
+                </div>
+                <div className="desk-card-info-list">
+                  <div className="desk-info-row">
+                    <MapPin size={16} />
+                    <span>SB SPORTS & CONSTRUCTION, Rajasthan, India</span>
+                  </div>
                 </div>
               </div>
 
               {/* ISO Quality Standards Card */}
-              <div className="contact-desk-card">
-                <div className="desk-icon-box">
-                  <ShieldCheck size={26} />
-                </div>
-                <div className="desk-info">
-                  <div className="desk-title">ISO Certified Civil Engineering Standards</div>
-                  <div className="desk-certified">
-                    Certified Engineering Audits & Quality Guarantee
+              <div className="contact-desk-card" data-aos="fade-right" data-aos-delay="400">
+                <div className="desk-card-header">
+                  <div className="desk-card-icon">
+                    <ShieldCheck size={22} />
                   </div>
-                  <p className="desk-subtext">
-                    Laser-screed precision level verification, sub-base slope gradient, and structural masonry checks.
-                  </p>
+                  <div>
+                    <div className="desk-card-title">ISO Certified Civil Engineering Standards</div>
+                    <div className="desk-card-subtitle">Audited Quality Guarantee</div>
+                  </div>
+                </div>
+                <div className="desk-card-info-list">
+                  <div className="desk-info-row">
+                    <CheckCircle2 size={16} />
+                    <span>Laser-screed sub-base gradient & IS 456 / IS 1893 compliance</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Project Requirements Form Card */}
-            <div className="contact-form-card" id="quick-form">
-              <div className="form-card-header">
-                <div className="form-intake-badge">
-                  <Clock size={13} /> ARCHITECTURAL INTAKE DESK
-                </div>
-                <h3 className="form-card-title">
-                  Submit Project Requirements
-                </h3>
-                <p className="form-card-subtext">
-                  Specify your project parameters and blueprint notes for technical engineering evaluation.
-                </p>
+            <div className="contact-form-card" id="quick-form" data-aos="fade-left" data-aos-delay="200">
+              <div className="form-header-title">
+                Submit Project Requirements
+              </div>
+              <div className="form-header-desc">
+                Specify your project parameters and blueprint notes for technical engineering evaluation.
               </div>
 
               {!inquirySent ? (
-                <form onSubmit={handleSubmit} className="contact-intake-form">
-                  <div className="form-group">
-                    <label className="form-label">
-                      Name / Organization *
-                    </label>
+                <form onSubmit={handleSubmit} className="contact-form">
+                  <div className="form-group-field">
+                    <label>Name / Organization *</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Metro Sports Arena / Residential Villa Layout"
-                      className="form-input"
                       value={inputData.organization}
                       onChange={(e) => setInputData({ ...inputData, organization: e.target.value })}
                     />
                   </div>
 
-                  <div className="form-row-2col">
-                    <div className="form-group">
-                      <label className="form-label">
-                        Phone Number (10 Digits) *
-                      </label>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                    <div className="form-group-field">
+                      <label>Phone Number (10 Digits) *</label>
                       <input
                         type="tel"
                         required
                         maxLength={10}
-                        placeholder="Enter 10-Digit Mobile Number"
-                        className="form-input"
-                        style={{ borderColor: phoneError ? "#FF4D4D" : undefined }}
+                        placeholder="10-Digit Mobile"
                         value={inputData.phone}
                         onChange={(e) => {
                           const val = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
@@ -229,31 +229,23 @@ export default function ContactPage({ onOpenQuote }) {
                         }}
                       />
                       {phoneError && (
-                        <div style={{ color: "#FF4D4D", fontSize: "0.78rem", marginTop: "4px", fontWeight: 700 }}>
-                          {phoneError}
-                        </div>
+                        <div className="form-error-msg">{phoneError}</div>
                       )}
                     </div>
-                    <div className="form-group">
-                      <label className="form-label">
-                        Email Address
-                      </label>
+                    <div className="form-group-field">
+                      <label>Email Address</label>
                       <input
                         type="email"
                         placeholder="info@domain.com"
-                        className="form-input"
                         value={inputData.email}
                         onChange={(e) => setInputData({ ...inputData, email: e.target.value })}
                       />
                     </div>
                   </div>
 
-                  <div className="form-group">
-                    <label className="form-label">
-                      Construction Discipline *
-                    </label>
+                  <div className="form-group-field">
+                    <label>Construction Discipline *</label>
                     <select
-                      className="form-input form-select"
                       value={inputData.service}
                       onChange={(e) => setInputData({ ...inputData, service: e.target.value })}
                     >
@@ -270,32 +262,31 @@ export default function ContactPage({ onOpenQuote }) {
                     </select>
                   </div>
 
-                  <div className="form-group">
-                    <label className="form-label">
-                      Project Details / Plot Specifications
-                    </label>
+                  <div className="form-group-field">
+                    <label>Project Details / Plot Specifications</label>
                     <textarea
                       rows="3"
                       placeholder="Plot dimensions, geographic location, structural requirements..."
-                      className="form-input form-textarea"
                       value={inputData.notes}
                       onChange={(e) => setInputData({ ...inputData, notes: e.target.value })}
                     />
                   </div>
 
-                  <div className="form-actions-row">
+                  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "8px" }}>
                     <button
                       type="submit"
-                      className="btn btn-orange form-submit-btn"
+                      className="form-submit-btn"
+                      style={{ flex: 1 }}
                     >
                       <Send size={18} />
-                      <span>Submit Project Requirements</span>
+                      <span>Submit Specifications</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={openWhatsApp}
-                      className="btn form-whatsapp-btn"
+                      className="form-submit-btn"
+                      style={{ background: "#25D366", color: "#FFFFFF", flex: 1 }}
                     >
                       <MessageSquare size={18} />
                       <span>Direct WhatsApp</span>
@@ -303,13 +294,13 @@ export default function ContactPage({ onOpenQuote }) {
                   </div>
                 </form>
               ) : (
-                <div className="form-success-box">
-                  <CheckCircle2 size={52} className="success-icon" />
-                  <h4 className="success-title">
+                <div style={{ textAlign: "center", padding: "40px 20px" }}>
+                  <CheckCircle2 size={56} style={{ color: "#0084FF", marginBottom: "16px" }} />
+                  <h4 style={{ color: "#FFFFFF", fontSize: "1.4rem", fontWeight: 800, marginBottom: "12px" }}>
                     Specifications Logged Successfully
                   </h4>
-                  <p className="success-text">
-                    Thank you! Requirements for <strong>{inputData.organization}</strong> have been logged. Our senior engineering desk will contact you via {inputData.phone || inputData.email}.
+                  <p style={{ color: "#CBD5E1", fontSize: "0.95rem", lineHeight: 1.6, marginBottom: "24px" }}>
+                    Thank you! Requirements for <strong style={{ color: "#FFFFFF" }}>{inputData.organization}</strong> have been logged. Our senior engineering desk will contact you via {inputData.phone || inputData.email}.
                   </p>
                   <button
                     type="button"
@@ -317,19 +308,8 @@ export default function ContactPage({ onOpenQuote }) {
                       setInquirySent(false);
                       setInputData({ organization: "", email: "", phone: "", service: "Synthetic Sports Court Construction", notes: "" });
                     }}
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "8px",
-                      padding: "12px 24px",
-                      background: "rgba(25, 200, 244, 0.15)",
-                      border: "1px solid #2298D8",
-                      color: "#FFFFFF",
-                      fontSize: "0.92rem",
-                      fontWeight: 700,
-                      borderRadius: "6px",
-                      cursor: "pointer"
-                    }}
+                    className="form-submit-btn"
+                    style={{ background: "transparent", border: "1px solid #0084FF", color: "#0084FF" }}
                   >
                     <span>Submit Another Project</span>
                   </button>

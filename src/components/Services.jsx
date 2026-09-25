@@ -105,10 +105,17 @@ export default function Services({ onSelectService }) {
 
         {/* 2 Main Flagship Divisions Grid */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "32px", marginBottom: "48px" }}>
-          {coreDivisions.map((division) => {
+          {coreDivisions.map((division, idx) => {
             const Icon = division.icon;
             return (
-              <div key={division.id} className="clean-card" style={{ padding: 0, display: "flex", flexDirection: "column", overflow: "hidden", border: "1px solid #DCE4EC", borderRadius: "10px" }}>
+              <div
+                key={division.id}
+                className="clean-card"
+                data-aos="fade-up"
+                data-aos-duration="750"
+                data-aos-delay={idx * 150}
+                style={{ padding: 0, display: "flex", flexDirection: "column", overflow: "hidden", border: "1px solid #DCE4EC", borderRadius: "10px" }}
+              >
                 {/* Photo Header */}
                 <div style={{ width: "100%", height: "250px", overflow: "hidden", position: "relative", background: "#04101F" }}>
                   <img
@@ -117,7 +124,7 @@ export default function Services({ onSelectService }) {
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s ease" }}
                   />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(4, 16, 31, 0.1) 0%, rgba(4, 16, 31, 0.85) 100%)" }} />
-                  <span className="badge-blue" style={{ position: "absolute", bottom: "16px", left: "16px", background: "#071A33", color: "#2298D8", border: "1px solid rgba(25, 200, 244, 0.4)", fontWeight: 800 }}>
+                  <span className="badge-blue" style={{ position: "absolute", bottom: "16px", left: "16px", background: "#071A33", color: "#087FEA", border: "1px solid rgba(8, 127, 234, 0.4)", fontWeight: 800 }}>
                     <ShieldCheck size={13} /> {division.badge}
                   </span>
                 </div>
@@ -179,7 +186,7 @@ export default function Services({ onSelectService }) {
                         textDecoration: "none"
                       }}
                     >
-                      <PhoneCall size={18} style={{ color: "#2298D8" }} />
+                      <PhoneCall size={18} style={{ color: "#087FEA" }} />
                     </a>
                   </div>
                 </div>
@@ -193,10 +200,17 @@ export default function Services({ onSelectService }) {
           {specialtyCards.map((spec, i) => {
             const SIcon = spec.icon;
             return (
-              <div key={i} className="clean-card" style={{ padding: "20px", display: "flex", flexDirection: "column", gap: "12px" }}>
+              <div
+                key={i}
+                className="clean-card"
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={i * 100}
+                style={{ padding: "20px", display: "flex", flexDirection: "column", gap: "12px" }}
+              >
                 <div style={{ width: "100%", height: "140px", borderRadius: "6px", overflow: "hidden", position: "relative" }}>
                   <img src={spec.image} alt={spec.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                  <span style={{ position: "absolute", top: "10px", left: "10px", background: "#071A33", color: "#2298D8", fontSize: "0.72rem", fontWeight: 800, padding: "3px 8px", borderRadius: "4px" }}>
+                  <span style={{ position: "absolute", top: "10px", left: "10px", background: "#071A33", color: "#087FEA", fontSize: "0.72rem", fontWeight: 800, padding: "3px 8px", borderRadius: "4px" }}>
                     {spec.badge}
                   </span>
                 </div>

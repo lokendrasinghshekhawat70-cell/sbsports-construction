@@ -285,7 +285,7 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
               </div>
               <div
                 className="btn btn-secondary btn-sm"
-                style={{ background: "rgba(25, 200, 244, 0.2)", border: "1px solid #2298D8", color: "#FFFFFF" }}
+                style={{ background: "#071A33", border: "1px solid #1E293B", color: "#FFFFFF" }}
               >
                 <Camera size={16} />
                 <span>View Arena Specs</span>
@@ -405,12 +405,12 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
                     top: "12px",
                     left: "12px",
                     background: "#071A33",
-                    color: "#2298D8",
+                    color: "#087FEA",
                     fontSize: "0.72rem",
                     fontWeight: 700,
                     padding: "4px 12px",
                     borderRadius: "4px",
-                    border: "1px solid rgba(25, 200, 244, 0.3)",
+                    border: "1px solid rgba(8, 127, 234, 0.3)",
                     textTransform: "uppercase"
                   }}
                 >
@@ -458,7 +458,8 @@ export default function SportsCourtSection({ onNavigate, onOpenQuote }) {
 
                 <div
                   style={{
-                    background: "rgba(8, 127, 234, 0.05)",
+                    background: "#F8FAFC",
+                    border: "1px solid #E2E8F0",
                     borderLeft: "3px solid #087FEA",
                     padding: "10px 14px",
                     borderRadius: "0 6px 6px 0",

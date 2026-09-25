@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Sun,
   Moon,
@@ -13,6 +14,15 @@ export default function CourtSimulator({ onOpenQuote }) {
   const [isNightMode, setIsNightMode] = useState(false);
   const [showDimensions, setShowDimensions] = useState(true);
   const [colorTheme, setColorTheme] = useState("tournament"); // "tournament", "forest", "clay"
+  const navigate = useNavigate();
+
+  const handleOpenQuoteSafe = (quoteTitle) => {
+    if (typeof onOpenQuote === "function") {
+      onOpenQuote(quoteTitle);
+    } else {
+      navigate(`/Contact?service=${encodeURIComponent(quoteTitle)}`);
+    }
+  };
 
   const sports = [
     {
@@ -78,7 +88,7 @@ export default function CourtSimulator({ onOpenQuote }) {
         tournament: {
           name: "FIBA Terracotta & Maple Key",
           inner: "#c2410c",
-          key: "#d97706",
+          key: "#087FEA",
           outer: "#1e3a8a",
           lines: "#ffffff",
           border: "#000000"
@@ -86,7 +96,7 @@ export default function CourtSimulator({ onOpenQuote }) {
         forest: {
           name: "Emerald Arena & Sand Key",
           inner: "#047857",
-          key: "#d97706",
+          key: "#087FEA",
           outer: "#064e3b",
           lines: "#ffffff",
           border: "#000000"
@@ -250,7 +260,7 @@ export default function CourtSimulator({ onOpenQuote }) {
         tournament: {
           name: "Natural European Maple Hardwood",
           floor: "#fde68a",
-          woodAccent: "#d97706",
+          woodAccent: "#087FEA",
           lines: "#dc2626",
           tin: "#b91c1c",
           walls: "#f8fafc",
@@ -968,7 +978,7 @@ export default function CourtSimulator({ onOpenQuote }) {
 
             {/* Olympic Deadlift Drop Platform 1 */}
             <rect x="80" y="200" width="240" height="150" fill="#0f172a" stroke="#ffffff" strokeWidth="2" rx="4" />
-            <rect x="130" y="200" width="140" height="150" fill="#d97706" opacity="0.85" stroke="#ffffff" strokeWidth="1" />
+            <rect x="130" y="200" width="140" height="150" fill="#087FEA" opacity="0.85" stroke="#ffffff" strokeWidth="1" />
             <text x="200" y="275" fill="#000000" fontSize="11" fontWeight="900" textAnchor="middle">WOOD CORE LIFTING ZONE</text>
             <rect x="85" y="205" width="40" height="140" fill="#1e293b" />
             <rect x="275" y="205" width="40" height="140" fill="#1e293b" />
@@ -980,7 +990,7 @@ export default function CourtSimulator({ onOpenQuote }) {
 
             {/* Olympic Deadlift Drop Platform 2 */}
             <rect x="360" y="200" width="240" height="150" fill="#0f172a" stroke="#ffffff" strokeWidth="2" rx="4" />
-            <rect x="410" y="200" width="140" height="150" fill="#d97706" opacity="0.85" stroke="#ffffff" strokeWidth="1" />
+            <rect x="410" y="200" width="140" height="150" fill="#087FEA" opacity="0.85" stroke="#ffffff" strokeWidth="1" />
             <text x="480" y="275" fill="#000000" fontSize="11" fontWeight="900" textAnchor="middle">WOOD CORE LIFTING ZONE</text>
             <rect x="365" y="205" width="40" height="140" fill="#1e293b" />
             <rect x="555" y="205" width="40" height="140" fill="#1e293b" />
@@ -1505,18 +1515,20 @@ export default function CourtSimulator({ onOpenQuote }) {
         </div>
 
         <button
-          onClick={() => onOpenQuote(`${currentSport.name} - Formal Specification & Quote`)}
+          onClick={() => handleOpenQuoteSafe(`${currentSport.name} - Formal Specification & Quote`)}
           className="btn btn-primary"
           style={{
-            background: "#000000",
+            background: "#0084FF",
             color: "#FFFFFF",
-            border: "1px solid #000000",
+            border: "none",
             fontWeight: 800,
-            padding: "10px 22px",
+            padding: "12px 24px",
+            borderRadius: "6px",
             cursor: "pointer",
             display: "inline-flex",
             alignItems: "center",
-            gap: "8px"
+            gap: "8px",
+            boxShadow: "0 4px 15px rgba(0, 132, 255, 0.4)"
           }}
         >
           <span>Request Detailed Specification</span>

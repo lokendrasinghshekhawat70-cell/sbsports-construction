@@ -87,10 +87,17 @@ export default function HowItWorks({ onOpenQuote }) {
             marginBottom: "48px"
           }}
         >
-          {steps.map((item) => {
+          {steps.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div key={item.step} className="clean-card" style={{ padding: "28px 24px", display: "flex", flexDirection: "column" }}>
+              <div
+                key={item.step}
+                className="clean-card"
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 100}
+                style={{ padding: "28px 24px", display: "flex", flexDirection: "column" }}
+              >
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "18px" }}>
                   <span
                     style={{

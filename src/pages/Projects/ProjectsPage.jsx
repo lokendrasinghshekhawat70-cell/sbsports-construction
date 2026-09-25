@@ -183,143 +183,101 @@ export default function ProjectsPage({ onBookConsultation }) {
     : projects.filter(p => p.category === filter);
 
   return (
-    <div className="projects-page-wrapper" style={{ background: "#F4F7FA", minHeight: "100vh" }}>
+    <div className="projects-page-wrapper">
       {/* Hero Header Banner */}
-      <section className="projects-hero-banner" style={{ background: "linear-gradient(180deg, #04101F 0%, #071A33 100%)", padding: "60px 0 44px 0", borderBottom: "1px solid rgba(25, 200, 244, 0.2)" }}>
-        <div className="container" style={{ textAlign: "center" }}>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "rgba(8, 127, 234, 0.12)",
-              border: "1px solid rgba(25, 200, 244, 0.3)",
-              color: "#2298D8",
-              padding: "6px 18px",
-              fontSize: "0.8rem",
-              fontWeight: 800,
-              borderRadius: "6px",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              marginBottom: "16px"
-            }}
-          >
+      <section className="projects-hero-banner" data-aos="fade-up">
+        <div className="container">
+          <div className="projects-badge-pill" data-aos="fade-down">
             <Sparkles size={16} />
             <span>SB SPORTS & CONSTRUCTION PORTFOLIO</span>
           </div>
 
-          <h1 className="projects-page-title" style={{ color: "#FFFFFF", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 800, margin: "0 0 12px 0", lineHeight: 1.2 }}>
+          <h1 className="projects-page-title" data-aos="fade-up" data-aos-delay="100">
             FEATURED ENGINEERING PROJECTS <br />
-            <span className="text-gradient-blue">& EXECUTED WORKS</span>
+            <span>& EXECUTED WORKS</span>
           </h1>
 
-          <p className="projects-page-subtitle" style={{ maxWidth: "780px", margin: "0 auto", color: "#D9E2EA", fontSize: "1.05rem", lineHeight: 1.6 }}>
+          <p className="projects-page-subtitle" data-aos="fade-up" data-aos-delay="200">
             Explore completed Sports Arenas, Synthetic Courts, Box Cricket Turfs, Commercial Complexes, and Turnkey Houses executed by SB SPORTS & CONSTRUCTION.
           </p>
         </div>
       </section>
 
       {/* Filter Tabs Bar */}
-      <div className="projects-filter-bar" style={{ background: "#FFFFFF", borderBottom: "1px solid #DCE4EC", sticky: "top", top: "72px", zIndex: 30 }}>
+      <div className="projects-filter-bar">
         <div className="container">
-          <div className="projects-tabs-list" style={{ display: "flex", justifyContent: "center", gap: "12px", padding: "16px 0", flexWrap: "wrap" }}>
+          <div className="projects-tabs-list">
             <button
-              className={`filter-btn ${filter === "all" ? "active" : ""}`}
+              className={`projects-filter-btn ${filter === "all" ? "active" : ""}`}
               onClick={() => setFilter("all")}
             >
               All Projects ({projects.length})
             </button>
             <button
-              className={`filter-btn ${filter === "sports" ? "active" : ""}`}
+              className={`projects-filter-btn ${filter === "sports" ? "active" : ""}`}
               onClick={() => setFilter("sports")}
             >
-              <Trophy size={16} /> 1. Sports Arenas & Turfs (Integral Spor Caliber)
+              <Trophy size={16} /> Sports Infrastructure
             </button>
             <button
-              className={`filter-btn ${filter === "civil" ? "active" : ""}`}
+              className={`projects-filter-btn ${filter === "civil" ? "active" : ""}`}
               onClick={() => setFilter("civil")}
             >
-              <Building2 size={16} /> 2. Civil & Building Engineering (MSS Krishna Caliber)
+              <Building2 size={16} /> Civil & Building Engineering
             </button>
           </div>
         </div>
       </div>
 
       {/* Projects Grid */}
-      <section className="section-padding projects-grid-section" style={{ padding: "60px 0 80px 0" }}>
+      <section className="projects-grid-section">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "28px" }}>
-            {filteredProjects.map((proj) => (
+          <div className="projects-catalog-grid">
+            {filteredProjects.map((proj, idx) => (
               <div
                 key={proj.id}
-                className="clean-card"
-                style={{
-                  padding: 0,
-                  overflow: "hidden",
-                  cursor: "pointer",
-                  display: "flex",
-                  flexDirection: "column",
-                  background: "#FFFFFF",
-                  border: "1px solid #DCE4EC",
-                  borderRadius: "10px",
-                  boxShadow: "0 4px 14px rgba(7, 26, 51, 0.06)",
-                  transition: "all 0.3s ease"
-                }}
+                className="project-catalog-card"
+                data-aos="fade-up"
+                data-aos-delay={((idx % 3) + 1) * 100}
                 onClick={() => setSelectedProject(proj)}
               >
-                <div style={{ width: "100%", height: "230px", overflow: "hidden", position: "relative", background: "#04101F" }}>
+                <div className="project-card-image-wrap">
                   <img
                     src={proj.image}
                     alt={proj.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s ease" }}
                   />
-                  <span
-                    style={{
-                      position: "absolute",
-                      top: "14px",
-                      left: "14px",
-                      background: "#071A33",
-                      border: "1px solid rgba(25, 200, 244, 0.3)",
-                      color: "#2298D8",
-                      padding: "4px 12px",
-                      fontSize: "0.75rem",
-                      fontWeight: 800,
-                      borderRadius: "6px",
-                      textTransform: "uppercase"
-                    }}
-                  >
+                  <span className="project-card-badge">
                     {proj.categoryName}
                   </span>
                 </div>
 
-                <div style={{ padding: "26px", display: "flex", flexDirection: "column", flex: 1 }}>
-                  <div style={{ display: "flex", gap: "14px", fontSize: "0.82rem", color: "#64748B", marginBottom: "10px" }}>
-                    <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                      <MapPin size={14} style={{ color: "#087FEA" }} /> {proj.location}
+                <div className="project-card-body">
+                  <div className="project-card-meta">
+                    <span>
+                      <MapPin size={14} /> {proj.location}
                     </span>
-                    <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                      <Calendar size={14} style={{ color: "#2298D8" }} /> {proj.timeline}
+                    <span>
+                      <Calendar size={14} /> {proj.timeline}
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#071A33", marginBottom: "10px", lineHeight: 1.3 }}>
+                  <h3 className="project-card-title">
                     {proj.title}
                   </h3>
-                  <p style={{ fontSize: "0.9rem", color: "#64748B", lineHeight: 1.6, marginBottom: "20px" }}>
+                  <p className="project-card-desc">
                     {proj.description}
                   </p>
 
-                  <div style={{ marginTop: "auto", paddingTop: "16px", borderTop: "1px solid #DCE4EC", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#087FEA", background: "rgba(8, 127, 234, 0.08)", padding: "4px 10px", borderRadius: "4px" }}>
+                  <div className="project-card-footer">
+                    <span className="project-area-tag">
                       {proj.area}
                     </span>
                     <button
-                      className="btn btn-secondary btn-sm"
+                      className="project-inspect-btn"
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedProject(proj);
                       }}
-                      style={{ color: "#071A33", borderColor: "#087FEA" }}
                     >
                       <span>Inspect Project</span>
                       <ArrowUpRight size={15} />
@@ -335,105 +293,70 @@ export default function ProjectsPage({ onBookConsultation }) {
       {/* Project Detail Modal */}
       {selectedProject && (
         <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "rgba(4, 16, 31, 0.85)",
-            backdropFilter: "blur(8px)",
-            zIndex: 999,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "20px"
-          }}
+          className="project-modal-backdrop"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            style={{
-              background: "#04101F",
-              border: "1px solid rgba(25, 200, 244, 0.3)",
-              borderRadius: "12px",
-              maxWidth: "720px",
-              width: "100%",
-              maxHeight: "90vh",
-              overflowY: "auto",
-              position: "relative",
-              color: "#FFFFFF",
-              boxShadow: "0 20px 60px rgba(0, 0, 0, 0.7)"
-            }}
+            className="project-modal-dialog"
             onClick={(e) => e.stopPropagation()}
           >
             <button
+              className="project-modal-close"
               onClick={() => setSelectedProject(null)}
-              style={{
-                position: "absolute",
-                top: "16px",
-                right: "16px",
-                background: "rgba(255, 255, 255, 0.1)",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
-                color: "#FFFFFF",
-                borderRadius: "50%",
-                width: "36px",
-                height: "36px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                zIndex: 10
-              }}
             >
               <X size={20} />
             </button>
 
-            <div style={{ width: "100%", height: "260px", overflow: "hidden", position: "relative" }}>
+            <div style={{ width: "100%", height: "280px", overflow: "hidden", position: "relative" }}>
               <img src={selectedProject.image} alt={selectedProject.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              <span style={{ position: "absolute", bottom: "16px", left: "16px", background: "#071A33", border: "1px solid #2298D8", color: "#2298D8", padding: "6px 14px", fontWeight: 800, fontSize: "0.8rem", borderRadius: "6px" }}>
+              <span style={{ position: "absolute", bottom: "16px", left: "16px", background: "rgba(6, 9, 14, 0.85)", border: "1px solid #0084FF", color: "#0084FF", padding: "6px 14px", fontWeight: 800, fontSize: "0.8rem", borderRadius: "4px" }}>
                 {selectedProject.categoryName}
               </span>
             </div>
 
             <div style={{ padding: "32px" }}>
-              <h2 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#FFFFFF", marginBottom: "12px" }}>
+              <h2 style={{ fontSize: "1.7rem", fontWeight: 900, color: "#FFFFFF", marginBottom: "12px" }}>
                 {selectedProject.title}
               </h2>
-              <p style={{ color: "#D9E2EA", fontSize: "0.96rem", lineHeight: 1.6, marginBottom: "24px" }}>
+              <p style={{ color: "#CBD5E1", fontSize: "0.98rem", lineHeight: 1.7, marginBottom: "24px" }}>
                 {selectedProject.description}
               </p>
 
-              <div style={{ background: "#071A33", border: "1px solid rgba(25, 200, 244, 0.2)", borderRadius: "8px", padding: "20px", marginBottom: "24px" }}>
-                <h4 style={{ color: "#2298D8", fontWeight: 800, fontSize: "0.9rem", textTransform: "uppercase", marginBottom: "12px" }}>
+              <div style={{ background: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "6px", padding: "20px", marginBottom: "24px" }}>
+                <h4 style={{ color: "#0084FF", fontWeight: 800, fontSize: "0.9rem", textTransform: "uppercase", marginBottom: "14px", letterSpacing: "0.05em" }}>
                   Engineering Specifications:
                 </h4>
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   {selectedProject.architecturalFeatures.map((feat, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.9rem", color: "#FFFFFF" }}>
-                      <Check size={16} style={{ color: "#2298D8", flexShrink: 0, marginTop: "2px" }} />
+                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.92rem", color: "#D1D5DB" }}>
+                      <Check size={16} style={{ color: "#0084FF", flexShrink: 0, marginTop: "2px" }} />
                       <span>{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div style={{ background: "rgba(8, 127, 234, 0.1)", border: "1px solid rgba(8, 127, 234, 0.3)", borderRadius: "8px", padding: "20px", marginBottom: "26px" }}>
+              <div style={{ background: "rgba(0, 132, 255, 0.06)", border: "1px solid rgba(0, 132, 255, 0.25)", borderRadius: "6px", padding: "20px", marginBottom: "26px" }}>
                 <div style={{ display: "flex", gap: "4px", marginBottom: "8px" }}>
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} fill="#D97706" color="#D97706" />
+                    <Star key={i} size={16} fill="#FF7A00" color="#FF7A00" />
                   ))}
                 </div>
-                <p style={{ color: "#FFFFFF", fontStyle: "italic", fontSize: "0.92rem", margin: "0 0 8px 0" }}>
+                <p style={{ color: "#FFFFFF", fontStyle: "italic", fontSize: "0.94rem", margin: "0 0 8px 0" }}>
                   "{selectedProject.clientReview}"
                 </p>
-                <div style={{ color: "#2298D8", fontWeight: 700, fontSize: "0.85rem" }}>— {selectedProject.clientAuthor}</div>
+                <div style={{ color: "#0084FF", fontWeight: 700, fontSize: "0.85rem" }}>— {selectedProject.clientAuthor}</div>
               </div>
 
               <button
                 onClick={() => {
                   const title = selectedProject.title;
                   setSelectedProject(null);
-                  onBookConsultation(title);
+                  if (onBookConsultation) {
+                    onBookConsultation(title);
+                  } else {
+                    window.location.href = `/Contact?service=${encodeURIComponent(title)}`;
+                  }
                 }}
                 className="btn btn-primary"
                 style={{ width: "100%", justifyContent: "center", padding: "16px", fontSize: "1rem" }}

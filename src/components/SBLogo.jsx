@@ -3,7 +3,7 @@ import logoImg from "../assets/SB.jpeg";
 
 /**
  * SBLogo: Premium brand logo component using SB.jpeg asset
- * with Royal Blue (#087FEA), Electric Cyan (#2298D8), and Orange (#D97706) accents.
+ * with Royal Blue (#087FEA), Electric Cyan (#087FEA), and Orange (#087FEA) accents.
  */
 export default function SBLogo({ size = "md", showText = true, className = "", variant = "dark" }) {
   const sizeMap = {

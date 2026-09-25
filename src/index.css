@@ -1,42 +1,61 @@
 /* =========================================================
-   SB SPORTS & CONSTRUCTION - CORPORATE ENGINEERING DESIGN SYSTEM
-   ROYAL BLUE, DEEP NAVY, ELECTRIC CYAN & ORANGE ACCENT THEME
+   SB SPORTS & CONSTRUCTION - DARK LUXURY ENGINEERING DESIGN SYSTEM
+   PALETTE DERIVED DIRECTLY FROM SB LOGO:
+   - Primary: Electric Royal Blue (#0084FF)
+   - Secondary Accent: Energetic Flame Orange (#FF7A00)
+   - Edge Glow: Electric Cyan (#00C2FF)
+   - Chrome Silver: (#CBD5E1)
+   - Backgrounds: Obsidian Deep Charcoal (#06090E / #0B111D)
+   - Text: Pure White (#FFFFFF)
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg-navy: #071A33;
-  --bg-dark-navy: #04101F;
-  --bg-light: #F4F7FA;
-  --bg-white: #FFFFFF;
-  --bg-card: #FFFFFF;
+  --bg-black: #06090E;
+  --bg-dark: #0B111D;
+  --bg-charcoal: #101827;
+  --bg-card: #131E30;
+  --bg-card-hover: #1A2840;
 
-  --border-color: #DCE4EC;
-  --border-highlight: #087FEA;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-highlight: #0084FF;
+  --border-accent: #FF7A00;
 
-  --accent-blue: #087FEA;
-  --accent-cyan: #2298D8;
-  --accent-orange: #D97706;
-  --accent-silver: #D9E2EA;
+  /* Logo-Derived Brand Colors */
+  --brand-blue: #0084FF;
+  --brand-blue-hover: #006fe0;
+  --brand-blue-light: #00C2FF;
+  --brand-blue-glow: rgba(0, 132, 255, 0.35);
 
-  --text-dark: #071A33;
-  --text-muted: #64748B;
-  --text-light: #FFFFFF;
-  --text-silver: #D9E2EA;
+  --brand-orange: #FF7A00;
+  --brand-orange-hover: #e66e00;
+  --brand-orange-glow: rgba(255, 122, 0, 0.35);
+
+  --brand-silver: #CBD5E1;
+
+  /* Backward Compatibility Aliases */
+  --primary: #0084FF;
+  --accent: #FF7A00;
+  --accent-lime: #0084FF;
+  --accent-lime-hover: #006fe0;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #D1D5DB;
+  --text-muted: #8896A6;
+  --text-dark: #06090E;
 
   --font-heading: 'Manrope', 'DM Sans', sans-serif;
   --font-body: 'Inter', 'Manrope', sans-serif;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 
-  --shadow-sm: 0 2px 8px rgba(7, 26, 51, 0.05);
-  --shadow-card: 0 4px 20px rgba(7, 26, 51, 0.06);
-  --shadow-hover: 0 12px 30px rgba(7, 26, 51, 0.12);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.85);
 
-  --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *,
@@ -49,12 +68,13 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-black);
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background-color: var(--bg-black);
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -67,25 +87,25 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #04101F;
+  background: #06090E;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #087FEA;
+  background: #1B293F;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2298D8;
+  background: var(--brand-blue);
 }
 
 /* Selection Color */
 ::selection {
-  background: rgba(8, 127, 234, 0.25);
-  color: #071A33;
+  background: var(--brand-blue);
+  color: #FFFFFF;
 }
 
-/* Typography Helpers */
+/* Typography */
 h1,
 h2,
 h3,
@@ -95,12 +115,12 @@ h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
   font-weight: 800;
-  color: var(--text-dark);
-  line-height: 1.2;
+  color: var(--text-primary);
+  line-height: 1.15;
 }
 
 p {
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 a {
@@ -117,80 +137,70 @@ button {
 
 /* Containers */
 .container {
-  max-width: 1280px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
 }
 
 .section-padding {
-  padding: 90px 0;
+  padding: 120px 0;
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 60px 0;
+    padding: 80px 0;
   }
 }
 
-/* Section Header Styles - Modern Engineering Badges */
+/* Section Header Styles */
 .section-header {
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto 52px auto;
+  max-width: 840px;
+  margin: 0 auto 60px auto;
 }
 
 .section-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(8, 127, 234, 0.08) !important;
-  border: 1px solid rgba(8, 127, 234, 0.25) !important;
-  color: #087FEA !important;
+  background: rgba(0, 132, 255, 0.1);
+  border: 1px solid rgba(0, 132, 255, 0.3);
+  color: var(--brand-blue-light);
   padding: 6px 18px;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   border-radius: var(--radius-sm);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .section-title {
-  font-size: 2.6rem;
-  font-weight: 800;
-  margin-bottom: 16px;
-  color: #071A33;
-  letter-spacing: -0.02em;
-  line-height: 1.18;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
 }
 
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
+.section-title span {
+  color: var(--brand-blue);
 }
 
 .section-subtitle {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
 /* Text Highlight Utilities */
-.text-blue {
-  color: #087FEA !important;
+.text-brand-blue {
+  color: var(--brand-blue) !important;
 }
 
-.text-cyan {
-  color: #2298D8 !important;
-}
-
-.text-orange {
-  color: #D97706 !important;
-}
-
-.text-navy {
-  color: #071A33 !important;
+.text-brand-orange {
+  color: var(--brand-orange) !important;
 }
 
 .text-white {
@@ -198,162 +208,18 @@ button {
 }
 
 .text-muted {
-  color: #64748B !important;
+  color: #8896A6 !important;
 }
 
-.text-gradient-blue {
-  background: linear-gradient(135deg, #087FEA 0%, #2298D8 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-}
-
-/* =========================================================
-   CARDS & HOVER EFFECTS
-   ========================================================= */
-
-.glass-card, .clean-card {
-  background: #FFFFFF !important;
-  border: 1px solid #DCE4EC !important;
-  border-radius: var(--radius-md);
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-card) !important;
-  transition: var(--transition-smooth);
-}
-
-.glass-card:hover, .clean-card:hover {
-  border-color: #087FEA !important;
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover) !important;
-}
-
-/* Feature Card */
-.feature-card {
-  background: #FFFFFF !important;
-  border: 1px solid #DCE4EC !important;
-  border-radius: var(--radius-md);
-  padding: 34px 28px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-card) !important;
-  transition: var(--transition-smooth);
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  border-color: #087FEA !important;
-  box-shadow: var(--shadow-hover) !important;
-}
-
-.feature-icon-wrapper {
-  width: 52px;
-  height: 52px;
-  background: rgba(8, 127, 234, 0.08) !important;
-  border: 1px solid rgba(8, 127, 234, 0.2) !important;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #087FEA !important;
-  margin-bottom: 22px;
-  transition: var(--transition-smooth);
-}
-
-.feature-card:hover .feature-icon-wrapper {
-  background: #087FEA !important;
-  color: #FFFFFF !important;
-  border-color: #087FEA !important;
-}
-
-/* Stat Card */
-.stat-card {
-  background: #071A33 !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: var(--radius-sm);
-  padding: 22px 24px;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
-  transition: var(--transition-smooth);
-}
-
-.stat-card:hover {
-  border-color: #2298D8 !important;
-  transform: translateY(-2px);
-}
-
-/* Project Portfolio Card */
-.project-card {
-  position: relative;
-  overflow: hidden;
-  background: #FFFFFF !important;
-  border: 1px solid #DCE4EC !important;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card) !important;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-
-.project-card:hover {
-  border-color: #087FEA !important;
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover) !important;
-}
-
-.project-image-wrap {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  border-bottom: 1px solid #DCE4EC;
-}
-
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.05);
-}
-
-.project-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: #071A33 !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  color: #2298D8 !important;
-  padding: 4px 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-radius: var(--radius-sm);
-  z-index: 2;
-}
-
-.project-content {
-  padding: 24px;
-  position: relative;
-  background: #FFFFFF !important;
-}
-
-/* =========================================================
-   BUTTON STYLES - BRAND BLUE (#087FEA), CYAN & ORANGE
-   ========================================================= */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  padding: 13px 26px;
+  font-weight: 800;
+  font-size: 0.96rem;
+  padding: 14px 28px;
   cursor: pointer;
   white-space: nowrap;
   border-radius: var(--radius-sm);
@@ -361,122 +227,59 @@ button {
   letter-spacing: 0.02em;
 }
 
-/* Primary Button: Background #087FEA, Text #FFFFFF, Hover #2298D8 */
-.btn-primary {
-  background: #087FEA !important;
+.btn-primary,
+.btn-brand-blue {
+  background: #0084FF !important;
   color: #FFFFFF !important;
-  font-weight: 700;
-  border: 1px solid #087FEA !important;
-  box-shadow: 0 4px 14px rgba(8, 127, 234, 0.25) !important;
-}
-
-.btn-primary:hover {
-  background: #2298D8 !important;
-  border-color: #2298D8 !important;
-  color: #071A33 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(25, 200, 244, 0.35) !important;
-}
-
-/* Secondary Button: Transparent, Border #087FEA, Text #071A33 or #FFFFFF */
-.btn-secondary {
-  background: transparent !important;
-  color: #071A33 !important;
-  border: 1px solid #087FEA !important;
-}
-
-.btn-secondary:hover {
-  background: rgba(8, 127, 234, 0.08) !important;
-  border-color: #2298D8 !important;
-  color: #087FEA !important;
-  transform: translateY(-2px);
-}
-
-/* Orange Accent Button: Background #D97706 for high priority CTAs */
-.btn-orange {
-  background: #D97706 !important;
-  color: #FFFFFF !important;
-  border: 1px solid #D97706 !important;
   font-weight: 800;
-  box-shadow: 0 4px 14px rgba(255, 138, 0, 0.3) !important;
+  border: none !important;
+  box-shadow: 0 4px 18px rgba(0, 132, 255, 0.35) !important;
 }
 
-.btn-orange:hover {
-  background: #e07900 !important;
-  border-color: #e07900 !important;
+.btn-primary:hover,
+.btn-brand-blue:hover {
+  background: #006fe0 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 132, 255, 0.55) !important;
   color: #FFFFFF !important;
-  transform: translateY(-2px);
 }
 
-.btn-sm {
-  padding: 8px 16px;
-  font-size: 0.85rem;
-  border-radius: var(--radius-sm);
+.btn-brand-orange {
+  background: #FF7A00 !important;
+  color: #FFFFFF !important;
+  font-weight: 800;
+  border: none !important;
+  box-shadow: 0 4px 18px rgba(255, 122, 0, 0.35) !important;
 }
 
-/* Badges */
-.badge-blue {
-  background: rgba(8, 127, 234, 0.1) !important;
-  border: 1px solid rgba(8, 127, 234, 0.3) !important;
-  color: #087FEA !important;
-  padding: 4px 12px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: var(--radius-sm);
+.btn-brand-orange:hover {
+  background: #e66e00 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 122, 0, 0.55) !important;
+  color: #FFFFFF !important;
 }
 
-.badge-cyan {
-  background: rgba(25, 200, 244, 0.1) !important;
-  border: 1px solid rgba(25, 200, 244, 0.3) !important;
-  color: #2298D8 !important;
-  padding: 4px 12px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: var(--radius-sm);
+.btn-outline {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
 }
 
-.badge-orange {
-  background: rgba(255, 138, 0, 0.1) !important;
-  border: 1px solid rgba(255, 138, 0, 0.3) !important;
-  color: #D97706 !important;
-  padding: 4px 12px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: var(--radius-sm);
+.btn-outline:hover {
+  background: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #06090E !important;
+  transform: translateY(-3px);
 }
 
-/* Hero Specialty Pill Items */
-.hero-pill-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  border-radius: 6px;
-  background: rgba(4, 16, 31, 0.85);
-  border: 1px solid rgba(25, 200, 244, 0.25);
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(4, 16, 31, 0.5);
-  transition: var(--transition-smooth);
+.btn-outline-blue {
+  background: transparent !important;
+  color: #0084FF !important;
+  border: 1.5px solid #0084FF !important;
 }
 
-.hero-pill-item:hover {
-  border-color: #2298D8;
-  transform: translateY(-2px);
-  background: rgba(8, 127, 234, 0.2);
+.btn-outline-blue:hover {
+  background: #0084FF !important;
+  color: #FFFFFF !important;
+  transform: translateY(-3px);
 }
-
-.btn-glow {
-  box-shadow: 0 0 24px rgba(8, 127, 234, 0.45) !important;
-}
-
-.btn-glow:hover {
-  box-shadow: 0 0 32px rgba(25, 200, 244, 0.6) !important;
-}
-
-
-

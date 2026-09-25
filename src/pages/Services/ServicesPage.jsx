@@ -280,7 +280,7 @@ export default function ServicesPage({ onOpenQuote }) {
       <section className="services-hero-banner">
         <div className="container" style={{ textAlign: "center" }}>
           <div className="services-pill-badge">
-            <HardHat size={16} style={{ color: "#2298D8" }} />
+            <HardHat size={16} style={{ color: "#087FEA" }} />
             <span>SB SPORTS & CONSTRUCTION TECHNICAL SERVICES CATALOG</span>
           </div>
 
@@ -295,7 +295,7 @@ export default function ServicesPage({ onOpenQuote }) {
 
           <div className="services-hero-metrics">
             <div className="metric-chip">
-              <Trophy size={16} style={{ color: "#2298D8" }} />
+              <Trophy size={16} style={{ color: "#087FEA" }} />
               <span>500+ Sports Arenas Delivered</span>
             </div>
             <div className="metric-chip">
@@ -303,7 +303,7 @@ export default function ServicesPage({ onOpenQuote }) {
               <span>1.5M+ Sq. Ft. Civil Execution</span>
             </div>
             <div className="metric-chip">
-              <ShieldCheck size={16} style={{ color: "#D97706" }} />
+              <ShieldCheck size={16} style={{ color: "#087FEA" }} />
               <span>ISO 9001:2015 Quality Standards</span>
             </div>
           </div>
@@ -337,7 +337,7 @@ export default function ServicesPage({ onOpenQuote }) {
       </div>
 
       {/* Interactive Tools Control Bar */}
-      <div style={{ background: "#04101F", padding: "16px 0", borderBottom: "1px solid rgba(25, 200, 244, 0.2)" }}>
+      <div style={{ background: "#04101F", padding: "16px 0", borderBottom: "1px solid rgba(8, 127, 234, 0.2)" }}>
         <div className="container" style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
           <button
             type="button"
@@ -353,7 +353,7 @@ export default function ServicesPage({ onOpenQuote }) {
               borderRadius: "6px"
             }}
           >
-            <Zap size={16} style={{ color: "#2298D8" }} />
+            <Zap size={16} style={{ color: "#087FEA" }} />
             <span>{showSimulator ? "Close 3D Court Color Simulator" : "Launch 3D Court Color Simulator"}</span>
           </button>
 
@@ -362,8 +362,8 @@ export default function ServicesPage({ onOpenQuote }) {
             onClick={() => setShowLayersVisualizer(!showLayersVisualizer)}
             className="btn"
             style={{
-              background: showLayersVisualizer ? "#087FEA" : "rgba(25, 200, 244, 0.15)",
-              border: "1px solid #2298D8",
+              background: showLayersVisualizer ? "#087FEA" : "rgba(8, 127, 234, 0.15)",
+              border: "1px solid #087FEA",
               color: "#FFFFFF",
               padding: "10px 22px",
               fontSize: "0.88rem",
@@ -371,7 +371,7 @@ export default function ServicesPage({ onOpenQuote }) {
               borderRadius: "6px"
             }}
           >
-            <Layers size={16} style={{ color: "#2298D8" }} />
+            <Layers size={16} style={{ color: "#087FEA" }} />
             <span>{showLayersVisualizer ? "Close 8-Layer Tech Visualizer" : "View 8-Layer Acrylic Coating Visualizer"}</span>
           </button>
         </div>
@@ -380,14 +380,14 @@ export default function ServicesPage({ onOpenQuote }) {
       {/* Render Court Simulator if Toggled */}
       {showSimulator && (
         <div className="container" style={{ marginTop: "30px" }}>
-          <CourtSimulator />
+          <CourtSimulator onOpenQuote={onOpenQuote} />
         </div>
       )}
 
       {/* Render Coating Layers Visualizer if Toggled */}
       {showLayersVisualizer && (
         <div className="container" style={{ marginTop: "30px" }}>
-          <CoatingLayersVisualizer />
+          <CoatingLayersVisualizer onOpenQuote={onOpenQuote} />
         </div>
       )}
 
@@ -457,7 +457,7 @@ export default function ServicesPage({ onOpenQuote }) {
                         className="call-direct-btn"
                         title="Call Engineering Desk"
                       >
-                        <PhoneCall size={18} style={{ color: "#2298D8" }} />
+                        <PhoneCall size={18} style={{ color: "#087FEA" }} />
                       </a>
                     </div>
                   </div>
@@ -474,7 +474,7 @@ export default function ServicesPage({ onOpenQuote }) {
           <div className="consultation-banner-box">
             <div className="consultation-content">
               <div className="consultation-pill">
-                <Sparkles size={15} style={{ color: "#2298D8" }} />
+                <Sparkles size={15} style={{ color: "#087FEA" }} />
                 <span>DIRECT TECHNICAL DESK</span>
               </div>
               <h2 className="consultation-title">
@@ -499,7 +499,7 @@ export default function ServicesPage({ onOpenQuote }) {
                 href="tel:+919636365391"
                 className="direct-phone-link"
               >
-                <PhoneCall size={18} style={{ color: "#2298D8" }} />
+                <PhoneCall size={18} style={{ color: "#2c8deeff" }} />
                 <span>Call Hotline: <strong>+91-9636365391</strong></span>
               </a>
             </div>

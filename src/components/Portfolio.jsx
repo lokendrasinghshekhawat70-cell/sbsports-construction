@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
 import {
   Building,
   MapPin,
@@ -20,6 +21,10 @@ import {
 export default function Portfolio({ onBookConsultation }) {
   const [filter, setFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [filter]);
 
   const projects = [
     {
@@ -259,10 +264,13 @@ export default function Portfolio({ onBookConsultation }) {
 
         {/* Projects Grid */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "28px" }}>
-          {filteredProjects.map((proj) => (
+          {filteredProjects.map((proj, idx) => (
             <div
               key={proj.id}
               className="clean-card project-card"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={(idx % 3) * 120}
               onClick={() => setSelectedProject(proj)}
             >
               <div className="project-image-wrap">
@@ -375,7 +383,7 @@ export default function Portfolio({ onBookConsultation }) {
                 alt={selectedProject.title}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
-              <span className="badge-blue" style={{ position: "absolute", bottom: "14px", left: "14px", background: "#071A33", color: "#2298D8" }}>
+              <span className="badge-blue" style={{ position: "absolute", bottom: "14px", left: "14px", background: "#071A33", color: "#087FEA" }}>
                 {selectedProject.categoryName}
               </span>
             </div>

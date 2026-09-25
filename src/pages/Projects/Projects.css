@@ -1,7 +1,311 @@
 /* =========================================================
-   Projects Page Styles (White Theme)
+   PROJECTS PAGE STYLES - LUXURY OBSIDIAN & ROYAL BLUE PALETTE
+   THEME: OBSIDIAN DARK NAVY / JET BLACK + ROYAL BLUE (#0084FF) + AMBER ORANGE (#FF7A00)
    ========================================================= */
 
 .projects-page-wrapper {
+  background: var(--bg-black, #06090E);
+  min-height: 100vh;
+  color: #FFFFFF;
   padding-bottom: 80px;
+}
+
+/* Hero Banner */
+.projects-hero-banner {
+  background: radial-gradient(circle at 50% 20%, rgba(0, 132, 255, 0.1) 0%, #06090E 75%);
+  padding: 100px 0 60px 0;
+  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
+  text-align: center;
+}
+
+.projects-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 132, 255, 0.1);
+  border: 1px solid rgba(0, 132, 255, 0.3);
+  color: #0084FF;
+  padding: 6px 18px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: 6px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.projects-page-title {
+  color: #FFFFFF;
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  margin: 0 0 16px 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.projects-page-title span {
+  color: #0084FF;
+}
+
+.projects-page-subtitle {
+  max-width: 780px;
+  margin: 0 auto;
+  color: #CBD5E1;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Filter Bar */
+.projects-filter-bar {
+  background: #0B111D;
+  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
+  position: sticky;
+  top: 76px;
+  z-index: 30;
+  backdrop-filter: blur(12px);
+}
+
+.projects-tabs-list {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 0;
+  flex-wrap: wrap;
+}
+
+.projects-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #101827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projects-filter-btn:hover {
+  background: rgba(0, 132, 255, 0.15);
+  color: #0084FF;
+  border-color: rgba(0, 132, 255, 0.4);
+}
+
+.projects-filter-btn.active {
+  background: #0084FF;
+  color: #FFFFFF;
+  border-color: #0084FF;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(0, 132, 255, 0.4);
+}
+
+/* Grid & Cards */
+.projects-grid-section {
+  padding: 70px 0 90px 0;
+}
+
+.projects-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+.project-catalog-card {
+  background: #101827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-catalog-card:hover {
+  border-color: rgba(0, 132, 255, 0.6);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 132, 255, 0.15);
+}
+
+.project-card-image-wrap {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  background: #06090E;
+}
+
+.project-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.project-catalog-card:hover .project-card-image-wrap img {
+  transform: scale(1.08);
+}
+
+.project-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(6, 9, 14, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 132, 255, 0.4);
+  color: #0084FF;
+  padding: 5px 14px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-card-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: #8896A6;
+  margin-bottom: 12px;
+}
+
+.project-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-card-meta svg {
+  color: #0084FF;
+}
+
+.project-card-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+.project-catalog-card:hover .project-card-title {
+  color: #0084FF;
+}
+
+.project-card-desc {
+  font-size: 0.92rem;
+  color: #CBD5E1;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.project-card-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-area-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0084FF;
+  background: rgba(0, 132, 255, 0.08);
+  border: 1px solid rgba(0, 132, 255, 0.25);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.project-inspect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-inspect-btn:hover {
+  background: #0084FF;
+  color: #FFFFFF;
+  border-color: #0084FF;
+}
+
+/* Modal Overlay */
+.project-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.project-modal-dialog {
+  background: #101827;
+  border: 1px solid rgba(0, 132, 255, 0.4);
+  border-radius: 8px;
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  color: #FFFFFF;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 132, 255, 0.15);
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.project-modal-close:hover {
+  background: #0084FF;
+  color: #FFFFFF;
+  border-color: #0084FF;
+}
+
+@media (max-width: 768px) {
+  .projects-catalog-grid {
+    grid-template-columns: 1fr;
+  }
 }

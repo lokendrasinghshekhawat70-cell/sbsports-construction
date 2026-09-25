@@ -83,7 +83,7 @@ export default function Guarantees() {
                   <div className="feature-icon-wrapper" style={{ marginBottom: 0 }}>
                     <Icon size={24} />
                   </div>
-                  <span className="badge-blue" style={{ background: "#071A33", color: "#2298D8", border: "1px solid rgba(25, 200, 244, 0.3)" }}>
+                  <span className="badge-blue" style={{ background: "#071A33", color: "#087FEA", border: "1px solid rgba(8, 127, 234, 0.3)" }}>
                     <Sparkles size={12} /> {item.badge}
                   </span>
                 </div>

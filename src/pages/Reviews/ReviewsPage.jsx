@@ -74,143 +74,80 @@ export default function ReviewsPage() {
   ];
 
   return (
-    <div className="reviews-page-wrapper" style={{ background: "#F4F7FA", color: "#071A33", minHeight: "100vh", paddingBottom: "80px" }}>
+    <div className="reviews-page-wrapper">
       {/* Page Banner Header */}
-      <div className="page-hero-banner" style={{ background: "linear-gradient(180deg, #04101F 0%, #071A33 100%)", padding: "60px 0 44px 0", textAlign: "center", borderBottom: "1px solid rgba(25, 200, 244, 0.2)" }}>
+      <div className="reviews-hero-banner" data-aos="fade-up">
         <div className="container">
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "rgba(8, 127, 234, 0.12)",
-              border: "1px solid rgba(25, 200, 244, 0.3)",
-              color: "#2298D8",
-              padding: "6px 18px",
-              fontWeight: 800,
-              fontSize: "0.8rem",
-              borderRadius: "6px",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              marginBottom: "16px"
-            }}
-          >
+          <div className="reviews-pill-badge" data-aos="fade-down">
             <ThumbsUp size={15} />
             <span>SB SPORTS & CONSTRUCTION VERIFIED REVIEWS</span>
           </div>
-          <h1 className="page-main-title" style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "clamp(2rem, 3.5vw, 3rem)", margin: "0 0 12px 0", lineHeight: 1.2 }}>
+          <h1 className="reviews-page-title" data-aos="fade-up" data-aos-delay="100">
             CLIENT VERIFICATIONS <br />
-            <span className="text-gradient-blue">& AUDITED TESTIMONIALS</span>
+            <span>& AUDITED TESTIMONIALS</span>
           </h1>
-          <p className="page-main-subtitle" style={{ color: "#D9E2EA", maxWidth: "760px", margin: "0 auto 28px auto", fontSize: "1.02rem", lineHeight: 1.6 }}>
+          <p className="reviews-page-subtitle" data-aos="fade-up" data-aos-delay="200">
             Read verified reviews from clients who constructed Sports Infrastructure and Turnkey Residential Houses with SB SPORTS & CONSTRUCTION.
           </p>
 
           {/* Rating Summary Pill */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "18px",
-              background: "#04101F",
-              border: "1px solid rgba(25, 200, 244, 0.3)",
-              borderRadius: "10px",
-              padding: "12px 28px",
-              boxShadow: "0 8px 25px rgba(4, 16, 31, 0.5)"
-            }}
-          >
-            <div style={{ fontSize: "2.2rem", fontWeight: 800, color: "#2298D8", fontFamily: "'Manrope', sans-serif" }}>4.9</div>
+          <div className="reviews-rating-pill" data-aos="zoom-in" data-aos-delay="300">
+            <div className="reviews-rating-score">4.9</div>
             <div style={{ textAlign: "left" }}>
-              <div style={{ display: "flex", gap: "4px" }}>
+              <div style={{ display: "flex", gap: "4px", marginBottom: "4px" }}>
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="#D97706" color="#D97706" />
+                  <Star key={i} size={18} fill="#FF7A00" color="#FF7A00" />
                 ))}
               </div>
-              <span style={{ fontSize: "0.82rem", color: "#D9E2EA", fontWeight: 600 }}>Based on 500+ Verified Projects</span>
+              <span style={{ fontSize: "0.82rem", color: "#CBD5E1", fontWeight: 700 }}>Based on 500+ Completed Projects</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container" style={{ paddingTop: "52px" }}>
+      <div className="container" style={{ paddingTop: "60px" }}>
         {/* Testimonials Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "28px", marginBottom: "52px" }}>
-          {testimonials.map((t) => (
+        <div className="reviews-grid-wrap">
+          {testimonials.map((t, idx) => (
             <div
               key={t.id}
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid #DCE4EC",
-                borderRadius: "10px",
-                padding: "28px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                boxShadow: "0 4px 14px rgba(7, 26, 51, 0.05)",
-                transition: "transform 0.3s ease"
-              }}
+              className="reviews-card"
+              data-aos="fade-up"
+              data-aos-delay={((idx % 3) + 1) * 100}
             >
               <div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-                  <div style={{ display: "flex", gap: "3px" }}>
+                <div className="reviews-card-top">
+                  <div className="reviews-stars">
                     {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} size={17} fill="#D97706" color="#D97706" />
+                      <Star key={i} size={17} fill="#FF7A00" color="#FF7A00" />
                     ))}
                   </div>
-                  <Quote size={24} style={{ color: "#087FEA", opacity: 0.6 }} />
+                  <Quote size={24} style={{ color: "#0084FF", opacity: 0.7 }} />
                 </div>
 
-                <p style={{ color: "#334155", fontSize: "0.95rem", lineHeight: 1.65, fontStyle: "italic", marginBottom: "20px" }}>
+                <p className="reviews-quote-text">
                   "{t.quote}"
                 </p>
               </div>
 
               <div>
-                <div
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    background: "rgba(8, 127, 234, 0.06)",
-                    border: "1px solid rgba(8, 127, 234, 0.18)",
-                    padding: "4px 10px",
-                    borderRadius: "4px",
-                    fontSize: "0.78rem",
-                    fontWeight: 700,
-                    marginBottom: "16px",
-                    color: "#087FEA"
-                  }}
-                >
-                  <Trophy size={13} style={{ color: "#087FEA" }} />
+                <div className="reviews-tag">
+                  <Trophy size={13} style={{ color: "#0084FF" }} />
                   <span>{t.project} • {t.city}</span>
                 </div>
 
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", borderTop: "1px solid #E2E8F0", paddingTop: "14px" }}>
-                  <div
-                    style={{
-                      width: "38px",
-                      height: "38px",
-                      borderRadius: "8px",
-                      background: "#071A33",
-                      border: "1px solid #087FEA",
-                      color: "#2298D8",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontWeight: 800,
-                      fontSize: "0.88rem"
-                    }}
-                  >
+                <div className="reviews-author-row">
+                  <div className="reviews-avatar">
                     {t.avatarInitials}
                   </div>
                   <div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                      <span style={{ fontWeight: 800, color: "#071A33", fontSize: "0.92rem" }}>{t.author}</span>
+                    <div className="reviews-author-name">
+                      <span>{t.author}</span>
                       {t.verified && (
-                        <CheckCircle2 size={15} style={{ color: "#087FEA" }} title="Verified Technical Review" />
+                        <CheckCircle2 size={15} style={{ color: "#0084FF" }} title="Verified Technical Review" />
                       )}
                     </div>
-                    <span style={{ color: "#64748B", fontSize: "0.8rem" }}>{t.role} ({t.date})</span>
+                    <div className="reviews-author-role">{t.role} ({t.date})</div>
                   </div>
                 </div>
               </div>
@@ -219,29 +156,18 @@ export default function ReviewsPage() {
         </div>
 
         {/* Accreditations Bar */}
-        <div
-          style={{
-            background: "#04101F",
-            border: "1px solid rgba(25, 200, 244, 0.3)",
-            borderRadius: "12px",
-            padding: "32px 40px",
-            boxShadow: "0 10px 30px rgba(4, 16, 31, 0.6)",
-            color: "#FFFFFF"
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", borderBottom: "1px solid rgba(217, 226, 234, 0.15)", paddingBottom: "14px" }}>
-            <Award size={22} style={{ color: "#2298D8" }} />
-            <span style={{ fontWeight: 800, color: "#FFFFFF", fontSize: "1.05rem", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-              Licensed & Certified By Leading International Authorities
-            </span>
+        <div className="reviews-accred-panel" data-aos="fade-up">
+          <div className="reviews-accred-head">
+            <Award size={24} style={{ color: "#0084FF" }} />
+            <span>Licensed & Certified By Leading International Authorities</span>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "20px" }}>
+          <div className="reviews-accred-grid">
             {certifications.map((c, idx) => (
-              <div key={idx} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                <ShieldCheck size={20} style={{ color: "#2298D8", flexShrink: 0, marginTop: "2px" }} />
+              <div key={idx} className="reviews-accred-item">
+                <ShieldCheck size={20} />
                 <div>
-                  <div style={{ fontWeight: 800, fontSize: "0.9rem", color: "#FFFFFF" }}>{c.title}</div>
-                  <div style={{ fontSize: "0.8rem", color: "#94A3B8", marginTop: "2px" }}>{c.desc}</div>
+                  <div className="reviews-accred-title">{c.title}</div>
+                  <div className="reviews-accred-desc">{c.desc}</div>
                 </div>
               </div>
             ))}

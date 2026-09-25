@@ -26,11 +26,9 @@ function App() {
 
   useEffect(() => {
     AOS.init({
-      duration: 750,
-      easing: "ease-out-cubic",
-      once: false, // Animates every single time on scroll
-      mirror: true, // Animates out and back in when scrolling up/down
-      offset: 60,
+      duration: 900,
+      once: true,
+      offset: 100
     });
   }, []);
 
@@ -57,13 +55,15 @@ function App() {
           {/* Home */}
           <Route path="/" element={<HomePage onOpenQuote={handleOpenQuoteGeneric} onSelectService={handleOpenQuoteWithService} />} />
 
-          {/* Sports Courts & Synthetic Coating (Integrated into Services) */}
-          <Route path="/SportsCourtsAndCoating" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />
-          <Route path="/sports-courts" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />
+          {/* Sports Courts & Infrastructure */}
+          <Route path="/SportsCourtsAndCoating" element={<SportsCourtsPage onOpenQuote={handleOpenQuoteWithService} />} />
+          <Route path="/sports-courts" element={<SportsCourtsPage onOpenQuote={handleOpenQuoteWithService} />} />
 
-          {/* Construction Services */}
+          {/* Civil & Building Engineering Services */}
           <Route path="/Services" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />
           <Route path="/services" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />
+          <Route path="/civil-construction" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />
+          <Route path="/civil" element={<ServicesPage onOpenQuote={handleOpenQuoteWithService} />} />
 
           {/* Projects */}
           <Route path="/Projects" element={<ProjectsPage onBookConsultation={handleOpenQuoteWithService} />} />

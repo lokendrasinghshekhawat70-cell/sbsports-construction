@@ -83,34 +83,55 @@ export default function ContactSection({ onOpenQuote }) {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="section-pill" style={{ background: "rgba(8, 127, 234, 0.15)", borderColor: "rgba(25, 200, 244, 0.3)" }}>
-            <HardHat size={15} style={{ color: "#2298D8" }} />
-            <span style={{ color: "#2298D8" }}>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
+          <div
+            className="section-pill"
+            data-aos="fade-down"
+            data-aos-duration="700"
+            style={{ background: "#0E1E34", borderColor: "#1E293B", color: "#FFFFFF" }}
+          >
+            <HardHat size={15} style={{ color: "#087FEA" }} />
+            <span style={{ color: "#373434ff" }}>SB SPORTS & CONSTRUCTION PLANNING DESK</span>
           </div>
-          <h2 className="section-title" style={{ color: "#FFFFFF" }}>
+          <h2
+            className="section-title"
+            data-aos="fade-up"
+            data-aos-duration="750"
+            data-aos-delay="100"
+            style={{ color: "#FFFFFF" }}
+          >
             Submit Your Project Specifications <br />
             <span className="text-gradient-blue">& Request Site Inspection</span>
           </h2>
-          <p className="section-subtitle" style={{ color: "#D9E2EA" }}>
+          <p
+            className="section-subtitle"
+            data-aos="fade-up"
+            data-aos-duration="750"
+            data-aos-delay="150"
+            style={{ color: "#D9E2EA" }}
+          >
             Connect directly with our engineering desk for Sports Arenas, ITF Synthetic Coatings, Box Cricket Turfs, and Turnkey House Construction Projects.
           </p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px", alignItems: "start" }}>
           {/* Left Column: Technical Desks */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="800"
+            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+          >
             {/* Direct Phone Helpline Card */}
             <div
               style={{
                 padding: "26px",
-                background: "#04101F",
-                border: "1px solid rgba(25, 200, 244, 0.25)",
+                background: "#071A33",
+                border: "1px solid #1E293B",
                 borderRadius: "10px",
-                boxShadow: "0 8px 30px rgba(4, 16, 31, 0.5)"
+                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.4)"
               }}
             >
               <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#2298D8", flexShrink: 0 }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "#04101F", border: "1px solid #1E293B", color: "#087FEA", flexShrink: 0 }}>
                   <PhoneCall size={24} />
                 </div>
                 <div>
@@ -119,7 +140,7 @@ export default function ContactSection({ onOpenQuote }) {
                   </div>
                   <a
                     href="tel:+919636365391"
-                    style={{ color: "#2298D8", fontSize: "1.25rem", fontWeight: 800, textDecoration: "none", display: "inline-block" }}
+                    style={{ color: "#FFFFFF", fontSize: "1.25rem", fontWeight: 800, textDecoration: "none", display: "inline-block" }}
                   >
                     +91-9636365391
                   </a>
@@ -134,14 +155,14 @@ export default function ContactSection({ onOpenQuote }) {
             <div
               style={{
                 padding: "26px",
-                background: "#04101F",
-                border: "1px solid rgba(25, 200, 244, 0.25)",
+                background: "#071A33",
+                border: "1px solid #1E293B",
                 borderRadius: "10px",
-                boxShadow: "0 8px 30px rgba(4, 16, 31, 0.5)"
+                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.4)"
               }}
             >
               <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#2298D8", flexShrink: 0 }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "#04101F", border: "1px solid #1E293B", color: "#087FEA", flexShrink: 0 }}>
                   <Mail size={24} />
                 </div>
                 <div>
@@ -165,21 +186,21 @@ export default function ContactSection({ onOpenQuote }) {
             <div
               style={{
                 padding: "26px",
-                background: "#04101F",
-                border: "1px solid rgba(25, 200, 244, 0.25)",
+                background: "#071A33",
+                border: "1px solid #1E293B",
                 borderRadius: "10px",
-                boxShadow: "0 8px 30px rgba(4, 16, 31, 0.5)"
+                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.4)"
               }}
             >
               <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ padding: "12px", borderRadius: "8px", background: "rgba(8, 127, 234, 0.15)", color: "#2298D8", flexShrink: 0 }}>
+                <div style={{ padding: "12px", borderRadius: "8px", background: "#04101F", border: "1px solid #1E293B", color: "#087FEA", flexShrink: 0 }}>
                   <ShieldCheck size={24} />
                 </div>
                 <div>
                   <div style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "1.05rem", marginBottom: "4px" }}>
                     ISO Certified Civil Engineering Standards
                   </div>
-                  <div style={{ color: "#2298D8", fontSize: "0.9rem", fontWeight: 700 }}>
+                  <div style={{ color: "#087FEA", fontSize: "0.9rem", fontWeight: 700 }}>
                     Certified Engineering Audits & Quality Guarantee
                   </div>
                   <div style={{ color: "#94A3B8", fontSize: "0.85rem", marginTop: "4px" }}>
@@ -192,10 +213,12 @@ export default function ContactSection({ onOpenQuote }) {
 
           {/* Right Column: Project Requirements Form Card */}
           <div
+            data-aos="fade-left"
+            data-aos-duration="800"
             style={{
               padding: "36px",
               background: "#04101F",
-              border: "1px solid rgba(25, 200, 244, 0.3)",
+              border: "1px solid rgba(8, 127, 234, 0.3)",
               borderRadius: "10px",
               boxShadow: "0 12px 40px rgba(4, 16, 31, 0.7)"
             }}
@@ -207,9 +230,9 @@ export default function ContactSection({ onOpenQuote }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "6px",
-                  background: "rgba(25, 200, 244, 0.12)",
-                  border: "1px solid rgba(25, 200, 244, 0.3)",
-                  color: "#2298D8",
+                  background: "rgba(8, 127, 234, 0.12)",
+                  border: "1px solid rgba(8, 127, 234, 0.3)",
+                  color: "#087FEA",
                   padding: "4px 12px",
                   borderRadius: "6px",
                   fontSize: "0.75rem",
@@ -243,7 +266,7 @@ export default function ContactSection({ onOpenQuote }) {
                       width: "100%",
                       padding: "13px 16px",
                       background: "#071A33",
-                      border: "1px solid rgba(25, 200, 244, 0.3)",
+                      border: "1px solid rgba(8, 127, 234, 0.3)",
                       borderRadius: "6px",
                       color: "#FFFFFF",
                       fontSize: "0.94rem",
@@ -272,7 +295,7 @@ export default function ContactSection({ onOpenQuote }) {
                         width: "100%",
                         padding: "13px 16px",
                         background: "#071A33",
-                        border: phoneError ? "1px solid #ff5858ff" : "1px solid rgba(25, 200, 244, 0.3)",
+                        border: phoneError ? "1px solid #ff5858ff" : "1px solid rgba(8, 127, 234, 0.3)",
                         borderRadius: "6px",
                         color: "#FFFFFF",
                         fontSize: "0.94rem",
@@ -298,7 +321,7 @@ export default function ContactSection({ onOpenQuote }) {
                         width: "100%",
                         padding: "13px 16px",
                         background: "#071A33",
-                        border: "1px solid rgba(25, 200, 244, 0.3)",
+                        border: "1px solid rgba(8, 127, 234, 0.3)",
                         borderRadius: "6px",
                         color: "#FFFFFF",
                         fontSize: "0.94rem",
@@ -319,7 +342,7 @@ export default function ContactSection({ onOpenQuote }) {
                       width: "100%",
                       padding: "13px 16px",
                       background: "#071A33",
-                      border: "1px solid rgba(25, 200, 244, 0.3)",
+                      border: "1px solid rgba(8, 127, 234, 0.3)",
                       borderRadius: "6px",
                       color: "#FFFFFF",
                       fontSize: "0.94rem",
@@ -352,7 +375,7 @@ export default function ContactSection({ onOpenQuote }) {
                       width: "100%",
                       padding: "13px 16px",
                       background: "#071A33",
-                      border: "1px solid rgba(25, 200, 244, 0.3)",
+                      border: "1px solid rgba(8, 127, 234, 0.3)",
                       borderRadius: "6px",
                       color: "#FFFFFF",
                       fontSize: "0.94rem",
@@ -380,9 +403,9 @@ export default function ContactSection({ onOpenQuote }) {
                       flex: 1,
                       justifyContent: "center",
                       padding: "16px",
-                      background: "rgba(25, 200, 244, 0.12)",
-                      border: "1px solid #2298D8",
-                      color: "#2298D8"
+                      background: "rgba(8, 127, 234, 0.12)",
+                      border: "1px solid #087FEA",
+                      color: "#087FEA"
                     }}
                   >
                     <MessageSquare size={18} />
@@ -392,7 +415,7 @@ export default function ContactSection({ onOpenQuote }) {
               </form>
             ) : (
               <div style={{ textAlign: "center", padding: "30px 10px" }}>
-                <CheckCircle2 size={48} style={{ color: "#2298D8", margin: "0 auto 16px auto" }} />
+                <CheckCircle2 size={48} style={{ color: "#087FEA", margin: "0 auto 16px auto" }} />
                 <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#FFFFFF", marginBottom: "8px" }}>
                   Inquiry Successfully Registered
                 </h4>
@@ -410,8 +433,8 @@ export default function ContactSection({ onOpenQuote }) {
                     alignItems: "center",
                     gap: "8px",
                     padding: "10px 22px",
-                    background: "rgba(25, 200, 244, 0.15)",
-                    border: "1px solid #2298D8",
+                    background: "rgba(8, 127, 234, 0.15)",
+                    border: "1px solid #087FEA",
                     color: "#FFFFFF",
                     fontSize: "0.9rem",
                     fontWeight: 700,
