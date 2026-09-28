@@ -55,7 +55,7 @@ export default function Navbar({ onOpenQuote }) {
             className="brand-logo"
             title="SB SPORTS & CONSTRUCTION"
           >
-            <SBLogo size="md" variant="light" />
+            <SBLogo size="md" variant="navbar" />
           </Link>
         </div>
 
@@ -94,7 +94,7 @@ export default function Navbar({ onOpenQuote }) {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X size={22} color="#0084FF" /> : <Menu size={22} color="#FFFFFF" />}
+            {mobileMenuOpen ? <X size={22} color="#0084FF" /> : <Menu size={22} color="#0B192C" />}
           </button>
         </div>
       </div>

@@ -337,23 +337,24 @@ export default function ServicesPage({ onOpenQuote }) {
       </div>
 
       {/* Interactive Tools Control Bar */}
-      <div style={{ background: "#04101F", padding: "16px 0", borderBottom: "1px solid rgba(8, 127, 234, 0.2)" }}>
+      <div style={{ background: "#F8FAFC", padding: "16px 0", borderBottom: "1px solid #E2E8F0" }}>
         <div className="container" style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
           <button
             type="button"
             onClick={() => setShowSimulator(!showSimulator)}
             className="btn"
             style={{
-              background: showSimulator ? "#087FEA" : "rgba(8, 127, 234, 0.15)",
-              border: "1px solid #087FEA",
-              color: "#FFFFFF",
+              background: showSimulator ? "#0084FF" : "#FFFFFF",
+              border: "1px solid #0084FF",
+              color: showSimulator ? "#FFFFFF" : "#0084FF",
               padding: "10px 22px",
               fontSize: "0.88rem",
               fontWeight: 700,
-              borderRadius: "6px"
+              borderRadius: "6px",
+              boxShadow: "0 2px 8px rgba(0, 132, 255, 0.15)"
             }}
           >
-            <Zap size={16} style={{ color: "#087FEA" }} />
+            <Zap size={16} style={{ color: showSimulator ? "#FFFFFF" : "#0084FF" }} />
             <span>{showSimulator ? "Close 3D Court Color Simulator" : "Launch 3D Court Color Simulator"}</span>
           </button>
 
@@ -362,16 +363,17 @@ export default function ServicesPage({ onOpenQuote }) {
             onClick={() => setShowLayersVisualizer(!showLayersVisualizer)}
             className="btn"
             style={{
-              background: showLayersVisualizer ? "#087FEA" : "rgba(8, 127, 234, 0.15)",
-              border: "1px solid #087FEA",
-              color: "#FFFFFF",
+              background: showLayersVisualizer ? "#0084FF" : "#FFFFFF",
+              border: "1px solid #0084FF",
+              color: showLayersVisualizer ? "#FFFFFF" : "#0084FF",
               padding: "10px 22px",
               fontSize: "0.88rem",
               fontWeight: 700,
-              borderRadius: "6px"
+              borderRadius: "6px",
+              boxShadow: "0 2px 8px rgba(0, 132, 255, 0.15)"
             }}
           >
-            <Layers size={16} style={{ color: "#087FEA" }} />
+            <Layers size={16} style={{ color: showLayersVisualizer ? "#FFFFFF" : "#0084FF" }} />
             <span>{showLayersVisualizer ? "Close 8-Layer Tech Visualizer" : "View 8-Layer Acrylic Coating Visualizer"}</span>
           </button>
         </div>

@@ -1,27 +1,27 @@
 /* =========================================================
-   REVIEWS PAGE STYLES - LUXURY OBSIDIAN & ROYAL BLUE PALETTE
+   REVIEWS PAGE STYLES - LIGHT LUXURY THEME
    ========================================================= */
 
 .reviews-page-wrapper {
-  background: var(--bg-black, #06090E);
-  color: #FFFFFF;
+  background: #FFFFFF;
+  color: #0F172A;
   min-height: 100vh;
   padding-bottom: 90px;
 }
 
 .reviews-hero-banner {
-  background: radial-gradient(circle at 50% 20%, rgba(0, 132, 255, 0.1) 0%, #06090E 75%);
+  background: #F8FAFC;
   padding: 100px 0 60px 0;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .reviews-pill-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 132, 255, 0.1);
-  border: 1px solid rgba(0, 132, 255, 0.3);
+  background: rgba(0, 132, 255, 0.08);
+  border: 1px solid rgba(0, 132, 255, 0.25);
   color: #0084FF;
   padding: 6px 18px;
   font-weight: 800;
@@ -33,7 +33,7 @@
 }
 
 .reviews-page-title {
-  color: #FFFFFF;
+  color: #0F172A;
   font-weight: 900;
   font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   margin: 0 0 16px 0;
@@ -46,7 +46,7 @@
 }
 
 .reviews-page-subtitle {
-  color: #CBD5E1;
+  color: #475569;
   max-width: 760px;
   margin: 0 auto 32px auto;
   font-size: 1.05rem;
@@ -57,11 +57,11 @@
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  background: #101827;
-  border: 1px solid rgba(0, 132, 255, 0.35);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
   padding: 14px 32px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .reviews-rating-score {
@@ -80,21 +80,21 @@
 }
 
 .reviews-card {
-  background: #101827;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
   padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reviews-card:hover {
-  border-color: rgba(0, 132, 255, 0.5);
+  border-color: #0084FF;
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 132, 255, 0.1);
+  box-shadow: 0 16px 40px rgba(0, 132, 255, 0.12);
 }
 
 .reviews-card-top {
@@ -110,7 +110,7 @@
 }
 
 .reviews-quote-text {
-  color: #E2E8F0;
+  color: #334155;
   font-size: 0.96rem;
   line-height: 1.7;
   font-style: italic;
@@ -122,7 +122,7 @@
   align-items: center;
   gap: 6px;
   background: rgba(0, 132, 255, 0.08);
-  border: 1px solid rgba(0, 132, 255, 0.25);
+  border: 1px solid rgba(0, 132, 255, 0.2);
   padding: 5px 12px;
   border-radius: 4px;
   font-size: 0.78rem;
@@ -135,7 +135,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #E2E8F0;
   padding-top: 16px;
 }
 
@@ -143,7 +143,7 @@
   width: 42px;
   height: 42px;
   border-radius: 6px;
-  background: #06090E;
+  background: rgba(0, 132, 255, 0.1);
   border: 1px solid #0084FF;
   color: #0084FF;
   display: flex;
@@ -155,7 +155,7 @@
 
 .reviews-author-name {
   font-weight: 800;
-  color: #FFFFFF;
+  color: #0F172A;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
@@ -163,18 +163,18 @@
 }
 
 .reviews-author-role {
-  color: #8896A6;
+  color: #64748B;
   font-size: 0.82rem;
   margin-top: 2px;
 }
 
 .reviews-accred-panel {
-  background: #101827;
-  border: 1px solid rgba(0, 132, 255, 0.25);
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
   padding: 36px 44px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  color: #0F172A;
 }
 
 .reviews-accred-head {
@@ -182,13 +182,13 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #E2E8F0;
   padding-bottom: 16px;
 }
 
 .reviews-accred-head span {
   font-weight: 900;
-  color: #FFFFFF;
+  color: #0F172A;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -215,12 +215,12 @@
 .reviews-accred-title {
   font-weight: 800;
   font-size: 0.92rem;
-  color: #FFFFFF;
+  color: #0F172A;
 }
 
 .reviews-accred-desc {
   font-size: 0.82rem;
-  color: #8896A6;
+  color: #64748B;
   margin-top: 4px;
   line-height: 1.5;
 }

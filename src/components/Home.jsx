@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import {
@@ -20,11 +20,67 @@ import {
   Globe2,
   Headphones,
   Compass,
-  FileSpreadsheet
+  FileSpreadsheet,
+  ChevronLeft,
+  ChevronRight,
+  Eye
 } from "lucide-react";
 
 export default function Home({ onOpenQuote }) {
   const [activeProjectFilter, setActiveProjectFilter] = useState("all");
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      image: "/images/sports_arena_complex_big.jpg",
+      tag: "Flagship Arena Infrastructure",
+      title: "Championship Multi-Sport Arenas",
+      badge: "500+ Facilities Handed Over",
+      desc: "Comprehensive master-planned sports complexes with turnkey laser grading."
+    },
+    {
+      image: "/images/sports_tennis_court.jpg",
+      tag: "8-Layer ITF Certified Cushion",
+      title: "Tournament Acrylic Tennis Arenas",
+      badge: "ITF Pace 3 Medium Certified",
+      desc: "28% impact shock attenuation protecting player joints with true ball rebound."
+    },
+    {
+      image: "/images/sports_box_cricket_turf.jpg",
+      tag: "30ft Steel Cage & High-Mast Arena",
+      title: "Commercial Box Cricket & Futsal Turfs",
+      badge: "50mm Monofilament Grass",
+      desc: "Engineered for 24/7 commercial monetization with 300+ Lux LED illumination."
+    },
+    {
+      image: "/images/integral_sports_stadium_hero.jpg",
+      tag: "Olympic Caliber Stadiums",
+      title: "IAAF Athletic Tracks & Arenas",
+      badge: "Full-PUR Sandwich Tracks",
+      desc: "World Athletics certified seamless polyurethane running track systems."
+    },
+    {
+      image: "/images/sports_basketball_court.jpg",
+      tag: "FIBA Grade Multi-Court Systems",
+      title: "Indoor & Outdoor Basketball Arenas",
+      badge: "Shock Attenuation System",
+      desc: "Multi-tone textured acrylic surface with laser regulation line markings."
+    },
+    {
+      image: "/images/integral_civil_commercial_hero.jpg",
+      tag: "Turnkey EPC Civil Construction",
+      title: "Commercial Plazas & High-Rise Structures",
+      badge: "IS 456 & IS 1893 Compliant",
+      desc: "Monolithic M30+ concrete framing, heavy raft foundations, and structural steel."
+    }
+  ];
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 6000); // 6s per slide = 36s complete cycle
+    return () => clearInterval(slideInterval);
+  }, [heroSlides.length]);
 
   const projectsData = [
     {
@@ -268,37 +324,103 @@ export default function Home({ onOpenQuote }) {
 
   return (
     <main className="sb-home-container">
-      {/* 1. FULLSCREEN CINEMATIC HERO (100vh) */}
+      {/* 1. FULLSCREEN CINEMATIC MULTI-IMAGE FLOATING HERO */}
       <section className="hero">
-        <div className="hero-bg"></div>
+        {/* Multi-Image Floating Background Stack */}
+        <div className="hero-slides-wrapper">
+          {heroSlides.map((slide, idx) => (
+            <div
+              key={idx}
+              className={`hero-bg-slide ${idx === currentHeroSlide ? "slide-active" : ""}`}
+              style={{ backgroundImage: `url(${slide.image})` }}
+            />
+          ))}
+        </div>
+
+        {/* Soft Cinematic Luxury Gradient Overlay */}
         <div className="hero-overlay"></div>
 
-        <div className="hero-content">
-          <p className="hero-tag" data-aos="fade-down" data-aos-duration="600">
-            PREMIUM SPORTS INFRASTRUCTURE & CIVIL CONSTRUCTION
-          </p>
+        <div className="hero-inner-container">
+          {/* Main Hero Content */}
+          <div className="hero-content">
+            <h1 data-aos="fade-up" data-aos-duration="750" data-aos-delay="100">
+              ENGINEERING
+              <span className="hero-title-accent"> SPACES.</span>
+              <br />
+              BUILDING
+              <span className="hero-title-accent"> CHAMPIONS.</span>
+            </h1>
 
-          <h1 data-aos="fade-up" data-aos-duration="750" data-aos-delay="100">
-            ENGINEERING
-            <span> SPACES.</span>
-            <br />
-            BUILDING
-            <span> CHAMPIONS.</span>
-          </h1>
+            <p className="hero-description" data-aos="fade-up" data-aos-duration="750" data-aos-delay="200">
+              Turnkey sports infrastructure and high-precision civil engineering built to international tournament standards from laser blueprint to PE handover.
+            </p>
 
-          <p className="hero-description" data-aos="fade-up" data-aos-duration="750" data-aos-delay="200">
-            Turnkey sports infrastructure and high-precision civil engineering built to international standards from blueprint to handover.
-          </p>
+            <div className="hero-buttons" data-aos="fade-up" data-aos-duration="750" data-aos-delay="300">
+              <Link to="/Projects" className="btn-primary hero-main-btn">
+                <span>Explore Our Work</span>
+                <ArrowRight size={18} />
+              </Link>
 
-          <div className="hero-buttons" data-aos="fade-up" data-aos-duration="750" data-aos-delay="300">
-            <Link to="/Projects" className="btn-primary">
-              <span>Explore Our Work</span>
-              <ArrowRight size={18} />
-            </Link>
+              <Link to="/Contact" className="btn-outline hero-sec-btn">
+                <span>Get Free Consultation</span>
+              </Link>
+            </div>
 
-            <Link to="/Contact" className="btn-outline">
-              <span>Get Free Consultation</span>
-            </Link>
+            {/* Quick Micro Trust Badges */}
+            <div className="hero-trust-badges" data-aos="fade-up" data-aos-delay="400">
+              <div className="hero-badge-item">
+                <ShieldCheck size={16} className="badge-icon-blue" />
+                <span>ITF & BWF Certified</span>
+              </div>
+              <div className="hero-badge-item">
+                <CheckCircle2 size={16} className="badge-icon-orange" />
+                <span>IS 456 Civil Standards</span>
+              </div>
+              <div className="hero-badge-item">
+                <Trophy size={16} className="badge-icon-gold" />
+                <span>10-Year Warranty</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Sleek Floating Facility Indicator Card (Bottom Right) */}
+          <div className="hero-facility-card" data-aos="fade-left" data-aos-duration="850">
+            <div className="facility-pill-badge">
+              <span className="live-pulsing-dot"></span>
+              <span>FEATURED INFRASTRUCTURE</span>
+            </div>
+            <h4 className="facility-title">{heroSlides[currentHeroSlide].title}</h4>
+            <p className="facility-tag">{heroSlides[currentHeroSlide].tag} • {heroSlides[currentHeroSlide].badge}</p>
+            
+            {/* Interactive Slide Switcher */}
+            <div className="hero-slides-controls">
+              <div className="hero-dots">
+                {heroSlides.map((_, dotIdx) => (
+                  <button
+                    key={dotIdx}
+                    onClick={() => setCurrentHeroSlide(dotIdx)}
+                    className={`hero-dot ${dotIdx === currentHeroSlide ? "active" : ""}`}
+                    aria-label={`Slide ${dotIdx + 1}`}
+                  />
+                ))}
+              </div>
+              <div className="hero-nav-btns">
+                <button
+                  onClick={() => setCurrentHeroSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
+                  className="hero-arrow-btn"
+                  title="Previous Facility"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+                <button
+                  onClick={() => setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length)}
+                  className="hero-arrow-btn"
+                  title="Next Facility"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -306,10 +428,6 @@ export default function Home({ onOpenQuote }) {
         <div className="hero-scroll" data-aos="fade-up" data-aos-delay="400">
           <span></span>
           SCROLL TO EXPLORE
-        </div>
-
-        <div className="hero-number" data-aos="fade-left" data-aos-delay="400">
-          01 / 06
         </div>
       </section>
 

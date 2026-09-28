@@ -1,20 +1,20 @@
 /* =========================================================
-   PROJECTS PAGE STYLES - LUXURY OBSIDIAN & ROYAL BLUE PALETTE
-   THEME: OBSIDIAN DARK NAVY / JET BLACK + ROYAL BLUE (#0084FF) + AMBER ORANGE (#FF7A00)
+   PROJECTS PAGE STYLES - LIGHT LUXURY THEME
+   THEME: PURE WHITE (#FFFFFF), OFF-WHITE (#F8FAFC), ROYAL BLUE (#0084FF)
    ========================================================= */
 
 .projects-page-wrapper {
-  background: var(--bg-black, #06090E);
+  background: #FFFFFF;
   min-height: 100vh;
-  color: #FFFFFF;
+  color: #0F172A;
   padding-bottom: 80px;
 }
 
 /* Hero Banner */
 .projects-hero-banner {
-  background: radial-gradient(circle at 50% 20%, rgba(0, 132, 255, 0.1) 0%, #06090E 75%);
+  background: #F8FAFC;
   padding: 100px 0 60px 0;
-  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
+  border-bottom: 1px solid #E2E8F0;
   text-align: center;
 }
 
@@ -22,8 +22,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 132, 255, 0.1);
-  border: 1px solid rgba(0, 132, 255, 0.3);
+  background: rgba(0, 132, 255, 0.08);
+  border: 1px solid rgba(0, 132, 255, 0.25);
   color: #0084FF;
   padding: 6px 18px;
   font-size: 0.8rem;
@@ -35,7 +35,7 @@
 }
 
 .projects-page-title {
-  color: #FFFFFF;
+  color: #0F172A;
   font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   font-weight: 900;
   margin: 0 0 16px 0;
@@ -50,17 +50,17 @@
 .projects-page-subtitle {
   max-width: 780px;
   margin: 0 auto;
-  color: #CBD5E1;
+  color: #475569;
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
 /* Filter Bar */
 .projects-filter-bar {
-  background: #0B111D;
-  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
   position: sticky;
-  top: 76px;
+  top: 70px;
   z-index: 30;
   backdrop-filter: blur(12px);
 }
@@ -77,9 +77,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #101827;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #FFFFFF;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #334155;
   padding: 10px 22px;
   border-radius: 6px;
   font-size: 0.88rem;
@@ -89,9 +89,9 @@
 }
 
 .projects-filter-btn:hover {
-  background: rgba(0, 132, 255, 0.15);
+  background: rgba(0, 132, 255, 0.08);
   color: #0084FF;
-  border-color: rgba(0, 132, 255, 0.4);
+  border-color: rgba(0, 132, 255, 0.3);
 }
 
 .projects-filter-btn.active {
@@ -99,12 +99,13 @@
   color: #FFFFFF;
   border-color: #0084FF;
   font-weight: 800;
-  box-shadow: 0 4px 15px rgba(0, 132, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 132, 255, 0.3);
 }
 
 /* Grid & Cards */
 .projects-grid-section {
   padding: 70px 0 90px 0;
+  background: #FFFFFF;
 }
 
 .projects-catalog-grid {
@@ -114,20 +115,21 @@
 }
 
 .project-catalog-card {
-  background: #101827;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-catalog-card:hover {
-  border-color: rgba(0, 132, 255, 0.6);
+  border-color: #0084FF;
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 132, 255, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 132, 255, 0.12);
 }
 
 .project-card-image-wrap {
@@ -135,7 +137,7 @@
   height: 250px;
   position: relative;
   overflow: hidden;
-  background: #06090E;
+  background: #F1F5F9;
 }
 
 .project-card-image-wrap img {
@@ -154,9 +156,9 @@
   position: absolute;
   top: 14px;
   left: 14px;
-  background: rgba(6, 9, 14, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 132, 255, 0.4);
+  border: 1px solid rgba(0, 132, 255, 0.3);
   color: #0084FF;
   padding: 5px 14px;
   font-size: 0.72rem;
@@ -164,6 +166,7 @@
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .project-card-body {
@@ -177,7 +180,7 @@
   display: flex;
   gap: 16px;
   font-size: 0.82rem;
-  color: #8896A6;
+  color: #64748B;
   margin-bottom: 12px;
 }
 
@@ -194,7 +197,7 @@
 .project-card-title {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: #0F172A;
   margin-bottom: 12px;
   line-height: 1.35;
   transition: color 0.3s ease;
@@ -206,7 +209,7 @@
 
 .project-card-desc {
   font-size: 0.92rem;
-  color: #CBD5E1;
+  color: #475569;
   line-height: 1.65;
   margin-bottom: 24px;
 }
@@ -214,7 +217,7 @@
 .project-card-footer {
   margin-top: auto;
   padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #E2E8F0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -225,7 +228,7 @@
   font-weight: 700;
   color: #0084FF;
   background: rgba(0, 132, 255, 0.08);
-  border: 1px solid rgba(0, 132, 255, 0.25);
+  border: 1px solid rgba(0, 132, 255, 0.2);
   padding: 4px 12px;
   border-radius: 4px;
 }
@@ -234,9 +237,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
   padding: 7px 14px;
   border-radius: 4px;
   font-size: 0.82rem;
@@ -258,8 +261,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -268,25 +271,25 @@
 }
 
 .project-modal-dialog {
-  background: #101827;
-  border: 1px solid rgba(0, 132, 255, 0.4);
-  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
   max-width: 760px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  color: #FFFFFF;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 132, 255, 0.15);
+  color: #0F172A;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
 }
 
 .project-modal-close {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
   border-radius: 50%;
   width: 38px;
   height: 38px;

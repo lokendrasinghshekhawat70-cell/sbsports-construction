@@ -1,5 +1,6 @@
 /* =========================================================
-   Navbar Styling - Dark Luxury Theme with Logo Brand Palette
+   Navbar Styling - Ultra-Premium Luxury Brand Header
+   Designed to seamlessly match SB SPORTS & CONSTRUCTION Logo
    ========================================================= */
 
 .site-header {
@@ -12,24 +13,28 @@
 }
 
 .header-transparent {
-  background: transparent;
-  padding: 24px 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 132, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .header-scrolled {
-  background: rgba(6, 9, 14, 0.96);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 132, 255, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 .nav-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
 
 .nav-brand-container {
@@ -38,46 +43,58 @@
   flex-shrink: 0;
 }
 
+.brand-logo {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px);
+}
+
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 8px;
 }
 
 .nav-link {
   position: relative;
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   font-weight: 700;
-  color: #E2E8F0;
-  padding: 8px 14px;
-  border-radius: 4px;
-  transition: all 0.25s ease;
+  color: #1E293B;
+  padding: 9px 16px;
+  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .nav-link:hover {
   color: #0084FF;
-  background: rgba(0, 132, 255, 0.08);
+  background: rgba(0, 132, 255, 0.07);
 }
 
 .nav-link-active {
   color: #0084FF !important;
   font-weight: 800;
+  background: rgba(0, 132, 255, 0.08);
 }
 
 .active-indicator-bar {
   position: absolute;
-  bottom: -4px;
-  left: 14px;
-  right: 14px;
-  height: 2px;
+  bottom: 0px;
+  left: 16px;
+  right: 16px;
+  height: 2.5px;
   background: #0084FF;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 132, 255, 0.8);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 132, 255, 0.5);
 }
 
 .nav-cta-wrapper {
@@ -90,76 +107,79 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #0084FF;
+  background: linear-gradient(135deg, #0084FF 0%, #0066CC 100%);
   color: #FFFFFF;
   font-weight: 800;
   font-size: 0.88rem;
-  padding: 10px 22px;
-  border-radius: 4px;
+  padding: 11px 22px;
+  border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 18px rgba(0, 132, 255, 0.4);
-  letter-spacing: 0.03em;
+  box-shadow: 0 6px 20px rgba(0, 132, 255, 0.30);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .nav-cta-btn:hover {
-  background: #006fe0;
-  box-shadow: 0 6px 25px rgba(0, 132, 255, 0.65);
+  background: linear-gradient(135deg, #0075e0 0%, #0055b3 100%);
+  box-shadow: 0 10px 28px rgba(0, 132, 255, 0.50);
   transform: translateY(-2px);
 }
 
-.nav-cta-btn span {
-  font-size: 1.05rem;
-  line-height: 1;
+.nav-cta-btn svg {
+  transition: transform 0.25s ease;
 }
 
-.mobile-menu-toggle {
+.nav-cta-btn:hover svg {
+  transform: translateX(3px);
+}
+
+.mobile-menu-btn {
   display: none;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #FFFFFF;
-  padding: 8px;
-  border-radius: 6px;
+  background: rgba(11, 25, 44, 0.05);
+  border: 1px solid rgba(11, 25, 44, 0.1);
+  color: #0B192C;
+  padding: 9px;
+  border-radius: 8px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
 }
 
-.mobile-menu-toggle:hover {
-  background: rgba(0, 132, 255, 0.15);
+.mobile-menu-btn:hover {
+  background: rgba(0, 132, 255, 0.1);
   border-color: #0084FF;
-  color: #0084FF;
 }
 
-/* Mobile Drawer */
-.mobile-nav-drawer {
+/* Mobile Navigation Drawer */
+.mobile-drawer {
   display: none;
 }
 
 @media (max-width: 1024px) {
   .desktop-nav,
-  .nav-cta-wrapper {
+  .nav-cta-wrapper .nav-cta-btn {
     display: none;
   }
 
-  .mobile-menu-toggle {
+  .mobile-menu-btn {
     display: flex;
   }
 
-  .mobile-nav-drawer {
+  .mobile-drawer {
     display: block;
     position: fixed;
     top: 72px;
     left: 0;
     right: 0;
-    background: rgba(6, 9, 14, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 132, 255, 0.2);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(0, 132, 255, 0.15);
     padding: 24px 20px 32px 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     animation: slideDown 0.3s ease forwards;
   }
 
@@ -174,49 +194,54 @@
     }
   }
 
-  .mobile-nav-links {
+  .mobile-drawer-links {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
-  .mobile-nav-link {
+  .mobile-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 14px 18px;
-    border-radius: 6px;
-    font-size: 1.05rem;
+    border-radius: 8px;
+    font-size: 1.02rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #0B192C;
     text-decoration: none;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
     transition: all 0.2s ease;
   }
 
-  .mobile-nav-link:hover,
-  .mobile-nav-link-active {
-    background: rgba(0, 132, 255, 0.12);
-    border-color: rgba(0, 132, 255, 0.4);
+  .mobile-link:hover,
+  .mobile-link-active {
+    background: rgba(0, 132, 255, 0.08);
+    border-color: #0084FF;
     color: #0084FF;
   }
 
-  .mobile-nav-cta {
+  .mobile-drawer-cta {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .mobile-cta-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     width: 100%;
-    background: #0084FF;
+    background: linear-gradient(135deg, #0084FF 0%, #0066CC 100%);
     color: #FFFFFF;
     padding: 15px;
     font-weight: 800;
-    font-size: 1rem;
-    border-radius: 6px;
+    font-size: 0.98rem;
+    border-radius: 8px;
     text-decoration: none;
-    box-shadow: 0 4px 18px rgba(0, 132, 255, 0.4);
+    box-shadow: 0 6px 22px rgba(0, 132, 255, 0.35);
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }

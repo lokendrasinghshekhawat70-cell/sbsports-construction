@@ -73,8 +73,8 @@ export default function Footer({ onOpenQuote }) {
             <h4 className="footer-col-title">Direct Contact</h4>
             <div className="footer-contact-info">
               <a href="tel:+919636365391" className="footer-contact-link highlight">
-                <PhoneCall size={16} color="#0084FF" />
-                <span>+91-9636365391</span>
+                <PhoneCall size={16} color="#FFFFFF" />
+                <span style={{ color: "#FFFFFF" }}>+91-9636365391</span>
               </a>
               <a href="mailto:sbsportsandconstruction@gmail.com" className="footer-contact-link">
                 <Mail size={16} color="#0084FF" />
@@ -105,7 +105,7 @@ export default function Footer({ onOpenQuote }) {
         {/* Footer Bottom Bar */}
         <div className="footer-bottom">
           <div className="footer-brand-wrap">
-            <SBLogo size="sm" variant="light" />
+            <SBLogo size="sm" variant="navbar" />
           </div>
 
           <p className="footer-copyright">

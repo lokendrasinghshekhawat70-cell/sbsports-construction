@@ -98,67 +98,67 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
       title: "Micro-Grain Cushion Elastic Rebound Coat",
       thickness: "300 - 450 Microns",
       category: "Cushion Refinement",
-      layerColor: "#2563EB",
-      composition: "High-grade acrylic binder with micro-pulverized rubber particles for smooth transitions",
-      purpose: "Fills the voids of the coarse cushion layer, producing a velvety smooth elastic bed ready for color application.",
+      layerColor: "#4338CA",
+      composition: "Fine-mesh cellular EPDM / SBR micro-granules embedded in high-grade acrylic binder",
+      purpose: "Fills voids between coarse cushion granules to ensure true ball bounce and uniform kinetic response across the entire court.",
       features: [
-        "Flawless surface tension and micro-leveling",
-        "Jointless monolithic rubber-acrylic composite",
-        "Enhances true ball bounce and spin response",
-        "Optimized energy return"
+        "Ultra-smooth cushioning transition",
+        "Eliminates cushion layer micro-voids",
+        "Guarantees true coefficient of restitution (COR)",
+        "Extended court elasticity lifespan (10+ years)"
       ],
-      icon: "✨"
+      icon: "🎾"
     },
     {
       id: 6,
-      name: "Layer 6: Vibrant Color Pre-Coat",
-      title: "Deep Pigment Acrylic Texture Undercoat",
-      thickness: "150 - 200 Microns",
-      category: "Color Base",
-      layerColor: "#EA580C",
-      composition: "Heavy-bodied pure acrylic emulsion rich in UV-stable inorganic mineral oxides",
-      purpose: "Builds deep pigment saturation and uniform friction underlayment that prevents premature color fade.",
+      name: "Layer 6: Intermediate Acrylic Color Base",
+      title: "Intense Pigmented Heavy-Wear Matrix",
+      thickness: "200 - 250 Microns",
+      category: "Color & Traction",
+      layerColor: "#2563EB",
+      composition: "Pure acrylic resin loaded with light-fast, UV-stable mineral pigments and fine silica",
+      purpose: "Provides the primary deep color saturation, sets the baseline court pace rating (CPR), and locks cushion layers.",
       features: [
-        "100% pure lightfast pigment technology",
-        "UV degradation resistance rating Grade 4+",
-        "High resistance to intense tropical heat and sun exposure",
-        "Deep, radiant color hue foundation"
+        "Rich color depth resistant to sun bleaching",
+        "Controlled surface friction for optimal slide/grip",
+        "High abrasion and scuff resistance",
+        "Hydrophobic water-shedding surface"
       ],
       icon: "🎨"
     },
     {
       id: 7,
-      name: "Layer 7: Ultra-Tough Top Wear Finish Coat",
-      title: "Anti-Skid, All-Weather Top Wear Surface",
+      name: "Layer 7: Ultra-Tuff UV Top Wear Coat",
+      title: "Tournament-Grade Acrylic UV Anti-Glare Surface",
       thickness: "150 - 200 Microns",
-      category: "Playing Surface",
-      layerColor: "#059669",
-      composition: "Fortified pure acrylic copolymer with micro-texture spherical silica particles",
-      purpose: "The final playing surface that contacts the athlete's shoes and ball. Delivers certified non-skid traction wet or dry.",
+      category: "Play Surface",
+      layerColor: "#0284C7",
+      composition: "Cross-linking acrylic polymer matrix with micro-texture friction modifiers and UV inhibitors",
+      purpose: "The final playing surface engineered for ITF Medium-Fast pace, glare-free night visibility, and extreme weather resilience.",
       features: [
-        "ITF Pace Rating 3 (Medium) or Custom Pace 4 (Medium-Fast)",
-        "Zero-glare matte finish under direct sun & floodlights",
-        "High abrasion resistance (Taber Abrasion test certified)",
-        "Weatherproof: handles extreme rains, frost, and summer heat"
+        "ITF Speed Classification Certified (Pace Category 3 & 4)",
+        "Anti-glare micro-texture under high-mast LED lights",
+        "100% UV, ozone, and acid-rain resistant",
+        "Guaranteed uniform ball bounce angle"
       ],
       icon: "🏆"
     },
     {
       id: 8,
-      name: "Layer 8: Precision Game Line Markings",
-      title: "100% Acrylic Polyurethane Regulation Lines",
-      thickness: "100 - 150 Microns",
-      category: "Regulation Geometry",
-      layerColor: "#00C2FF",
-      composition: "Non-bleed, heavy-duty pure aliphatic polyurethane and acrylic line markings",
-      purpose: "Laser-straight, crisp boundary lines painted according to exact international federation standards (ITF, FIBA, BWF, USAPA).",
+      name: "Layer 8: Laser Line Markings",
+      title: "100% Acrylic Anti-Skid Tournament Line Paint",
+      thickness: "50 - 80 Microns",
+      category: "Precision Lines",
+      layerColor: "#FFFFFF",
+      composition: "Heavy-bodied pure acrylic white elastomeric paint with microscopic anti-skid texturing",
+      purpose: "Razor-sharp, glare-free, non-skid court boundaries applied using laser alignment meeting ITF / BWF / FIBA regulations.",
       features: [
-        "Sharp 50mm laser-masked edges with zero bleed",
-        "Anti-glare textured finish for high optical contrast",
-        "Permanent adhesion that withstands high foot traffic",
-        "Multi-sport overlaid lines (e.g. Tennis + Pickleball combo)"
+        "Identical friction coefficient to court surface (no slipping on lines)",
+        "Zero-bleed razor-sharp edge masking",
+        "High-contrast optical brilliance under floodlights",
+        "Permanent chemical bond preventing line peeling"
       ],
-      icon: "📐"
+      icon: "📏"
     }
   ];
 
@@ -167,12 +167,12 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
   return (
     <div
       style={{
-        background: "linear-gradient(165deg, #09172A 0%, #050D18 100%)",
-        border: "1px solid rgba(0, 174, 239, 0.25)",
+        background: "#FFFFFF",
+        border: "1px solid #E2E8F0",
         borderRadius: "16px",
         padding: "32px",
-        boxShadow: "0 20px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 132, 255, 0.1)",
-        color: "#FFFFFF",
+        boxShadow: "0 10px 35px rgba(0, 0, 0, 0.05)",
+        color: "#0F172A",
         marginTop: "20px",
         marginBottom: "35px"
       }}
@@ -184,9 +184,9 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
             display: "inline-flex",
             alignItems: "center",
             gap: "8px",
-            background: "rgba(0, 174, 239, 0.1)",
-            border: "1px solid rgba(0, 174, 239, 0.35)",
-            color: "#00C2FF",
+            background: "rgba(0, 132, 255, 0.08)",
+            border: "1px solid rgba(0, 132, 255, 0.25)",
+            color: "#0084FF",
             padding: "6px 16px",
             borderRadius: "30px",
             fontSize: "0.78rem",
@@ -204,7 +204,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
           style={{
             fontSize: "clamp(1.5rem, 2.6vw, 2.2rem)",
             fontWeight: 900,
-            color: "#FFFFFF",
+            color: "#0F172A",
             margin: "0 0 10px 0",
             letterSpacing: "-0.02em"
           }}
@@ -212,7 +212,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
           8-Layer Synthetic Sports Court Coating System
         </h3>
 
-        <p style={{ color: "#94A3B8", fontSize: "0.95rem", lineHeight: 1.6, margin: 0 }}>
+        <p style={{ color: "#475569", fontSize: "0.95rem", lineLine: 1.6, margin: 0 }}>
           Engineered for international tournament performance. Click any layer below to inspect its microscopic composition, shock absorption elasticity, and engineering specifications.
         </p>
 
@@ -221,9 +221,9 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
           <button 
             onClick={() => setIsExplodedView(true)}
             style={{
-              background: isExplodedView ? "linear-gradient(135deg, #0084FF 0%, #00B4D8 100%)" : "rgba(255, 255, 255, 0.05)",
-              color: isExplodedView ? "#FFFFFF" : "#94A3B8",
-              border: isExplodedView ? "1px solid #00C2FF" : "1px solid rgba(255, 255, 255, 0.12)",
+              background: isExplodedView ? "#0084FF" : "#F8FAFC",
+              color: isExplodedView ? "#FFFFFF" : "#334155",
+              border: isExplodedView ? "1px solid #0084FF" : "1px solid #CBD5E1",
               padding: "9px 20px",
               borderRadius: "8px",
               fontWeight: 800,
@@ -234,7 +234,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
               gap: "8px",
               textTransform: "uppercase",
               transition: "all 0.25s ease",
-              boxShadow: isExplodedView ? "0 4px 18px rgba(0, 132, 255, 0.4)" : "none"
+              boxShadow: isExplodedView ? "0 4px 15px rgba(0, 132, 255, 0.3)" : "none"
             }}
           >
             <Maximize size={15} />
@@ -244,9 +244,9 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
           <button 
             onClick={() => setIsExplodedView(false)}
             style={{
-              background: !isExplodedView ? "linear-gradient(135deg, #0084FF 0%, #00B4D8 100%)" : "rgba(255, 255, 255, 0.05)",
-              color: !isExplodedView ? "#FFFFFF" : "#94A3B8",
-              border: !isExplodedView ? "1px solid #00C2FF" : "1px solid rgba(255, 255, 255, 0.12)",
+              background: !isExplodedView ? "#0084FF" : "#F8FAFC",
+              color: !isExplodedView ? "#FFFFFF" : "#334155",
+              border: !isExplodedView ? "1px solid #0084FF" : "1px solid #CBD5E1",
               padding: "9px 20px",
               borderRadius: "8px",
               fontWeight: 800,
@@ -257,7 +257,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
               gap: "8px",
               textTransform: "uppercase",
               transition: "all 0.25s ease",
-              boxShadow: !isExplodedView ? "0 4px 18px rgba(0, 132, 255, 0.4)" : "none"
+              boxShadow: !isExplodedView ? "0 4px 15px rgba(0, 132, 255, 0.3)" : "none"
             }}
           >
             <Layers size={15} />
@@ -285,12 +285,12 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
                 onClick={() => setSelectedLayerIndex(idx)}
                 style={{
                   background: isSelected 
-                    ? "linear-gradient(90deg, rgba(0, 132, 255, 0.28) 0%, rgba(7, 26, 48, 0.95) 100%)" 
-                    : "linear-gradient(90deg, #0b1a2e 0%, #071322 100%)",
-                  color: isSelected ? "#FFFFFF" : "#CBD5E1",
+                    ? "rgba(0, 132, 255, 0.08)" 
+                    : "#F8FAFC",
+                  color: isSelected ? "#0084FF" : "#334155",
                   border: isSelected 
                     ? "1.5px solid #0084FF" 
-                    : "1px solid rgba(255, 255, 255, 0.08)",
+                    : "1px solid #E2E8F0",
                   borderRadius: "10px",
                   padding: "15px 20px",
                   cursor: "pointer",
@@ -300,7 +300,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
                   transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
                   transform: isSelected ? "translateX(8px)" : "none",
                   boxShadow: isSelected 
-                    ? "0 8px 25px rgba(0, 132, 255, 0.35), inset 0 0 12px rgba(0, 132, 255, 0.2)" 
+                    ? "0 4px 15px rgba(0, 132, 255, 0.15)" 
                     : "none"
                 }}
               >
@@ -314,15 +314,15 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      background: isSelected ? "#0084FF" : "rgba(255, 255, 255, 0.08)",
-                      color: isSelected ? "#FFFFFF" : "#00C2FF",
-                      border: isSelected ? "1px solid #00C2FF" : "1px solid rgba(0, 194, 255, 0.25)",
+                      background: isSelected ? "#0084FF" : "#FFFFFF",
+                      color: isSelected ? "#FFFFFF" : "#0084FF",
+                      border: "1px solid #0084FF",
                       borderRadius: "6px"
                     }}
                   >
                     {layer.id}
                   </span>
-                  <span style={{ fontWeight: 800, fontSize: "0.95rem", color: isSelected ? "#FFFFFF" : "#E2E8F0" }}>
+                  <span style={{ fontWeight: 800, fontSize: "0.95rem", color: isSelected ? "#0084FF" : "#0F172A" }}>
                     {layer.name}
                   </span>
                 </div>
@@ -332,9 +332,9 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
                     fontWeight: 700,
                     fontSize: "0.8rem",
                     letterSpacing: "0.02em",
-                    background: "rgba(0, 194, 255, 0.1)",
-                    border: "1px solid rgba(0, 194, 255, 0.25)",
-                    color: "#00C2FF",
+                    background: "rgba(0, 132, 255, 0.08)",
+                    border: "1px solid rgba(0, 132, 255, 0.2)",
+                    color: "#0084FF",
                     padding: "3px 10px",
                     borderRadius: "4px"
                   }}
@@ -349,21 +349,21 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
         {/* Right Side: Deep Technical Breakdown Card */}
         <div
           style={{
-            background: "linear-gradient(165deg, #0b1a2e 0%, #061120 100%)",
-            border: "1px solid rgba(0, 174, 239, 0.3)",
+            background: "#F8FAFC",
+            border: "1px solid #E2E8F0",
             borderRadius: "14px",
             padding: "28px",
-            boxShadow: "0 15px 45px rgba(0, 0, 0, 0.5)"
+            boxShadow: "0 6px 20px rgba(0, 0, 0, 0.03)"
           }}
         >
           {/* Card Top Header */}
-          <div style={{ marginBottom: "22px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", paddingBottom: "18px" }}>
+          <div style={{ marginBottom: "22px", borderBottom: "1px solid #E2E8F0", paddingBottom: "18px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px", flexWrap: "wrap", gap: "8px" }}>
               <span
                 style={{
-                  background: "rgba(0, 132, 255, 0.15)",
-                  border: "1px solid rgba(0, 132, 255, 0.4)",
-                  color: "#00C2FF",
+                  background: "rgba(0, 132, 255, 0.08)",
+                  border: "1px solid rgba(0, 132, 255, 0.25)",
+                  color: "#0084FF",
                   padding: "4px 12px",
                   fontSize: "0.75rem",
                   fontWeight: 800,
@@ -373,18 +373,18 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
               >
                 {currentLayer.category}
               </span>
-              <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#94A3B8" }}>
-                Thickness: <strong style={{ color: "#00C2FF" }}>{currentLayer.thickness}</strong>
+              <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#64748B" }}>
+                Thickness: <strong style={{ color: "#0084FF" }}>{currentLayer.thickness}</strong>
               </span>
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
               <span style={{ fontSize: "2.4rem", lineHeight: 1 }}>{currentLayer.icon}</span>
               <div>
-                <h4 style={{ fontSize: "1.35rem", fontWeight: 900, color: "#FFFFFF", margin: "0 0 4px 0" }}>
+                <h4 style={{ fontSize: "1.35rem", fontWeight: 900, color: "#0F172A", margin: "0 0 4px 0" }}>
                   {currentLayer.name}
                 </h4>
-                <p style={{ fontSize: "0.92rem", color: "#00C2FF", fontWeight: 700, margin: 0 }}>
+                <p style={{ fontSize: "0.92rem", color: "#0084FF", fontWeight: 700, margin: 0 }}>
                   {currentLayer.title}
                 </p>
               </div>
@@ -398,7 +398,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
                 style={{
                   fontSize: "0.78rem",
                   fontWeight: 800,
-                  color: "#00C2FF",
+                  color: "#0084FF",
                   textTransform: "uppercase",
                   letterSpacing: "0.06em",
                   display: "block",
@@ -407,7 +407,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
               >
                 Material Composition & Chemistry
               </span>
-              <p style={{ fontSize: "0.9rem", color: "#CBD5E1", lineHeight: 1.6, margin: 0 }}>
+              <p style={{ fontSize: "0.9rem", color: "#475569", lineHeight: 1.6, margin: 0 }}>
                 {currentLayer.composition}
               </p>
             </div>
@@ -417,7 +417,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
                 style={{
                   fontSize: "0.78rem",
                   fontWeight: 800,
-                  color: "#00C2FF",
+                  color: "#0084FF",
                   textTransform: "uppercase",
                   letterSpacing: "0.06em",
                   display: "block",
@@ -426,7 +426,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
               >
                 Primary Structural Function
               </span>
-              <p style={{ fontSize: "0.9rem", color: "#CBD5E1", lineHeight: 1.6, margin: 0 }}>
+              <p style={{ fontSize: "0.9rem", color: "#475569", lineHeight: 1.6, margin: 0 }}>
                 {currentLayer.purpose}
               </p>
             </div>
@@ -436,7 +436,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
                 style={{
                   fontSize: "0.78rem",
                   fontWeight: 800,
-                  color: "#00C2FF",
+                  color: "#0084FF",
                   textTransform: "uppercase",
                   letterSpacing: "0.06em",
                   display: "block",
@@ -447,8 +447,8 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
               </span>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
                 {currentLayer.features.map((feat, fidx) => (
-                  <li key={fidx} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.88rem", color: "#E2E8F0" }}>
-                    <CheckCircle2 size={16} style={{ color: "#00C2FF", flexShrink: 0, marginTop: "2px" }} />
+                  <li key={fidx} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "0.88rem", color: "#334155" }}>
+                    <CheckCircle2 size={16} style={{ color: "#0084FF", flexShrink: 0, marginTop: "2px" }} />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -461,7 +461,7 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
             style={{
               marginTop: "26px",
               paddingTop: "20px",
-              borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+              borderTop: "1px solid #E2E8F0",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -471,19 +471,19 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
           >
             <div style={{ display: "flex", gap: "20px" }}>
               <div>
-                <span style={{ fontWeight: 900, fontSize: "1.2rem", display: "block", color: "#00C2FF" }}>28%</span>
-                <span style={{ fontSize: "0.72rem", color: "#94A3B8", textTransform: "uppercase", fontWeight: 700 }}>Shock Attenuation</span>
+                <span style={{ fontWeight: 900, fontSize: "1.2rem", display: "block", color: "#0084FF" }}>28%</span>
+                <span style={{ fontSize: "0.72rem", color: "#64748B", textTransform: "uppercase", fontWeight: 700 }}>Shock Attenuation</span>
               </div>
               <div>
-                <span style={{ fontWeight: 900, fontSize: "1.2rem", display: "block", color: "#00C2FF" }}>100%</span>
-                <span style={{ fontSize: "0.72rem", color: "#94A3B8", textTransform: "uppercase", fontWeight: 700 }}>Moisture Lock</span>
+                <span style={{ fontWeight: 900, fontSize: "1.2rem", display: "block", color: "#0084FF" }}>100%</span>
+                <span style={{ fontSize: "0.72rem", color: "#64748B", textTransform: "uppercase", fontWeight: 700 }}>Moisture Lock</span>
               </div>
             </div>
 
             <button
               onClick={() => handleConsultEngineer(`${currentLayer.name} - Sports Court Coating Specifications`)}
               style={{
-                background: "linear-gradient(135deg, #0084FF 0%, #00B4D8 100%)",
+                background: "#0084FF",
                 color: "#FFFFFF",
                 border: "none",
                 fontWeight: 900,
@@ -494,16 +494,16 @@ export default function CoatingLayersVisualizer({ onOpenQuote }) {
                 alignItems: "center",
                 gap: "8px",
                 fontSize: "0.9rem",
-                boxShadow: "0 6px 20px rgba(0, 132, 255, 0.4)",
+                boxShadow: "0 4px 15px rgba(0, 132, 255, 0.3)",
                 transition: "all 0.25s ease"
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 8px 25px rgba(0, 132, 255, 0.6)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(0, 132, 255, 0.5)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 6px 20px rgba(0, 132, 255, 0.4)";
+                e.currentTarget.style.boxShadow = "0 4px 15px rgba(0, 132, 255, 0.3)";
               }}
             >
               <span>Consult Court Engineer</span>

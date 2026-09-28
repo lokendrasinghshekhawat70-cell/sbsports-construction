@@ -1,29 +1,29 @@
 /* =========================================================
-   SERVICES PAGE STYLES - DARK LUXURY ENGINEERING THEME
-   THEME: OBSIDIAN DARK NAVY / JET BLACK + ROYAL BLUE (#0084FF) + AMBER ORANGE (#FF7A00)
+   SERVICES PAGE STYLES - LIGHT LUXURY ENGINEERING THEME
+   THEME: PURE WHITE (#FFFFFF), OFF-WHITE (#F8FAFC), ROYAL BLUE (#0084FF) & AMBER ORANGE (#FF7A00)
    ========================================================= */
 
 .services-page-wrapper {
-  background: #06090E;
+  background: #FFFFFF;
   min-height: 100vh;
-  color: #FFFFFF;
+  color: #0F172A;
 }
 
 /* Hero Banner Section */
 .services-hero-banner {
-  background: #06090E;
+  background: #F8FAFC;
   padding: 130px 0 60px 0;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .services-pill-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 132, 255, 0.1);
-  border: 1px solid rgba(0, 132, 255, 0.3);
+  background: rgba(0, 132, 255, 0.08);
+  border: 1px solid rgba(0, 132, 255, 0.25);
   color: #0084FF;
   padding: 6px 18px;
   font-size: 0.78rem;
@@ -39,7 +39,7 @@
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: #FFFFFF;
+  color: #0F172A;
   line-height: 1.12;
   margin-bottom: 18px;
 }
@@ -49,7 +49,7 @@
 }
 
 .services-hero-subtitle {
-  color: #CBD5E1;
+  color: #475569;
   font-size: clamp(1rem, 1.2vw, 1.15rem);
   max-width: 800px;
   margin: 0 auto 36px auto;
@@ -68,18 +68,19 @@
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: #101827;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: var(--radius-sm);
   font-size: 0.88rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #0F172A;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 /* Filter Navigation Bar */
 .services-filter-nav {
-  background: #0B111D;
-  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
   position: sticky;
   top: 70px;
   z-index: 40;
@@ -99,9 +100,9 @@
   gap: 8px;
   padding: 10px 22px;
   border-radius: var(--radius-sm);
-  background: #101827;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #FFFFFF;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #334155;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
@@ -117,7 +118,7 @@
   background: #0084FF;
   color: #FFFFFF;
   border-color: #0084FF;
-  box-shadow: 0 4px 15px rgba(0, 132, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 132, 255, 0.3);
 }
 
 .filter-btn.active svg {
@@ -127,6 +128,7 @@
 /* Services Main Grid */
 .services-main-section {
   padding: 70px 0 90px 0;
+  background: #FFFFFF;
 }
 
 .services-cards-grid {
@@ -137,11 +139,11 @@
 
 /* Service Professional Card */
 .service-pro-card {
-  background: #101827;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
@@ -150,7 +152,7 @@
 .service-pro-card:hover {
   border-color: #0084FF;
   transform: translateY(-5px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85), 0 0 20px rgba(0, 132, 255, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 132, 255, 0.12);
 }
 
 /* Card Image Header */
@@ -176,7 +178,7 @@
   position: absolute;
   top: 14px;
   left: 14px;
-  background: rgba(6, 9, 14, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 132, 255, 0.3);
   color: #0084FF;
   padding: 5px 12px;
@@ -186,6 +188,7 @@
   text-transform: uppercase;
   border-radius: var(--radius-sm);
   backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .card-popular-pill {
@@ -203,7 +206,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  box-shadow: 0 4px 10px rgba(255, 122, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(255, 122, 0, 0.3);
 }
 
 /* Card Body */
@@ -225,8 +228,8 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-sm);
-  background: rgba(0, 132, 255, 0.1);
-  border: 1px solid rgba(0, 132, 255, 0.25);
+  background: rgba(0, 132, 255, 0.08);
+  border: 1px solid rgba(0, 132, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -249,22 +252,22 @@
   font-family: 'Manrope', sans-serif;
   font-size: 1.35rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: #0F172A;
   margin-bottom: 12px;
   line-height: 1.25;
 }
 
 .card-description {
   font-size: 0.92rem;
-  color: #CBD5E1;
+  color: #475569;
   line-height: 1.6;
   margin-bottom: 22px;
 }
 
 /* Scope Box */
 .scope-box {
-  background: #131E30;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: var(--radius-sm);
   padding: 18px;
   margin-bottom: 22px;
@@ -293,7 +296,7 @@
   align-items: flex-start;
   gap: 8px;
   font-size: 0.85rem;
-  color: #E2E8F0;
+  color: #334155;
   line-height: 1.45;
 }
 
@@ -308,8 +311,8 @@
   width: 46px;
   height: 46px;
   border-radius: var(--radius-sm);
-  background: #101827;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -332,10 +335,11 @@
 /* Consultation Callout */
 .consultation-callout-section {
   padding: 0 0 90px 0;
+  background: #FFFFFF;
 }
 
 .consultation-banner-box {
-  background: #101827;
+  background: #F8FAFC;
   border: 1px solid #0084FF;
   border-radius: var(--radius-md);
   padding: 48px;
@@ -343,7 +347,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 32px;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 132, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 132, 255, 0.08);
 }
 
 .consultation-content {
@@ -354,8 +358,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 132, 255, 0.1);
-  border: 1px solid rgba(0, 132, 255, 0.3);
+  background: rgba(0, 132, 255, 0.08);
+  border: 1px solid rgba(0, 132, 255, 0.25);
   color: #0084FF;
   padding: 5px 14px;
   font-size: 0.75rem;
@@ -370,13 +374,13 @@
   font-family: 'Manrope', sans-serif;
   font-size: 1.9rem;
   font-weight: 900;
-  color: #FFFFFF;
+  color: #0F172A;
   margin-bottom: 12px;
   line-height: 1.25;
 }
 
 .consultation-text {
-  color: #CBD5E1;
+  color: #475569;
   font-size: 0.98rem;
   line-height: 1.65;
   margin: 0;
@@ -395,12 +399,13 @@
   justify-content: center;
   gap: 8px;
   padding: 14px 22px;
-  background: #06090E;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
   border-radius: var(--radius-sm);
-  color: #FFFFFF;
+  color: #0F172A;
   font-size: 0.92rem;
   text-decoration: none;
+  font-weight: 700;
   transition: all 0.25s ease;
 }
 

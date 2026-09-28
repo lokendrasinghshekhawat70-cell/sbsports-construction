@@ -12,27 +12,27 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg-black: #06090E;
-  --bg-dark: #0B111D;
-  --bg-charcoal: #101827;
-  --bg-card: #131E30;
-  --bg-card-hover: #1A2840;
+  --bg-black: #FFFFFF;
+  --bg-dark: #F8FAFC;
+  --bg-charcoal: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
 
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: #E2E8F0;
   --border-highlight: #0084FF;
   --border-accent: #FF7A00;
 
   /* Logo-Derived Brand Colors */
   --brand-blue: #0084FF;
   --brand-blue-hover: #006fe0;
-  --brand-blue-light: #00C2FF;
-  --brand-blue-glow: rgba(0, 132, 255, 0.35);
+  --brand-blue-light: #0084FF;
+  --brand-blue-glow: rgba(0, 132, 255, 0.15);
 
   --brand-orange: #FF7A00;
   --brand-orange-hover: #e66e00;
-  --brand-orange-glow: rgba(255, 122, 0, 0.35);
+  --brand-orange-glow: rgba(255, 122, 0, 0.15);
 
-  --brand-silver: #CBD5E1;
+  --brand-silver: #64748B;
 
   /* Backward Compatibility Aliases */
   --primary: #0084FF;
@@ -40,20 +40,20 @@
   --accent-lime: #0084FF;
   --accent-lime-hover: #006fe0;
 
-  --text-primary: #FFFFFF;
-  --text-secondary: #D1D5DB;
-  --text-muted: #8896A6;
-  --text-dark: #06090E;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --text-dark: #0F172A;
 
   --font-heading: 'Manrope', 'DM Sans', sans-serif;
   --font-body: 'Inter', 'Manrope', sans-serif;
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
 
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.6);
-  --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.85);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 12px 35px rgba(0, 132, 255, 0.12);
 
   --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -68,12 +68,12 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-black);
+  background-color: #FFFFFF;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-black);
+  background-color: #FFFFFF;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -87,11 +87,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #06090E;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1B293F;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
@@ -163,9 +163,9 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 132, 255, 0.1);
-  border: 1px solid rgba(0, 132, 255, 0.3);
-  color: var(--brand-blue-light);
+  background: rgba(0, 132, 255, 0.08);
+  border: 1px solid rgba(0, 132, 255, 0.25);
+  color: var(--brand-blue);
   padding: 6px 18px;
   font-size: 0.8rem;
   font-weight: 800;
@@ -179,7 +179,7 @@ button {
   font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight: 900;
   margin-bottom: 20px;
-  color: #FFFFFF;
+  color: var(--text-primary);
   letter-spacing: -0.03em;
   line-height: 1.08;
 }
@@ -204,11 +204,11 @@ button {
 }
 
 .text-white {
-  color: #FFFFFF !important;
+  color: #0F172A !important;
 }
 
 .text-muted {
-  color: #8896A6 !important;
+  color: #64748B !important;
 }
 
 /* Buttons */
@@ -233,14 +233,14 @@ button {
   color: #FFFFFF !important;
   font-weight: 800;
   border: none !important;
-  box-shadow: 0 4px 18px rgba(0, 132, 255, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(0, 132, 255, 0.25) !important;
 }
 
 .btn-primary:hover,
 .btn-brand-blue:hover {
   background: #006fe0 !important;
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 132, 255, 0.55) !important;
+  box-shadow: 0 8px 25px rgba(0, 132, 255, 0.4) !important;
   color: #FFFFFF !important;
 }
 
@@ -249,26 +249,26 @@ button {
   color: #FFFFFF !important;
   font-weight: 800;
   border: none !important;
-  box-shadow: 0 4px 18px rgba(255, 122, 0, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(255, 122, 0, 0.25) !important;
 }
 
 .btn-brand-orange:hover {
   background: #e66e00 !important;
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 122, 0, 0.55) !important;
+  box-shadow: 0 8px 25px rgba(255, 122, 0, 0.4) !important;
   color: #FFFFFF !important;
 }
 
 .btn-outline {
   background: transparent !important;
-  color: #FFFFFF !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  color: #0F172A !important;
+  border: 1.5px solid #CBD5E1 !important;
 }
 
 .btn-outline:hover {
-  background: #FFFFFF !important;
-  border-color: #FFFFFF !important;
-  color: #06090E !important;
+  background: #0F172A !important;
+  border-color: #0F172A !important;
+  color: #FFFFFF !important;
   transform: translateY(-3px);
 }
 
